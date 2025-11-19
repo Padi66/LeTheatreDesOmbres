@@ -1,84 +1,25 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class SceneTeleporter : MonoBehaviour
 {
     [Header("Scene Settings")]
     public int sceneToLoadBuildIndex;
+    public int dialogueBranchNumber = 1;
 
-    [Header("Fade Settings")]
-    public CanvasGroup fadeCanvasGroup;
-    public float fadeDuration = 1f;
+    [Header("Movement Providers")]
+    public ContinuousMoveProvider continuousMoveProvider;
+    public ContinuousTurnProvider continuousTurnProvider;
 
-    [Header("Dialogue Settings")]
-    public DialogueSequence dialogueSequence;
-    public float delayBeforeDialogue = 2f;
-
-    private bool isTeleporting = false;
+    private bool hasTriggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isTeleporting)
+        if (other.CompareTag("Player") && !hasTriggered)
         {
-            isTeleporting = true;
-            StartCoroutine(TeleportSequence());
+            hasTriggered = true;
+            SceneTransitionManager.TeleportToScene(sceneToLoadBuildIndex, dialogueBranchNumber, continuousMoveProvider, continuousTurnProvider);
         }
-    }
-
-    private IEnumerator TeleportSequence()
-    {
-        yield return StartCoroutine(FadeToBlack());
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoadBuildIndex);
-
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        if (dialogueSequence == null)
-        {
-            dialogueSequence = FindFirstObjectByType<DialogueSequence>();
-        }
-
-        yield return StartCoroutine(FadeFromBlack());
-
-        yield return new WaitForSeconds(delayBeforeDialogue);
-
-        if (dialogueSequence != null)
-        {
-            dialogueSequence.StartDialogueBranch(1);
-        }
-
-        isTeleporting = false;
-    }
-
-    private IEnumerator FadeToBlack()
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            yield return null;
-        }
-
-        fadeCanvasGroup.alpha = 1f;
-    }
-
-    private IEnumerator FadeFromBlack()
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(elapsedTime / fadeDuration);
-            yield return null;
-        }
-
-        fadeCanvasGroup.alpha = 0f;
     }
 }

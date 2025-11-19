@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class DialogueSequence : MonoBehaviour
 {
+    [Header("UI Reference")]
+    public TextMeshProUGUI dialogueTextUI;
+
     [Header("Dialogue Settings")]
-    public TeleportationEvent teleportEvent;
     public float typewriterDelay = 0.05f;
     public float displayTime = 2f;
 
@@ -22,12 +24,20 @@ public class DialogueSequence : MonoBehaviour
 
     [HideInInspector] public bool dialogueFinished = false;
 
+    private void Awake()
+    {
+        if (dialogueTextUI == null)
+        {
+            dialogueTextUI = GetComponent<TextMeshProUGUI>();
+        }
+    }
+
     public void StartDialogueBranch(int branch)
     {
         if (activeDialogue != null)
             StopCoroutine(activeDialogue);
 
-        dialogueFinished = false; //reset à chaque nouveau dialogue
+        dialogueFinished = false;
 
         if (branch == 1)
             activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch1));
@@ -47,31 +57,36 @@ public class DialogueSequence : MonoBehaviour
 
     private IEnumerator ShowDialogueSequence(List<string> lines)
     {
-        GetComponent<TMP_Text>().enabled = true;
-        if (teleportEvent == null || lines == null || lines.Count == 0)
+        if (dialogueTextUI == null || lines == null || lines.Count == 0)
+        {
+            Debug.LogWarning("DialogueTextUI is null or lines are empty!");
             yield break;
+        }
 
-        var textUI = teleportEvent.dialogueText.GetComponentInChildren<TextMeshProUGUI>();
-        teleportEvent.dialogueText.SetActive(true);
+        if (!gameObject.activeInHierarchy)
+        {
+            gameObject.SetActive(true);
+        }
+
+        dialogueTextUI.enabled = true;
 
         foreach (string line in lines)
         {
-            textUI.text = "";
+            dialogueTextUI.text = "";
+
             foreach (char c in line)
             {
-                textUI.text += c;
+                dialogueTextUI.text += c;
                 yield return new WaitForSeconds(typewriterDelay);
             }
+
             yield return new WaitForSeconds(displayTime);
         }
 
-        teleportEvent.dialogueText.SetActive(false);
+        dialogueTextUI.text = "";
         activeDialogue = null;
-
-        teleportEvent.EnableTeleport();
-
-        //Dialogue terminé
         dialogueFinished = true;
+
         Debug.Log("Dialogue terminé !");
     }
 }
