@@ -35,4 +35,18 @@ public class LevelManager : MonoBehaviour
         
     }
     
+    public void LoadMainMenu()
+    {
+        _currentLevel = 0;
+        LoadNewLevel(0); 
+        
+       
+        
+    }
+    
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    
 }

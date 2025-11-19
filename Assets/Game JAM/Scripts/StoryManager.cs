@@ -8,6 +8,7 @@ public class StoryManager : MonoBehaviour
 {
     public static Action<string, bool> OnSocketStateChanged;
     public static Action<string, string> OnCubePlaced;
+    public static Action OnPushButton;
 
 
     public bool _socketGreen;
@@ -17,25 +18,25 @@ public class StoryManager : MonoBehaviour
     public string _cubeInGreen;
     public string _cubeInOrange;
     public string _cubeInPurple;
-
-    public bool _winOrLoose;
+    
     
     [SerializeField] DialogueSequence _dialogueSequence;
-    [SerializeField] Public _public;
     [SerializeField] LevelManager _levelManager;
-    [SerializeField] TeleportationEvent _teleportationEvent;
+    
 
 
     private void OnEnable()
     {
         OnSocketStateChanged += OnSocketUpdate;
         OnCubePlaced += OnCubeUpdate;
+        OnPushButton += LaunchStory;
     }
 
     private void OnDisable()
     {
         OnSocketStateChanged -= OnSocketUpdate;
         OnCubePlaced -= OnCubeUpdate;
+        OnPushButton -= LaunchStory;
     }
 
 
@@ -79,6 +80,10 @@ public class StoryManager : MonoBehaviour
             Debug.Log($" {_levelManager.gameObject.name} launched something");
             switch (_levelManager._currentLevel)
             {
+                case 0:
+                    CheckCombinationMenu();
+                    break;
+
                 case 1:
                     CheckCombinationLevel1();
                     break;
@@ -86,43 +91,29 @@ public class StoryManager : MonoBehaviour
                 case 2:
                     CheckCombinationLevel2();
                     break;
-
-                case 3:
-                    CheckCombinationLevel3();
-                    break;
             }
         }
     
 
-    private void CheckCombinationLevel1()
+    private void CheckCombinationMenu()
     {
         Debug.Log("CombinaisonCheck");
 
         if (_cubeInGreen == "CubeGreen")
         {
-            /*_curtainsLeft.OpenCurtains();
-            _curtainsRight.OpenCurtains();*/
-            _dialogueSequence.gameObject.SetActive(true);
-            _dialogueSequence.StartDialogueBranch(1);
-
-            Debug.Log("Fin du Garde du corps");
-
             
-             _public.PublicReaction(true);
-            
+            _levelManager.LoadLevel1();
             
         }
 
-        if (_cubeInGreen == "CubeOrange")
+        if (_cubeInGreen == "CubePurple")
         {
-            _dialogueSequence.StartDialogueBranch(2);
-            
-                _public.PublicReaction(false);
+            _levelManager.Quit();
             
         }
     }
 
-    private void CheckCombinationLevel3()
+    private void CheckCombinationLevel1()
         {
 
         if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
@@ -130,7 +121,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(1);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(true);
+                
             }
         }
         if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple")
@@ -138,17 +129,14 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(2);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
 
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(3);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                _public.PublicReaction(false);
-            }
+           
         }
 
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
@@ -156,7 +144,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(4);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
 
@@ -167,7 +155,7 @@ public class StoryManager : MonoBehaviour
             if (_dialogueSequence.dialogueFinished)
             {
 
-                _public.PublicReaction(false);
+                
             }
         }
 
@@ -176,7 +164,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(6);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
     }
@@ -188,7 +176,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(1);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(true);
+                
                 //YOU WIN
                 _levelManager.LoadLevel3();
             }
@@ -200,7 +188,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(2);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
 
@@ -209,7 +197,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(3);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
 
@@ -218,7 +206,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(4);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
 
@@ -227,7 +215,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(5);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
 
@@ -236,7 +224,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(6);
             if (_dialogueSequence.dialogueFinished)
             {
-                _public.PublicReaction(false);
+                
             }
         }
         

@@ -7,6 +7,8 @@ public class CurtainsMove : MonoBehaviour
     public Transform _endPositionLeft;
     public Transform _startPositionRight;
     public Transform _endPositionRight;
+    public Transform _curtainsRight;
+    public Transform _curtainsLeft;
     public float _duration = 2f;
     
     public void OpenCurtainsLeft()
@@ -37,7 +39,7 @@ public class CurtainsMove : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_startPositionLeft.position, _endPositionLeft.position, elapsed / _duration);
+            _curtainsLeft.position = Vector3.Lerp(_startPositionLeft.position, _endPositionLeft.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
@@ -50,12 +52,10 @@ public class CurtainsMove : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_endPositionLeft.position, _startPositionLeft.position, elapsed / _duration);
+            _curtainsLeft.position = Vector3.Lerp(_endPositionLeft.position, _startPositionLeft.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _startPositionLeft.position;
     }
     IEnumerator OpenRight()
     {
@@ -63,12 +63,10 @@ public class CurtainsMove : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_startPositionRight.position, _endPositionRight.position, elapsed / _duration);
+            _curtainsRight.position = Vector3.Lerp(_startPositionRight.position, _endPositionRight.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _endPositionRight.position;
     }
     IEnumerator CloseRight()
     {
@@ -76,12 +74,10 @@ public class CurtainsMove : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_endPositionRight.position, _startPositionRight.position, elapsed / _duration);
+            _curtainsRight.position = Vector3.Lerp(_endPositionRight.position, _startPositionRight.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _startPositionRight.position;
     }
    
 }
