@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class SocketVert : MonoBehaviour
+public class SocketGreen : MonoBehaviour
 {
     [SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
@@ -33,7 +33,7 @@ public class SocketVert : MonoBehaviour
         string _cubeName = cube.name;
         _lightcolor.intensity = 1;
         
-        if (cube.GetComponent<CubeVert>())
+        if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Vert contient Cube Vert");
         }
@@ -41,7 +41,7 @@ public class SocketVert : MonoBehaviour
         {
             Debug.Log("Socket Vert contient Cube Orange");
         }
-        else if (cube.GetComponent<CubeViolet>())
+        else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Vert contient Cube Violet");
         }

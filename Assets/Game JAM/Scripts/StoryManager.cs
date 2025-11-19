@@ -10,13 +10,13 @@ public class StoryManager : MonoBehaviour
     public static Action<string, string> OnCubePlaced;
 
 
-    public bool _socketVert;
+    public bool _socketGreen;
     public bool _socketOrange;
-    public bool _socketViolet;
+    public bool _socketPurple;
 
-    public string _cubeInVert;
+    public string _cubeInGreen;
     public string _cubeInOrange;
-    public string _cubeInViolet;
+    public string _cubeInPurple;
 
     public bool _winOrLoose;
     
@@ -43,14 +43,14 @@ public class StoryManager : MonoBehaviour
     {
         switch (socketName)
         {
-            case "Vert":
-                _socketVert = state;
+            case "Green":
+                _socketGreen = state;
                 break;
             case "Orange":
                 _socketOrange = state;
                 break;
             case "Purple":
-                _socketViolet = state;
+                _socketPurple = state;
                 break;
         }
     }
@@ -60,14 +60,14 @@ public class StoryManager : MonoBehaviour
         
         switch (socketName)
         {
-            case "Vert":
-                _cubeInVert = cubeName;
+            case "Green":
+                _cubeInGreen = cubeName;
                 break;
             case "Orange":
                 _cubeInOrange = cubeName;
                 break;
             case "Purple":
-                _cubeInViolet = cubeName;
+                _cubeInPurple = cubeName;
                 break;
         }
     }
@@ -98,7 +98,7 @@ public class StoryManager : MonoBehaviour
     {
         Debug.Log("CombinaisonCheck");
 
-        if (_cubeInVert == "CubeVert")
+        if (_cubeInGreen == "CubeGreen")
         {
             /*_curtainsLeft.OpenCurtains();
             _curtainsRight.OpenCurtains();*/
@@ -113,7 +113,7 @@ public class StoryManager : MonoBehaviour
             
         }
 
-        if (_cubeInVert == "CubeOrange")
+        if (_cubeInGreen == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(2);
             
@@ -125,7 +125,7 @@ public class StoryManager : MonoBehaviour
     private void CheckCombinationLevel3()
         {
 
-        if (_cubeInVert == "CubeViolet" && _cubeInOrange == "CubeOrange")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(1);
             if (_dialogueSequence.dialogueFinished)
@@ -133,7 +133,7 @@ public class StoryManager : MonoBehaviour
                 _public.PublicReaction(true);
             }
         }
-        if (_cubeInVert == "CubeVert" && _cubeInOrange == "CubeViolet")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(2);
             if (_dialogueSequence.dialogueFinished)
@@ -142,7 +142,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeOrange" && _cubeInOrange == "CubeViolet")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(3);
             if (_dialogueSequence.dialogueFinished)
@@ -151,7 +151,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeOrange" && _cubeInOrange == "CubeViolet")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(4);
             if (_dialogueSequence.dialogueFinished)
@@ -160,7 +160,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeOrange" && _cubeInOrange == "CubeVert")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(5);
 
@@ -171,7 +171,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeViolet" && _cubeInOrange == "CubeOrange")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(6);
             if (_dialogueSequence.dialogueFinished)
@@ -183,7 +183,7 @@ public class StoryManager : MonoBehaviour
 
     private void CheckCombinationLevel2()
     {
-        if (_cubeInVert == "CubeVert" && _cubeInOrange == "CubeOrange" && _cubeInViolet == "CubeViolet")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubeOrange" && _cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(1);
             if (_dialogueSequence.dialogueFinished)
@@ -195,7 +195,7 @@ public class StoryManager : MonoBehaviour
 
         }
 
-        if (_cubeInVert == "CubeOrange" && _cubeInOrange == "CubeVert" && _cubeInViolet == "CubeViolet")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubeGreen" && _cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(2);
             if (_dialogueSequence.dialogueFinished)
@@ -204,7 +204,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeViolet" && _cubeInOrange == "CubeVert" && _cubeInViolet == "CubeOrange")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeGreen" && _cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(3);
             if (_dialogueSequence.dialogueFinished)
@@ -213,7 +213,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeVert" && _cubeInOrange == "CubeViolet" && _cubeInViolet == "CubeOrange")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple" && _cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(4);
             if (_dialogueSequence.dialogueFinished)
@@ -222,7 +222,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeViolet" && _cubeInOrange == "CubeOrange" && _cubeInViolet == "CubeVert")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange" && _cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(5);
             if (_dialogueSequence.dialogueFinished)
@@ -231,7 +231,7 @@ public class StoryManager : MonoBehaviour
             }
         }
 
-        if (_cubeInVert == "CubeOrange" && _cubeInOrange == "CubeViolet" && _cubeInViolet == "CubeVert")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple" && _cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(6);
             if (_dialogueSequence.dialogueFinished)

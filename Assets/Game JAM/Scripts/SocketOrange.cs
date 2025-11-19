@@ -31,7 +31,7 @@ public class SocketOrange : MonoBehaviour
         string _cubeName = cube.name;
         _lightcolor.intensity = 1;
         
-        if (cube.GetComponent<CubeVert>())
+        if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Orange contient Cube Vert");
         }
@@ -39,7 +39,7 @@ public class SocketOrange : MonoBehaviour
         {
             Debug.Log("Socket Orange contient Cube Orange");
         }
-        else if (cube.GetComponent<CubeViolet>())
+        else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Orange contient Cube Violet");
         }
