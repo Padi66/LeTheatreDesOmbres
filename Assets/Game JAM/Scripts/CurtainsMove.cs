@@ -43,8 +43,7 @@ public class CurtainsMove : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _endPositionLeft.position;
+        _curtainsLeft.position = _endPositionLeft.position;
     }
     IEnumerator CloseLeft()
     {
@@ -56,6 +55,7 @@ public class CurtainsMove : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+        _curtainsLeft.position = _startPositionLeft.position;
     }
     IEnumerator OpenRight()
     {
@@ -67,6 +67,7 @@ public class CurtainsMove : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+        _curtainsRight.position = _endPositionRight.position;
     }
     IEnumerator CloseRight()
     {
@@ -78,6 +79,7 @@ public class CurtainsMove : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+        _curtainsRight.position = _startPositionRight.position;
     }
    
 }

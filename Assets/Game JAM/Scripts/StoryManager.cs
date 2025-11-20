@@ -14,10 +14,12 @@ public class StoryManager : MonoBehaviour
     public bool _socketGreen;
     public bool _socketOrange;
     public bool _socketPurple;
+    public bool _socketTool;
 
     public string _cubeInGreen;
     public string _cubeInOrange;
     public string _cubeInPurple;
+    public string _cubeInTool;
     
     
     [SerializeField] DialogueSequence _dialogueSequence;
@@ -53,6 +55,9 @@ public class StoryManager : MonoBehaviour
             case "Purple":
                 _socketPurple = state;
                 break;
+            case "Tool":
+                _socketTool = state;
+                break;
         }
     }
 
@@ -69,6 +74,9 @@ public class StoryManager : MonoBehaviour
                 break;
             case "Purple":
                 _cubeInPurple = cubeName;
+                break;
+            case "Tool":
+                _cubeInTool = cubeName;
                 break;
         }
     }

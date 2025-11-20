@@ -10,6 +10,10 @@ public class PiedestalUP : MonoBehaviour
     public Transform _endPositionPurple;
     public Transform _startPositionOrange;
     public Transform _endPositionOrange;
+    public Transform _piedestalOrange;
+    public Transform _piedestalPurple;
+    public Transform _piedestalGreen;
+    
     public float _duration = 2f;
     
     public void UpGreen()
@@ -50,12 +54,12 @@ public class PiedestalUP : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_startPositionGreen.position, _endPositionGreen.position, elapsed / _duration);
+            _piedestalGreen.position = Vector3.Lerp(_startPositionGreen.position, _endPositionGreen.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = _endPositionGreen.position;
+        _piedestalGreen.position = _endPositionGreen.position;
     }
     IEnumerator DownEnumGreen()
     {
@@ -63,12 +67,12 @@ public class PiedestalUP : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_endPositionGreen.position, _startPositionGreen.position, elapsed / _duration);
+            _piedestalGreen.position = Vector3.Lerp(_endPositionGreen.position, _startPositionGreen.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = _startPositionGreen.position;
+        _piedestalGreen.position = _startPositionGreen.position;
     }
     IEnumerator UpEnumPurple()
     {
@@ -76,12 +80,12 @@ public class PiedestalUP : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_startPositionPurple.position, _endPositionPurple.position, elapsed / _duration);
+            _piedestalPurple.position = Vector3.Lerp(_startPositionPurple.position, _endPositionPurple.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = _endPositionPurple.position;
+      _piedestalPurple.position = _endPositionPurple.position;
     }
     IEnumerator DownEnumPurple()
     {
@@ -89,12 +93,11 @@ public class PiedestalUP : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_endPositionPurple.position, _startPositionPurple.position, elapsed / _duration);
+            _piedestalPurple.position = Vector3.Lerp(_endPositionPurple.position, _startPositionPurple.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _startPositionPurple.position;
+        _piedestalPurple.position = _startPositionPurple.position;
     }
     
     IEnumerator UpEnumOrange()
@@ -103,12 +106,11 @@ public class PiedestalUP : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_startPositionOrange.position, _endPositionOrange.position, elapsed / _duration);
+            _piedestalOrange.position = Vector3.Lerp(_startPositionOrange.position, _endPositionOrange.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _endPositionOrange.position;
+        _piedestalOrange.position = _endPositionOrange.position;
     }
     IEnumerator DownEnumOrange()
     {
@@ -116,12 +118,11 @@ public class PiedestalUP : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            transform.position = Vector3.Lerp(_endPositionOrange.position, _startPositionOrange.position, elapsed / _duration);
+            _piedestalOrange.position = Vector3.Lerp(_endPositionOrange.position, _startPositionOrange.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        transform.position = _startPositionOrange.position;
+        _piedestalOrange.position = _startPositionOrange.position;
     }
 }
 
