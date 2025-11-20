@@ -28,6 +28,7 @@ public class ActivateStory : MonoBehaviour
     {
         StoryManager.OnPushButton?.Invoke();
         _grabInteractable.enabled = false;
+        StartCoroutine(Delay());
         StartCoroutine(MoveTicket());
 
     }
@@ -46,5 +47,10 @@ public class ActivateStory : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+    }
+    
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(6f); 
     }
 }
