@@ -12,6 +12,7 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private Transform _attachPositionEnd;
     [SerializeField] private Transform _socketAttach; 
     [SerializeField] private float _duration;
+    [SerializeField] private XRGrabInteractable _grabInteractable;
 
     void OnEnable()
     {
@@ -26,6 +27,7 @@ public class ActivateStory : MonoBehaviour
     void OnButtonPressed()
     {
         StoryManager.OnPushButton?.Invoke();
+        _grabInteractable.enabled = false;
         StartCoroutine(MoveTicket());
 
     }

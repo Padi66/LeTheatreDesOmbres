@@ -44,15 +44,15 @@ public class SocketPurple : MonoBehaviour
             Debug.Log("Socket Violet contient Cube Violet");
         }
         
-        StoryManager.OnSocketStateChanged?.Invoke("Violet", true);
-        StoryManager.OnCubePlaced?.Invoke("Violet", _cubeName);
+        StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
+        StoryManager.OnCubePlaced?.Invoke("Purple", _cubeName);
     }
 
     void OnSelectExited(SelectExitEventArgs args)
     {
         _lightcolor.intensity = 0;
         Debug.Log("Socket Violet vide");
-        StoryManager.OnSocketStateChanged?.Invoke("Violet", false);
-        StoryManager.OnCubePlaced?.Invoke("Violet", null);
+        StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
+        StoryManager.OnCubePlaced?.Invoke("Purple", null);
     }
 }

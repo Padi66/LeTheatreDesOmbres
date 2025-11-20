@@ -52,8 +52,8 @@ public class SocketGreen : MonoBehaviour
             
         }
         
-        StoryManager.OnSocketStateChanged?.Invoke("Vert", true);
-        StoryManager.OnCubePlaced?.Invoke("Vert", _cubeName);
+        StoryManager.OnSocketStateChanged?.Invoke("Green", true);
+        StoryManager.OnCubePlaced?.Invoke("Green", _cubeName);
     }
 
     void OnSelectExited(SelectExitEventArgs args)
@@ -61,8 +61,8 @@ public class SocketGreen : MonoBehaviour
         //SON
         //_lightcolor.intensity = 0;
         Debug.Log("Socket Vert vide");
-        StoryManager.OnSocketStateChanged?.Invoke("Vert", false);
-        StoryManager.OnCubePlaced?.Invoke("Vert", null);
+        StoryManager.OnSocketStateChanged?.Invoke("Green", false);
+        StoryManager.OnCubePlaced?.Invoke("Green", null);
     }
 
 }
