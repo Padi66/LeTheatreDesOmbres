@@ -81,26 +81,28 @@ public class StoryManager : MonoBehaviour
         }
         StoryDirect();
     }
-
+    
+    //verification générale
     public void LaunchStory()
         {
             Debug.Log($" {_levelManager.gameObject.name} launched something");
             switch (_levelManager._currentLevel)
             {
-                case 1:
+                case 0:
                     CheckCombinationMenu();
                     break;
 
-                case 2:
+                case 1:
                     CheckCombinationLevel1();
                     break;
 
-                case 3:
+                case 2:
                     CheckCombinationLevel2();
                     break;
             }
         }
     
+    //verification en direct
     public void StoryDirect()
     {
         Debug.Log($" {_levelManager.gameObject.name} launched something");
@@ -140,7 +142,7 @@ public class StoryManager : MonoBehaviour
             
         }
 
-        if (_cubeInGreen == "CubePurple")
+        else if (_cubeInGreen == "CubePurple")
         {
             _levelManager.Quit();
             

@@ -37,19 +37,19 @@ public class SocketGreen : MonoBehaviour
         {
             Debug.Log("Socket Vert contient Cube Vert");
             //Faire monter le next piedestal
-            //premier texte
+            
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Vert contient Cube Orange");
             //Faire monter le next piedestal
-            //premier texte
+            
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Vert contient Cube Violet");
             //Faire monter le next piedestal
-            //premier texte
+            
         }
         
         StoryManager.OnSocketStateChanged?.Invoke("Vert", true);
@@ -61,8 +61,6 @@ public class SocketGreen : MonoBehaviour
         //SON
         _lightcolor.intensity = 0;
         Debug.Log("Socket Vert vide");
-        //faire redescendre le piedestal
-        //remettre le dialogue precedent
         StoryManager.OnSocketStateChanged?.Invoke("Vert", false);
         StoryManager.OnCubePlaced?.Invoke("Vert", null);
     }

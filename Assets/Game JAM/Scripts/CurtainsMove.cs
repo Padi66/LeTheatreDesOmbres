@@ -12,11 +12,7 @@ public class CurtainsMove : MonoBehaviour
     public Transform _curtainsLeft;
     public float _duration = 2f;
 
-    private void Start()
-    {
-        OpenCurtainsLeft();
-    }
-
+    
     public void OpenCurtainsLeft()
     {
         //SON
