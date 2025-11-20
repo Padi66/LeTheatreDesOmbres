@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +11,12 @@ public class CurtainsMove : MonoBehaviour
     public Transform _curtainsRight;
     public Transform _curtainsLeft;
     public float _duration = 2f;
-    
+
+    private void Start()
+    {
+        OpenCurtainsLeft();
+    }
+
     public void OpenCurtainsLeft()
     {
         //SON

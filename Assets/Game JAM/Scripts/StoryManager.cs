@@ -79,30 +79,56 @@ public class StoryManager : MonoBehaviour
                 _cubeInTool = cubeName;
                 break;
         }
+        StoryDirect();
     }
 
     public void LaunchStory()
         {
-          
-                //faire un truc
             Debug.Log($" {_levelManager.gameObject.name} launched something");
             switch (_levelManager._currentLevel)
             {
-                case 0:
+                case 1:
                     CheckCombinationMenu();
                     break;
 
-                case 1:
+                case 2:
                     CheckCombinationLevel1();
                     break;
 
-                case 2:
+                case 3:
                     CheckCombinationLevel2();
                     break;
             }
         }
     
+    public void StoryDirect()
+    {
+        Debug.Log($" {_levelManager.gameObject.name} launched something");
+        switch (_levelManager._currentLevel)
+        {
+            case 1:
+                CheckDirectLevel1();
+                break;
 
+            case 2:
+                CheckDirectLevel2();
+                break;
+        }
+    }
+
+
+    private void CheckDirectLevel1()
+    {
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
+        {}
+    }
+
+    private void CheckDirectLevel2()
+    {
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
+        {}
+    }
+    
     private void CheckCombinationMenu()
     {
         Debug.Log("CombinaisonCheck");
