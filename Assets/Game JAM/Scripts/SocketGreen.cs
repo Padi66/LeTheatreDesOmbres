@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketGreen : MonoBehaviour
 {
-    [SerializeField] private Light _lightcolor;
+    //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
     
 
@@ -31,7 +31,7 @@ public class SocketGreen : MonoBehaviour
        
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        _lightcolor.intensity = 1;
+        //_lightcolor.intensity = 1;
         
         if (cube.GetComponent<CubeGreen>())
         {
@@ -59,7 +59,7 @@ public class SocketGreen : MonoBehaviour
     void OnSelectExited(SelectExitEventArgs args)
     {
         //SON
-        _lightcolor.intensity = 0;
+        //_lightcolor.intensity = 0;
         Debug.Log("Socket Vert vide");
         StoryManager.OnSocketStateChanged?.Invoke("Vert", false);
         StoryManager.OnCubePlaced?.Invoke("Vert", null);
