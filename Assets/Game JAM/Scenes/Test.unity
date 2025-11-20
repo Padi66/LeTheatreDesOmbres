@@ -188,6 +188,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.92, y: 2.67, z: 27.82}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &427072798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 841665867140707524, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
+  m_PrefabInstance: {fileID: 9191122819535623062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &427072801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8944505188611212439, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
+  m_PrefabInstance: {fileID: 9191122819535623062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427072798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecc085bf63270540b2d9a418fb5f149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Content.Interaction::UnityEngine.XR.Content.Interaction.XRLockSocketInteractor
+--- !u!114 &427072804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427072798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8ab427b865d2c49b4bbc99f6f49018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRSocketReplacementV2
+  socketInteractor: {fileID: 427072801}
+  prefabToSpawn: {fileID: 7014283666997132451, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
+  removeParentObject: 1
+  particleEffect: {fileID: 5739587784058940176, guid: 0eb9b440000134f459b96a2e2921e388, type: 3}
+  playEffectOnSpawn: 1
+  playEffectOnDestroy: 0
+  destroyDelay: 0.05
 --- !u!1001 &541489529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,9 +805,11 @@ MonoBehaviour:
   _socketGreen: 0
   _socketOrange: 0
   _socketPurple: 0
+  _socketTool: 0
   _cubeInGreen: 
   _cubeInOrange: 
   _cubeInPurple: 
+  _cubeInTool: 
   _dialogueSequence: {fileID: 0}
   _levelManager: {fileID: 0}
 --- !u!4 &1628006683
@@ -2036,7 +2073,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 841665867140707524, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 427072804}
   m_SourcePrefab: {fileID: 100100000, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
