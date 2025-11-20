@@ -137,13 +137,14 @@ public class StoryManager : MonoBehaviour
 
         if (_cubeInGreen == "CubeGreen")
         {
-            
+            Debug.Log("Open Level 1");
             _levelManager.LoadLevel1();
             
         }
 
         else if (_cubeInGreen == "CubePurple")
         {
+            Debug.Log("Quit");
             _levelManager.Quit();
             
         }
