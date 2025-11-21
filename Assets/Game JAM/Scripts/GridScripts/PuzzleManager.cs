@@ -32,8 +32,6 @@ public class PuzzleManager : MonoBehaviour
     {
         if (puzzleCompleted) return;
 
-        if (!AllSocketsFilled()) return;
-
         string[] currentTags = new string[snapCheckers.Length];
         for (int i = 0; i < snapCheckers.Length; i++)
         {
@@ -50,34 +48,51 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    private bool AllSocketsFilled()
-    {
-        foreach (var snap in snapCheckers)
-        {
-            if (!snap.HasObject) return false;
-        }
-        return true;
-    }
-
     private bool MatchesCombination(string[] currentTags, string[] requiredTags)
     {
-        if (currentTags.Length != requiredTags.Length) return false;
+        if (currentTags.Length != requiredTags.Length) 
+        {
+            Debug.LogWarning($"Tag array length mismatch: {currentTags.Length} vs {requiredTags.Length}");
+            return false;
+        }
 
         for (int i = 0; i < currentTags.Length; i++)
         {
-            if (currentTags[i] != requiredTags[i]) return false;
+            if (requiredTags[i] == "" || requiredTags[i] == "Empty")
+            {
+                if (currentTags[i] != "")
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (currentTags[i] != requiredTags[i])
+                {
+                    return false;
+                }
+            }
         }
+
+        Debug.Log("Combination matched! Checking if valid...");
         return true;
     }
 
     private void OnCombinationMatched(PuzzleCombination combination)
     {
+        if (puzzleCompleted) return;
+        
         puzzleCompleted = true;
-        Debug.Log($"Combination matched: {combination.combinationName}");
+        Debug.Log($"✓ Combination matched: {combination.combinationName}");
 
         if (combination.objectToSpawn != null && combination.spawnLocation != null)
         {
-            Instantiate(combination.objectToSpawn, combination.spawnLocation.position, combination.spawnLocation.rotation);
+            GameObject spawned = Instantiate(combination.objectToSpawn, combination.spawnLocation.position, combination.spawnLocation.rotation);
+            Debug.Log($"Spawned: {spawned.name}");
+        }
+        else
+        {
+            Debug.LogWarning("Cannot spawn - objectToSpawn or spawnLocation is null!");
         }
     }
 }
