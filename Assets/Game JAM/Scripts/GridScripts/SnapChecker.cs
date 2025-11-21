@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class SnapChecker: MonoBehaviour
+public class SnapChecker : MonoBehaviour
 {
-    public string expectedTag; // tag du bloc attendu
+    public int socketID;
     private XRSocketInteractor socket;
     private GameObject currentObject;
 
-    public bool IsCorrect => currentObject != null && currentObject.CompareTag(expectedTag);
+    public string CurrentTag => currentObject != null ? currentObject.tag : "";
+    public bool HasObject => currentObject != null;
 
     void Awake()
     {
@@ -20,12 +21,12 @@ public class SnapChecker: MonoBehaviour
     private void OnObjectPlaced(SelectEnterEventArgs args)
     {
         currentObject = args.interactableObject.transform.gameObject;
-        PuzzleManager.Instance.CheckAllSockets();
+        PuzzleManager.Instance.CheckCombination();
     }
 
     private void OnObjectRemoved(SelectExitEventArgs args)
     {
         currentObject = null;
-        PuzzleManager.Instance.CheckAllSockets();
+        PuzzleManager.Instance.CheckCombination();
     }
 }

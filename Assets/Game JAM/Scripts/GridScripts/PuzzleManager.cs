@@ -2,6 +2,15 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
+public class PuzzleCombination
+{
+    public string combinationName;
+    public string[] requiredTags;
+    public GameObject objectToSpawn;
+    public Transform spawnLocation;
+}
+
 public class PuzzleManager : MonoBehaviour
 {
     public static PuzzleManager Instance;
@@ -9,18 +18,8 @@ public class PuzzleManager : MonoBehaviour
     [Tooltip("Tous les SnapChecker du niveau")]
     public SnapChecker[] snapCheckers;
 
-    [Header("Effets de victoire")]
-    public AudioSource VictorySound;
-
-    [Header("Animal à animer")]
-    public Animator animalAnimator;     
-    public GameObject animalObject;     
-    public float escapeSpeed = 3f;      
-    public float escapeDuration = 2.5f; 
-
-    [Header("Transition vers les crédits")]
-    public float delayBeforeCredits = 3f; // ← Durée avant de charger la scène des crédits
-    public string creditsSceneName = "CreditsScene"; // ← Nom de ta scène des crédits (à adapter)
+    [Header("Puzzle Combinations")]
+    public PuzzleCombination[] combinations;
 
     private bool puzzleCompleted = false;
 
@@ -29,77 +28,56 @@ public class PuzzleManager : MonoBehaviour
         Instance = this;
     }
 
-    public void CheckAllSockets()
+    public void CheckCombination()
     {
         if (puzzleCompleted) return;
 
+        if (!AllSocketsFilled()) return;
+
+        string[] currentTags = new string[snapCheckers.Length];
+        for (int i = 0; i < snapCheckers.Length; i++)
+        {
+            currentTags[i] = snapCheckers[i].CurrentTag;
+        }
+
+        foreach (var combination in combinations)
+        {
+            if (MatchesCombination(currentTags, combination.requiredTags))
+            {
+                OnCombinationMatched(combination);
+                return;
+            }
+        }
+    }
+
+    private bool AllSocketsFilled()
+    {
         foreach (var snap in snapCheckers)
         {
-            if (!snap.IsCorrect) return; // si un snap est faux, on quitte
+            if (!snap.HasObject) return false;
         }
-
-        // Si on arrive ici, tout est correct
-        OnPuzzleCompleted();
+        return true;
     }
 
-    private void OnPuzzleCompleted()
+    private bool MatchesCombination(string[] currentTags, string[] requiredTags)
+    {
+        if (currentTags.Length != requiredTags.Length) return false;
+
+        for (int i = 0; i < currentTags.Length; i++)
+        {
+            if (currentTags[i] != requiredTags[i]) return false;
+        }
+        return true;
+    }
+
+    private void OnCombinationMatched(PuzzleCombination combination)
     {
         puzzleCompleted = true;
+        Debug.Log($"Combination matched: {combination.combinationName}");
 
-        /*// Joue le son de victoire s’il existe
-        if (VictorySound != null)
-            VictorySound.Play();
-
-        // Lance la fuite de l’animal
-        if (animalAnimator != null)
-            StartCoroutine(AnimalEscape());
-        else
-            StartCoroutine(WaitAndLoadCredits()); // si pas d’animal, on lance directement le délai
-    }
-
-    private IEnumerator AnimalEscape()
-    {
-        Debug.Log("🐾 L’animal prend la fuite !");
-
-        // Lance l’animation "Run"
-        animalAnimator.SetTrigger("Run");
-
-        // Fait bouger l’animal vers l’avant pendant quelques secondes
-        float timer = 0f;
-        Vector3 direction = animalObject.transform.forward;
-
-        while (timer < escapeDuration)
+        if (combination.objectToSpawn != null && combination.spawnLocation != null)
         {
-            animalObject.transform.position += direction * escapeSpeed * Time.deltaTime;
-            timer += Time.deltaTime;
-            yield return null;
+            Instantiate(combination.objectToSpawn, combination.spawnLocation.position, combination.spawnLocation.rotation);
         }
-
-        // Fais disparaître l’animal après la fuite
-        Destroy(animalObject);
-
-        // Attends la fin du son de victoire (ou un délai fixe)
-        yield return StartCoroutine(WaitAndLoadCredits());
-    }
-
-    private IEnumerator WaitAndLoadCredits()
-    {
-        // Attendre le son s’il existe
-        float waitTime = delayBeforeCredits;
-
-        if (VictorySound != null)
-        {
-            // On prend la durée du clip si elle est plus longue que le délai prévu
-            float clipLength = VictorySound.clip != null ? VictorySound.clip.length : 0f;
-            waitTime = Mathf.Max(delayBeforeCredits, clipLength);
-        }
-
-        Debug.Log($"⏳ Attente de {waitTime} secondes avant les crédits...");
-        yield return new WaitForSeconds(waitTime);
-
-        // Charge la scène des crédits
-        Debug.Log("🎬 Chargement de la scène des crédits...");
-        SceneManager.LoadScene(creditsSceneName);*/
     }
 }
-
