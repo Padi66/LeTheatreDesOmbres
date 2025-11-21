@@ -8,6 +8,7 @@ public class SocketGreen : MonoBehaviour
 {
     //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
+    [SerializeField] private PiedestalUP _piedestal;
     
 
     void OnEnable()
@@ -36,19 +37,19 @@ public class SocketGreen : MonoBehaviour
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Vert contient Cube Vert");
-            //Faire monter le next piedestal
+            //_piedestal.
             
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Vert contient Cube Orange");
-            //Faire monter le next piedestal
+            //_piedestal.
             
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Vert contient Cube Violet");
-            //Faire monter le next piedestal
+            //_piedestal.
             
         }
         

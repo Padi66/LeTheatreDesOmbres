@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3915068478629221515
+--- !u!1 &6103935914882764204
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3666567879831769428}
-  - component: {fileID: 7494320509812203275}
+  - component: {fileID: 3148364079345802809}
+  - component: {fileID: 8432446832783612374}
+  - component: {fileID: 405249113847635248}
+  - component: {fileID: 4692820781508095928}
   m_Layer: 0
   m_Name: ===Manager===
   m_TagString: Untagged
@@ -17,41 +19,76 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3666567879831769428
+--- !u!4 &3148364079345802809
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3915068478629221515}
+  m_GameObject: {fileID: 6103935914882764204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.87864, y: 1.26582, z: 21.36214}
+  m_LocalPosition: {x: -4.023, y: 1.099, z: -9.1238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7494320509812203275
+--- !u!114 &8432446832783612374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3915068478629221515}
+  m_GameObject: {fileID: 6103935914882764204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f3e3ef4429e5fe4e9eaa405e5cfdd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryManager
-  _socketVert: 0
+  _socketGreen: 0
   _socketOrange: 0
-  _socketViolet: 0
-  _cubeInVert: 
+  _socketPurple: 0
+  _socketTool: 0
+  _cubeInGreen: 
   _cubeInOrange: 
-  _cubeInViolet: 
-  _winOrLoose: 0
-  _curtainsLeft: {fileID: 0}
-  _curtainsRight: {fileID: 0}
+  _cubeInPurple: 
+  _cubeInTool: 
   _dialogueSequence: {fileID: 0}
-  _public: {fileID: 0}
+  _levelManager: {fileID: 405249113847635248}
+  _piedestal: {fileID: 0}
+--- !u!114 &405249113847635248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103935914882764204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cf6b23e8aa3ca45800238ea1b0d801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  _currentLevel: 0
+--- !u!114 &4692820781508095928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103935914882764204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb14f55faa57aaa44b7c1d7a7b5eae95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PiedestalUP
+  _startPositionGreen: {fileID: 0}
+  _endPositionGreen: {fileID: 0}
+  _startPositionPurple: {fileID: 0}
+  _endPositionPurple: {fileID: 0}
+  _startPositionOrange: {fileID: 0}
+  _endPositionOrange: {fileID: 0}
+  _piedestalOrange: {fileID: 0}
+  _piedestalPurple: {fileID: 0}
+  _piedestalGreen: {fileID: 0}
+  _duration: 2

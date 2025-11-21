@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 7363575341279361327}
   - component: {fileID: 8341854980171911836}
   - component: {fileID: 3408575646157300986}
+  - component: {fileID: 5037734386672077501}
   m_Layer: 0
-  m_Name: Figurine Finished 1
+  m_Name: CubeVert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,3 +296,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Content.Interaction::UnityEngine.XR.Content.Interaction.Keychain
   m_Keys:
   - {fileID: 11400000, guid: f72c909ecd41e3842b6b6fa50d69980e, type: 2}
+--- !u!114 &5037734386672077501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8457255823230282914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9246ae6073df24798a1df1bf7e8d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeGreen

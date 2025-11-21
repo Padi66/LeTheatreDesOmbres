@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2841579617102598438
+--- !u!1 &7767528924328576305
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5383381421902376299}
-  - component: {fileID: 2581627621286613209}
-  - component: {fileID: 6563082800453495284}
-  - component: {fileID: 8442787673620459020}
-  - component: {fileID: 3841634820494719956}
-  - component: {fileID: 6027844872829120847}
-  - component: {fileID: 2455311900024102887}
-  - component: {fileID: 7481361158435327529}
+  - component: {fileID: 5937344239541706445}
+  - component: {fileID: 6238906326499909393}
+  - component: {fileID: 5626538138959260569}
+  - component: {fileID: 1247680341936307653}
+  - component: {fileID: 8321602989538197057}
+  - component: {fileID: 6751243484752987528}
+  - component: {fileID: 1557385800505816166}
+  - component: {fileID: 965708935139628041}
+  - component: {fileID: 4407967872937067681}
   m_Layer: 0
-  m_Name: Figurine Finished 2
+  m_Name: CubePurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5383381421902376299
+--- !u!4 &5937344239541706445
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.55, y: 1.493, z: 11.722001}
+  m_LocalPosition: {x: 26.257, y: 1.50744, z: 11.722001}
   m_LocalScale: {x: 0.20450006, y: 0.6135, z: 0.20450005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2581627621286613209
+--- !u!33 &6238906326499909393
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6563082800453495284
+--- !u!23 &5626538138959260569
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -71,7 +72,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cda5ff44748963e4d9bb10715f07dbc5, type: 2}
+  - {fileID: 2100000, guid: e7a78c3fb82811f4183f309276f4c084, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,13 +95,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8442787673620459020
+--- !u!65 &1247680341936307653
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -115,13 +116,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3841634820494719956
+--- !u!54 &8321602989538197057
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -142,13 +143,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6027844872829120847
+--- !u!114 &6751243484752987528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
@@ -269,25 +270,25 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &2455311900024102887
+--- !u!114 &1557385800505816166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 008b537303ffcf845a2bed1a2e855677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketableBlock
---- !u!114 &7481361158435327529
+--- !u!114 &965708935139628041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841579617102598438}
+  m_GameObject: {fileID: 7767528924328576305}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 505599121cd7c2d4d87a596056b0142b, type: 3}
@@ -295,3 +296,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Content.Interaction::UnityEngine.XR.Content.Interaction.Keychain
   m_Keys:
   - {fileID: 11400000, guid: f72c909ecd41e3842b6b6fa50d69980e, type: 2}
+--- !u!114 &4407967872937067681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767528924328576305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f61c3d012f447e47bb9f4a1a58a69ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubePurple

@@ -6,8 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketPurple : MonoBehaviour
 {
-    [SerializeField] private Light _lightcolor;
+    //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
+    [SerializeField] private PiedestalUP _piedestal;
     
 
     void OnEnable()
@@ -29,19 +30,22 @@ public class SocketPurple : MonoBehaviour
        
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        _lightcolor.intensity = 1;
+        //_lightcolor.intensity = 1;
         
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Violet contient Cube Vert");
+            //_piedestal.
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Violet contient Cube Orange");
+            //_piedestal.
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Violet contient Cube Violet");
+            //_piedestal.
         }
         
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
@@ -50,7 +54,7 @@ public class SocketPurple : MonoBehaviour
 
     void OnSelectExited(SelectExitEventArgs args)
     {
-        _lightcolor.intensity = 0;
+        //_lightcolor.intensity = 0;
         Debug.Log("Socket Violet vide");
         StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
         StoryManager.OnCubePlaced?.Invoke("Purple", null);

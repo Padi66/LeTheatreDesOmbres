@@ -12,7 +12,10 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private Transform _attachPositionEnd;
     [SerializeField] private Transform _socketAttach; 
     [SerializeField] private float _duration;
-    [SerializeField] private XRGrabInteractable _grabInteractable;
+    [SerializeField] private XRSocketInteractor _socketGreen;
+    [SerializeField] private XRSocketInteractor _socketOrange;
+    [SerializeField] private XRSocketInteractor _socketPurple;
+    [SerializeField] private XRSocketInteractor _socketTool;
 
     void OnEnable()
     {
@@ -27,10 +30,34 @@ public class ActivateStory : MonoBehaviour
     void OnButtonPressed()
     {
         StoryManager.OnPushButton?.Invoke();
-        _grabInteractable.enabled = false;
+        LockAllCubesInSockets();
         StartCoroutine(Delay());
         StartCoroutine(MoveTicket());
 
+    }
+    
+    private void LockAllCubesInSockets()
+    {
+        LockCubeInSocket(_socketGreen, "Socket Vert");
+        LockCubeInSocket(_socketOrange, "Socket Orange");
+        LockCubeInSocket(_socketPurple, "Socket Violet");
+        LockCubeInSocket(_socketTool, "Socket Outil");
+    }
+
+    private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
+    {
+        if (socket != null && socket.hasSelection)
+        {
+            IXRSelectInteractable interactable = socket.interactablesSelected[0];
+            GameObject cube = interactable.transform.gameObject;
+            
+            XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
+            if (grabInteractable != null)
+            {
+                grabInteractable.enabled = false;
+                Debug.Log($"Cube verrouillé dans {socketName}");
+            }
+        }
     }
 
     IEnumerator MoveTicket()
@@ -51,6 +78,7 @@ public class ActivateStory : MonoBehaviour
     
     IEnumerator Delay()
     {
+        //texte d'attente de chargement
         yield return new WaitForSeconds(6f); 
     }
 }

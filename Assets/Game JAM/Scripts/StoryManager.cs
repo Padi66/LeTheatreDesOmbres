@@ -24,6 +24,7 @@ public class StoryManager : MonoBehaviour
     
     [SerializeField] DialogueSequence _dialogueSequence;
     [SerializeField] LevelManager _levelManager;
+    [SerializeField] private PiedestalUP _piedestal;
     
 
 

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7608574479110005281}
   - component: {fileID: 6947914285431115964}
   - component: {fileID: 8146040788703813018}
-  - component: {fileID: 3442235123091971567}
   - component: {fileID: 4952675616354419067}
   m_Layer: 0
   m_Name: Bottom Figurine 1
@@ -269,18 +268,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &3442235123091971567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117567053886166506}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4200b5b7540ad6549b7a96feb82e6dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeOrange
 --- !u!114 &4952675616354419067
 MonoBehaviour:
   m_ObjectHideFlags: 0

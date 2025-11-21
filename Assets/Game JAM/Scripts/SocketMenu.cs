@@ -4,11 +4,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class SocketOrange : MonoBehaviour
+public class SocketMenu : MonoBehaviour
 {
     //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
-    [SerializeField] private PiedestalUP _piedestal;
+    
     
 
     void OnEnable()
@@ -26,7 +26,7 @@ public class SocketOrange : MonoBehaviour
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-       //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
+        //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
        
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
@@ -34,30 +34,30 @@ public class SocketOrange : MonoBehaviour
         
         if (cube.GetComponent<CubeGreen>())
         {
-            Debug.Log("Socket Orange contient Cube Vert");
-            //_piedestal.
+            Debug.Log("Socket Violet contient Cube Vert");
+            
         }
         else if (cube.GetComponent<CubeOrange>())
         {
-            Debug.Log("Socket Orange contient Cube Orange");
-            //_piedestal.
+            Debug.Log("Socket Violet contient Cube Orange");
+            
         }
         else if (cube.GetComponent<CubePurple>())
         {
-            Debug.Log("Socket Orange contient Cube Violet");
-            //_piedestal.
+            Debug.Log("Socket Violet contient Cube Violet");
+            
         }
         
-        StoryManager.OnSocketStateChanged?.Invoke("Orange", true);
-        StoryManager.OnCubePlaced?.Invoke("Orange", _cubeName);
+        StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
+        StoryManager.OnCubePlaced?.Invoke("Purple", _cubeName);
     }
 
     void OnSelectExited(SelectExitEventArgs args)
     {
         //_lightcolor.intensity = 0;
-        Debug.Log("Socket Orange vide");
-        StoryManager.OnSocketStateChanged?.Invoke("Orange", false);
-        StoryManager.OnCubePlaced?.Invoke("Orange", null);
+        Debug.Log("Socket Violet vide");
+        StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
+        StoryManager.OnCubePlaced?.Invoke("Purple", null);
     }
-
 }
+

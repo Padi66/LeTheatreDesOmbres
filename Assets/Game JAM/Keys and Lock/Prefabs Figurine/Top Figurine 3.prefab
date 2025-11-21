@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9202124121825955252}
   - component: {fileID: 8476877726496378739}
   - component: {fileID: 7479060910795130853}
-  - component: {fileID: 2550732054236696833}
   - component: {fileID: 5310773814916928857}
   m_Layer: 0
   m_Name: Top Figurine 3
@@ -71,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 594e0f737425d0843a92de8af39b590e, type: 2}
+  - {fileID: 2100000, guid: e7a78c3fb82811f4183f309276f4c084, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -269,18 +268,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &2550732054236696833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4446821193594901248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4200b5b7540ad6549b7a96feb82e6dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeOrange
 --- !u!114 &5310773814916928857
 MonoBehaviour:
   m_ObjectHideFlags: 0

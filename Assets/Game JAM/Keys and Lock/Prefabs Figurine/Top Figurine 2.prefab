@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3733217094884254179}
   - component: {fileID: 2214363183415466054}
   - component: {fileID: 883659754785175887}
-  - component: {fileID: 3695317590073615682}
   - component: {fileID: 1683769046401641891}
   m_Layer: 0
   m_Name: Top Figurine 2
@@ -269,18 +268,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &3695317590073615682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5061720907574929115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4200b5b7540ad6549b7a96feb82e6dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeOrange
 --- !u!114 &1683769046401641891
 MonoBehaviour:
   m_ObjectHideFlags: 0
