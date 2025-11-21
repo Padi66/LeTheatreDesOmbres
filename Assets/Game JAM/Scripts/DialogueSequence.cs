@@ -13,53 +13,61 @@ public class DialogueSequence : MonoBehaviour
     public float displayTime = 2f;
 
     [Header("Dialogue Branches")]
-    [TextArea(2, 5)] public List<string> dialogueBranch1;
-    [TextArea(2, 5)] public List<string> dialogueBranch2;
-    [TextArea(2, 5)] public List<string> dialogueBranch3;
-    [TextArea(2, 5)] public List<string> dialogueBranch4;
-    [TextArea(2, 5)] public List<string> dialogueBranch5;
-    [TextArea(2, 5)] public List<string> dialogueBranch6;
+    [TextArea(2, 5)] public List<string> branch0;
+    [TextArea(2, 5)] public List<string> branch1;
+    [TextArea(2, 5)] public List<string> branch2;
+    [TextArea(2, 5)] public List<string> branch3;
+    [TextArea(2, 5)] public List<string> branch4;
+    [TextArea(2, 5)] public List<string> branch5;
+    [TextArea(2, 5)] public List<string> branch6;
+    [TextArea(2, 5)] public List<string> branch7;
+    [TextArea(2, 5)] public List<string> branch8;
+    [TextArea(2, 5)] public List<string> branch9;
+    [TextArea(2, 5)] public List<string> branch10;
 
     private Coroutine activeDialogue;
-
-    [HideInInspector] public bool dialogueFinished = false;
-
-    private void Awake()
-    {
-        if (dialogueTextUI == null)
-        {
-            dialogueTextUI = GetComponent<TextMeshProUGUI>();
-        }
-    }
 
     public void StartDialogueBranch(int branch)
     {
         if (activeDialogue != null)
             StopCoroutine(activeDialogue);
 
-        dialogueFinished = false;
+        List<string> selectedBranch = GetBranch(branch);
 
-        if (branch == 1)
-            activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch1));
-        else if (branch == 2)
-            activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch2));
-        else if (branch == 3)
-            activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch3));
-        else if (branch == 4)
-            activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch4));
-        else if (branch == 5)
-            activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch5));
-        else if (branch == 6)
-            activeDialogue = StartCoroutine(ShowDialogueSequence(dialogueBranch6));
+        if (selectedBranch != null && selectedBranch.Count > 0)
+        {
+            activeDialogue = StartCoroutine(ShowDialogueSequence(selectedBranch));
+        }
         else
-            Debug.LogWarning("Numéro de branche inconnu !");
+        {
+            Debug.LogWarning($"Branch {branch} is null or empty!");
+        }
     }
 
-    private IEnumerator ShowDialogueSequence(List<string> lines)
+    private List<string> GetBranch(int branchNumber)
     {
-        if (dialogueTextUI == null || lines == null || lines.Count == 0)
+        switch (branchNumber)
         {
-            Debug.LogWarning("DialogueTextUI is null or lines are empty!");
+            case 0: return branch0;
+            case 1: return branch1;
+            case 2: return branch2;
+            case 3: return branch3;
+            case 4: return branch4;
+            case 5: return branch5;
+            case 6: return branch6;
+            case 7: return branch7;
+            case 8: return branch8;
+            case 9: return branch9;
+            case 10: return branch10;
+            default: return null;
+        }
+    }
+
+    private IEnumerator ShowDialogueSequence(List<string> dialogues)
+    {
+        if (dialogueTextUI == null)
+        {
+            Debug.LogWarning("DialogueTextUI is null!");
             yield break;
         }
 
@@ -70,7 +78,7 @@ public class DialogueSequence : MonoBehaviour
 
         dialogueTextUI.enabled = true;
 
-        foreach (string line in lines)
+        foreach (string line in dialogues)
         {
             dialogueTextUI.text = "";
 
@@ -85,8 +93,5 @@ public class DialogueSequence : MonoBehaviour
 
         dialogueTextUI.text = "";
         activeDialogue = null;
-        dialogueFinished = true;
-
-        Debug.Log("Dialogue terminé !");
     }
 }

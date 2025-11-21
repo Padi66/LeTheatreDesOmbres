@@ -2,18 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class StoryManager : MonoBehaviour
 {
     public static Action<string, bool> OnSocketStateChanged;
     public static Action<string, string> OnCubePlaced;
     public static Action OnPushButton;
-    
-    
-
 
     public bool _socketGreen;
     public bool _socketOrange;
@@ -25,18 +19,13 @@ public class StoryManager : MonoBehaviour
     public string _cubeInPurple;
     public string _cubeInTool;
 
-
     [SerializeField] private float _delayBeforeActivation = 5f;
     [SerializeField] DialogueSequence _dialogueSequence;
     [SerializeField] LevelManager _levelManager;
     [SerializeField] private PiedestalUP _piedestal;
-    
+
     private AsyncOperation _preloadedScene;
     private bool _isPreloading = false;
-   
-
-   
-
 
     private void OnEnable()
     {
@@ -51,7 +40,6 @@ public class StoryManager : MonoBehaviour
         OnCubePlaced -= OnCubeUpdate;
         OnPushButton -= LaunchStory;
     }
-
 
     private void OnSocketUpdate(string socketName, bool state)
     {
@@ -74,7 +62,6 @@ public class StoryManager : MonoBehaviour
 
     private void OnCubeUpdate(string socketName, string cubeName)
     {
-        
         switch (socketName)
         {
             case "Green":
@@ -92,27 +79,25 @@ public class StoryManager : MonoBehaviour
         }
         StoryDirect();
     }
-    
-    //verification générale
-    public void LaunchStory()
-        {
-            Debug.Log($" {_levelManager.gameObject.name} launched something");
-            switch (_levelManager._currentLevel)
-            {
-                case 0:
-                    CheckCombinationMenu();
-                    break;
 
-                case 1:
-                    CheckCombinationBackstage();
-                    break;
-            }
+    public void LaunchStory()
+    {
+        Debug.Log($"{_levelManager.gameObject.name} launched something");
+        switch (_levelManager._currentLevel)
+        {
+            case 0:
+                CheckCombinationMenu();
+                break;
+
+            case 1:
+                CheckCombinationBackstage();
+                break;
         }
-    
-    //verification en direct
+    }
+
     public void StoryDirect()
     {
-        Debug.Log($" {_levelManager.gameObject.name} launched something");
+        Debug.Log($"{_levelManager.gameObject.name} launched something");
         switch (_levelManager._currentLevel)
         {
             case 1:
@@ -120,7 +105,6 @@ public class StoryManager : MonoBehaviour
                 break;
         }
     }
-
 
     private void CheckDirectBackstage()
     {
@@ -131,11 +115,8 @@ public class StoryManager : MonoBehaviour
                 Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
                 StartCoroutine(PreloadAndLaunchScene(2, _delayBeforeActivation));
             }
-
         }
     }
-
-
 
     private void CheckCombinationMenu()
     {
@@ -145,100 +126,56 @@ public class StoryManager : MonoBehaviour
         {
             Debug.Log("Open Level 1");
             _levelManager.LoadLevel1();
-            
         }
-
         else if (_cubeInGreen == "CubePurple")
         {
             Debug.Log("Quit");
             _levelManager.Quit();
-            
         }
     }
 
     private void CheckCombinationBackstage()
     {
-
         if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(1);
-            if (_dialogueSequence.dialogueFinished)
-            {
-
-            }
         }
-
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(2);
-            if (_dialogueSequence.dialogueFinished)
-            {
-
-            }
         }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(3);
-
         }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
-        {
-            _dialogueSequence.StartDialogueBranch(4);
-            if (_dialogueSequence.dialogueFinished)
-            {
-
-            }
-        }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubeGreen")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(5);
-
-            if (_dialogueSequence.dialogueFinished)
-            {
-
-
-            }
-        }
-
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
-        {
-            _dialogueSequence.StartDialogueBranch(6);
-            if (_dialogueSequence.dialogueFinished)
-            {
-
-            }
         }
     }
 
     private IEnumerator PreloadAndLaunchScene(int buildIndex, float delayBeforeActivation)
     {
         _isPreloading = true;
-    
+
         Debug.Log($"Début du préchargement de la scène {buildIndex}");
-    
+
         _preloadedScene = SceneManager.LoadSceneAsync(buildIndex);
         _preloadedScene.allowSceneActivation = false;
-    
+
         while (_preloadedScene.progress < 0.9f)
         {
             Debug.Log($"Chargement en cours: {_preloadedScene.progress * 100:F0}%");
             yield return null;
         }
-    
+
         Debug.Log("Scène chargée à 90% - En attente...");
-    
+
         yield return new WaitForSeconds(delayBeforeActivation);
-    
+
         Debug.Log("Activation de la scène !");
         _preloadedScene.allowSceneActivation = true;
-    
+
         _isPreloading = false;
     }
 }
-    
-
-
-    
