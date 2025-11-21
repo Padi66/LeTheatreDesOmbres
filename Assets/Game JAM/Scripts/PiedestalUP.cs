@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,7 +16,8 @@ public class PiedestalUP : MonoBehaviour
     public Transform _piedestalGreen;
     
     public float _duration = 2f;
-    
+
+   
     public void UpGreen()
     {
         //SON

@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -9,6 +11,8 @@ public class StoryManager : MonoBehaviour
     public static Action<string, bool> OnSocketStateChanged;
     public static Action<string, string> OnCubePlaced;
     public static Action OnPushButton;
+    
+    
 
 
     public bool _socketGreen;
@@ -20,12 +24,18 @@ public class StoryManager : MonoBehaviour
     public string _cubeInOrange;
     public string _cubeInPurple;
     public string _cubeInTool;
-    
-    
+
+
+    [SerializeField] private float _delayBeforeActivation = 5f;
     [SerializeField] DialogueSequence _dialogueSequence;
     [SerializeField] LevelManager _levelManager;
     [SerializeField] private PiedestalUP _piedestal;
     
+    private AsyncOperation _preloadedScene;
+    private bool _isPreloading = false;
+   
+
+   
 
 
     private void OnEnable()
@@ -94,11 +104,7 @@ public class StoryManager : MonoBehaviour
                     break;
 
                 case 1:
-                    CheckCombinationLevel1();
-                    break;
-
-                case 2:
-                    CheckCombinationLevel2();
+                    CheckCombinationBackstage();
                     break;
             }
         }
@@ -110,28 +116,27 @@ public class StoryManager : MonoBehaviour
         switch (_levelManager._currentLevel)
         {
             case 1:
-                CheckDirectLevel1();
-                break;
-
-            case 2:
-                CheckDirectLevel2();
+                CheckDirectBackstage();
                 break;
         }
     }
 
 
-    private void CheckDirectLevel1()
+    private void CheckDirectBackstage()
     {
         if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
-        {}
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(2, _delayBeforeActivation));
+            }
+
+        }
     }
 
-    private void CheckDirectLevel2()
-    {
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
-        {}
-    }
-    
+
+
     private void CheckCombinationMenu()
     {
         Debug.Log("CombinaisonCheck");
@@ -151,30 +156,31 @@ public class StoryManager : MonoBehaviour
         }
     }
 
-    private void CheckCombinationLevel1()
-        {
+    private void CheckCombinationBackstage()
+    {
 
         if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(1);
             if (_dialogueSequence.dialogueFinished)
             {
-                
+
             }
         }
+
         if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(2);
             if (_dialogueSequence.dialogueFinished)
             {
-                
+
             }
         }
 
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(3);
-           
+
         }
 
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
@@ -182,7 +188,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(4);
             if (_dialogueSequence.dialogueFinished)
             {
-                
+
             }
         }
 
@@ -193,7 +199,7 @@ public class StoryManager : MonoBehaviour
             if (_dialogueSequence.dialogueFinished)
             {
 
-                
+
             }
         }
 
@@ -202,71 +208,37 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(6);
             if (_dialogueSequence.dialogueFinished)
             {
-                
+
             }
         }
     }
 
-    private void CheckCombinationLevel2()
+    private IEnumerator PreloadAndLaunchScene(int buildIndex, float delayBeforeActivation)
     {
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubeOrange" && _cubeInPurple == "CubePurple")
+        _isPreloading = true;
+    
+        Debug.Log($"Début du préchargement de la scène {buildIndex}");
+    
+        _preloadedScene = SceneManager.LoadSceneAsync(buildIndex);
+        _preloadedScene.allowSceneActivation = false;
+    
+        while (_preloadedScene.progress < 0.9f)
         {
-            _dialogueSequence.StartDialogueBranch(1);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                
-                //YOU WIN
-                _levelManager.LoadLevel3();
-            }
-
+            Debug.Log($"Chargement en cours: {_preloadedScene.progress * 100:F0}%");
+            yield return null;
         }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubeGreen" && _cubeInPurple == "CubePurple")
-        {
-            _dialogueSequence.StartDialogueBranch(2);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                
-            }
-        }
-
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeGreen" && _cubeInPurple == "CubeOrange")
-        {
-            _dialogueSequence.StartDialogueBranch(3);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                
-            }
-        }
-
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple" && _cubeInPurple == "CubeOrange")
-        {
-            _dialogueSequence.StartDialogueBranch(4);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                
-            }
-        }
-
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange" && _cubeInPurple == "CubeGreen")
-        {
-            _dialogueSequence.StartDialogueBranch(5);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                
-            }
-        }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple" && _cubeInPurple == "CubeGreen")
-        {
-            _dialogueSequence.StartDialogueBranch(6);
-            if (_dialogueSequence.dialogueFinished)
-            {
-                
-            }
-        }
-        
+    
+        Debug.Log("Scène chargée à 90% - En attente...");
+    
+        yield return new WaitForSeconds(delayBeforeActivation);
+    
+        Debug.Log("Activation de la scène !");
+        _preloadedScene.allowSceneActivation = true;
+    
+        _isPreloading = false;
     }
 }
+    
+
 
     

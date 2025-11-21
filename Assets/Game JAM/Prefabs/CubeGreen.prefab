@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6693213218518103272}
   - component: {fileID: 3373095786007246921}
   - component: {fileID: 3638050672452554332}
+  - component: {fileID: 7046587767917708331}
   m_Layer: 0
   m_Name: CubeGreen
   m_TagString: Untagged
@@ -280,3 +281,15 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &7046587767917708331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371142553204606993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
