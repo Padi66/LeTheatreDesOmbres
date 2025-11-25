@@ -26,50 +26,7 @@ public class StoryManager : MonoBehaviour
 
     private AsyncOperation _preloadedScene;
 
-    private void Start()
-    {
-        StartCoroutine(TestHapticFeedback());
-    }
-
-    private IEnumerator TestHapticFeedback()
-    {
-        yield return new WaitForSeconds(1f);
-
-        List<InputDevice> rightDevices = new List<InputDevice>();
-        List<InputDevice> leftDevices = new List<InputDevice>();
-
-        InputDeviceCharacteristics rightHandedCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDeviceCharacteristics leftHandedCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
-
-        InputDevices.GetDevicesWithCharacteristics(rightHandedCharacteristics, rightDevices);
-        InputDevices.GetDevicesWithCharacteristics(leftHandedCharacteristics, leftDevices);
-
-        List<InputDevice> allDevices = new List<InputDevice>();
-        allDevices.AddRange(rightDevices);
-        allDevices.AddRange(leftDevices);
-
-        Debug.Log($"Found {allDevices.Count} controllers (Right: {rightDevices.Count}, Left: {leftDevices.Count})");
-
-        foreach (InputDevice device in allDevices)
-        {
-            HapticCapabilities capabilities;
-            if (device.TryGetHapticCapabilities(out capabilities))
-            {
-                if (capabilities.supportsImpulse)
-                {
-                    uint channel = 0;
-                    float amplitude = 1f;
-                    float duration = 1f;
-                    bool success = device.SendHapticImpulse(channel, amplitude, duration);
-                    Debug.Log($"Haptic feedback sent to {device.name}: amplitude={amplitude}, duration={duration}, success={success}");
-                }
-                else
-                {
-                    Debug.LogWarning($"Device {device.name} does not support haptic impulse");
-                }
-            }
-        }
-    }
+    
 
     private void OnEnable()
     {
