@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -6,10 +7,11 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketOrange : MonoBehaviour
 {
-    
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
+    [SerializeField] private float _lockDelay = 0.3f;
 
+    private Coroutine _lockCoroutine;
 
     void OnEnable()
     {
@@ -23,19 +25,88 @@ public class SocketOrange : MonoBehaviour
         _socketInteractor.selectExited.RemoveListener(OnSelectExited);
     }
 
-
-
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
-
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
+
+        if (cube.GetComponent<CubeGreen>())
+        {
+            Debug.Log("Socket Orange contient Cube Vert");
+            if (_piedestal != null)
+            {
+                _piedestal.UpOrange();
+            }
+        }
+        else if (cube.GetComponent<CubeOrange>())
+        {
+            Debug.Log("Socket Orange contient Cube Orange");
+            if (_piedestal != null)
+            {
+                _piedestal.UpOrange();
+            }
+        }
+        else if (cube.GetComponent<CubePurple>())
+        {
+            Debug.Log("Socket Orange contient Cube Violet");
+            if (_piedestal != null)
+            {
+                _piedestal.UpOrange();
+            }
+        }
+
+        StoryManager.OnSocketStateChanged?.Invoke("Orange", true);
+        StoryManager.OnCubePlaced?.Invoke("Orange", _cubeName);
+
+        if (_lockCoroutine != null)
+        {
+            StopCoroutine(_lockCoroutine);
+        }
+
+        _lockCoroutine = StartCoroutine(LockCubeAfterDelay(cube));
+    }
+
+    void OnSelectExited(SelectExitEventArgs args)
+    {
+        GameObject cube = args.interactableObject.transform.gameObject;
+
+        if (_lockCoroutine != null)
+        {
+            StopCoroutine(_lockCoroutine);
+            _lockCoroutine = null;
+        }
+
+        XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.enabled = true;
+        }
+
+        Rigidbody rb = cube.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
+
+        if (_piedestal != null)
+        {
+            _piedestal.DownOrange();
+        }
+
+        Debug.Log("Socket Orange vide");
+        StoryManager.OnSocketStateChanged?.Invoke("Orange", false);
+        StoryManager.OnCubePlaced?.Invoke("Orange", null);
+    }
+
+    private IEnumerator LockCubeAfterDelay(GameObject cube)
+    {
+        yield return new WaitForSeconds(_lockDelay);
 
         XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
         if (grabInteractable != null)
         {
             grabInteractable.enabled = false;
+            Debug.Log("Cube verrouillé dans Socket Orange");
         }
 
         Rigidbody rb = cube.GetComponent<Rigidbody>();
@@ -44,28 +115,6 @@ public class SocketOrange : MonoBehaviour
             rb.isKinematic = true;
         }
 
-        if (cube.GetComponent<Sword>())
-        {
-            Debug.Log("Socket Tool contient Sword");
-            _piedestal.UpPurple();
-        }
-        else if (cube.GetComponent<Shield>())
-        {
-            Debug.Log("Socket Tool contient Shield");
-            _piedestal.UpPurple();
-        }
-
-        StoryManager.OnSocketStateChanged?.Invoke("Tool", true);
-        StoryManager.OnCubePlaced?.Invoke("Tool", _cubeName);
+        _lockCoroutine = null;
     }
-    
-
-    void OnSelectExited(SelectExitEventArgs args)
-    {
-        //_lightcolor.intensity = 0;
-        Debug.Log("Socket Orange vide");
-        StoryManager.OnSocketStateChanged?.Invoke("Orange", false);
-        StoryManager.OnCubePlaced?.Invoke("Orange", null);
-    }
-
 }
