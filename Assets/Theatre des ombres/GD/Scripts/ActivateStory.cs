@@ -50,12 +50,19 @@ public class ActivateStory : MonoBehaviour
         {
             IXRSelectInteractable interactable = socket.interactablesSelected[0];
             GameObject cube = interactable.transform.gameObject;
-            
+        
             XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
             if (grabInteractable != null)
             {
                 grabInteractable.enabled = false;
                 Debug.Log($"Cube verrouillé dans {socketName}");
+            }
+
+            Rigidbody rb = cube.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+                Debug.Log($"Rigidbody désactivé dans {socketName}");
             }
         }
     }

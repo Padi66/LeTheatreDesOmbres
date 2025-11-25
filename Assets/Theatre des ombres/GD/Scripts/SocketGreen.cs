@@ -26,36 +26,38 @@ public class SocketGreen : MonoBehaviour
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
-        
-        //SON
-       
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        //_lightcolor.intensity = 1;
-        
+
+        XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.enabled = false;
+        }
+
+        Rigidbody rb = cube.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+        }
+    
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Vert contient Cube Vert");
-            //_piedestal.
-            
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Vert contient Cube Orange");
-            //_piedestal.
-            
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Vert contient Cube Violet");
-            //_piedestal.
-            
         }
-        
+    
         StoryManager.OnSocketStateChanged?.Invoke("Green", true);
         StoryManager.OnCubePlaced?.Invoke("Green", _cubeName);
     }
+    
 
     void OnSelectExited(SelectExitEventArgs args)
     {

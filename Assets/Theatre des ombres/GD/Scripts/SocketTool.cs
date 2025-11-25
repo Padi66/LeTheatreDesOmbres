@@ -29,7 +29,18 @@ public class SocketTool : MonoBehaviour
        
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        _lightcolor.intensity = 1;
+
+        XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.enabled = false;
+        }
+
+        Rigidbody rb = cube.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+        }
         
         if (cube.GetComponent<Sword>())
         {

@@ -26,28 +26,34 @@ public class SocketPurple : MonoBehaviour
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
-       
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        //_lightcolor.intensity = 1;
-        
+
+        XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.enabled = false;
+        }
+
+        Rigidbody rb = cube.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+        }
+    
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Violet contient Cube Vert");
-            //_piedestal.
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Violet contient Cube Orange");
-            //_piedestal.
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Violet contient Cube Violet");
-            //_piedestal.
         }
-        
+    
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
         StoryManager.OnCubePlaced?.Invoke("Purple", _cubeName);
     }
