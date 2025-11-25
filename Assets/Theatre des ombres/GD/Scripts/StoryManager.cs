@@ -54,9 +54,6 @@ public class StoryManager : MonoBehaviour
             case "Purple":
                 _socketPurple = state;
                 break;
-            case "Tool":
-                _socketTool = state;
-                break;
         }
     }
 
@@ -72,9 +69,6 @@ public class StoryManager : MonoBehaviour
                 break;
             case "Purple":
                 _cubeInPurple = cubeName;
-                break;
-            case "Tool":
-                _cubeInTool = cubeName;
                 break;
         }
         StoryDirect();
@@ -108,14 +102,132 @@ public class StoryManager : MonoBehaviour
 
     private void CheckDirectBackstage()
     {
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
+        //Dialogue Chevalresse
+        if (_cubeInGreen == "CubeOrange")
         {
-            if (!_isPreloading)
-            {
-                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
-                StartCoroutine(PreloadAndLaunchScene(2, _delayBeforeActivation));
-            }
+            
         }
+        
+        //Dialogue Squelette
+        else if (_cubeInGreen == "CubeGreen")
+        {
+            
+        }
+        
+        //Dialogue Roi
+        else if (_cubeInGreen == "CubePurple")
+        {
+            
+        }
+        
+        //Dialogue Chevalresse Epée
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" )
+        {
+            
+        }
+        
+        //Dialogue Chevalresse Bouclier
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" )
+        {
+            
+        }
+        
+        //Dialogue Squelette Epée
+        else if (_cubeInGreen == "CubeGreen"  && _cubeInOrange == "Sword" )
+        {
+            
+        }
+        
+        //Dialogue Squelette Bouclier
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield")
+        {
+            
+        }
+        
+        //Dialogue Roi Epée
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" )
+        {
+            
+        }
+        
+        //Dialogue Roi Bouclier
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" )
+        {
+            
+        }
+
+        //Dialogue Chevalresse Epée Squelette
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        {
+            
+        }
+        
+        //Dialogue Chevalresse Epée Roi
+        else if (_cubeInGreen == "CubeOrange"  && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        {
+            
+        }
+        
+        //Dialogue Chevalresse Bouclier Roi
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        {
+            
+        }
+        
+        //Dialogue Chevalresse Bouclier Squelette
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        {
+            
+        }
+        
+        //Dialogue Squelette Epee Roi
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        {
+            
+        }
+        
+        //Dialogue Squelette Epee Chevalresse
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        {
+            
+        }
+        
+        //Dialogue Squelette Bouclier Roi
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        {
+            
+        }
+        
+        //Dialogue Squelette Bouclier Chevalresse
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        {
+            
+        }
+        
+        //Dialogue Roi Epée Chevalresse
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        {
+            
+        }
+        
+        //Dialogue Roi Epée Squelette
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        {
+            
+        }
+        
+        //Dialogue Roi Bouclier Chevalresse
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        {
+            
+        }
+        
+        //Dialogue Roi Bouclier Squelette
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        {
+            
+        }
+        
     }
 
     private void CheckCombinationMenu()
@@ -136,23 +248,130 @@ public class StoryManager : MonoBehaviour
 
     private void CheckCombinationBackstage()
     {
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "CubeOrange")
+        //Dialogue Chevalresse Epée Squelette
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
-            _dialogueSequence.StartDialogueBranch(1);
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(2, _delayBeforeActivation));
+            }
+            
         }
-        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "CubePurple")
+        
+        //Dialogue Chevalresse Epée Roi
+        else if (_cubeInGreen == "CubeOrange"  && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
-            _dialogueSequence.StartDialogueBranch(2);
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(3, _delayBeforeActivation));
+            }
         }
-        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubePurple")
+        
+        //Dialogue Chevalresse Bouclier Roi
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
-            _dialogueSequence.StartDialogueBranch(3);
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(4, _delayBeforeActivation));
+            }
         }
-        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "CubeGreen")
+        
+        //Dialogue Chevalresse Bouclier Squelette
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
-            _dialogueSequence.StartDialogueBranch(5);
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(5, _delayBeforeActivation));
+            }
         }
+        
+        //Dialogue Squelette Epee Roi
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(6, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Squelette Epee Chevalresse
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(7, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Squelette Bouclier Roi
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(8, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Squelette Bouclier Chevalresse
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(9, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Roi Epée Chevalresse
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(10, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Roi Epée Squelette
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(11, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Roi Bouclier Chevalresse
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(12, _delayBeforeActivation));
+            }
+        }
+        
+        //Dialogue Roi Bouclier Squelette
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        {
+            if (!_isPreloading)
+            {
+                Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+                StartCoroutine(PreloadAndLaunchScene(13, _delayBeforeActivation));
+            }
+        }
+        
     }
+
+    
 
     private IEnumerator PreloadAndLaunchScene(int buildIndex, float delayBeforeActivation)
     {

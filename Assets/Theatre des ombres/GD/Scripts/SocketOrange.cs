@@ -9,23 +9,26 @@ public class SocketOrange : MonoBehaviour
     //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
-    
+
 
     void OnEnable()
     {
         _socketInteractor.selectEntered.AddListener(OnSelectEntered);
         _socketInteractor.selectExited.AddListener(OnSelectExited);
     }
+
     void OnDisable()
     {
         _socketInteractor.selectEntered.RemoveListener(OnSelectEntered);
         _socketInteractor.selectExited.RemoveListener(OnSelectExited);
     }
-    
-    
+
+
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
+        //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
+
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
 
@@ -40,23 +43,20 @@ public class SocketOrange : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-    
-        if (cube.GetComponent<CubeGreen>())
+
+        if (cube.GetComponent<Sword>())
         {
-            Debug.Log("Socket Orange contient Cube Vert");
+            Debug.Log("Socket Tool contient Sword");
         }
-        else if (cube.GetComponent<CubeOrange>())
+        else if (cube.GetComponent<Shield>())
         {
-            Debug.Log("Socket Orange contient Cube Orange");
+            Debug.Log("Socket Tool contient Shield");
         }
-        else if (cube.GetComponent<CubePurple>())
-        {
-            Debug.Log("Socket Orange contient Cube Violet");
-        }
-    
-        StoryManager.OnSocketStateChanged?.Invoke("Orange", true);
-        StoryManager.OnCubePlaced?.Invoke("Orange", _cubeName);
+
+        StoryManager.OnSocketStateChanged?.Invoke("Tool", true);
+        StoryManager.OnCubePlaced?.Invoke("Tool", _cubeName);
     }
+    
 
     void OnSelectExited(SelectExitEventArgs args)
     {
