@@ -2,6 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
 
 public class StoryManager : MonoBehaviour
 {
@@ -23,7 +27,28 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private SceneTransitionManager _transition;
 
     private AsyncOperation _preloadedScene;
+    
 
+    void Start()
+    {
+        TriggerHapticOnBothControllers(0.8f, 0.3f);    }
+    
+    private void TriggerHapticOnBothControllers(float amplitude, float duration)
+    {
+        HapticImpulsePlayer[] hapticPlayers = FindObjectsOfType<HapticImpulsePlayer>();
+        
+        if (hapticPlayers.Length == 0)
+        {
+            Debug.LogWarning("❌ Aucun HapticImpulsePlayer trouvé dans la scène");
+            return;
+        }
+        
+        foreach (HapticImpulsePlayer hapticPlayer in hapticPlayers)
+        {
+            hapticPlayer.SendHapticImpulse(amplitude, duration);
+            Debug.Log($"✅ Haptic envoyé sur {hapticPlayer.gameObject.name} - Amplitude: {amplitude}, Durée: {duration}");
+        }
+    }
     private void OnEnable()
     {
         OnSocketStateChanged += OnSocketUpdate;
@@ -261,7 +286,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Chevalresse Epée Roi
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(3));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -269,7 +294,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Chevalresse Bouclier Roi
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(4));
             Debug.Log("Bonne combinaison ! Préchargement et lancement arès délai...");
@@ -277,7 +302,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Chevalresse Bouclier Squelette
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(5));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -286,7 +311,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Squelette Epee Roi
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(6));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -294,7 +319,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Squelette Epee Chevalresse
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(7));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -302,7 +327,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Squelette Bouclier Roi
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
 
             _transition.StartCoroutine(_transition.TransitionToScene(8));
@@ -311,7 +336,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Squelette Bouclier Chevalresse
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(9));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -319,7 +344,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Roi Epée Chevalresse
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(10));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -327,7 +352,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Roi Epée Squelette
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(11));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -336,7 +361,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Roi Bouclier Chevalresse
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(12));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -344,7 +369,7 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Roi Bouclier Squelette
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(13));
             Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
@@ -352,4 +377,6 @@ public class StoryManager : MonoBehaviour
         }
 
     }
+    
 }
+
