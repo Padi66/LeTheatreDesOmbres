@@ -395,7 +395,8 @@ Transform:
   m_LocalPosition: {x: 3.50331, y: 2.24831, z: -2.19723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1052507085}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &344891704
@@ -479,6 +480,10 @@ PrefabInstance:
       propertyPath: _piedestal
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1438174480339057244, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
+      propertyPath: _storyManager
+      value: 
+      objectReference: {fileID: 1419855058}
     - target: {fileID: 3578943981672964972, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.634
@@ -616,6 +621,10 @@ PrefabInstance:
       propertyPath: _piedestal
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3978146764777009893, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
+      propertyPath: _storyManager
+      value: 
+      objectReference: {fileID: 1419855058}
     - target: {fileID: 4134417657979637049, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1054,7 +1063,6 @@ GameObject:
   - component: {fileID: 1052507088}
   - component: {fileID: 1052507087}
   - component: {fileID: 1052507086}
-  - component: {fileID: 1052507090}
   - component: {fileID: 1052507089}
   m_Layer: 0
   m_Name: FadeCanvas
@@ -1076,7 +1084,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1113113533}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 336537481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1158,18 +1166,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1052507090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052507084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 633d49f8c1cca764e9ed585daa35faf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FadeCanvas
 --- !u!1 &1113113532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,6 +1432,19 @@ MonoBehaviour:
   branch10:
   - LES 3 SONT LA
   - C PAS CACA
+  branch11: []
+  branch12: []
+  branch13: []
+  branch14: []
+  branch15: []
+  branch16: []
+  branch17: []
+  branch18: []
+  branch19: []
+  branch20: []
+  branch21: []
+  branch22: []
+  branch23: []
 --- !u!1 &1237560344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1511075057
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,6 +1740,10 @@ PrefabInstance:
       propertyPath: _piedestal
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5219575818477711076, guid: 3536c6d8a64fbf84e9ee1a6184521ed0, type: 3}
+      propertyPath: _storyManager
+      value: 
+      objectReference: {fileID: 1419855058}
     - target: {fileID: 5969120718487763201, guid: 3536c6d8a64fbf84e9ee1a6184521ed0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.58
@@ -2372,7 +2385,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1052507085}
   - {fileID: 203844589}
   - {fileID: 421925788}
   - {fileID: 114416625}
