@@ -219,7 +219,7 @@ public class SceneTransitionManager : MonoBehaviour
             }
         }
 
-        disabledLineVisuals.Clear();
+        //disabledLineVisuals.Clear();
         Debug.Log($"Re-enabled {enabledCount} line visuals");
     }
 
@@ -275,6 +275,7 @@ public class SceneTransitionManager : MonoBehaviour
         fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false;
         Debug.Log("FadeFromBlack complete");
+        //disabledLineVisuals.Clear();
     }
 
     private void DisableMovement()
