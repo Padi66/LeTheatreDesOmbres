@@ -10,6 +10,7 @@ public class SocketGreen : MonoBehaviour
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private float _lockDelay = 0.3f;
+    [SerializeField] private StoryManager _storyManager;
     
     private Coroutine _lockCoroutine;
 
@@ -37,6 +38,7 @@ public class SocketGreen : MonoBehaviour
             {
                 _piedestal.UpGreen();
             }
+            _storyManager.CheckDirectStep1();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
@@ -45,6 +47,7 @@ public class SocketGreen : MonoBehaviour
             {
                 _piedestal.UpGreen();
             }
+            _storyManager.CheckDirectStep1();
         }
         else if (cube.GetComponent<CubePurple>())
         {
@@ -53,6 +56,7 @@ public class SocketGreen : MonoBehaviour
             {
                 _piedestal.UpGreen();
             }
+            _storyManager.CheckDirectStep1();
         }
         
         StoryManager.OnSocketStateChanged?.Invoke("Green", true);
@@ -112,6 +116,11 @@ public class SocketGreen : MonoBehaviour
         if (rb != null)
         {
             rb.isKinematic = true;
+        }
+        if (_socketInteractor != null)
+        {
+            _socketInteractor.enabled = false;
+            Debug.Log("Socket Vert désactivé");
         }
         
         _lockCoroutine = null;

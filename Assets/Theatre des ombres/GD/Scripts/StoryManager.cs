@@ -90,15 +90,10 @@ public class StoryManager : MonoBehaviour
     public void StoryDirect()
     {
         Debug.Log($"{_levelManager.gameObject.name} launched something");
-        switch (_levelManager._currentLevel)
-        {
-            case 1:
-                CheckDirectBackstage();
-                break;
-        }
+        CheckDirectStep1();
     }
 
-    private void CheckDirectBackstage()
+    public void CheckDirectStep1()
     {
         //Dialogue Chevalresse
         if (_cubeInGreen == "CubeOrange")
@@ -107,17 +102,24 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Squelette
-        if (_cubeInGreen == "CubeGreen")
+        else if (_cubeInGreen == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(2);
         }
 
         //Dialogue Roi
-        if (_cubeInGreen == "CubePurple")
+        else if (_cubeInGreen == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(3);
         }
 
+       
+        }
+
+    
+
+    public void CheckDirectStep2()
+    {
         //Dialogue Chevalresse Epée
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword")
         {
@@ -125,35 +127,38 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Chevalresse Bouclier
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield")
         {
             _dialogueSequence.StartDialogueBranch(5);
         }
 
         //Dialogue Squelette Epée
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword")
         {
             _dialogueSequence.StartDialogueBranch(6);
         }
 
         //Dialogue Squelette Bouclier
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield")
         {
             _dialogueSequence.StartDialogueBranch(7);
         }
 
         //Dialogue Roi Epée
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword")
         {
             _dialogueSequence.StartDialogueBranch(8);
         }
 
         //Dialogue Roi Bouclier
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield")
         {
             _dialogueSequence.StartDialogueBranch(9);
         }
+    }
 
+    public void CheckDirectStep3()
+    {
         //Dialogue Chevalresse Epée Squelette
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
@@ -161,73 +166,72 @@ public class StoryManager : MonoBehaviour
         }
 
         //Dialogue Chevalresse Epée Roi
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(11);
         }
 
         //Dialogue Chevalresse Bouclier Roi
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(12);
         }
 
         //Dialogue Chevalresse Bouclier Squelette
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(13);
         }
 
         //Dialogue Squelette Epee Roi
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(14);
         }
 
         //Dialogue Squelette Epee Chevalresse
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(15);
         }
 
         //Dialogue Squelette Bouclier Roi
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(16);
         }
 
         //Dialogue Squelette Bouclier Chevalresse
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(17);
         }
 
         //Dialogue Roi Epée Chevalresse
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(18);
         }
 
         //Dialogue Roi Epée Squelette
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(19);
         }
 
         //Dialogue Roi Bouclier Chevalresse
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(20);
         }
 
         //Dialogue Roi Bouclier Squelette
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(21);
         }
-
     }
-
+    
     private void CheckCombinationMenu()
     {
         Debug.Log("CombinaisonCheck");

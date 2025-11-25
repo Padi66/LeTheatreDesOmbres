@@ -10,6 +10,7 @@ public class SocketPurple : MonoBehaviour
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private float _lockDelay = 0.3f;
+    [SerializeField] private StoryManager _storyManager;
     
     private Coroutine _lockCoroutine;
 
@@ -37,6 +38,7 @@ public class SocketPurple : MonoBehaviour
             {
                 _piedestal.UpPurple();
             }
+            _storyManager.CheckDirectStep3();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
@@ -45,6 +47,7 @@ public class SocketPurple : MonoBehaviour
             {
                 _piedestal.UpPurple();
             }
+            _storyManager.CheckDirectStep3();
         }
         else if (cube.GetComponent<CubePurple>())
         {
@@ -53,6 +56,7 @@ public class SocketPurple : MonoBehaviour
             {
                 _piedestal.UpPurple();
             }
+            _storyManager.CheckDirectStep3();
         }
         
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
@@ -112,6 +116,11 @@ public class SocketPurple : MonoBehaviour
         if (rb != null)
         {
             rb.isKinematic = true;
+        }
+        if (_socketInteractor != null)
+        {
+            _socketInteractor.enabled = false;
+            Debug.Log("Socket Vert désactivé");
         }
         
         _lockCoroutine = null;
