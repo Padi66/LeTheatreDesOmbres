@@ -78,7 +78,7 @@ public class PuzzleManager : MonoBehaviour
         return true;
     }
 
-    private void OnCombinationMatched(PuzzleCombination combination)
+    /*private void OnCombinationMatched(PuzzleCombination combination)
     {
         if (puzzleCompleted) return;
         
@@ -94,5 +94,38 @@ public class PuzzleManager : MonoBehaviour
         {
             Debug.LogWarning("Cannot spawn - objectToSpawn or spawnLocation is null!");
         }
+    }*/
+    private void OnCombinationMatched(PuzzleCombination combination)
+    {
+        if (puzzleCompleted) return;
+
+        puzzleCompleted = true;
+        Debug.Log($"✓ Combination matched: {combination.combinationName}");
+
+        // Destroy all blocks currently placed in each socket
+        foreach (var snapChecker in snapCheckers)
+        {
+            if (snapChecker.CurrentObject != null)
+            {
+                Destroy(snapChecker.CurrentObject);
+                snapChecker.CurrentObject = null;
+            }
+        }
+
+
+        // Spawn object if needed
+        if (combination.objectToSpawn != null && combination.spawnLocation != null)
+        {
+            GameObject spawned = Instantiate(combination.objectToSpawn,
+                combination.spawnLocation.position,
+                combination.spawnLocation.rotation);
+
+            Debug.Log($"Spawned: {spawned.name}");
+        }
+        else
+        {
+            Debug.LogWarning("Cannot spawn - objectToSpawn or spawnLocation is null!");
+        }
     }
+
 }

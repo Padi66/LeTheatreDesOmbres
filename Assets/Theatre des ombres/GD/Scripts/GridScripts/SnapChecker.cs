@@ -7,6 +7,12 @@ public class SnapChecker : MonoBehaviour
     public int socketID;
     private XRSocketInteractor socket;
     private GameObject currentObject;
+    public GameObject CurrentObject
+    {
+        get => currentObject;
+        set => currentObject = value;
+    }
+
 
     public string CurrentTag => currentObject != null ? currentObject.tag : "";
     public bool HasObject => currentObject != null;
