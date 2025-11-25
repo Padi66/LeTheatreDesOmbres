@@ -24,7 +24,19 @@ public class DialogueSequence : MonoBehaviour
     [TextArea(2, 5)] public List<string> branch8;
     [TextArea(2, 5)] public List<string> branch9;
     [TextArea(2, 5)] public List<string> branch10;
-
+    [TextArea(2, 5)] public List<string> branch11;
+    [TextArea(2, 5)] public List<string> branch12;
+    [TextArea(2, 5)] public List<string> branch13;
+    [TextArea(2, 5)] public List<string> branch14;
+    [TextArea(2, 5)] public List<string> branch15;
+    [TextArea(2, 5)] public List<string> branch16;
+    [TextArea(2, 5)] public List<string> branch17;
+    [TextArea(2, 5)] public List<string> branch18;
+    [TextArea(2, 5)] public List<string> branch19;
+    [TextArea(2, 5)] public List<string> branch20;
+    [TextArea(2, 5)] public List<string> branch21;
+    [TextArea(2, 5)] public List<string> branch22;
+    [TextArea(2, 5)] public List<string> branch23;
     private Coroutine activeDialogue;
     private Queue<int> branchQueue = new Queue<int>();
     private bool isPlaying = false;
@@ -81,6 +93,19 @@ public class DialogueSequence : MonoBehaviour
             case 8: return branch8;
             case 9: return branch9;
             case 10: return branch10;
+            case 11: return branch11;
+            case 12: return branch12;
+            case 13: return branch13;
+            case 14: return branch14;
+            case 15: return branch15;
+            case 16: return branch16;
+            case 17: return branch17;
+            case 18: return branch18;
+            case 19: return branch19;
+            case 20: return branch20;
+            case 21: return branch21;
+            case 22: return branch22; //Text de départ
+            case 23: return branch23; //Texte final
             default: return null;
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketOrange : MonoBehaviour
 {
-    //[SerializeField] private Light _lightcolor;
+    
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
 
@@ -47,10 +47,12 @@ public class SocketOrange : MonoBehaviour
         if (cube.GetComponent<Sword>())
         {
             Debug.Log("Socket Tool contient Sword");
+            _piedestal.UpPurple();
         }
         else if (cube.GetComponent<Shield>())
         {
             Debug.Log("Socket Tool contient Shield");
+            _piedestal.UpPurple();
         }
 
         StoryManager.OnSocketStateChanged?.Invoke("Tool", true);

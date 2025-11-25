@@ -14,7 +14,7 @@ public class TeleportationDialogueManager : MonoBehaviour
     private bool introPlayed = false;
     private bool puzzleCompleted = false;
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         StoryManager.OnCubePlaced += OnCubePlacedHandler;
     }
@@ -22,9 +22,9 @@ public class TeleportationDialogueManager : MonoBehaviour
     private void OnDisable()
     {
         StoryManager.OnCubePlaced -= OnCubePlacedHandler;
-    }
+    }*/
 
-    private void Start()
+    /*private void Start()
     {
         if (wallTrigger1 != null) wallTrigger1.SetActive(false);
         if (wallTrigger2 != null) wallTrigger2.SetActive(false);
@@ -56,9 +56,9 @@ public class TeleportationDialogueManager : MonoBehaviour
         {
             Debug.LogError("DialogueSequence is not assigned!");
         }
-    }
+    }*/
 
-    private void OnCubePlacedHandler(string socketName, string cubeName)
+    /*private void OnCubePlacedHandler(string socketName, string cubeName)
     {
         if (!introPlayed)
         {
@@ -83,9 +83,9 @@ public class TeleportationDialogueManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         CheckIfAllSocketsFilled();
-    }
+    }*/
 
-    private void PlayDialogueForCubePlacement(string socketName, string cubeName)
+    /*private void PlayDialogueForCubePlacement(string socketName, string cubeName)
     {
         if (socketName == "Green")
         {
@@ -159,16 +159,16 @@ public class TeleportationDialogueManager : MonoBehaviour
 
             StartCoroutine(WaitAndCompletePuzzle());
         }
-    }
+    }*/
 
-    private IEnumerator WaitAndCompletePuzzle()
+    /*private IEnumerator WaitAndCompletePuzzle()
     {
         yield return new WaitForSeconds(3f);
 
         CompletePuzzle();
-    }
+    }*/
 
-    private void CompletePuzzle()
+    /*private void CompletePuzzle()
     {
         Debug.Log("Puzzle complete! Activating wall triggers...");
 
@@ -191,5 +191,5 @@ public class TeleportationDialogueManager : MonoBehaviour
         {
             Debug.LogWarning("WallTrigger2 is not assigned!");
         }
-    }
+    }*/
 }

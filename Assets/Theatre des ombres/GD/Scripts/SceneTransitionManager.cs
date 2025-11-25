@@ -43,7 +43,8 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    private IEnumerator TransitionToScene(int sceneIndex)
+   
+    public IEnumerator TransitionToScene(int sceneIndex)
     {
         DisableMovement();
 

@@ -27,10 +27,10 @@ public class SocketMenu : MonoBehaviour
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         //if (args.interactableObject.transform.gameObject.GetComponent<CubeOrange>())
-       
+        
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        //_lightcolor.intensity = 1;
+        
         
         if (cube.GetComponent<CubeGreen>())
         {

@@ -6,7 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketPurple : MonoBehaviour
 {
-    //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     

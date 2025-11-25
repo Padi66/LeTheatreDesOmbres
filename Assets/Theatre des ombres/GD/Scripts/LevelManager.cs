@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int _currentLevel;
+    [SerializeField] DialogueSequence _dialogueSequence;
 
     public void LoadNewLevel(int buildIndex)
     {
@@ -27,10 +28,9 @@ public class LevelManager : MonoBehaviour
     
     //Dialogue Chevalresse Epée Squelette
     public void LoadLevel1()
-    {
+    {   _currentLevel = 2;
         LoadNewLevel(2);
-        _currentLevel = 2;
-
+        
     }
     
     //Dialogue Chevalresse Epée Roi
@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
     {
         _currentLevel = 2;
         LoadNewLevel(3); 
+        
     }
     
     //Dialogue Chevalresse Bouclier Roi
@@ -45,6 +46,7 @@ public class LevelManager : MonoBehaviour
     {
         _currentLevel = 3;
         LoadNewLevel(4); 
+        ;
     }
     
     //Dialogue Chevalresse Bouclier Squelette

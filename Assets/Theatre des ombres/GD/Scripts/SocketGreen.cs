@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketGreen : MonoBehaviour
 {
-    //[SerializeField] private Light _lightcolor;
+    
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     
@@ -44,15 +44,20 @@ public class SocketGreen : MonoBehaviour
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Vert contient Cube Vert");
+            _piedestal.UpOrange();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Vert contient Cube Orange");
+            _piedestal.UpOrange();
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Vert contient Cube Violet");
+            _piedestal.UpOrange();
         }
+        
+        
     
         StoryManager.OnSocketStateChanged?.Invoke("Green", true);
         StoryManager.OnCubePlaced?.Invoke("Green", _cubeName);
