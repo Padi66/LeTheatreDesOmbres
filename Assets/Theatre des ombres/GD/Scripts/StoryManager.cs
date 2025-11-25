@@ -29,26 +29,7 @@ public class StoryManager : MonoBehaviour
     private AsyncOperation _preloadedScene;
     
 
-    void Start()
-    {
-        TriggerHapticOnBothControllers(0.8f, 0.3f);    }
-    
-    private void TriggerHapticOnBothControllers(float amplitude, float duration)
-    {
-        HapticImpulsePlayer[] hapticPlayers = FindObjectsOfType<HapticImpulsePlayer>();
-        
-        if (hapticPlayers.Length == 0)
-        {
-            Debug.LogWarning("❌ Aucun HapticImpulsePlayer trouvé dans la scène");
-            return;
-        }
-        
-        foreach (HapticImpulsePlayer hapticPlayer in hapticPlayers)
-        {
-            hapticPlayer.SendHapticImpulse(amplitude, duration);
-            Debug.Log($"✅ Haptic envoyé sur {hapticPlayer.gameObject.name} - Amplitude: {amplitude}, Durée: {duration}");
-        }
-    }
+
     private void OnEnable()
     {
         OnSocketStateChanged += OnSocketUpdate;
