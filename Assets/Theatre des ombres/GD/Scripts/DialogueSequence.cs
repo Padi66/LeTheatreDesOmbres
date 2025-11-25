@@ -26,17 +26,39 @@ public class DialogueSequence : MonoBehaviour
     [TextArea(2, 5)] public List<string> branch10;
 
     private Coroutine activeDialogue;
+    private Queue<int> branchQueue = new Queue<int>();
+    private bool isPlaying = false;
 
     public void StartDialogueBranch(int branch)
     {
-        if (activeDialogue != null)
-            StopCoroutine(activeDialogue);
+        if (isPlaying)
+        {
+            if (!branchQueue.Contains(branch))
+            {
+                branchQueue.Enqueue(branch);
+                Debug.Log($"Branch {branch} queued. Queue size: {branchQueue.Count}");
+            }
+            else
+            {
+                Debug.Log($"Branch {branch} already in queue, skipping.");
+            }
+        }
+        else
+        {
+            PlayBranch(branch);
+        }
+    }
 
+    private void PlayBranch(int branch)
+    {
         List<string> selectedBranch = GetBranch(branch);
 
         if (selectedBranch != null && selectedBranch.Count > 0)
         {
-            activeDialogue = StartCoroutine(ShowDialogueSequence(selectedBranch));
+            if (activeDialogue != null)
+                StopCoroutine(activeDialogue);
+
+            activeDialogue = StartCoroutine(ShowDialogueSequence(selectedBranch, branch));
         }
         else
         {
@@ -63,7 +85,7 @@ public class DialogueSequence : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowDialogueSequence(List<string> dialogues)
+    private IEnumerator ShowDialogueSequence(List<string> dialogues, int branchNumber)
     {
         if (dialogueTextUI == null)
         {
@@ -77,6 +99,9 @@ public class DialogueSequence : MonoBehaviour
         }
 
         dialogueTextUI.enabled = true;
+        isPlaying = true;
+
+        Debug.Log($"Playing Branch {branchNumber} with {dialogues.Count} lines");
 
         foreach (string line in dialogues)
         {
@@ -92,6 +117,16 @@ public class DialogueSequence : MonoBehaviour
         }
 
         dialogueTextUI.text = "";
+        isPlaying = false;
         activeDialogue = null;
+
+        Debug.Log($"Branch {branchNumber} finished");
+
+        if (branchQueue.Count > 0)
+        {
+            int nextBranch = branchQueue.Dequeue();
+            Debug.Log($"Playing next queued branch: {nextBranch}. Remaining in queue: {branchQueue.Count}");
+            PlayBranch(nextBranch);
+        }
     }
 }

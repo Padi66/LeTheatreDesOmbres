@@ -29,12 +29,22 @@ public class TeleportationDialogueManager : MonoBehaviour
         if (wallTrigger1 != null) wallTrigger1.SetActive(false);
         if (wallTrigger2 != null) wallTrigger2.SetActive(false);
 
-        StartCoroutine(PlayIntroSequence());
+        StartCoroutine(PlayIntroAndRaisePedestals());
     }
 
-    private IEnumerator PlayIntroSequence()
+    private IEnumerator PlayIntroAndRaisePedestals()
     {
         yield return new WaitForSeconds(1f);
+
+        if (piedestalController != null)
+        {
+            piedestalController.UpGreen();
+            piedestalController.UpOrange();
+            piedestalController.UpPurple();
+            Debug.Log("All pedestals are rising!");
+        }
+
+        yield return new WaitForSeconds(0.5f);
 
         if (dialogueSequence != null)
         {
@@ -64,35 +74,32 @@ public class TeleportationDialogueManager : MonoBehaviour
 
         Debug.Log($"Cube placed: {cubeName} in {socketName}");
 
-        HandleCubePlacement(socketName, cubeName);
+        PlayDialogueForCubePlacement(socketName, cubeName);
 
+        StartCoroutine(CheckAfterDelay());
+    }
+
+    private IEnumerator CheckAfterDelay()
+    {
+        yield return new WaitForEndOfFrame();
         CheckIfAllSocketsFilled();
     }
 
-    private void HandleCubePlacement(string socketName, string cubeName)
+    private void PlayDialogueForCubePlacement(string socketName, string cubeName)
     {
-        if (piedestalController == null)
-        {
-            Debug.LogWarning("PiedestalController not assigned!");
-            return;
-        }
-
         if (socketName == "Green")
         {
             if (cubeName == "CubeGreen")
             {
                 dialogueSequence.StartDialogueBranch(1);
-                piedestalController.UpGreen();
             }
             else if (cubeName == "CubeOrange")
             {
                 dialogueSequence.StartDialogueBranch(2);
-                piedestalController.UpOrange();
             }
             else if (cubeName == "CubePurple")
             {
                 dialogueSequence.StartDialogueBranch(3);
-                piedestalController.UpPurple();
             }
         }
         else if (socketName == "Orange")
@@ -100,17 +107,14 @@ public class TeleportationDialogueManager : MonoBehaviour
             if (cubeName == "CubeGreen")
             {
                 dialogueSequence.StartDialogueBranch(4);
-                piedestalController.UpGreen();
             }
             else if (cubeName == "CubeOrange")
             {
                 dialogueSequence.StartDialogueBranch(5);
-                piedestalController.UpOrange();
             }
             else if (cubeName == "CubePurple")
             {
                 dialogueSequence.StartDialogueBranch(6);
-                piedestalController.UpPurple();
             }
         }
         else if (socketName == "Purple")
@@ -118,17 +122,14 @@ public class TeleportationDialogueManager : MonoBehaviour
             if (cubeName == "CubeGreen")
             {
                 dialogueSequence.StartDialogueBranch(7);
-                piedestalController.UpGreen();
             }
             else if (cubeName == "CubeOrange")
             {
                 dialogueSequence.StartDialogueBranch(8);
-                piedestalController.UpOrange();
             }
             else if (cubeName == "CubePurple")
             {
                 dialogueSequence.StartDialogueBranch(9);
-                piedestalController.UpPurple();
             }
         }
     }
