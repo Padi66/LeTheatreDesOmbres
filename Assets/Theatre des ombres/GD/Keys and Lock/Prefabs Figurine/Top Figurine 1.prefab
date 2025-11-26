@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 499210738471047009}
   m_Layer: 0
   m_Name: Top Figurine 1
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7620550476518455857}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.981, y: 1.012, z: 19.29}
   m_LocalScale: {x: 0.20450006, y: 0.2045, z: 0.20450006}
   m_ConstrainProportionsScale: 1
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7620550476518455857}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -8258878276078739554, guid: d182f2374594359458b8ad2c1ca9c90c, type: 3}
 --- !u!23 &4275584390926724304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13fea913cc0bb08458bb75c2ea4b5fe8, type: 2}
+  - {fileID: 9101493772372985727, guid: d182f2374594359458b8ad2c1ca9c90c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.98352444, y: 0.85197246, z: 0.97513956}
+  m_Center: {x: 0.008237826, y: 0.03349475, z: -0.012430261}
 --- !u!54 &7280438160445975923
 Rigidbody:
   m_ObjectHideFlags: 0

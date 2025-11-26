@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1250621923687189421}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.75, z: 0}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 2, y: 0.75, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -71,6 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketPurple
   _socketInteractor: {fileID: 0}
   _piedestal: {fileID: 0}
+  _lockDelay: 0.3
+  _storyManager: {fileID: 0}
 --- !u!114 &242047987982098580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +201,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.981, y: 1.459, z: 14.468}
-  m_LocalScale: {x: 0.20450006, y: 0.409, z: 0.20450006}
+  m_LocalScale: {x: 0.20450006, y: 0.2045, z: 0.20450006}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4810216278224842818}
@@ -213,7 +215,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9056761493691988298}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2652504014450719902, guid: 952187f14725bd74e885c068a7cd02ab, type: 3}
 --- !u!23 &801768241803538173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -239,7 +241,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13fea913cc0bb08458bb75c2ea4b5fe8, type: 2}
+  - {fileID: 6276423338777038083, guid: 952187f14725bd74e885c068a7cd02ab, type: 3}
+  - {fileID: 9101493772372985727, guid: 952187f14725bd74e885c068a7cd02ab, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -514,7 +517,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7278053764468182216, guid: c4feb6ef12b3c5341a9123676cb27dcf, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278053764468182216, guid: c4feb6ef12b3c5341a9123676cb27dcf, type: 3}
       propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278053764468182216, guid: c4feb6ef12b3c5341a9123676cb27dcf, type: 3}
+      propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7278053764468182216, guid: c4feb6ef12b3c5341a9123676cb27dcf, type: 3}
