@@ -16,7 +16,8 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private XRSocketInteractor _socketGreen;
     [SerializeField] private XRSocketInteractor _socketOrange;
     [SerializeField] private XRSocketInteractor _socketPurple;
-    [SerializeField] private SocketMenu _socketMenu;
+    [SerializeField] private SocketPurple _socketPurpleRef;
+    
 
     void OnEnable()
     {
@@ -30,7 +31,7 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
-        if (_socketMenu._isInSocket)
+        if (_socketPurpleRef._isInSocket)
         {
             StoryManager.OnPushButton?.Invoke();
             LockAllCubesInSockets();
