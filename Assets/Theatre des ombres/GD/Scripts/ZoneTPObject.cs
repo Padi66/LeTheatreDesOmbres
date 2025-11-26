@@ -4,7 +4,7 @@ using UnityEngine;
 public class ZoneTPObject : MonoBehaviour
 {
     [Header("Configuration")] [SerializeField]
-    private float _resetDelay = 0.5f;
+    private float _resetDelay = 0.1f;
 
     [SerializeField] private bool _resetRotation = true;
     [SerializeField] private bool _resetVelocity = true;

@@ -16,7 +16,6 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private XRSocketInteractor _socketGreen;
     [SerializeField] private XRSocketInteractor _socketOrange;
     [SerializeField] private XRSocketInteractor _socketPurple;
-    [SerializeField] private XRSocketInteractor _socketTool;
     [SerializeField] private SocketMenu _socketMenu;
 
     void OnEnable()
@@ -46,7 +45,7 @@ public class ActivateStory : MonoBehaviour
         LockCubeInSocket(_socketGreen, "Socket Vert");
         LockCubeInSocket(_socketOrange, "Socket Orange");
         LockCubeInSocket(_socketPurple, "Socket Violet");
-        LockCubeInSocket(_socketTool, "Socket Outil");
+        
     }
 
     private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
