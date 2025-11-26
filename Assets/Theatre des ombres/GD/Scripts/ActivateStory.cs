@@ -13,8 +13,7 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private Transform _socketAttach; 
     [SerializeField] private float _duration;
     
-    [SerializeField] private XRSocketInteractor _socketGreen;
-    [SerializeField] private XRSocketInteractor _socketOrange;
+    
     [SerializeField] private XRSocketInteractor _socketPurple;
     [SerializeField] private SocketPurple _socketPurpleRef;
     
@@ -43,8 +42,6 @@ public class ActivateStory : MonoBehaviour
     
     private void LockAllCubesInSockets()
     {
-        LockCubeInSocket(_socketGreen, "Socket Vert");
-        LockCubeInSocket(_socketOrange, "Socket Orange");
         LockCubeInSocket(_socketPurple, "Socket Violet");
         
     }

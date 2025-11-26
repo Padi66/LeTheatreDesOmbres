@@ -10,7 +10,7 @@ public class SocketPurple : MonoBehaviour
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private StoryManager _storyManager;
-    public bool _isInSocket = true;
+    public bool _isInSocket = false;
 
    
     void OnEnable()
@@ -43,6 +43,7 @@ public class SocketPurple : MonoBehaviour
         }
         else if (cube.GetComponent<CubeOrange>())
         {
+            _isInSocket = true;
             Debug.Log("Socket Violet contient Cube Orange");
             if (_piedestal != null)
             {
@@ -53,6 +54,7 @@ public class SocketPurple : MonoBehaviour
         }
         else if (cube.GetComponent<CubePurple>())
         {
+            _isInSocket = true;
             Debug.Log("Socket Violet contient Cube Violet");
             if (_piedestal != null)
             {
