@@ -468,16 +468,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &702197018 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1288029733978345692, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
-  m_PrefabInstance: {fileID: 5596197452655971518}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &820047284 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8614852229203970330, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
-  m_PrefabInstance: {fileID: 5596197452655971518}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1014885169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,11 +573,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActivateStory
   _button: {fileID: 1014885171}
-  _attachPositionStart: {fileID: 702197018}
-  _attachPositionEnd: {fileID: 1757633701}
-  _socketAttach: {fileID: 820047284}
+  _attachPositionStart: {fileID: 0}
+  _attachPositionEnd: {fileID: 0}
+  _socketAttach: {fileID: 0}
   _duration: 2
+  _delayAfterAnimation: 0.5
   _socketPurpleRef: {fileID: 5596197452655971520}
+  _storyManager: {fileID: 0}
 --- !u!1001 &1364582975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -661,11 +653,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
---- !u!4 &1757633701 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4588910701135526638, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
-  m_PrefabInstance: {fileID: 5596197452655971518}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1982186122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -930,6 +917,14 @@ PrefabInstance:
     - target: {fileID: 6103935914882764204, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
       propertyPath: m_Name
       value: ===Manager===
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432446832783612374, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: _socketGreen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432446832783612374, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: _socketPurple
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
