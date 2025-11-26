@@ -8,14 +8,12 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class ActivateStory : MonoBehaviour
 {
     [SerializeField] private XRPushButton _button;
-    [SerializeField] private GameObject _socketMenu;
-    [SerializeField] private Transform _positionEnd;
-    [SerializeField] private float _duration = 3f;
+    [SerializeField] private Transform _attachPositionStart;
+    [SerializeField] private Transform _attachPositionEnd;
+    [SerializeField] private Transform _socketAttach; 
+    [SerializeField] private float _duration;
     
     [SerializeField] private SocketPurple _socketPurpleRef;
-
-    private string _lockedCubeName;
-    private Vector3 _startPosition;
 
     void OnEnable()
     {
@@ -29,32 +27,23 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
-        Debug.Log($"Bouton pressé ! Cube dans socket : {_socketPurpleRef._isInSocket}");
-        
         if (_socketPurpleRef._isInSocket)
         {
-            XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
             
-            if (socketInteractor != null && socketInteractor.hasSelection)
-            {
-                _lockedCubeName = socketInteractor.interactablesSelected[0].transform.gameObject.name;
-                Debug.Log($"Cube verrouillé : {_lockedCubeName}");
-                
-                StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
-                StoryManager.OnCubePlaced?.Invoke("Purple", _lockedCubeName);
-            }
-            
-            LockCubeInSocket(socketInteractor);
-            StoryManager.OnPushButton?.Invoke();
+            LockAllCubesInSockets();
+            StartCoroutine(Delay());
             StartCoroutine(MoveTicket());
-        }
-        else
-        {
-            Debug.Log("Pas de cube dans le socket !");
+            StoryManager.OnPushButton?.Invoke();
         }
     }
     
-    private void LockCubeInSocket(XRSocketInteractor socket)
+    private void LockAllCubesInSockets()
+    {
+        XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
+        LockCubeInSocket(socketInteractor, "Socket Violet");
+    }
+
+    private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
     {
         if (socket != null && socket.hasSelection)
         {
@@ -65,41 +54,38 @@ public class ActivateStory : MonoBehaviour
             if (grabInteractable != null)
             {
                 grabInteractable.enabled = false;
-                Debug.Log("Cube verrouillé");
+                Debug.Log($"Cube verrouillé dans {socketName}");
             }
 
             Rigidbody rb = cube.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
-                Debug.Log("Rigidbody désactivé");
+                Debug.Log($"Rigidbody désactivé dans {socketName}");
             }
-            
-            socket.enabled = false;
-            Debug.Log("Socket désactivé");
         }
     }
 
     IEnumerator MoveTicket()
     {
-        Debug.Log("Début du mouvement du ticket...");
-        
-        _startPosition = _socketMenu.transform.position;
+        Debug.Log("Marche Pas ou pas loumpa");
         float elapsed = 0f;
 
         while (elapsed < _duration)
         {
-            _socketMenu.transform.position = Vector3.Lerp(
-                _startPosition, 
-                _positionEnd.position,
-                elapsed / _duration
-            );
-            
+            _socketAttach.position = Vector3.Lerp(
+                _attachPositionStart.position, 
+                _attachPositionEnd.position,
+                elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
         
-        _socketMenu.transform.position = _positionEnd.position;
-        Debug.Log("Ticket arrivé à destination !");
+        _socketAttach.position = _attachPositionEnd.position;
+    }
+    
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(5f); 
     }
 }
