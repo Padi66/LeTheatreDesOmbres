@@ -29,10 +29,11 @@ public class ActivateStory : MonoBehaviour
     {
         if (_socketPurpleRef._isInSocket)
         {
-            StoryManager.OnPushButton?.Invoke();
+            
             LockAllCubesInSockets();
             StartCoroutine(Delay());
             StartCoroutine(MoveTicket());
+            StoryManager.OnPushButton?.Invoke();
         }
     }
     
