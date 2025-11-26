@@ -36,7 +36,7 @@ public class SocketOrange : MonoBehaviour
             Debug.Log("Socket Orange contient Cube Vert");
             if (_piedestal != null)
             {
-                _piedestal.UpOrange();
+                _piedestal.UpPurple();
             }
             _storyManager.CheckDirectStep2();
         }
@@ -45,7 +45,7 @@ public class SocketOrange : MonoBehaviour
             Debug.Log("Socket Orange contient Cube Orange");
             if (_piedestal != null)
             {
-                _piedestal.UpOrange();
+                _piedestal.UpPurple();
             }
             _storyManager.CheckDirectStep2();
         }
@@ -54,7 +54,7 @@ public class SocketOrange : MonoBehaviour
             Debug.Log("Socket Orange contient Cube Violet");
             if (_piedestal != null)
             {
-                _piedestal.UpOrange();
+                _piedestal.UpPurple();
             }
             _storyManager.CheckDirectStep2();
         }
