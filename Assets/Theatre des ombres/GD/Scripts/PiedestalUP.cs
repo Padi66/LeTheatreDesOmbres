@@ -41,6 +41,7 @@ public class PiedestalUP : MonoBehaviour
     
     public void UpOrange()
     {
+        Debug.Log("PPI");
         //SON
         StartCoroutine(UpEnumOrange());
     }

@@ -20,7 +20,7 @@ public class SceneTransitionManager : MonoBehaviour
     private ContinuousMoveProvider moveProvider;
     private ContinuousTurnProvider turnProvider;
     private int currentDialogueBranch = 1;
-    private List<GameObject> disabledLineVisuals = new List<GameObject>();
+    private bool sceneFadeComplete = false;
 
     private void Awake()
     {
@@ -130,6 +130,8 @@ public class SceneTransitionManager : MonoBehaviour
     {
         Debug.Log($"Starting transition to scene {sceneIndex}");
 
+        sceneFadeComplete = false;
+
         DisableMovement();
         DisableControllerRays();
 
@@ -142,7 +144,9 @@ public class SceneTransitionManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log($"Scene {sceneIndex} loaded");
+        Debug.Log($"Scene {sceneIndex} loaded - disabling NEW scene LineVisuals");
+
+        DisableControllerRays();
 
         yield return new WaitForSeconds(0.2f);
 
@@ -150,20 +154,25 @@ public class SceneTransitionManager : MonoBehaviour
 
         if (sceneFadeScreen != null)
         {
-            Debug.Log("Found SceneFadeScreen, fading it out");
+            Debug.Log("Found SceneFadeScreen, starting fade out");
             sceneFadeScreen.FadeOut(fadeDuration, OnSceneFadeComplete);
         }
         else
         {
             Debug.LogWarning("No SceneFadeScreen found in new scene");
+            sceneFadeComplete = true;
         }
 
         yield return StartCoroutine(FadeFromBlack());
 
-        Debug.Log($"Waiting full fade duration ({fadeDuration}s) to ensure all fades complete");
-        yield return new WaitForSeconds(fadeDuration);
+        Debug.Log("FadeFromBlack done, waiting for SceneFadeScreen to complete");
 
-        Debug.Log("All fades complete, enabling controller rays NOW");
+        while (!sceneFadeComplete)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Both fades complete, enabling controller rays NOW");
         EnableControllerRays();
 
         if (sceneFadeScreen == null)
@@ -174,7 +183,8 @@ public class SceneTransitionManager : MonoBehaviour
 
     private void OnSceneFadeComplete()
     {
-        Debug.Log("Scene transition complete, enabling movement");
+        Debug.Log("SceneFadeScreen complete");
+        sceneFadeComplete = true;
         FindAndEnableMovementInNewScene();
         StartCoroutine(DelayedDialogue());
     }
@@ -187,21 +197,20 @@ public class SceneTransitionManager : MonoBehaviour
 
     private void DisableControllerRays()
     {
-        disabledLineVisuals.Clear();
-
         GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
 
+        int disabledCount = 0;
         foreach (GameObject obj in allObjects)
         {
             if (obj.name == "LineVisual" && obj.activeSelf)
             {
                 obj.SetActive(false);
-                disabledLineVisuals.Add(obj);
+                disabledCount++;
                 Debug.Log($"Disabled LineVisual: {GetGameObjectPath(obj)}");
             }
         }
 
-        Debug.Log($"Disabled {disabledLineVisuals.Count} line visuals");
+        Debug.Log($"Disabled {disabledCount} line visuals");
     }
 
     private void EnableControllerRays()
@@ -219,7 +228,6 @@ public class SceneTransitionManager : MonoBehaviour
             }
         }
 
-        //disabledLineVisuals.Clear();
         Debug.Log($"Re-enabled {enabledCount} line visuals");
     }
 
@@ -275,7 +283,6 @@ public class SceneTransitionManager : MonoBehaviour
         fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false;
         Debug.Log("FadeFromBlack complete");
-        //disabledLineVisuals.Clear();
     }
 
     private void DisableMovement()
