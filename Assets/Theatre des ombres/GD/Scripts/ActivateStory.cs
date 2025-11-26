@@ -8,12 +8,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class ActivateStory : MonoBehaviour
 {
     [SerializeField] private XRPushButton _button;
-    [SerializeField] private Transform _attachPositionStart;
-    [SerializeField] private Transform _attachPositionEnd;
-    [SerializeField] private Transform _socketAttach; 
-    [SerializeField] private float _duration;
+    [SerializeField] private GameObject _socketMenu;
+    [SerializeField] private Transform _positionEnd;
+    [SerializeField] private float _duration = 3f;
     
     [SerializeField] private SocketPurple _socketPurpleRef;
+
+    private string _lockedCubeName;
+    private Vector3 _startPosition;
 
     void OnEnable()
     {
@@ -31,10 +33,20 @@ public class ActivateStory : MonoBehaviour
         
         if (_socketPurpleRef._isInSocket)
         {
-            LockAllCubesInSockets();
-            StartCoroutine(Delay());
-            StartCoroutine(MoveTicket());
+            XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
+            
+            if (socketInteractor != null && socketInteractor.hasSelection)
+            {
+                _lockedCubeName = socketInteractor.interactablesSelected[0].transform.gameObject.name;
+                Debug.Log($"Cube verrouillé : {_lockedCubeName}");
+                
+                StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
+                StoryManager.OnCubePlaced?.Invoke("Purple", _lockedCubeName);
+            }
+            
+            LockCubeInSocket(socketInteractor);
             StoryManager.OnPushButton?.Invoke();
+            StartCoroutine(MoveTicket());
         }
         else
         {
@@ -42,13 +54,7 @@ public class ActivateStory : MonoBehaviour
         }
     }
     
-    private void LockAllCubesInSockets()
-    {
-        XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
-        LockCubeInSocket(socketInteractor, "Socket Violet");
-    }
-
-    private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
+    private void LockCubeInSocket(XRSocketInteractor socket)
     {
         if (socket != null && socket.hasSelection)
         {
@@ -59,49 +65,41 @@ public class ActivateStory : MonoBehaviour
             if (grabInteractable != null)
             {
                 grabInteractable.enabled = false;
-                Debug.Log($"Cube verrouillé dans {socketName}");
+                Debug.Log("Cube verrouillé");
             }
 
             Rigidbody rb = cube.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
-                Debug.Log($"Rigidbody désactivé dans {socketName}");
+                Debug.Log("Rigidbody désactivé");
             }
             
             socket.enabled = false;
-            Debug.Log($"{socketName} désactivé - plus d'interactions possibles");
+            Debug.Log("Socket désactivé");
         }
     }
 
     IEnumerator MoveTicket()
     {
-        AutoSocketAttach autoAttach = _socketAttach.GetComponent<AutoSocketAttach>();
-        if (autoAttach != null)
-        {
-            autoAttach.enabled = false;
-            Debug.Log("AutoSocketAttach désactivé !");
-        }
-
         Debug.Log("Début du mouvement du ticket...");
+        
+        _startPosition = _socketMenu.transform.position;
         float elapsed = 0f;
 
         while (elapsed < _duration)
         {
-            _socketAttach.position = Vector3.Lerp(
-                _attachPositionStart.position, 
-                _attachPositionEnd.position,
-                elapsed / _duration);
+            _socketMenu.transform.position = Vector3.Lerp(
+                _startPosition, 
+                _positionEnd.position,
+                elapsed / _duration
+            );
+            
             elapsed += Time.deltaTime;
             yield return null;
         }
         
-        _socketAttach.position = _attachPositionEnd.position;
+        _socketMenu.transform.position = _positionEnd.position;
         Debug.Log("Ticket arrivé à destination !");
-    }
-    
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(5f); 
     }
 }
