@@ -13,10 +13,7 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private Transform _socketAttach; 
     [SerializeField] private float _duration;
     
-    
-    [SerializeField] private XRSocketInteractor _socketPurple;
     [SerializeField] private SocketPurple _socketPurpleRef;
-    
 
     void OnEnable()
     {
@@ -37,13 +34,12 @@ public class ActivateStory : MonoBehaviour
             StartCoroutine(Delay());
             StartCoroutine(MoveTicket());
         }
-
     }
     
     private void LockAllCubesInSockets()
     {
-        LockCubeInSocket(_socketPurple, "Socket Violet");
-        
+        XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
+        LockCubeInSocket(socketInteractor, "Socket Violet");
     }
 
     private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
@@ -66,6 +62,9 @@ public class ActivateStory : MonoBehaviour
                 rb.isKinematic = true;
                 Debug.Log($"Rigidbody désactivé dans {socketName}");
             }
+            
+            socket.enabled = false;
+            Debug.Log($"{socketName} désactivé - plus d'interactions possibles");
         }
     }
 
@@ -83,11 +82,12 @@ public class ActivateStory : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+        
+        _socketAttach.position = _attachPositionEnd.position;
     }
     
     IEnumerator Delay()
     {
-        //texte d'attente de chargement
         yield return new WaitForSeconds(6f); 
     }
 }
