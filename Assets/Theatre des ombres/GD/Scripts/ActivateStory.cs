@@ -27,13 +27,18 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
+        Debug.Log($"Bouton pressé ! Cube dans socket : {_socketPurpleRef._isInSocket}");
+        
         if (_socketPurpleRef._isInSocket)
         {
-            
             LockAllCubesInSockets();
             StartCoroutine(Delay());
             StartCoroutine(MoveTicket());
             StoryManager.OnPushButton?.Invoke();
+        }
+        else
+        {
+            Debug.Log("Pas de cube dans le socket !");
         }
     }
     
@@ -71,7 +76,14 @@ public class ActivateStory : MonoBehaviour
 
     IEnumerator MoveTicket()
     {
-        Debug.Log("Marche Pas ou pas loumpa");
+        AutoSocketAttach autoAttach = _socketAttach.GetComponent<AutoSocketAttach>();
+        if (autoAttach != null)
+        {
+            autoAttach.enabled = false;
+            Debug.Log("AutoSocketAttach désactivé !");
+        }
+
+        Debug.Log("Début du mouvement du ticket...");
         float elapsed = 0f;
 
         while (elapsed < _duration)
@@ -85,10 +97,11 @@ public class ActivateStory : MonoBehaviour
         }
         
         _socketAttach.position = _attachPositionEnd.position;
+        Debug.Log("Ticket arrivé à destination !");
     }
     
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(6f); 
+        yield return new WaitForSeconds(5f); 
     }
 }
