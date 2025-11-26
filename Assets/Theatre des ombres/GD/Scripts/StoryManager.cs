@@ -233,13 +233,13 @@ public class StoryManager : MonoBehaviour
     {
         Debug.Log("CombinaisonCheck");
 
-        if (_cubeInGreen == "CubeGreen")
+        if (_cubeInPurple == "CubeGreen")
         {
             Debug.Log("Open Level 1");
             
             _levelManager.LoadLevel1();
         }
-        else if (_cubeInGreen == "CubePurple")
+        else if (_cubeInPurple == "CubePurple")
         {
             Debug.Log("Quit");
             

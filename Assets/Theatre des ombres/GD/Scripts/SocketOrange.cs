@@ -9,7 +9,6 @@ public class SocketOrange : MonoBehaviour
 {
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
-    [SerializeField] private float _lockDelay = 0.3f;
     [SerializeField] private StoryManager _storyManager;
 
     private Coroutine _lockCoroutine;

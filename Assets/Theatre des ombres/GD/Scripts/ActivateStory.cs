@@ -13,11 +13,10 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private Transform _socketAttach; 
     [SerializeField] private float _duration;
     
-    [SerializeField] private XRSocketInteractor _socketGreen;
-    [SerializeField] private XRSocketInteractor _socketOrange;
+    
     [SerializeField] private XRSocketInteractor _socketPurple;
-    [SerializeField] private XRSocketInteractor _socketTool;
-    [SerializeField] private SocketMenu _socketMenu;
+    [SerializeField] private SocketPurple _socketPurpleRef;
+    
 
     void OnEnable()
     {
@@ -31,7 +30,7 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
-        if (_socketMenu._isInSocket)
+        if (_socketPurpleRef._isInSocket)
         {
             StoryManager.OnPushButton?.Invoke();
             LockAllCubesInSockets();
@@ -43,10 +42,8 @@ public class ActivateStory : MonoBehaviour
     
     private void LockAllCubesInSockets()
     {
-        LockCubeInSocket(_socketGreen, "Socket Vert");
-        LockCubeInSocket(_socketOrange, "Socket Orange");
         LockCubeInSocket(_socketPurple, "Socket Violet");
-        LockCubeInSocket(_socketTool, "Socket Outil");
+        
     }
 
     private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
