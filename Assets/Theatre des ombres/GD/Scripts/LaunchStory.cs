@@ -15,7 +15,7 @@ public class LaunchStory : MonoBehaviour
         _curtains.OpenCurtainsRight();
         _curtains.OpenCurtainsLeft();
         StartCoroutine(Delay());
-        _dialogueSequence.StartDialogueBranch(23);
+        _dialogueSequence.StartDialogueBranch(9);
         
     }
 

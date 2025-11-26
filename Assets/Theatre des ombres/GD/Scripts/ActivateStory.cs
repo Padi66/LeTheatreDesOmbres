@@ -30,14 +30,14 @@ public class ActivateStory : MonoBehaviour
         if (_socketPurpleRef._isInSocket)
         {
             
-            LockAllCubesInSockets();
+            //LockAllCubesInSockets();
             StartCoroutine(Delay());
             StartCoroutine(MoveTicket());
             StoryManager.OnPushButton?.Invoke();
         }
     }
     
-    private void LockAllCubesInSockets()
+    /*private void LockAllCubesInSockets()
     {
         XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
         LockCubeInSocket(socketInteractor, "Socket Violet");
@@ -64,7 +64,7 @@ public class ActivateStory : MonoBehaviour
                 Debug.Log($"Rigidbody désactivé dans {socketName}");
             }
         }
-    }
+    }*/
 
     IEnumerator MoveTicket()
     {

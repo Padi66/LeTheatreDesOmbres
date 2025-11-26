@@ -120,12 +120,12 @@ public class StoryManager : MonoBehaviour
         //objet épée
         if (_cubeInOrange == "Sword")
         {
-            
+            _dialogueSequence.StartDialogueBranch(4);
         }
         //objet bouclier
         else if (_cubeInOrange == "Shield")
         {
-            
+            _dialogueSequence.StartDialogueBranch(5);
         }
     }
 
@@ -134,17 +134,17 @@ public class StoryManager : MonoBehaviour
         //squelette chateau
         if (_cubeInPurple == "CubeGreen")
         {
-            
+            _dialogueSequence.StartDialogueBranch(6);
         }
         //roi chateau
         else if (_cubeInPurple == "CubePurple")
         {
-            
+            _dialogueSequence.StartDialogueBranch(7);
         }
         //chevalresse chateau
         else if (_cubeInPurple == "CubeOrange")
         {
-            
+            _dialogueSequence.StartDialogueBranch(8);
         }
     }
     
