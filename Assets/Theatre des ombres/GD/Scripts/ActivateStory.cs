@@ -1,19 +1,20 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class ActivateStory : MonoBehaviour
 {
     [SerializeField] private XRPushButton _button;
     [SerializeField] private Transform _attachPositionStart;
     [SerializeField] private Transform _attachPositionEnd;
-    [SerializeField] private Transform _socketAttach; 
-    [SerializeField] private float _duration;
-    
+    [SerializeField] private Transform _socketAttach;
+    [SerializeField] private float _duration = 2f;
+    [SerializeField] private float _delayAfterAnimation = 0.5f;
+
     [SerializeField] private SocketPurple _socketPurpleRef;
+    [SerializeField] private StoryManager _storyManager;
+
+    private bool _hasBeenPressed = false;
 
     void OnEnable()
     {
@@ -27,65 +28,145 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
+        if (_hasBeenPressed)
+        {
+            Debug.LogWarning("Bouton déjà pressé, action en cours - ignorer");
+            return;
+        }
+
         if (_socketPurpleRef._isInSocket)
         {
-            
-            //LockAllCubesInSockets();
-            StartCoroutine(Delay());
-            StartCoroutine(MoveTicket());
-            StoryManager.OnPushButton?.Invoke();
-        }
-    }
-    
-    /*private void LockAllCubesInSockets()
-    {
-        XRSocketInteractor socketInteractor = _socketPurpleRef.GetComponent<XRSocketInteractor>();
-        LockCubeInSocket(socketInteractor, "Socket Violet");
-    }
+            Debug.Log("✓ Bouton pressé - cube dans socket détecté!");
 
-    private void LockCubeInSocket(XRSocketInteractor socket, string socketName)
-    {
-        if (socket != null && socket.hasSelection)
+            string cubeType = GetCubeTypeInSocket();
+            Debug.Log($"Type de cube détecté: '{cubeType}'");
+
+            if (string.IsNullOrEmpty(cubeType))
+            {
+                Debug.LogError("Impossible de déterminer le type de cube!");
+                return;
+            }
+
+            _hasBeenPressed = true;
+
+            GameObject cubeObject = GetCubeGameObject();
+            if (cubeObject != null)
+            {
+                StartCoroutine(AnimateCubeAndTrigger(cubeObject, cubeType));
+            }
+            else
+            {
+                Debug.LogError("Impossible de récupérer le GameObject du cube!");
+            }
+        }
+        else
         {
-            IXRSelectInteractable interactable = socket.interactablesSelected[0];
-            GameObject cube = interactable.transform.gameObject;
-        
-            XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
-            if (grabInteractable != null)
-            {
-                grabInteractable.enabled = false;
-                Debug.Log($"Cube verrouillé dans {socketName}");
-            }
+            Debug.LogWarning("✗ Bouton pressé mais aucun cube dans la socket!");
+        }
+    }
 
-            Rigidbody rb = cube.GetComponent<Rigidbody>();
-            if (rb != null)
+    private GameObject GetCubeGameObject()
+    {
+        var socketInteractor = _socketPurpleRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+
+        if (socketInteractor != null && socketInteractor.hasSelection)
+        {
+            var interactable = socketInteractor.interactablesSelected[0];
+            return interactable.transform.gameObject;
+        }
+
+        return null;
+    }
+
+    private string GetCubeTypeInSocket()
+    {
+        var socketInteractor = _socketPurpleRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+
+        if (socketInteractor != null && socketInteractor.hasSelection)
+        {
+            var interactable = socketInteractor.interactablesSelected[0];
+            GameObject cube = interactable.transform.gameObject;
+
+            if (cube.GetComponent<CubeGreen>())
             {
-                rb.isKinematic = true;
-                Debug.Log($"Rigidbody désactivé dans {socketName}");
+                return "CubeGreen";
+            }
+            else if (cube.GetComponent<CubeOrange>())
+            {
+                return "CubeOrange";
+            }
+            else if (cube.GetComponent<CubePurple>())
+            {
+                return "CubePurple";
             }
         }
-    }*/
 
-    IEnumerator MoveTicket()
+        return null;
+    }
+
+    IEnumerator AnimateCubeAndTrigger(GameObject cube, string cubeType)
     {
-        Debug.Log("Marche Pas ou pas loumpa");
+        Debug.Log("Début animation du cube");
+
+        LockCubeGrab(cube);
+
+        Vector3 startPos = _attachPositionStart.position;
+        Vector3 endPos = _attachPositionEnd.position;
         float elapsed = 0f;
 
         while (elapsed < _duration)
         {
-            _socketAttach.position = Vector3.Lerp(
-                _attachPositionStart.position, 
-                _attachPositionEnd.position,
-                elapsed / _duration);
+            cube.transform.position = Vector3.Lerp(startPos, endPos, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
-        
-        _socketAttach.position = _attachPositionEnd.position;
+
+        cube.transform.position = endPos;
+
+        Debug.Log("Animation terminée - verrouillage final");
+        LockCubeFinal(cube);
+
+        Debug.Log("Attente avant event");
+        yield return new WaitForSeconds(_delayAfterAnimation);
+
+        Debug.Log($"Déclenchement de l'action finale - Type de cube: '{cubeType}'");
+
+        if (_storyManager != null)
+        {
+            _storyManager.ExecuteMenuActionWithCubeType(cubeType);
+        }
+        else
+        {
+            Debug.LogError("StoryManager reference is missing!");
+        }
     }
-    
-    IEnumerator Delay()
+
+    private void LockCubeGrab(GameObject cube)
     {
-        yield return new WaitForSeconds(5f); 
+        var grabInteractable = cube.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.enabled = false;
+            Debug.Log($"Cube {cube.name} - Grab désactivé");
+        }
+
+        var socketInteractor = _socketPurpleRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+        if (socketInteractor != null)
+        {
+            socketInteractor.enabled = false;
+            Debug.Log("Socket désactivée");
+        }
+
+        Rigidbody rb = cube.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            Debug.Log("Rigidbody mis en kinematic pour l'animation");
+        }
+    }
+
+    private void LockCubeFinal(GameObject cube)
+    {
+        Debug.Log($"Cube {cube.name} verrouillé définitivement");
     }
 }
