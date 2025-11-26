@@ -23,6 +23,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] LevelManager _levelManager;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private SceneTransitionManager _transition;
+    
 
     private AsyncOperation _preloadedScene;
 
@@ -72,8 +73,6 @@ public class StoryManager : MonoBehaviour
                 _cubeInPurple = cubeName;
                 break;
         }
-
-        StoryDirect();
     }
 
     public void LaunchStory()
@@ -94,19 +93,22 @@ public class StoryManager : MonoBehaviour
     public void StoryDirect()
     {
         Debug.Log($"{_levelManager.gameObject.name} launched something");
-        CheckDirectStep1();
+       
     }
 
     public void CheckDirectStep1()
     {
+        //chevalresse forêt
         if (_cubeInGreen == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(1);
         }
+        //squelette forêt
         else if (_cubeInGreen == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(2);
         }
+        //roi forêt
         else if (_cubeInGreen == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(3);
@@ -114,6 +116,40 @@ public class StoryManager : MonoBehaviour
     }
 
     public void CheckDirectStep2()
+    {
+        //objet épée
+        if (_cubeInOrange == "Sword")
+        {
+            
+        }
+        //objet bouclier
+        else if (_cubeInOrange == "Shield")
+        {
+            
+        }
+    }
+
+    public void CheckDirectStep3()
+    {
+        //squelette chateau
+        if (_cubeInPurple == "CubeGreen")
+        {
+            
+        }
+        //roi chateau
+        else if (_cubeInPurple == "CubePurple")
+        {
+            
+        }
+        //chevalresse chateau
+        else if (_cubeInPurple == "CubeOrange")
+        {
+            
+        }
+    }
+    
+
+    /*public void CheckDirectStep2()
     {
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword")
         {
@@ -191,7 +227,7 @@ public class StoryManager : MonoBehaviour
         {
             _dialogueSequence.StartDialogueBranch(21);
         }
-    }
+    }*/
 
     private void CheckCombinationMenu()
     {
@@ -200,11 +236,13 @@ public class StoryManager : MonoBehaviour
         if (_cubeInGreen == "CubeGreen")
         {
             Debug.Log("Open Level 1");
+            
             _levelManager.LoadLevel1();
         }
         else if (_cubeInGreen == "CubePurple")
         {
             Debug.Log("Quit");
+            
             _levelManager.Quit();
         }
     }

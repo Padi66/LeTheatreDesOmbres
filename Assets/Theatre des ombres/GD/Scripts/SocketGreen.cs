@@ -62,16 +62,16 @@ public class SocketGreen : MonoBehaviour
         StoryManager.OnSocketStateChanged?.Invoke("Green", true);
         StoryManager.OnCubePlaced?.Invoke("Green", _cubeName);
         
-        if (_lockCoroutine != null)
+        /*if (_lockCoroutine != null)
         {
             StopCoroutine(_lockCoroutine);
         }
-        _lockCoroutine = StartCoroutine(LockCubeAfterDelay(cube));
+        _lockCoroutine = StartCoroutine(LockCubeAfterDelay(cube));*/
     }
 
     void OnSelectExited(SelectExitEventArgs args)
     {
-        GameObject cube = args.interactableObject.transform.gameObject;
+        /*GameObject cube = args.interactableObject.transform.gameObject;
         
         if (_lockCoroutine != null)
         {
@@ -94,14 +94,14 @@ public class SocketGreen : MonoBehaviour
         if (_piedestal != null)
         {
             _piedestal.DownGreen();
-        }
+        }*/
         
         Debug.Log("Socket Vert vide");
         StoryManager.OnSocketStateChanged?.Invoke("Green", false);
         StoryManager.OnCubePlaced?.Invoke("Green", null);
     }
 
-    private IEnumerator LockCubeAfterDelay(GameObject cube)
+    /*private IEnumerator LockCubeAfterDelay(GameObject cube)
     {
         yield return new WaitForSeconds(_lockDelay);
         
@@ -124,5 +124,5 @@ public class SocketGreen : MonoBehaviour
         }
         
         _lockCoroutine = null;
-    }
+    }*/
 }

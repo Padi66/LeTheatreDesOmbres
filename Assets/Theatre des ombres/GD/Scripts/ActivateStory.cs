@@ -12,10 +12,12 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private Transform _attachPositionEnd;
     [SerializeField] private Transform _socketAttach; 
     [SerializeField] private float _duration;
+    
     [SerializeField] private XRSocketInteractor _socketGreen;
     [SerializeField] private XRSocketInteractor _socketOrange;
     [SerializeField] private XRSocketInteractor _socketPurple;
     [SerializeField] private XRSocketInteractor _socketTool;
+    [SerializeField] private SocketMenu _socketMenu;
 
     void OnEnable()
     {
@@ -29,10 +31,13 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
-        StoryManager.OnPushButton?.Invoke();
-        LockAllCubesInSockets();
-        StartCoroutine(Delay());
-        StartCoroutine(MoveTicket());
+        if (_socketMenu._isInSocket)
+        {
+            StoryManager.OnPushButton?.Invoke();
+            LockAllCubesInSockets();
+            StartCoroutine(Delay());
+            StartCoroutine(MoveTicket());
+        }
 
     }
     

@@ -11,7 +11,7 @@ public class SocketPurple : MonoBehaviour
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private float _lockDelay = 0.3f;
     [SerializeField] private StoryManager _storyManager;
-    
+
     private Coroutine _lockCoroutine;
 
     void OnEnable()
@@ -19,7 +19,7 @@ public class SocketPurple : MonoBehaviour
         _socketInteractor.selectEntered.AddListener(OnSelectEntered);
         _socketInteractor.selectExited.AddListener(OnSelectExited);
     }
-    
+
     void OnDisable()
     {
         _socketInteractor.selectEntered.RemoveListener(OnSelectEntered);
@@ -30,7 +30,7 @@ public class SocketPurple : MonoBehaviour
     {
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
-        
+
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Violet contient Cube Vert");
@@ -38,6 +38,7 @@ public class SocketPurple : MonoBehaviour
             {
                 _piedestal.UpPurple();
             }
+
             _storyManager.CheckDirectStep3();
         }
         else if (cube.GetComponent<CubeOrange>())
@@ -47,6 +48,7 @@ public class SocketPurple : MonoBehaviour
             {
                 _piedestal.UpPurple();
             }
+
             _storyManager.CheckDirectStep3();
         }
         else if (cube.GetComponent<CubePurple>())
@@ -56,73 +58,22 @@ public class SocketPurple : MonoBehaviour
             {
                 _piedestal.UpPurple();
             }
+
             _storyManager.CheckDirectStep3();
         }
-        
+
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
         StoryManager.OnCubePlaced?.Invoke("Purple", _cubeName);
-        
-        if (_lockCoroutine != null)
-        {
-            StopCoroutine(_lockCoroutine);
-        }
-        _lockCoroutine = StartCoroutine(LockCubeAfterDelay(cube));
+
     }
 
     void OnSelectExited(SelectExitEventArgs args)
     {
-        GameObject cube = args.interactableObject.transform.gameObject;
-        
-        if (_lockCoroutine != null)
-        {
-            StopCoroutine(_lockCoroutine);
-            _lockCoroutine = null;
-        }
-        
-        XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
-        if (grabInteractable != null)
-        {
-            grabInteractable.enabled = true;
-        }
 
-        Rigidbody rb = cube.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = false;
-        }
-        
-        if (_piedestal != null)
-        {
-            _piedestal.DownPurple();
-        }
-        
         Debug.Log("Socket Violet vide");
         StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
         StoryManager.OnCubePlaced?.Invoke("Purple", null);
     }
-
-    private IEnumerator LockCubeAfterDelay(GameObject cube)
-    {
-        yield return new WaitForSeconds(_lockDelay);
-        
-        XRGrabInteractable grabInteractable = cube.GetComponent<XRGrabInteractable>();
-        if (grabInteractable != null)
-        {
-            grabInteractable.enabled = false;
-            Debug.Log("Cube verrouillé dans Socket Violet");
-        }
-
-        Rigidbody rb = cube.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-        }
-        if (_socketInteractor != null)
-        {
-            _socketInteractor.enabled = false;
-            Debug.Log("Socket Vert désactivé");
-        }
-        
-        _lockCoroutine = null;
-    }
 }
+
+   

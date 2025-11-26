@@ -8,7 +8,7 @@ public class SocketMenu : MonoBehaviour
 {
     //[SerializeField] private Light _lightcolor;
     [SerializeField] private XRSocketInteractor _socketInteractor;
-    
+    public bool _isInSocket = false ;
     
 
     void OnEnable()
@@ -35,17 +35,18 @@ public class SocketMenu : MonoBehaviour
         if (cube.GetComponent<CubeGreen>())
         {
             Debug.Log("Socket Violet contient Cube Vert");
+            _isInSocket = true;
             
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             Debug.Log("Socket Violet contient Cube Orange");
-            
+            _isInSocket = true;
         }
         else if (cube.GetComponent<CubePurple>())
         {
             Debug.Log("Socket Violet contient Cube Violet");
-            
+            _isInSocket = true;
         }
         
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
@@ -54,6 +55,7 @@ public class SocketMenu : MonoBehaviour
 
     void OnSelectExited(SelectExitEventArgs args)
     {
+        _isInSocket = false;
         //_lightcolor.intensity = 0;
         Debug.Log("Socket Violet vide");
         StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
