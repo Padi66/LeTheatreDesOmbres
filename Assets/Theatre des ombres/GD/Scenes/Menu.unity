@@ -468,6 +468,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &702197018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1288029733978345692, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
+  m_PrefabInstance: {fileID: 5596197452655971518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &820047284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8614852229203970330, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
@@ -578,14 +583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActivateStory
   _button: {fileID: 1014885171}
-  _attachPositionStart: {fileID: 820047284}
+  _attachPositionStart: {fileID: 702197018}
   _attachPositionEnd: {fileID: 1757633701}
   _socketAttach: {fileID: 820047284}
-  _duration: 8
-  _socketGreen: {fileID: 0}
-  _socketOrange: {fileID: 0}
-  _socketPurple: {fileID: 0}
-  _socketMenu: {fileID: 0}
+  _duration: 2
+  _socketPurpleRef: {fileID: 5596197452655971520}
 --- !u!1001 &1364582975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -830,6 +832,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SocketMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4588910701135526638, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.893
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588910701135526638, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.051
+      objectReference: {fileID: 0}
     - target: {fileID: 8420333775853230774, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
       propertyPath: _piedestal
       value: 
@@ -858,6 +868,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5596197452655971520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8420333775853230774, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
+  m_PrefabInstance: {fileID: 5596197452655971518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99abcdf626d04d846acbd86bd8cb10d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketPurple
 --- !u!1001 &6679598657733286157
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -71,6 +71,7 @@ public class ActivateStory : MonoBehaviour
 
     IEnumerator MoveTicket()
     {
+        Debug.Log("Marche Pas ou pas loumpa");
         float elapsed = 0f;
 
         while (elapsed < _duration)
@@ -78,8 +79,7 @@ public class ActivateStory : MonoBehaviour
             _socketAttach.position = Vector3.Lerp(
                 _attachPositionStart.position, 
                 _attachPositionEnd.position,
-                elapsed / _duration
-            );
+                elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
