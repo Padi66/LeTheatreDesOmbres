@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketGreen : MonoBehaviour
 {
-    [SerializeField] private XRSocketInteractor _socketInteractor;
+    [SerializeField] private XRLockSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private StoryManager _storyManager;
+    [SerializeField] private ParticleSystem _particleSystem;
     private bool _hasDone = false;
     
     private Coroutine _lockCoroutine;
@@ -35,6 +37,7 @@ public class SocketGreen : MonoBehaviour
         
         if (cube.GetComponent<CubeGreen>())
         {
+            _particleSystem.Play();
             Debug.Log("Socket Vert contient Cube Vert");
             if (_piedestal != null)
             {
@@ -48,6 +51,7 @@ public class SocketGreen : MonoBehaviour
         }
         else if (cube.GetComponent<CubeOrange>())
         {
+            _particleSystem.Play();
             Debug.Log("Socket Vert contient Cube Orange");
             if (_piedestal != null)
             {
@@ -61,6 +65,7 @@ public class SocketGreen : MonoBehaviour
         }
         else if (cube.GetComponent<CubePurple>())
         {
+            _particleSystem.Play();
             Debug.Log("Socket Vert contient Cube Violet");
             if (_piedestal != null)
             {

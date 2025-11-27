@@ -1,16 +1,18 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketPurple : MonoBehaviour
 {
-    [SerializeField] private XRSocketInteractor _socketInteractor;
+    [SerializeField] private XRLockSocketInteractor _socketInteractor;
     [SerializeField] private StoryManager _storyManager;
+    [SerializeField] private ParticleSystem _particleSystem;
 
-    public bool _isInSocket = false;
+    
 
     void OnEnable()
     {
@@ -32,6 +34,7 @@ public class SocketPurple : MonoBehaviour
         if (cube.GetComponent<CubeGreen>())
         {
             cubeName = "CubeGreen";
+            _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Vert - nom envoy�: '{cubeName}'");
             _storyManager.CheckDirectStep3();
         }
@@ -39,6 +42,7 @@ public class SocketPurple : MonoBehaviour
         {
             
             cubeName = "CubeOrange";
+            _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Orange - nom envoy�: '{cubeName}'");
             _storyManager.CheckDirectStep3();
         }
@@ -46,6 +50,7 @@ public class SocketPurple : MonoBehaviour
         {
             
             cubeName = "CubePurple";
+            _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Violet - nom envoy�: '{cubeName}'");
             _storyManager.CheckDirectStep3();
         }

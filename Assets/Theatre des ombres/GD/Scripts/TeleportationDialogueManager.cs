@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TeleportationDialogueManager : MonoBehaviour
 {
-    [Header("References")]
+    /*[Header("References")]
     [SerializeField] private DialogueSequence dialogueSequence;
     [SerializeField] private PiedestalUP piedestalController;
     [SerializeField] private StoryManager storyManager;
@@ -12,7 +12,7 @@ public class TeleportationDialogueManager : MonoBehaviour
 
     [Header("State Tracking")]
     private bool introPlayed = false;
-    private bool puzzleCompleted = false;
+    private bool puzzleCompleted = false;*/
 
     /*private void OnEnable()
     {
