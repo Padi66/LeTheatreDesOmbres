@@ -179,7 +179,7 @@ public class ActivateStory : MonoBehaviour
         if (cubeType == "CubeGreen")
         {
             Debug.Log("✓ Cube VERT - Chargement Level 1");
-            _levelManager.LoadLevel1();
+            _levelManager.LoadBackStage();
         }
         else if (cubeType == "CubePurple")
         {

@@ -22,6 +22,7 @@ public class PiedestalUP : MonoBehaviour
     {
         //SON
         StartCoroutine(UpEnumGreen());
+        Debug.Log("UP Green");
     }
     public void DownGreen()
     {

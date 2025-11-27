@@ -33,10 +33,10 @@ public class SocketOrange : MonoBehaviour
         GameObject cube = args.interactableObject.transform.gameObject;
         string _cubeName = cube.name;
 
-        if (cube.GetComponent<CubeGreen>())
+        if (cube.GetComponent<Sword>())
         {
             _particleSystem.Play();
-            Debug.Log("Socket Orange contient Cube Vert");
+            Debug.Log("Socket Orange contient Sword");
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -47,10 +47,10 @@ public class SocketOrange : MonoBehaviour
             }
             _storyManager.CheckDirectStep2();
         }
-        else if (cube.GetComponent<CubeOrange>())
+        else if (cube.GetComponent<Shield>())
         {
             _particleSystem.Play();
-            Debug.Log("Socket Orange contient Cube Orange");
+            Debug.Log("Socket Orange contient Shield");
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -61,25 +61,8 @@ public class SocketOrange : MonoBehaviour
             }
             _storyManager.CheckDirectStep2();
         }
-        else if (cube.GetComponent<CubePurple>())
-        {
-            _particleSystem.Play();
-            Debug.Log("Socket Orange contient Cube Violet");
-            if (_piedestal != null)
-            {
-                if (!_hasDone)
-                {
-                    _piedestal.UpPurple();
-                    _hasDone = true;
-                }
-            }
-            _storyManager.CheckDirectStep2();
-        }
-
         StoryManager.OnSocketStateChanged?.Invoke("Orange", true);
         StoryManager.OnCubePlaced?.Invoke("Orange", _cubeName);
-
-        
     }
 
     void OnSelectExited(SelectExitEventArgs args)
