@@ -43,6 +43,7 @@ public class SocketGreen : MonoBehaviour
             {
                 if (!_hasDone)
                 {
+                    Debug.Log($"Appel UpOrange avec socket: {_socketInteractor.enabled}");
                     _piedestal.UpOrange(_socketInteractor);
                     _hasDone = true;
                 }
