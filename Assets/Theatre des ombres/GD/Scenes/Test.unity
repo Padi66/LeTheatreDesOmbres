@@ -1526,6 +1526,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9093272638617640465, guid: 1bdf07dcdfaf4fe498f98be310151f40, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1539,6 +1543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 411561491499605093, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 629112591630105140, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1663,6 +1671,10 @@ PrefabInstance:
     - target: {fileID: 4891811221913759123, guid: 56c49a44be9cf2d4c85627544bedef36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146040788703813018, guid: 56c49a44be9cf2d4c85627544bedef36, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1899,6 +1911,10 @@ PrefabInstance:
     - target: {fileID: 4343030901173408245, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
       propertyPath: m_Name
       value: Bottom Figurine 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599279659557259491, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
