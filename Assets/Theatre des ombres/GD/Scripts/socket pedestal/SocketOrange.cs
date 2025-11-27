@@ -41,7 +41,7 @@ public class SocketOrange : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpPurple();
+                    _piedestal.UpPurple(_socketInteractor);
                     _hasDone = true;
                 }
             }
@@ -55,7 +55,7 @@ public class SocketOrange : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpPurple();
+                    _piedestal.UpPurple(_socketInteractor);
                     _hasDone = true;
                 }
             }

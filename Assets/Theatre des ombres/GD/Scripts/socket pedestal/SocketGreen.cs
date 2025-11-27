@@ -43,7 +43,7 @@ public class SocketGreen : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpOrange();
+                    _piedestal.UpOrange(_socketInteractor);
                     _hasDone = true;
                 }
             }
@@ -57,7 +57,7 @@ public class SocketGreen : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpOrange();
+                    _piedestal.UpOrange(_socketInteractor);
                     _hasDone = true;
                 }
             }
@@ -71,7 +71,7 @@ public class SocketGreen : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpOrange();
+                    _piedestal.UpOrange(_socketInteractor);
                     _hasDone = true;
                 }
             }
