@@ -1,17 +1,18 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketPurple : MonoBehaviour
 {
-    [SerializeField] private XRSocketInteractor _socketInteractor;
-    [SerializeField] private PiedestalUP _piedestal;
+    [SerializeField] private XRLockSocketInteractor _socketInteractor;
     [SerializeField] private StoryManager _storyManager;
+    [SerializeField] private ParticleSystem _particleSystem;
 
-    public bool _isInSocket = false;
+    
 
     void OnEnable()
     {
@@ -32,35 +33,37 @@ public class SocketPurple : MonoBehaviour
 
         if (cube.GetComponent<CubeGreen>())
         {
-            _isInSocket = true;
             cubeName = "CubeGreen";
-            Debug.Log($"Socket Violet contient Cube Vert - nom envoyé: '{cubeName}'");
+            _particleSystem.Play();
+            Debug.Log($"Socket Violet contient Cube Vert - nom envoyï¿½: '{cubeName}'");
             _storyManager.CheckDirectStep3();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
-            _isInSocket = true;
+            
             cubeName = "CubeOrange";
-            Debug.Log($"Socket Violet contient Cube Orange - nom envoyé: '{cubeName}'");
+            _particleSystem.Play();
+            Debug.Log($"Socket Violet contient Cube Orange - nom envoyï¿½: '{cubeName}'");
             _storyManager.CheckDirectStep3();
         }
         else if (cube.GetComponent<CubePurple>())
         {
-            _isInSocket = true;
+            
             cubeName = "CubePurple";
-            Debug.Log($"Socket Violet contient Cube Violet - nom envoyé: '{cubeName}'");
+            _particleSystem.Play();
+            Debug.Log($"Socket Violet contient Cube Violet - nom envoyï¿½: '{cubeName}'");
             _storyManager.CheckDirectStep3();
         }
 
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
         StoryManager.OnCubePlaced?.Invoke("Purple", cubeName);
 
-        Debug.Log($"Event OnCubePlaced envoyé: Socket=Purple, Cube='{cubeName}'");
+        Debug.Log($"Event OnCubePlaced envoyï¿½: Socket=Purple, Cube='{cubeName}'");
     }
 
     void OnSelectExited(SelectExitEventArgs args)
     {
-        _isInSocket = false;
+        
         Debug.Log("Socket Violet vide");
         StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
         StoryManager.OnCubePlaced?.Invoke("Purple", null);
@@ -77,11 +80,11 @@ public class SocketPurple : MonoBehaviour
             if (grabInteractable != null)
             {
                 grabInteractable.enabled = false;
-                Debug.Log($"Cube {cube.name} verrouillé - Grab désactivé");
+                Debug.Log($"Cube {cube.name} verrouillï¿½ - Grab dï¿½sactivï¿½");
             }
 
             _socketInteractor.enabled = false;
-            Debug.Log("Socket désactivée - plus d'interactions possibles");
+            Debug.Log("Socket dï¿½sactivï¿½e - plus d'interactions possibles");
         }
     }
 }

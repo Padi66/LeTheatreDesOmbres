@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1086125087529739330}
   - component: {fileID: 1217356742529747079}
   - component: {fileID: 8172245794987501467}
+  - component: {fileID: 8025247797878885561}
   m_Layer: 0
   m_Name: Top + Middle Figurine 3
   m_TagString: Untagged
@@ -282,6 +283,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008b537303ffcf845a2bed1a2e855677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketableBlock
+--- !u!114 &8025247797878885561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563593823074414097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
 --- !u!1 &3450023496411895668
 GameObject:
   m_ObjectHideFlags: 0

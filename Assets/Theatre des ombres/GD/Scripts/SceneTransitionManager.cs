@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using Unity.XR.CoreUtils;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class SceneTransitionManager : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public float delayBeforeDialogue = 2f;
+    public bool disableMovementDuringDialogue = true;
+
+    [Header("Camera Settings")]
+    public bool resetCameraRotationOnSceneLoad = true;
+    public float targetCameraYRotation = 0f;
 
     private Canvas fadeCanvas;
     private ContinuousMoveProvider moveProvider;
@@ -144,9 +150,15 @@ public class SceneTransitionManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log($"Scene {sceneIndex} loaded - disabling NEW scene LineVisuals");
+        Debug.Log($"Scene {sceneIndex} loaded - configuring NEW scene");
+
+        if (resetCameraRotationOnSceneLoad)
+        {
+            ResetCameraRotation();
+        }
 
         DisableControllerRays();
+        DisableMovementInNewScene();
 
         yield return new WaitForSeconds(0.2f);
 
@@ -181,11 +193,50 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
+    private void ResetCameraRotation()
+    {
+        XROrigin xrOrigin = FindFirstObjectByType<XROrigin>();
+
+        if (xrOrigin != null)
+        {
+            Camera mainCamera = xrOrigin.Camera;
+
+            if (mainCamera != null)
+            {
+                float currentCameraYRotation = mainCamera.transform.eulerAngles.y;
+                float rotationDifference = targetCameraYRotation - currentCameraYRotation;
+
+                Vector3 currentOriginRotation = xrOrigin.transform.eulerAngles;
+                xrOrigin.transform.eulerAngles = new Vector3(
+                    currentOriginRotation.x,
+                    currentOriginRotation.y + rotationDifference,
+                    currentOriginRotation.z
+                );
+
+                Debug.Log($"Camera rotation reset - Target: {targetCameraYRotation}°, Camera was: {currentCameraYRotation}°, XROrigin rotated by: {rotationDifference}°");
+            }
+            else
+            {
+                Debug.LogWarning("XROrigin found but Camera is null!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No XROrigin found in the new scene!");
+        }
+    }
+
+
     private void OnSceneFadeComplete()
     {
         Debug.Log("SceneFadeScreen complete");
         sceneFadeComplete = true;
-        FindAndEnableMovementInNewScene();
+
+        if (!disableMovementDuringDialogue)
+        {
+            EnableMovementInNewScene();
+        }
+
         StartCoroutine(DelayedDialogue());
     }
 
@@ -290,6 +341,7 @@ public class SceneTransitionManager : MonoBehaviour
         if (moveProvider != null)
         {
             moveProvider.enabled = false;
+            Debug.Log("Disabled OLD scene movement providers");
         }
 
         if (turnProvider != null)
@@ -298,20 +350,60 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    private void FindAndEnableMovementInNewScene()
+    private void DisableMovementInNewScene()
     {
-        ContinuousMoveProvider newMove = FindFirstObjectByType<ContinuousMoveProvider>();
-        ContinuousTurnProvider newTurn = FindFirstObjectByType<ContinuousTurnProvider>();
+        ContinuousMoveProvider[] moveProviders = FindObjectsByType<ContinuousMoveProvider>(FindObjectsSortMode.None);
+        ContinuousTurnProvider[] continuousTurnProviders = FindObjectsByType<ContinuousTurnProvider>(FindObjectsSortMode.None);
+        SnapTurnProvider[] snapTurnProviders = FindObjectsByType<SnapTurnProvider>(FindObjectsSortMode.None);
 
-        if (newMove != null)
+        foreach (var move in moveProviders)
         {
-            newMove.enabled = true;
+            move.enabled = false;
+            Debug.Log($"Disabled ContinuousMoveProvider on {move.gameObject.name}");
         }
 
-        if (newTurn != null)
+        foreach (var turn in continuousTurnProviders)
         {
-            newTurn.enabled = true;
+            turn.enabled = false;
+            Debug.Log($"Disabled ContinuousTurnProvider on {turn.gameObject.name}");
         }
+
+        foreach (var snapTurn in snapTurnProviders)
+        {
+            snapTurn.enabled = false;
+            Debug.Log($"Disabled SnapTurnProvider on {snapTurn.gameObject.name}");
+        }
+    }
+
+    private void EnableMovementInNewScene()
+    {
+        ContinuousMoveProvider[] moveProviders = FindObjectsByType<ContinuousMoveProvider>(FindObjectsSortMode.None);
+        ContinuousTurnProvider[] continuousTurnProviders = FindObjectsByType<ContinuousTurnProvider>(FindObjectsSortMode.None);
+        SnapTurnProvider[] snapTurnProviders = FindObjectsByType<SnapTurnProvider>(FindObjectsSortMode.None);
+
+        foreach (var move in moveProviders)
+        {
+            move.enabled = true;
+            Debug.Log($"Enabled ContinuousMoveProvider on {move.gameObject.name}");
+        }
+
+        foreach (var turn in continuousTurnProviders)
+        {
+            turn.enabled = true;
+            Debug.Log($"Enabled ContinuousTurnProvider on {turn.gameObject.name}");
+        }
+
+        foreach (var snapTurn in snapTurnProviders)
+        {
+            snapTurn.enabled = true;
+            Debug.Log($"Enabled SnapTurnProvider on {snapTurn.gameObject.name}");
+        }
+    }
+
+    public void EnableMovementAfterDialogue()
+    {
+        EnableMovementInNewScene();
+        Debug.Log("Movement enabled after dialogue");
     }
 
     private void TriggerDialogue()

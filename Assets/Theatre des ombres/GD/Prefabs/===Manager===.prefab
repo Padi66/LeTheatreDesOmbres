@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3148364079345802809}
   - component: {fileID: 8432446832783612374}
-  - component: {fileID: 405249113847635248}
   - component: {fileID: 4692820781508095928}
+  - component: {fileID: 6362158601421136897}
   m_Layer: 0
   m_Name: ===Manager===
   m_TagString: Untagged
@@ -49,27 +49,13 @@ MonoBehaviour:
   _socketGreen: 0
   _socketOrange: 0
   _socketPurple: 0
-  _socketTool: 0
   _cubeInGreen: 
   _cubeInOrange: 
   _cubeInPurple: 
-  _cubeInTool: 
   _dialogueSequence: {fileID: 0}
-  _levelManager: {fileID: 405249113847635248}
+  _levelManager: {fileID: 0}
   _piedestal: {fileID: 0}
---- !u!114 &405249113847635248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6103935914882764204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3cf6b23e8aa3ca45800238ea1b0d801, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  _currentLevel: 0
+  _transition: {fileID: 0}
 --- !u!114 &4692820781508095928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,3 +78,16 @@ MonoBehaviour:
   _piedestalPurple: {fileID: 0}
   _piedestalGreen: {fileID: 0}
   _duration: 2
+--- !u!114 &6362158601421136897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103935914882764204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cf6b23e8aa3ca45800238ea1b0d801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  _currentLevel: 0

@@ -9,11 +9,13 @@ public class PuzzleCombination
     public string[] requiredTags;
     public GameObject objectToSpawn;
     public Transform spawnLocation;
+    public ParticleSystem fx;
 }
 
 public class PuzzleManager : MonoBehaviour
 {
     public static PuzzleManager Instance;
+    [SerializeField] ParticleSystem _particleSystem;
 
     [Tooltip("Tous les SnapChecker du niveau")]
     public SnapChecker[] snapCheckers;
@@ -26,6 +28,7 @@ public class PuzzleManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
     }
 
     public void CheckCombination()
@@ -119,6 +122,7 @@ public class PuzzleManager : MonoBehaviour
             GameObject spawned = Instantiate(combination.objectToSpawn,
                 combination.spawnLocation.position,
                 combination.spawnLocation.rotation);
+            _particleSystem.Play();
 
             Debug.Log($"Spawned: {spawned.name}");
         }

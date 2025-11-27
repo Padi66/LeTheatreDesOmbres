@@ -82,17 +82,17 @@ public class DialogueSequence : MonoBehaviour
     {
         switch (branchNumber)
         {
-            case 0: return branch0;
-            case 1: return branch1;
-            case 2: return branch2;
-            case 3: return branch3;
-            case 4: return branch4;
-            case 5: return branch5;
-            case 6: return branch6;
-            case 7: return branch7;
-            case 8: return branch8;
-            case 9: return branch9;
-            case 10: return branch10;
+            case 0: return branch0; //il était une fois
+            case 1: return branch1; //piédestal vert text
+            case 2: return branch2;//Chevalresse dans la forêt
+            case 3: return branch3;//Squelette dans la forêt
+            case 4: return branch4;//Roi dans la forêt
+            case 5: return branch5;//épée au village
+            case 6: return branch6;//bouclier au village
+            case 7: return branch7;//Squelette au château
+            case 8: return branch8; //Roi au château
+            case 9: return branch9;//Chevalresse au château
+            case 10: return branch10; //Final
             case 11: return branch11;
             case 12: return branch12;
             case 13: return branch13;
@@ -104,8 +104,7 @@ public class DialogueSequence : MonoBehaviour
             case 19: return branch19;
             case 20: return branch20;
             case 21: return branch21;
-            case 22: return branch22; //Text de départ
-            case 23: return branch23; //Texte final
+            case 22: return branch22; 
             default: return null;
         }
     }

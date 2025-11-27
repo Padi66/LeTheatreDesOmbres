@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 3524259931235494008}
   - component: {fileID: 3514750119870192781}
   - component: {fileID: 9015132923688323499}
-  - component: {fileID: 8420333775853230774}
+  - component: {fileID: 8646211491558553632}
   m_Layer: 0
   m_Name: SocketMenu
   m_TagString: Untagged
@@ -258,7 +258,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8420333775853230774
+--- !u!114 &8646211491558553632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,11 +267,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4297418179021337282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99abcdf626d04d846acbd86bd8cb10d5, type: 3}
+  m_Script: {fileID: 11500000, guid: a63e09b95826d48409f5c2b2e8f387ba, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SocketPurple
-  _socketInteractor: {fileID: 0}
-  _piedestal: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::SocketMenu
+  _socketInteractor: {fileID: 3514750119870192781}
   _storyManager: {fileID: 0}
   _isInSocket: 0
 --- !u!1 &6917307672417622461

@@ -11,8 +11,9 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private float _duration = 2f;
     [SerializeField] private float _delayAfterAnimation = 0.5f;
 
-    [SerializeField] private SocketPurple _socketPurpleRef;
-    [SerializeField] private StoryManager _storyManager;
+    [SerializeField] private SocketMenu _socketMenuRef;
+    [SerializeField] private LevelManager _levelManager;
+    
 
     private bool _hasBeenPressed = false;
 
@@ -34,7 +35,7 @@ public class ActivateStory : MonoBehaviour
             return;
         }
 
-        if (_socketPurpleRef._isInSocket)
+        if (_socketMenuRef._isInSocket)
         {
             Debug.Log("✓ Bouton pressé - cube dans socket détecté!");
 
@@ -67,7 +68,7 @@ public class ActivateStory : MonoBehaviour
 
     private GameObject GetCubeGameObject()
     {
-        var socketInteractor = _socketPurpleRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+        var socketInteractor = _socketMenuRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
 
         if (socketInteractor != null && socketInteractor.hasSelection)
         {
@@ -80,7 +81,7 @@ public class ActivateStory : MonoBehaviour
 
     private string GetCubeTypeInSocket()
     {
-        var socketInteractor = _socketPurpleRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+        var socketInteractor = _socketMenuRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
 
         if (socketInteractor != null && socketInteractor.hasSelection)
         {
@@ -131,14 +132,9 @@ public class ActivateStory : MonoBehaviour
 
         Debug.Log($"Déclenchement de l'action finale - Type de cube: '{cubeType}'");
 
-        if (_storyManager != null)
-        {
-            _storyManager.ExecuteMenuActionWithCubeType(cubeType);
-        }
-        else
-        {
-            Debug.LogError("StoryManager reference is missing!");
-        }
+        ExecuteMenuActionWithCubeType(cubeType);
+        
+        
     }
 
     private void LockCubeGrab(GameObject cube)
@@ -150,7 +146,7 @@ public class ActivateStory : MonoBehaviour
             Debug.Log($"Cube {cube.name} - Grab désactivé");
         }
 
-        var socketInteractor = _socketPurpleRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
+        var socketInteractor = _socketMenuRef.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
         if (socketInteractor != null)
         {
             socketInteractor.enabled = false;
@@ -168,5 +164,31 @@ public class ActivateStory : MonoBehaviour
     private void LockCubeFinal(GameObject cube)
     {
         Debug.Log($"Cube {cube.name} verrouillé définitivement");
+    }
+    
+    public void ExecuteMenuActionWithCubeType(string cubeType)
+    {
+        Debug.Log($"=== ExecuteMenuActionWithCubeType appelé - Type: '{cubeType}' ===");
+
+        if (string.IsNullOrEmpty(cubeType))
+        {
+            Debug.LogWarning("Type de cube vide!");
+            return;
+        }
+
+        if (cubeType == "CubeGreen")
+        {
+            Debug.Log("✓ Cube VERT - Chargement Level 1");
+            _levelManager.LoadLevel1();
+        }
+        else if (cubeType == "CubePurple")
+        {
+            Debug.Log("✓ Cube VIOLET - Fermeture du jeu");
+            _levelManager.Quit();
+        }
+        else
+        {
+            Debug.LogWarning($"Type de cube non géré: '{cubeType}'");
+        }
     }
 }

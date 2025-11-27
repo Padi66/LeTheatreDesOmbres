@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketOrange : MonoBehaviour
 {
-    [SerializeField] private XRSocketInteractor _socketInteractor;
+    [SerializeField] private XRLockSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private StoryManager _storyManager;
+    [SerializeField] private ParticleSystem _particleSystem;
+    private bool _hasDone = false;
 
     private Coroutine _lockCoroutine;
 
@@ -32,28 +35,43 @@ public class SocketOrange : MonoBehaviour
 
         if (cube.GetComponent<CubeGreen>())
         {
+            _particleSystem.Play();
             Debug.Log("Socket Orange contient Cube Vert");
             if (_piedestal != null)
             {
-                _piedestal.UpPurple();
+                if (!_hasDone)
+                {
+                    _piedestal.UpPurple();
+                    _hasDone = true;
+                }
             }
             _storyManager.CheckDirectStep2();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
+            _particleSystem.Play();
             Debug.Log("Socket Orange contient Cube Orange");
             if (_piedestal != null)
             {
-                _piedestal.UpPurple();
+                if (!_hasDone)
+                {
+                    _piedestal.UpPurple();
+                    _hasDone = true;
+                }
             }
             _storyManager.CheckDirectStep2();
         }
         else if (cube.GetComponent<CubePurple>())
         {
+            _particleSystem.Play();
             Debug.Log("Socket Orange contient Cube Violet");
             if (_piedestal != null)
             {
-                _piedestal.UpPurple();
+                if (!_hasDone)
+                {
+                    _piedestal.UpPurple();
+                    _hasDone = true;
+                }
             }
             _storyManager.CheckDirectStep2();
         }
