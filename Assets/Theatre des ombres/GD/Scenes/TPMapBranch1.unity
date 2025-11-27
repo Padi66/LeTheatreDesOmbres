@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1
+      value: 3.94
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1274,7 +1274,9 @@ MonoBehaviour:
   typewriterDelay: 0.05
   displayTime: 2
   branch0: []
-  branch1: []
+  branch1:
+  - Ceci est un test de branch
+  - J'aime les trains
   branch2: []
   branch3: []
   branch4: []
