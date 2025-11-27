@@ -60,7 +60,8 @@ public class VRSocketReplacementV2 : MonoBehaviour
     {
         if (prefabToSpawn == null)
             return;
-
+        
         GameObject spawned = Instantiate(prefabToSpawn, transform.position, transform.rotation);
+        spawned.name = prefabToSpawn.name;
     }
 }    

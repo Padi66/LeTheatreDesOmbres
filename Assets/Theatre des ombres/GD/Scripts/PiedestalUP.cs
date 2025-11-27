@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 
 public class PiedestalUP : MonoBehaviour
 {
@@ -18,40 +19,22 @@ public class PiedestalUP : MonoBehaviour
     public float _duration = 2f;
 
    
-    public void UpGreen()
+    public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
-        //SON
-        StartCoroutine(UpEnumGreen());
-        Debug.Log("UP Green");
+        StartCoroutine(UpEnumOrange(socketToReactivate));
     }
-    public void DownGreen()
+
+    public void UpGreen(XRLockSocketInteractor socketToReactivate = null)
     {
-        //SON
-        StartCoroutine(DownEnumGreen());
+        StartCoroutine(UpEnumGreen(socketToReactivate));
     }
-    public void UpPurple()
+
+    public void UpPurple(XRLockSocketInteractor socketToReactivate = null)
     {
-        //SON
-        StartCoroutine(UpEnumPurple());
-    }
-    public void DownPurple()
-    {
-        //SON
-        StartCoroutine(DownEnumPurple());
+        StartCoroutine(UpEnumPurple(socketToReactivate));
     }
     
-    public void UpOrange()
-    {
-        //SON
-        StartCoroutine(UpEnumOrange());
-    }
-    public void DownOrange()
-    {
-        //SON
-        StartCoroutine(DownEnumOrange());
-    }
-    
-    IEnumerator UpEnumGreen()
+    IEnumerator UpEnumGreen(XRLockSocketInteractor socketToReactivate = null)
     {
         float elapsed = 0f;
 
@@ -63,7 +46,14 @@ public class PiedestalUP : MonoBehaviour
         }
 
         _piedestalGreen.position = _endPositionGreen.position;
+
+        if (socketToReactivate != null)
+        {
+            socketToReactivate.enabled = true;
+            Debug.Log("Socket Green réactivé après la montée du piédestal");
+        }
     }
+
     IEnumerator DownEnumGreen()
     {
         float elapsed = 0f;
@@ -77,7 +67,7 @@ public class PiedestalUP : MonoBehaviour
 
         _piedestalGreen.position = _startPositionGreen.position;
     }
-    IEnumerator UpEnumPurple()
+    IEnumerator UpEnumPurple(XRLockSocketInteractor socketToReactivate = null)
     {
         float elapsed = 0f;
 
@@ -88,7 +78,13 @@ public class PiedestalUP : MonoBehaviour
             yield return null;
         }
 
-      _piedestalPurple.position = _endPositionPurple.position;
+        _piedestalPurple.position = _endPositionPurple.position;
+
+        if (socketToReactivate != null)
+        {
+            socketToReactivate.enabled = true;
+            Debug.Log("Socket Purple réactivé après la montée du piédestal");
+        }
     }
     IEnumerator DownEnumPurple()
     {
@@ -103,7 +99,7 @@ public class PiedestalUP : MonoBehaviour
         _piedestalPurple.position = _startPositionPurple.position;
     }
     
-    IEnumerator UpEnumOrange()
+    IEnumerator UpEnumOrange(XRLockSocketInteractor socketToReactivate = null)
     {
         float elapsed = 0f;
 
@@ -113,8 +109,16 @@ public class PiedestalUP : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+    
         _piedestalOrange.position = _endPositionOrange.position;
+
+        if (socketToReactivate != null)
+        {
+            socketToReactivate.enabled = true;
+            Debug.Log("Socket Orange réactivé après la montée du piédestal");
+        }
     }
+
     IEnumerator DownEnumOrange()
     {
         float elapsed = 0f;
