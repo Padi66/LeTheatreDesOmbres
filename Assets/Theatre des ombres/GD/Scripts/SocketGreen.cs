@@ -10,6 +10,7 @@ public class SocketGreen : MonoBehaviour
     [SerializeField] private XRSocketInteractor _socketInteractor;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private StoryManager _storyManager;
+    private bool _hasDone = false;
     
     private Coroutine _lockCoroutine;
 
@@ -24,6 +25,8 @@ public class SocketGreen : MonoBehaviour
         _socketInteractor.selectEntered.RemoveListener(OnSelectEntered);
         _socketInteractor.selectExited.RemoveListener(OnSelectExited);
     }
+    
+    
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -35,7 +38,11 @@ public class SocketGreen : MonoBehaviour
             Debug.Log("Socket Vert contient Cube Vert");
             if (_piedestal != null)
             {
-                _piedestal.UpOrange();
+                if (!_hasDone)
+                {
+                    _piedestal.UpOrange();
+                    _hasDone = true;
+                }
             }
             _storyManager.CheckDirectStep1();
         }
@@ -44,7 +51,11 @@ public class SocketGreen : MonoBehaviour
             Debug.Log("Socket Vert contient Cube Orange");
             if (_piedestal != null)
             {
-                _piedestal.UpOrange();
+                if (!_hasDone)
+                {
+                    _piedestal.UpOrange();
+                    _hasDone = true;
+                }
             }
             _storyManager.CheckDirectStep1();
         }
@@ -53,7 +64,11 @@ public class SocketGreen : MonoBehaviour
             Debug.Log("Socket Vert contient Cube Violet");
             if (_piedestal != null)
             {
-                _piedestal.UpOrange();
+                if (!_hasDone)
+                {
+                    _piedestal.UpOrange();
+                    _hasDone = true;
+                }
             }
             _storyManager.CheckDirectStep1();
         }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int _currentLevel;
-    [SerializeField] DialogueSequence _dialogueSequence;
+    
 
     public void LoadNewLevel(int buildIndex)
     {

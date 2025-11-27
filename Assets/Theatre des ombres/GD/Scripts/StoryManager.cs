@@ -29,6 +29,9 @@ public class StoryManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TestHapticFeedback());
+        _dialogueSequence.StartDialogueBranch(0);
+        _piedestal.UpGreen();
+        _dialogueSequence.StartDialogueBranch(1);
     }
 
     private IEnumerator TestHapticFeedback()
@@ -75,14 +78,14 @@ public class StoryManager : MonoBehaviour
     {
         OnSocketStateChanged += OnSocketUpdate;
         OnCubePlaced += OnCubeUpdate;
-        OnPushButton += LaunchStory;
+        
     }
 
     private void OnDisable()
     {
         OnSocketStateChanged -= OnSocketUpdate;
         OnCubePlaced -= OnCubeUpdate;
-        OnPushButton -= LaunchStory;
+       
     }
 
     private void OnSocketUpdate(string socketName, bool state)
@@ -111,247 +114,172 @@ public class StoryManager : MonoBehaviour
         {
             case "Green":
                 _cubeInGreen = cubeName;
-                Debug.Log($"_cubeInGreen = '{_cubeInGreen}'");
+                
                 break;
             case "Orange":
                 _cubeInOrange = cubeName;
-                Debug.Log($"_cubeInOrange = '{_cubeInOrange}'");
+                
                 break;
             case "Purple":
                 _cubeInPurple = cubeName;
-                Debug.Log($"_cubeInPurple = '{_cubeInPurple}'");
+                
                 break;
         }
     }
+    
 
-    public void ExecuteMenuActionWithCubeType(string cubeType)
-    {
-        Debug.Log($"=== ExecuteMenuActionWithCubeType appelé - Type: '{cubeType}' ===");
-
-        if (string.IsNullOrEmpty(cubeType))
-        {
-            Debug.LogWarning("Type de cube vide!");
-            return;
-        }
-
-        if (cubeType == "CubeGreen")
-        {
-            Debug.Log("✓ Cube VERT - Chargement Level 1");
-            _levelManager.LoadLevel1();
-        }
-        else if (cubeType == "CubePurple")
-        {
-            Debug.Log("✓ Cube VIOLET - Fermeture du jeu");
-            _levelManager.Quit();
-        }
-        else
-        {
-            Debug.LogWarning($"Type de cube non géré: '{cubeType}'");
-        }
-    }
-
-    public void ExecuteMenuAction()
-    {
-        Debug.Log("=== ExecuteMenuAction appelé ===");
-        Debug.Log($"_cubeInPurple = '{_cubeInPurple}'");
-
-        if (string.IsNullOrEmpty(_cubeInPurple))
-        {
-            Debug.LogWarning("Aucun cube dans la socket Purple!");
-            return;
-        }
-
-        if (_cubeInPurple == "CubeGreen")
-        {
-            Debug.Log("✓ Cube VERT - Chargement Level 1 MAINTENANT");
-            _levelManager.LoadLevel1();
-        }
-        else if (_cubeInPurple == "CubePurple")
-        {
-            Debug.Log("✓ Cube VIOLET - Fermeture du jeu MAINTENANT");
-            _levelManager.Quit();
-        }
-        else
-        {
-            Debug.LogWarning($"Cube non reconnu: '{_cubeInPurple}'");
-        }
-    }
-
-    public void LaunchStory()
-    {
-        Debug.Log($"=== LaunchStory appelé ===");
-        Debug.Log($"Current Level: {_levelManager._currentLevel}");
-        Debug.Log($"_cubeInGreen: '{_cubeInGreen}'");
-        Debug.Log($"_cubeInOrange: '{_cubeInOrange}'");
-        Debug.Log($"_cubeInPurple: '{_cubeInPurple}'");
-
-        switch (_levelManager._currentLevel)
-        {
-            case 0:
-                Debug.Log("→ Appel de CheckCombinationMenu()");
-                CheckCombinationMenu();
-                break;
-
-            case 1:
-                Debug.Log("→ Appel de CheckCombinationBackstage()");
-                CheckCombinationBackstage();
-                break;
-
-            default:
-                Debug.LogWarning($"Level {_levelManager._currentLevel} non géré!");
-                break;
-        }
-    }
-
-    public void StoryDirect()
-    {
-        Debug.Log($"{_levelManager.gameObject.name} launched something");
-    }
+    
+    
+    
 
     public void CheckDirectStep1()
     {
+        //Chevalresse dans la forêt
         if (_cubeInGreen == "CubeOrange")
-        {
-            _dialogueSequence.StartDialogueBranch(1);
-        }
-        else if (_cubeInGreen == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(2);
         }
-        else if (_cubeInGreen == "CubePurple")
+        //Squelette dans la forêt
+        else if (_cubeInGreen == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(3);
         }
+        //Roi dans la forêt
+        else if (_cubeInGreen == "CubePurple")
+        {
+            _dialogueSequence.StartDialogueBranch(4);
+        }
+        CheckCombinationBackstage();
     }
 
     public void CheckDirectStep2()
     {
+        //épée au village
         if (_cubeInOrange == "Sword")
         {
-
+            _dialogueSequence.StartDialogueBranch(5);
         }
+        //bouclier au village
         else if (_cubeInOrange == "Shield")
         {
-
+            _dialogueSequence.StartDialogueBranch(6);
         }
+        CheckCombinationBackstage();
     }
 
     public void CheckDirectStep3()
     {
+        //Squelette au château
         if (_cubeInPurple == "CubeGreen")
         {
-
+            _dialogueSequence.StartDialogueBranch(7);
         }
+        //Roi au château
         else if (_cubeInPurple == "CubePurple")
         {
-
+            _dialogueSequence.StartDialogueBranch(8);
         }
+        //Chevalresse au château
         else if (_cubeInPurple == "CubeOrange")
         {
-
+            _dialogueSequence.StartDialogueBranch(9);
         }
+
+        CheckCombinationBackstage();
     }
 
-    private void CheckCombinationMenu()
-    {
-        Debug.Log($"=== CheckCombinationMenu appelé ===");
-        Debug.Log($"_cubeInPurple = '{_cubeInPurple}'");
-        Debug.Log($"_currentLevel = {_levelManager._currentLevel}");
-
-        if (string.IsNullOrEmpty(_cubeInPurple))
-        {
-            Debug.LogWarning("Aucun cube dans la socket Purple!");
-            return;
-        }
-
-        if (_cubeInPurple == "CubeGreen")
-        {
-            Debug.Log("✓ Cube VERT détecté - Chargement Level 1");
-            _levelManager.LoadLevel1();
-        }
-        else if (_cubeInPurple == "CubePurple")
-        {
-            Debug.Log("✓ Cube VIOLET détecté - Fermeture du jeu");
-            _levelManager.Quit();
-        }
-        else
-        {
-            Debug.LogWarning($"Cube non reconnu: '{_cubeInPurple}'");
-        }
-    }
+    
+    
 
     private void CheckCombinationBackstage()
     {
+        //Chevalresse Epée Squelette
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(2));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Chevalresse Epée Squelette");
         }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        
+        //Chevalresse Epée Roi
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(3));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Chevalresse Epée Roi");
         }
-
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        
+        //Chevalresse Bouclier Roi
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(4));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement arès délai...");
+            Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Roi");
         }
 
-        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        //Chevalresse Bouclier Squelette
+        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(5));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Squelette");
         }
-
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        
+        //Squelette Epée Roi
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(6));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Squelette Epée Roi");
         }
-
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        
+        //Squelette Epee Chevalier
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(7));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Squelette Epee Chevalier");
         }
 
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        //Squelette Bouclier Roi
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(8));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison !  //Squelette Bouclier Roi");
         }
-
-        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        
+        //Squelette Bouclier Chevalresse
+        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(9));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Squelette Bouclier Chevalresse");
         }
 
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        //Roi Epée Chevalresse
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(10));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison !  //Roi Epée Chevalresse");
         }
-
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        
+        //Roi Epee Squelette
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(11));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison !//Roi Epee Squelette");
         }
 
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        //Roi Bouclier Chevalresse
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(12));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Roi Bouclier Chevalresse");
         }
-
-        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        
+        //Roi Bouclier Squelette
+        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(13));
-            Debug.Log("Bonne combinaison ! Préchargement et lancement après délai...");
+            Debug.Log("Bonne combinaison ! //Roi Bouclier Squelette");
+        }
+
+        else
+        {
+            Debug.Log("Aucune Combinaison");
         }
     }
 }

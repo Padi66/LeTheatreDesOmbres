@@ -466,6 +466,7 @@ GameObject:
   - component: {fileID: 3258541478186541692}
   - component: {fileID: 7531435094398241306}
   - component: {fileID: 4793506196189303507}
+  - component: {fileID: 6401256869191111123}
   m_Layer: 0
   m_Name: Middle Figurine 1
   m_TagString: Cube
@@ -733,6 +734,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008b537303ffcf845a2bed1a2e855677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketableBlock
+--- !u!114 &6401256869191111123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289277864956885455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
 --- !u!1 &8416982530979400577
 GameObject:
   m_ObjectHideFlags: 0

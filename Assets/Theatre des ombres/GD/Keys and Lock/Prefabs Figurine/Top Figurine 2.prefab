@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2214363183415466054}
   - component: {fileID: 883659754785175887}
   - component: {fileID: 1683769046401641891}
+  - component: {fileID: 2865630995840048182}
   m_Layer: 0
   m_Name: Top Figurine 2
   m_TagString: Untagged
@@ -282,3 +283,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Content.Interaction::UnityEngine.XR.Content.Interaction.Keychain
   m_Keys:
   - {fileID: 11400000, guid: fd34d6e35a02bbc4585d86dc77500d70, type: 2}
+--- !u!114 &2865630995840048182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5061720907574929115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7280438160445975923}
   - component: {fileID: 1901259013966669678}
   - component: {fileID: 499210738471047009}
+  - component: {fileID: 4174870132218472484}
   m_Layer: 0
   m_Name: Top Figurine 1
   m_TagString: Cube
@@ -282,3 +283,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Content.Interaction::UnityEngine.XR.Content.Interaction.Keychain
   m_Keys:
   - {fileID: 11400000, guid: f0e02d35a6c4ffa40866165793792a00, type: 2}
+--- !u!114 &4174870132218472484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620550476518455857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
