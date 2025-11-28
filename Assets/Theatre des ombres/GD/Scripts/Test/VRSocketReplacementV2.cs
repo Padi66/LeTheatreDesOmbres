@@ -22,8 +22,6 @@ public class VRSocketReplacementV2 : MonoBehaviour
     private XRGrabInteractable parentGrabInteractable;
     private static XRInteractionManager cachedInteractionManager;
     
-    private Vector3 savedWorldPosition;
-    private Quaternion savedWorldRotation;
     private Vector3 savedHandLocalPosition;
     private Quaternion savedHandLocalRotation;
 
@@ -100,49 +98,86 @@ public class VRSocketReplacementV2 : MonoBehaviour
     {
         Debug.Log($"Objet inséré dans le socket, main actuelle: {(currentHandHolding != null ? currentHandHolding.transform.name : "aucune")}");
         
+        Vector3 savedWorldPosition = Vector3.zero;
+        Quaternion savedWorldRotation = Quaternion.identity;
+        
         if (parentGrabInteractable != null && parentGrabInteractable.transform != null)
         {
             savedWorldPosition = parentGrabInteractable.transform.position;
             savedWorldRotation = parentGrabInteractable.transform.rotation;
         }
         
+        GameObject insertedObject = null;
         if (args.interactableObject != null)
         {
-            GameObject insertedObject = args.interactableObject.transform.gameObject;
-            insertedObject.SetActive(false);
-            Destroy(insertedObject, destroyDelay);
+            insertedObject = args.interactableObject.transform.gameObject;
         }
 
+        GameObject spawnedObject = null;
+        bool shouldDestroy = false;
+        
         if (currentHandHolding != null)
         {
-            GameObject spawnedObject = SpawnPrefab();
+            spawnedObject = SpawnPrefab(savedWorldPosition, savedWorldRotation);
             
-            if (spawnedObject != null && cachedInteractionManager != null)
+            if (spawnedObject != null)
             {
-                cachedInteractionManager.StartCoroutine(
-                    ReattachToHandCoroutine(
-                        spawnedObject, 
-                        currentHandHolding, 
-                        savedWorldPosition, 
-                        savedWorldRotation,
-                        savedHandLocalPosition,
-                        savedHandLocalRotation
-                    )
-                );
+                shouldDestroy = true;
+                
+                if (cachedInteractionManager != null)
+                {
+                    cachedInteractionManager.StartCoroutine(
+                        ReattachToHandCoroutine(
+                            spawnedObject, 
+                            currentHandHolding, 
+                            savedWorldPosition, 
+                            savedWorldRotation,
+                            savedHandLocalPosition,
+                            savedHandLocalRotation
+                        )
+                    );
+                }
+                else
+                {
+                    Debug.LogError("XRInteractionManager introuvable pour la coroutine!");
+                }
+            }
+            else
+            {
+                Debug.LogError("Échec du spawn du prefab!");
             }
         }
-
-        gameObject.SetActive(false);
-        Destroy(gameObject, destroyDelay);
-
-        if (removeParentObject && transform.parent != null)
+        else
         {
-            transform.parent.gameObject.SetActive(false);
-            Destroy(transform.parent.gameObject, destroyDelay);
+            Debug.LogWarning("Aucune main ne tient la figurine, spawn du prefab sans réattachement");
+            spawnedObject = SpawnPrefab(savedWorldPosition, savedWorldRotation);
+            shouldDestroy = (spawnedObject != null);
+        }
+
+        if (shouldDestroy)
+        {
+            if (insertedObject != null)
+            {
+                insertedObject.SetActive(false);
+                Destroy(insertedObject, destroyDelay);
+            }
+
+            gameObject.SetActive(false);
+            Destroy(gameObject, destroyDelay);
+
+            if (removeParentObject && transform.parent != null)
+            {
+                transform.parent.gameObject.SetActive(false);
+                Destroy(transform.parent.gameObject, destroyDelay);
+            }
+        }
+        else
+        {
+            Debug.LogError("Le prefab n'a pas pu être spawné, conservation des objets!");
         }
     }
 
-    private GameObject SpawnPrefab()
+    private GameObject SpawnPrefab(Vector3 position, Quaternion rotation)
     {
         if (prefabToSpawn == null)
         {
@@ -150,10 +185,10 @@ public class VRSocketReplacementV2 : MonoBehaviour
             return null;
         }
         
-        GameObject spawned = Instantiate(prefabToSpawn, savedWorldPosition, savedWorldRotation);
+        GameObject spawned = Instantiate(prefabToSpawn, position, rotation);
         spawned.name = prefabToSpawn.name;
         
-        Debug.Log($"Prefab spawné: {spawned.name}");
+        Debug.Log($"Prefab spawné à {position}: {spawned.name}");
         return spawned;
     }
     
