@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
 
 public class StoryManager : MonoBehaviour
 {
@@ -30,7 +32,7 @@ public class StoryManager : MonoBehaviour
     {
         StartCoroutine(TestHapticFeedback());
         _dialogueSequence.StartDialogueBranch(0);
-        _piedestal.UpGreen();
+        
         _dialogueSequence.StartDialogueBranch(1);
     }
 

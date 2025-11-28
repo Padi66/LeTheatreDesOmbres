@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+
 public class SocketGreen : MonoBehaviour
 {
     [SerializeField] private XRLockSocketInteractor _socketInteractor;
@@ -17,6 +18,7 @@ public class SocketGreen : MonoBehaviour
     void Start()
     {
        _socketInteractor.enabled = false; 
+       _piedestal.UpGreen(_socketInteractor);
     }
 
     void OnEnable()
