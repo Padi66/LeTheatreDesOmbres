@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8341854980171911836}
   - component: {fileID: 3408575646157300986}
   - component: {fileID: 5077054193005544050}
+  - component: {fileID: 5049057749970227213}
   m_Layer: 0
   m_Name: CubePurple
   m_TagString: Untagged
@@ -311,6 +312,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f61c3d012f447e47bb9f4a1a58a69ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubePurple
+--- !u!114 &5049057749970227213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8457255823230282914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
 --- !u!1001 &3248548533720525007
 PrefabInstance:
   m_ObjectHideFlags: 0

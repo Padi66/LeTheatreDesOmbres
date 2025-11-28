@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2455311900024102887}
   - component: {fileID: 7481361158435327529}
   - component: {fileID: 5953643663375733492}
+  - component: {fileID: 7053643221872100355}
   m_Layer: 0
   m_Name: CubeOrange
   m_TagString: Untagged
@@ -309,6 +310,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4200b5b7540ad6549b7a96feb82e6dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeOrange
+--- !u!114 &7053643221872100355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2841579617102598438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
 --- !u!1001 &3114418509986121158
 PrefabInstance:
   m_ObjectHideFlags: 0
