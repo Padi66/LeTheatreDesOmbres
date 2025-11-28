@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02dc42a3ca7e5747bce47faed135095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneTPObject
-  _teleportOrange: {fileID: 0}
-  _teleportViolet: {fileID: 0}
-  _teleportVert: {fileID: 0}
+  _resetDelay: 0.1
+  _resetRotation: 1
+  _resetVelocity: 1
 --- !u!65 &344831038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -291,19 +291,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.45676
+      value: 18.44
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: -0.07000005
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.33
+      value: 18.97
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0022027695
+      value: 0.7053219
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9999976
+      value: 0.7088872
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.252
+      value: 90.289
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554d399b51bebfb4e9bbed3b1c1d9909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapChecker
-  expectedTag: 
+  socketID: 0
 --- !u!1 &804245705
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554d399b51bebfb4e9bbed3b1c1d9909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapChecker
-  expectedTag: 
+  socketID: 0
 --- !u!1 &997357555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554d399b51bebfb4e9bbed3b1c1d9909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapChecker
-  expectedTag: 
+  socketID: 0
 --- !u!1001 &1571078502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 554d399b51bebfb4e9bbed3b1c1d9909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapChecker
-  expectedTag: 
+  socketID: 0
 --- !u!1 &1628006681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,14 +1532,13 @@ MonoBehaviour:
   _socketGreen: 0
   _socketOrange: 0
   _socketPurple: 0
-  _socketTool: 0
   _cubeInGreen: 
   _cubeInOrange: 
   _cubeInPurple: 
-  _cubeInTool: 
   _dialogueSequence: {fileID: 0}
   _levelManager: {fileID: 0}
   _piedestal: {fileID: 0}
+  _transition: {fileID: 0}
 --- !u!4 &1628006683
 Transform:
   m_ObjectHideFlags: 0
