@@ -188,6 +188,12 @@ public class VRSocketReplacementV2 : MonoBehaviour
         GameObject spawned = Instantiate(prefabToSpawn, position, rotation);
         spawned.name = prefabToSpawn.name;
         
+        ObjectResetter resetter = spawned.GetComponent<ObjectResetter>();
+        if (resetter != null)
+        {
+            resetter.SetInitialTransform();
+        }
+        
         Debug.Log($"Prefab spawné à {position}: {spawned.name}");
         return spawned;
     }

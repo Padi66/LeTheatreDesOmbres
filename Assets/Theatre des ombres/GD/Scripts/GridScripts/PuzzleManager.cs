@@ -122,8 +122,15 @@ public class PuzzleManager : MonoBehaviour
             GameObject spawned = Instantiate(combination.objectToSpawn,
                 combination.spawnLocation.position,
                 combination.spawnLocation.rotation);
-            
+
             spawned.name = combination.objectToSpawn.name;
+                
+            ObjectResetter resetter = spawned.GetComponent<ObjectResetter>();
+            if (resetter != null)
+            {
+                resetter.SetInitialTransform();
+            }
+            
             _particleSystem.Play();
 
             Debug.Log($"Spawned: {spawned.name}");

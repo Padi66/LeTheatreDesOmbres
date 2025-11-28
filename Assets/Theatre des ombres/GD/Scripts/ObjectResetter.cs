@@ -13,4 +13,16 @@ public class ObjectResetter : MonoBehaviour
         _initialPosition = transform.position;
         _initialRotation = transform.rotation;
     }
+
+    public void SetInitialTransform(Vector3 position, Quaternion rotation)
+    {
+        _initialPosition = position;
+        _initialRotation = rotation;
+    }
+
+    public void SetInitialTransform()
+    {
+        _initialPosition = transform.position;
+        _initialRotation = transform.rotation;
+    }
 }
