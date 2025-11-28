@@ -33,27 +33,26 @@ public class SocketMenu : MonoBehaviour
         {
             _isInSocket = true;
             cubeName = "CubeGreen";
-            Debug.Log($"Socket Violet contient Cube Vert - nom envoy�: '{cubeName}'");
+            
             
         }
         else if (cube.GetComponent<CubePurple>())
         {
             _isInSocket = true;
             cubeName = "CubePurple";
-            Debug.Log($"Socket Violet contient Cube Violet - nom envoy�: '{cubeName}'");
+            
             
         }
 
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
         StoryManager.OnCubePlaced?.Invoke("Purple", cubeName);
-
-        Debug.Log($"Event OnCubePlaced envoy�: Socket=Purple, Cube='{cubeName}'");
+        
     }
 
     void OnSelectExited(SelectExitEventArgs args)
     {
         _isInSocket = false;
-        Debug.Log("Socket Violet vide");
+        Debug.Log("Socket Menu vide");
         StoryManager.OnSocketStateChanged?.Invoke("Purple", false);
         StoryManager.OnCubePlaced?.Invoke("Purple", null);
     }

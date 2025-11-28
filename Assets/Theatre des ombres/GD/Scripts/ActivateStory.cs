@@ -37,14 +37,14 @@ public class ActivateStory : MonoBehaviour
 
         if (_socketMenuRef._isInSocket)
         {
-            Debug.Log("✓ Bouton pressé - cube dans socket détecté!");
+            Debug.Log("Bouton pressé - cube dans socket détecté");
 
             string cubeType = GetCubeTypeInSocket();
             Debug.Log($"Type de cube détecté: '{cubeType}'");
 
             if (string.IsNullOrEmpty(cubeType))
             {
-                Debug.LogError("Impossible de déterminer le type de cube!");
+                Debug.LogError("Impossible de déterminer le type de cube");
                 return;
             }
 
@@ -57,12 +57,12 @@ public class ActivateStory : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Impossible de récupérer le GameObject du cube!");
+                Debug.LogError("Impossible de récupérer le GameObject du cube");
             }
         }
         else
         {
-            Debug.LogWarning("✗ Bouton pressé mais aucun cube dans la socket!");
+            Debug.LogWarning("Bouton pressé mais aucun cube dans la socket");
         }
     }
 
@@ -172,18 +172,18 @@ public class ActivateStory : MonoBehaviour
 
         if (string.IsNullOrEmpty(cubeType))
         {
-            Debug.LogWarning("Type de cube vide!");
+            Debug.LogWarning("Type de cube vide");
             return;
         }
 
         if (cubeType == "CubeGreen")
         {
-            Debug.Log("✓ Cube VERT - Chargement Level 1");
+            Debug.Log("Cube VERT - Chargement Level 1");
             _levelManager.LoadBackStage();
         }
         else if (cubeType == "CubePurple")
         {
-            Debug.Log("✓ Cube VIOLET - Fermeture du jeu");
+            Debug.Log("Cube VIOLET - Fermeture du jeu");
             _levelManager.Quit();
         }
         else

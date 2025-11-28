@@ -31,9 +31,6 @@ public class StoryManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TestHapticFeedback());
-        _dialogueSequence.StartDialogueBranch(0);
-        
-        _dialogueSequence.StartDialogueBranch(1);
     }
 
     private IEnumerator TestHapticFeedback()

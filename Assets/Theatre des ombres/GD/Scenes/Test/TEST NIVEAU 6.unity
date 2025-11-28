@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 1305203357}
   - component: {fileID: 1305203356}
   - component: {fileID: 1305203359}
+  - component: {fileID: 1305203360}
   m_Layer: 0
   m_Name: ===Manager===
   m_TagString: Untagged
@@ -656,6 +657,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
+  _lightGroup: {fileID: 0}
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
@@ -684,6 +686,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   _currentLevel: 2
+--- !u!114 &1305203360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305203355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6320729b4552ffc47ad705b48af1bda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightGroup
+  _lights: []
+  _intensity: 1
 --- !u!1 &1441288032
 GameObject:
   m_ObjectHideFlags: 0

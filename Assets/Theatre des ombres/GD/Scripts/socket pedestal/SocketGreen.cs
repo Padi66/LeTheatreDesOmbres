@@ -17,8 +17,7 @@ public class SocketGreen : MonoBehaviour
     
     void Start()
     {
-       _socketInteractor.enabled = false; 
-       _piedestal.UpGreen();
+       _socketInteractor.enabled = false;
     }
 
     void OnEnable()

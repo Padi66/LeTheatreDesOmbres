@@ -19,9 +19,19 @@ public class PiedestalUP : MonoBehaviour
     public XRLockSocketInteractor _socketGreen;
     public XRLockSocketInteractor _socketOrange;
     public XRLockSocketInteractor _socketPurple;
+    public DialogueSequence _dialogueSequence;
     public float _duration = 2f;
 
-   
+
+    private void Start()
+    {
+        StartCoroutine(Delay(6));
+        _dialogueSequence.StartDialogueBranch(0);
+        _dialogueSequence.StartDialogueBranch(1);
+        UpGreen();
+        
+    }
+
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
@@ -136,6 +146,11 @@ public class PiedestalUP : MonoBehaviour
             yield return null;
         }
         _piedestalOrange.position = _startPositionOrange.position;
+    }
+    IEnumerator Delay(int delay)
+    {
+        yield return new WaitForSeconds(delay);
+
     }
 }
 
