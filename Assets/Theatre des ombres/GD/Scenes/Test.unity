@@ -2802,6 +2802,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242225601196943516, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8663386
+      objectReference: {fileID: 0}
+    - target: {fileID: 242225601196943516, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1701806
+      objectReference: {fileID: 0}
+    - target: {fileID: 242225601196943516, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_Size.z
+      value: 1.772799
+      objectReference: {fileID: 0}
+    - target: {fileID: 242225601196943516, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0011616345
+      objectReference: {fileID: 0}
+    - target: {fileID: 242225601196943516, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.21834084
+      objectReference: {fileID: 0}
+    - target: {fileID: 242225601196943516, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.02714561
+      objectReference: {fileID: 0}
     - target: {fileID: 2442466229008620243, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
       propertyPath: m_Mesh
       value: 
