@@ -1128,10 +1128,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Middle + Bottom Figurine 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7979869653272559694, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9130453409524078558, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.86957
@@ -1630,10 +1626,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1217356742529747079, guid: 812da6d50e1f3a04fa14be3c7b18d792, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2563593823074414097, guid: 812da6d50e1f3a04fa14be3c7b18d792, type: 3}
       propertyPath: m_Name
       value: Top + Middle Figurine 3
@@ -1731,14 +1723,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6751243484752987528, guid: 00bdda2e1466630469e37240c8c1ca76, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6751243484752987528, guid: 00bdda2e1466630469e37240c8c1ca76, type: 3}
-      propertyPath: m_SmoothRotation
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7767528924328576305, guid: 00bdda2e1466630469e37240c8c1ca76, type: 3}
       propertyPath: m_Name
       value: CubeGreen
@@ -1795,10 +1779,6 @@ PrefabInstance:
     - target: {fileID: 228157561067628726, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684962695458948169, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9056761493691988298, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
       propertyPath: m_Name
@@ -2026,10 +2006,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9093272638617640465, guid: 1bdf07dcdfaf4fe498f98be310151f40, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2082,10 +2058,6 @@ PrefabInstance:
     - target: {fileID: 6175339765435382529, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7531435094398241306, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289277864956885455, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
       propertyPath: m_Name
@@ -2148,10 +2120,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8146040788703813018, guid: 56c49a44be9cf2d4c85627544bedef36, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2165,10 +2133,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1901259013966669678, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3815665661828442323, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.981
@@ -2270,10 +2234,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6027844872829120847, guid: 0a14a8006d967874daaf22987b9dbdbe, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2287,10 +2247,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 883659754785175887, guid: fa823ed97cc46af448f8a330ead2c1f3, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3252319288683936623, guid: fa823ed97cc46af448f8a330ead2c1f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.55
@@ -2392,10 +2348,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottom Figurine 3
       objectReference: {fileID: 0}
-    - target: {fileID: 8599279659557259491, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2409,10 +2361,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7363575341279361327, guid: 211ea7d78f871fe4fa3a3a7cf91d0857, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8457255823230282914, guid: 211ea7d78f871fe4fa3a3a7cf91d0857, type: 3}
       propertyPath: m_Name
       value: CubePurple
@@ -2527,10 +2475,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3954089639167045249, guid: d58cdbedb3cfc7e4a9c44288c8336a69, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4463804708278291137, guid: d58cdbedb3cfc7e4a9c44288c8336a69, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.55
@@ -2632,10 +2576,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7479060910795130853, guid: fb9cc6153878dd24f86f1588e2c46b81, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2689,10 +2629,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3769157452022766194, guid: 029a2331f5e6a19469105c9877aad6cf, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4644511683335856051, guid: 029a2331f5e6a19469105c9877aad6cf, type: 3}
       propertyPath: m_Name
       value: Middle Figurine 3
@@ -2710,10 +2646,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3299813805474667393, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3591664275389264111, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.257
@@ -2775,10 +2707,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Middle Figurine 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6766828700403576885, guid: eb121961caa5baa4b8fe72fb7080978a, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8186819968987666276, guid: eb121961caa5baa4b8fe72fb7080978a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.55
@@ -2835,10 +2763,6 @@ PrefabInstance:
     - target: {fileID: 4615199264355365219, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
       propertyPath: m_Name
       value: 'Top + Middle Figurine 2 '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5433148084453072704, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
-      propertyPath: m_TrackRotation
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9111683037372025167, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
       propertyPath: m_LocalPosition.x
