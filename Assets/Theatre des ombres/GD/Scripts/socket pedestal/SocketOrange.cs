@@ -14,7 +14,10 @@ public class SocketOrange : MonoBehaviour
     [SerializeField] private ParticleSystem _particleSystem;
     private bool _hasDone = false;
 
-    private Coroutine _lockCoroutine;
+    void Start()
+    {
+        _socketInteractor.enabled = false; 
+    }
 
     void OnEnable()
     {

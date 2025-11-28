@@ -26,6 +26,9 @@ public class SocketPurple : MonoBehaviour
         _socketInteractor.selectExited.RemoveListener(OnSelectExited);
     }
 
+
+    
+        
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         GameObject cube = args.interactableObject.transform.gameObject;
