@@ -49,7 +49,6 @@ public class SocketOrange : MonoBehaviour
                 _hasDone = true;
             }
         }
-        _storyManager.CheckDirectStep2();
     }
     else if (cube.GetComponent<Shield>())
     {
@@ -64,7 +63,7 @@ public class SocketOrange : MonoBehaviour
                 _hasDone = true;
             }
         }
-        _storyManager.CheckDirectStep2();
+        
     }
     
     StoryManager.OnSocketStateChanged?.Invoke("Orange", true);

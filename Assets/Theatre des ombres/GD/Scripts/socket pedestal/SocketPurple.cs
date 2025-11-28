@@ -44,23 +44,23 @@ public class SocketPurple : MonoBehaviour
             cubeName = "CubeGreen";
             _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Vert - nom envoy�: '{cubeName}'");
-            _storyManager.CheckDirectStep3();
+            
         }
         else if (cube.GetComponent<CubeOrange>())
         {
-            
+
             cubeName = "CubeOrange";
             _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Orange - nom envoy�: '{cubeName}'");
-            _storyManager.CheckDirectStep3();
         }
+
         else if (cube.GetComponent<CubePurple>())
         {
             
             cubeName = "CubePurple";
             _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Violet - nom envoy�: '{cubeName}'");
-            _storyManager.CheckDirectStep3();
+            
         }
 
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);

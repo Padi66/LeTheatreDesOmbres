@@ -116,17 +116,18 @@ public class StoryManager : MonoBehaviour
         {
             case "Green":
                 _cubeInGreen = cubeName;
-                
+                CheckDirectStep1();
                 break;
             case "Orange":
                 _cubeInOrange = cubeName;
-                
+                CheckDirectStep2();
                 break;
             case "Purple":
                 _cubeInPurple = cubeName;
-                
+                CheckDirectStep3();
                 break;
         }
+        CheckCombinationBackstage();
     }
     
 
@@ -151,7 +152,7 @@ public class StoryManager : MonoBehaviour
         {
             _dialogueSequence.StartDialogueBranch(4);
         }
-        CheckCombinationBackstage();
+        
     }
 
     public void CheckDirectStep2()
@@ -166,7 +167,6 @@ public class StoryManager : MonoBehaviour
         {
             _dialogueSequence.StartDialogueBranch(6);
         }
-        CheckCombinationBackstage();
     }
 
     public void CheckDirectStep3()
@@ -187,7 +187,7 @@ public class StoryManager : MonoBehaviour
             _dialogueSequence.StartDialogueBranch(9);
         }
 
-        CheckCombinationBackstage();
+        
     }
 
     
@@ -195,6 +195,7 @@ public class StoryManager : MonoBehaviour
 
     private void CheckCombinationBackstage()
     {
+        
         //Chevalresse Epée Squelette
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {

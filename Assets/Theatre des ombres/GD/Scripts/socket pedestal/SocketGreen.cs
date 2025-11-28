@@ -54,7 +54,6 @@ public class SocketGreen : MonoBehaviour
                     _hasDone = true;
                 }
             }
-            _storyManager.CheckDirectStep1();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
@@ -69,7 +68,6 @@ public class SocketGreen : MonoBehaviour
                     _hasDone = true;
                 }
             }
-            _storyManager.CheckDirectStep1();
         }
         else if (cube.GetComponent<CubePurple>())
         {
@@ -84,7 +82,7 @@ public class SocketGreen : MonoBehaviour
                     _hasDone = true;
                 }
             }
-            _storyManager.CheckDirectStep1();
+            
         }
     
         StoryManager.OnSocketStateChanged?.Invoke("Green", true);
