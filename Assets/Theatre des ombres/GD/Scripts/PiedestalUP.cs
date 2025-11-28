@@ -34,6 +34,7 @@ public class PiedestalUP : MonoBehaviour
 
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
+        _dialogueSequence.StartDialogueBranch(5);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
         StartCoroutine(UpEnumOrange(socket));
     }
@@ -46,6 +47,7 @@ public class PiedestalUP : MonoBehaviour
 
     public void UpPurple(XRLockSocketInteractor socketToReactivate = null)
     {
+        _dialogueSequence.StartDialogueBranch(8);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
         StartCoroutine(UpEnumPurple(socket));
     }
