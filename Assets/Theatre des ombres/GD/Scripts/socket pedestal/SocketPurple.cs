@@ -14,6 +14,11 @@ public class SocketPurple : MonoBehaviour
 
     
 
+    void Start()
+    {
+        _socketInteractor.enabled = false; 
+    }
+    
     void OnEnable()
     {
         _socketInteractor.selectEntered.AddListener(OnSelectEntered);

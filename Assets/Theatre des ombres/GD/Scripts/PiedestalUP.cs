@@ -16,23 +16,28 @@ public class PiedestalUP : MonoBehaviour
     public Transform _piedestalOrange;
     public Transform _piedestalPurple;
     public Transform _piedestalGreen;
-    
+    public XRLockSocketInteractor _socketGreen;
+    public XRLockSocketInteractor _socketOrange;
+    public XRLockSocketInteractor _socketPurple;
     public float _duration = 2f;
 
    
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
-        StartCoroutine(UpEnumOrange(socketToReactivate));
+        XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
+        StartCoroutine(UpEnumOrange(socket));
     }
 
     public void UpGreen(XRLockSocketInteractor socketToReactivate = null)
     {
-        StartCoroutine(UpEnumGreen(socketToReactivate));
+        XRLockSocketInteractor socket = socketToReactivate ?? _socketGreen;
+        StartCoroutine(UpEnumGreen(socket));
     }
 
     public void UpPurple(XRLockSocketInteractor socketToReactivate = null)
     {
-        StartCoroutine(UpEnumPurple(socketToReactivate));
+        XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
+        StartCoroutine(UpEnumPurple(socket));
     }
     
     IEnumerator UpEnumGreen(XRLockSocketInteractor socketToReactivate = null)

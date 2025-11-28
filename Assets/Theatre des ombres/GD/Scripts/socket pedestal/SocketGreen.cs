@@ -18,7 +18,7 @@ public class SocketGreen : MonoBehaviour
     void Start()
     {
        _socketInteractor.enabled = false; 
-       _piedestal.UpGreen(_socketInteractor);
+       _piedestal.UpGreen();
     }
 
     void OnEnable()
@@ -49,7 +49,7 @@ public class SocketGreen : MonoBehaviour
                 if (!_hasDone)
                 {
                     Debug.Log($"Appel UpOrange avec socket: {_socketInteractor.enabled}");
-                    _piedestal.UpOrange(_socketInteractor);
+                    _piedestal.UpOrange();
                     _hasDone = true;
                 }
             }
@@ -63,7 +63,7 @@ public class SocketGreen : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpOrange(_socketInteractor);
+                    _piedestal.UpOrange();
                     _hasDone = true;
                 }
             }
@@ -77,7 +77,7 @@ public class SocketGreen : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpOrange(_socketInteractor);
+                    _piedestal.UpOrange();
                     _hasDone = true;
                 }
             }
