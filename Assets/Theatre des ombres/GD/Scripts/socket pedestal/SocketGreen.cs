@@ -38,12 +38,13 @@ public class SocketGreen : MonoBehaviour
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         GameObject cube = args.interactableObject.transform.gameObject;
-        string _cubeName = cube.name;
-        
+        string cubeName = null;
+    
         if (cube.GetComponent<CubeGreen>())
         {
+            cubeName = "CubeGreen";
             _particleSystem.Play();
-            Debug.Log("Socket Vert contient Cube Vert");
+            Debug.Log($"Socket Vert contient Cube Vert - nom envoyé: '{cubeName}'");
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -57,8 +58,9 @@ public class SocketGreen : MonoBehaviour
         }
         else if (cube.GetComponent<CubeOrange>())
         {
+            cubeName = "CubeOrange";
             _particleSystem.Play();
-            Debug.Log("Socket Vert contient Cube Orange");
+            Debug.Log($"Socket Vert contient Cube Orange - nom envoyé: '{cubeName}'");
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -71,8 +73,9 @@ public class SocketGreen : MonoBehaviour
         }
         else if (cube.GetComponent<CubePurple>())
         {
+            cubeName = "CubePurple";
             _particleSystem.Play();
-            Debug.Log("Socket Vert contient Cube Violet");
+            Debug.Log($"Socket Vert contient Cube Violet - nom envoyé: '{cubeName}'");
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -83,16 +86,13 @@ public class SocketGreen : MonoBehaviour
             }
             _storyManager.CheckDirectStep1();
         }
-        
+    
         StoryManager.OnSocketStateChanged?.Invoke("Green", true);
-        StoryManager.OnCubePlaced?.Invoke("Green", _cubeName);
-        
-        /*if (_lockCoroutine != null)
-        {
-            StopCoroutine(_lockCoroutine);
-        }
-        _lockCoroutine = StartCoroutine(LockCubeAfterDelay(cube));*/
+        StoryManager.OnCubePlaced?.Invoke("Green", cubeName);
+    
+        Debug.Log($"Event OnCubePlaced envoyé: Socket=Green, Cube='{cubeName}'");
     }
+
 
     void OnSelectExited(SelectExitEventArgs args)
     {

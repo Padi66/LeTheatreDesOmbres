@@ -32,41 +32,46 @@ public class SocketOrange : MonoBehaviour
     }
 
     private void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        GameObject cube = args.interactableObject.transform.gameObject;
-        string _cubeName = cube.name;
+{
+    GameObject cube = args.interactableObject.transform.gameObject;
+    string cubeName = null;
 
-        if (cube.GetComponent<Sword>())
+    if (cube.GetComponent<Sword>())
+    {
+        cubeName = "Sword";
+        _particleSystem.Play();
+        Debug.Log($"Socket Orange contient Sword - nom envoyé: '{cubeName}'");
+        if (_piedestal != null)
         {
-            _particleSystem.Play();
-            Debug.Log("Socket Orange contient Sword");
-            if (_piedestal != null)
+            if (!_hasDone)
             {
-                if (!_hasDone)
-                {
-                    _piedestal.UpPurple();
-                    _hasDone = true;
-                }
+                _piedestal.UpPurple();
+                _hasDone = true;
             }
-            _storyManager.CheckDirectStep2();
         }
-        else if (cube.GetComponent<Shield>())
-        {
-            _particleSystem.Play();
-            Debug.Log("Socket Orange contient Shield");
-            if (_piedestal != null)
-            {
-                if (!_hasDone)
-                {
-                    _piedestal.UpPurple();
-                    _hasDone = true;
-                }
-            }
-            _storyManager.CheckDirectStep2();
-        }
-        StoryManager.OnSocketStateChanged?.Invoke("Orange", true);
-        StoryManager.OnCubePlaced?.Invoke("Orange", _cubeName);
+        _storyManager.CheckDirectStep2();
     }
+    else if (cube.GetComponent<Shield>())
+    {
+        cubeName = "Shield";
+        _particleSystem.Play();
+        Debug.Log($"Socket Orange contient Shield - nom envoyé: '{cubeName}'");
+        if (_piedestal != null)
+        {
+            if (!_hasDone)
+            {
+                _piedestal.UpPurple();
+                _hasDone = true;
+            }
+        }
+        _storyManager.CheckDirectStep2();
+    }
+    
+    StoryManager.OnSocketStateChanged?.Invoke("Orange", true);
+    StoryManager.OnCubePlaced?.Invoke("Orange", cubeName);
+    
+    Debug.Log($"Event OnCubePlaced envoyé: Socket=Orange, Cube='{cubeName}'");
+}
 
     void OnSelectExited(SelectExitEventArgs args)
     {
