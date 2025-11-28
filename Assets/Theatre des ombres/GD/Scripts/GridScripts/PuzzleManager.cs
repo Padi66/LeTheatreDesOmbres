@@ -126,10 +126,11 @@ public class PuzzleManager : MonoBehaviour
             spawned.name = combination.objectToSpawn.name;
                 
             ObjectResetter resetter = spawned.GetComponent<ObjectResetter>();
-            if (resetter != null)
+            if (resetter == null)
             {
-                resetter.SetInitialTransform();
+                resetter = spawned.AddComponent<ObjectResetter>();
             }
+            resetter.SaveInitialTransform();
             
             _particleSystem.Play();
 

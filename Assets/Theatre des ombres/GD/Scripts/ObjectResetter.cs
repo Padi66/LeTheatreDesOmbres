@@ -10,20 +10,12 @@ public class ObjectResetter : MonoBehaviour
 
     void Awake()
     {
-        _initialPosition = transform.position;
-        _initialRotation = transform.rotation;
+        SaveInitialTransform();
     }
 
-    public void SetInitialTransform(Vector3 position, Quaternion rotation)
-    {
-        _initialPosition = position;
-        _initialRotation = rotation;
-    }
-
-    public void SetInitialTransform()
+    public void SaveInitialTransform()
     {
         _initialPosition = transform.position;
         _initialRotation = transform.rotation;
-        Debug.Log($"[ObjectResetter] Position initiale définie pour {gameObject.name}: {_initialPosition}");
     }
-    }
+}

@@ -3,42 +3,28 @@ using UnityEngine;
 
 public class ZoneTPObject : MonoBehaviour
 {
-    [Header("Configuration")] [SerializeField]
-    private float _resetDelay = 0.1f;
-
+    [Header("Configuration")]
+    [SerializeField] private float _resetDelay = 0.1f;
     [SerializeField] private bool _resetRotation = true;
     [SerializeField] private bool _resetVelocity = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"[ZoneTP] Trigger entré par: {other.name}");
-    
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb == null)
         {
-            Debug.Log($"[ZoneTP] {other.name} n'a pas de Rigidbody");
-            return;
+            rb = other.GetComponentInParent<Rigidbody>();
         }
+        
+        if (rb == null) return;
 
-        ObjectResetter resetter = other.GetComponent<ObjectResetter>();
-    
+        ObjectResetter resetter = rb.GetComponent<ObjectResetter>();
         if (resetter == null)
         {
-            Debug.Log($"[ZoneTP] {other.name} n'a pas de ObjectResetter");
-            return;
+            resetter = rb.gameObject.AddComponent<ObjectResetter>();
         }
 
-        if (resetter != null &&
-            (other.GetComponent<CubeGreen>() != null ||
-             other.GetComponent<CubeOrange>() != null ||
-             other.GetComponent<CubePurple>() != null ||
-             other.GetComponent<Sword>() != null ||
-             other.GetComponent<Shield>() != null))
-
-
-        {
-            StartCoroutine(ResetObject(other.transform, rb, resetter));
-        }
+        StartCoroutine(ResetObject(rb.transform, rb, resetter));
     }
 
     private IEnumerator ResetObject(Transform obj, Rigidbody rb, ObjectResetter resetter)
@@ -58,7 +44,7 @@ public class ZoneTPObject : MonoBehaviour
             obj.rotation = resetter.InitialRotation;
         }
 
-        Debug.Log($"{obj.name} téléporté à sa position initiale");
+        Debug.Log($"{obj.name} téléporté à {resetter.InitialPosition}");
 
         yield return new WaitForSeconds(_resetDelay);
 
