@@ -203,77 +203,77 @@ public class StoryManager : MonoBehaviour
         }
         
         //Chevalresse Epée Roi
-        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(3));
             Debug.Log("Bonne combinaison ! //Chevalresse Epée Roi");
         }
         
         //Chevalresse Bouclier Roi
-        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(4));
             Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Roi");
         }
 
         //Chevalresse Bouclier Squelette
-        else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(5));
             Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Squelette");
         }
         
         //Squelette Epée Roi
-        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(6));
             Debug.Log("Bonne combinaison ! //Squelette Epée Roi");
         }
         
         //Squelette Epee Chevalier
-        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(7));
             Debug.Log("Bonne combinaison ! //Squelette Epee Chevalier");
         }
 
         //Squelette Bouclier Roi
-        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(8));
             Debug.Log("Bonne combinaison !  //Squelette Bouclier Roi");
         }
         
         //Squelette Bouclier Chevalresse
-        else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(9));
             Debug.Log("Bonne combinaison ! //Squelette Bouclier Chevalresse");
         }
 
         //Roi Epée Chevalresse
-        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(10));
             Debug.Log("Bonne combinaison !  //Roi Epée Chevalresse");
         }
         
         //Roi Epee Squelette
-        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(11));
             Debug.Log("Bonne combinaison !//Roi Epee Squelette");
         }
 
         //Roi Bouclier Chevalresse
-        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(12));
             Debug.Log("Bonne combinaison ! //Roi Bouclier Chevalresse");
         }
         
         //Roi Bouclier Squelette
-        else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
+        if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
             _transition.StartCoroutine(_transition.TransitionToScene(13));
             Debug.Log("Bonne combinaison ! //Roi Bouclier Squelette");
