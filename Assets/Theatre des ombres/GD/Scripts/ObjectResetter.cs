@@ -24,5 +24,6 @@ public class ObjectResetter : MonoBehaviour
     {
         _initialPosition = transform.position;
         _initialRotation = transform.rotation;
+        Debug.Log($"[ObjectResetter] Position initiale définie pour {gameObject.name}: {_initialPosition}");
     }
-}
+    }

@@ -11,10 +11,22 @@ public class ZoneTPObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"[ZoneTP] Trigger entré par: {other.name}");
+    
         Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb == null) return;
+        if (rb == null)
+        {
+            Debug.Log($"[ZoneTP] {other.name} n'a pas de Rigidbody");
+            return;
+        }
 
         ObjectResetter resetter = other.GetComponent<ObjectResetter>();
+    
+        if (resetter == null)
+        {
+            Debug.Log($"[ZoneTP] {other.name} n'a pas de ObjectResetter");
+            return;
+        }
 
         if (resetter != null &&
             (other.GetComponent<CubeGreen>() != null ||
