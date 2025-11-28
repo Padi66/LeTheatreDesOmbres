@@ -610,7 +610,11 @@ MonoBehaviour:
   typewriterDelay: 0.05
   displayTime: 2
   branch0:
-  - "Il \xE9tait une fois"
+  - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
+  - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
+  - "qui se dressait alors fi\xE8rement sur la colline."
+  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
+    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que ..."
   branch1:
   - "Vert lev\xE9"
   branch2:
