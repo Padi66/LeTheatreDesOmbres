@@ -13,11 +13,10 @@ public class LaunchStory : MonoBehaviour
     {
         //_light.intensity = 1;
         StartCoroutine(Delay(6));
-        Debug.Log("tuveucabb");
         _curtains.OpenCurtainsRight();
         _curtains.OpenCurtainsLeft();
         StartCoroutine(Delay(3));
-        _dialogueSequence.StartDialogueBranch(10);
+        _dialogueSequence.StartDialogueBranch(12);
         StartCoroutine(Delay(3));
         _levelManager.LoadBackStage();
         

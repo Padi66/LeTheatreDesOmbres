@@ -87,14 +87,14 @@ public class DialogueSequence : MonoBehaviour
             case 2: return branch2;//Chevalresse dans la forêt
             case 3: return branch3;//Squelette dans la forêt
             case 4: return branch4;//Roi dans la forêt
-            case 5: return branch5;//épée au village
-            case 6: return branch6;//bouclier au village
-            case 7: return branch7;//Squelette au château
-            case 8: return branch8; //Roi au château
-            case 9: return branch9;//Chevalresse au château
-            case 10: return branch10; //Final
-            case 11: return branch11;
-            case 12: return branch12;
+            case 5: return branch5;//piedestal orange text
+            case 6: return branch6;//épée au village
+            case 7: return branch7;//bouclier au village
+            case 8: return branch8; //piédestal violet text
+            case 9: return branch9;//squelette au chateau
+            case 10: return branch10; //roi au chateau
+            case 11: return branch11; //chevalresse au chateau
+            case 12: return branch12; // Final
             case 13: return branch13;
             case 14: return branch14;
             case 15: return branch15;
