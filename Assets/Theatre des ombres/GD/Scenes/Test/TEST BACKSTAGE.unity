@@ -610,13 +610,13 @@ MonoBehaviour:
   typewriterDelay: 0.05
   displayTime: 2
   branch0:
+  - "Il \xE9tait une fois..."
+  branch1:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que ..."
-  branch1:
-  - "Vert lev\xE9"
   branch2:
   - "Chevalresse dans la for\xEAt\r\n_cubeInGreen == \"CubeOrange\""
   branch3:
@@ -625,6 +625,14 @@ MonoBehaviour:
   - "Roi dans la for\xEAt\n_cubeInGreen == \"CubePurple\""
   branch5:
   - "\xE9p\xE9e au village\n_cubeInOrange == \"Sword\""
+  - "Malgr\xE9 ces mauvaises rencontres,"
+  - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
+    qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
+  - "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
+  - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
+    mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
+  - "qui, curieux de savoir ce qu\u2019il pouvait bien se procurer, interpella le
+    forgeron afin de lui demander ..."
   branch6:
   - 'bouclier au village
 
@@ -633,6 +641,13 @@ MonoBehaviour:
   - "Squelette au ch\xE2teau\n_cubeInPurple == \"CubeGreen\""
   branch8:
   - "Roi au ch\xE2teau\n_cubeInPurple == \"CubePurple\""
+  - "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin entamer
+    la derni\xE8re \xE9tape de son p\xE9riple,"
+  - "en entreprenant la mont\xE9e de la colline menant au ch\xE2teau."
+  - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
+    majestueusement devant lui."
+  - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
+    du ch\xE2teau, il aper\xE7ut une silhouette, celle ..."
   branch9:
   - "Chevalresse au ch\xE2teau\n_cubeInPurple == \"CubeOrange\""
   branch10:
