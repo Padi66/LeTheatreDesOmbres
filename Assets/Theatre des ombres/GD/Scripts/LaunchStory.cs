@@ -11,7 +11,7 @@ public class LaunchStory : MonoBehaviour
     
     void Start()
     {
-        _lightGroup.Intensity = 1;
+        //_lightGroup.Intensity = 1;
         StartCoroutine(Delay(6));
         _curtains.OpenCurtainsRight();
         _curtains.OpenCurtainsLeft();
