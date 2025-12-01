@@ -443,7 +443,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.05
-  displayTime: 2
+  typewriterDelay: 0.04
+  displayTime: 1
   branch0: []
   branch1: []
   branch2: []
@@ -548,8 +548,8 @@ MonoBehaviour:
   - "Choqu\xE9 et terrifi\xE9 de se retrouver face \xE0 un mort-vivant."
   - Le squelette en profita pour subtiliser la lame,
   - "alors visible sur l\u2019\xE9tabli du forgeron, avant de repartir du village."
-  - "Il prit un malin plaisir \xE0 terrifier les villageois qu'il croisait,"
-  - "parfaitement indiff\xE9rent \xE0 la panique qu\u2019il semait."
+  - "Il prit un malin plaisir \xE0 terrifier les villageois qu'il croisait, parfaitement
+    indiff\xE9rent \xE0 la panique qu\u2019il semait."
   - " Et c\u2019est ainsi, au pas lent et sans un regard en arri\xE8re,"
   - "que le squelette quitta le village, laissant derri\xE8re lui un silence lourd."
   - "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin entamer
@@ -612,8 +612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.38, y: -154.11}
-  m_SizeDelta: {x: 869.96, y: 99.11}
+  m_AnchoredPosition: {x: 12.08, y: -154.11}
+  m_SizeDelta: {x: 758.08, y: 99.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:
