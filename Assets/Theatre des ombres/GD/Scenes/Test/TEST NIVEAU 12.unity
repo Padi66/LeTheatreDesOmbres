@@ -357,8 +357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.89, y: 2.52}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: -1.0758, y: 3.5566}
+  m_SizeDelta: {x: 855.1915, y: 407.3313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &158098417 stripped
 Transform:
@@ -505,7 +505,9 @@ MonoBehaviour:
   branch7: []
   branch8: []
   branch9: []
-  branch10:
+  branch10: []
+  branch11: []
+  branch12:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
@@ -616,8 +618,6 @@ MonoBehaviour:
   - "Car parfois, la libert\xE9 n\u2019est pas un tr\xF4ne\u2026 "
   - "Mais simplement quelqu\u2019un qui vous tend la main quand tout le monde vous
     oublie."
-  branch11: []
-  branch12: []
   branch13: []
   branch14: []
   branch15: []
@@ -653,8 +653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.0031428, y: -152.34}
+  m_SizeDelta: {x: 855.2, y: 78.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:

@@ -11,24 +11,24 @@ public class LaunchStory : MonoBehaviour
     
     void Start()
     {
-        //_lightGroup.Intensity = 1;
-        StartCoroutine(Delay(6));
-        _curtains.OpenCurtainsRight();
-        _curtains.OpenCurtainsLeft();
-        StartCoroutine(Delay(6));
-        _dialogueSequence.StartDialogueBranch(12);
-        StartCoroutine(Delay(6));
-        //_light.intensity = 1
-        _levelManager.LoadBackStage();
-        
-        
+        StartCoroutine(Sequence());
     }
 
-
-    IEnumerator Delay(int delay)
+    IEnumerator Sequence()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(6f);
 
+        _curtains.OpenCurtainsRight();
+        _curtains.OpenCurtainsLeft();
+
+        yield return new WaitForSeconds(6f);
+
+        _dialogueSequence.StartDialogueBranch(12);
+
+        yield return new WaitForSeconds(6f);
+
+        //_light.intensity = 1
+        _levelManager.LoadBackStage();
     }
 }
  

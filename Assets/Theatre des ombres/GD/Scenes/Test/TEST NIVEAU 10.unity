@@ -357,8 +357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.89, y: 2.52}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: -1.0758, y: 3.5566}
+  m_SizeDelta: {x: 855.1915, y: 407.3313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &158098417 stripped
 Transform:
@@ -505,7 +505,9 @@ MonoBehaviour:
   branch7: []
   branch8: []
   branch9: []
-  branch10:
+  branch10: []
+  branch11: []
+  branch12:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
@@ -586,8 +588,6 @@ MonoBehaviour:
   - "pleurer jusqu\u2019\xE0 ce que fin s\u2019ensuive."
   - "On apprit alors plus tard que le squelette prit le pouvoir, faisant sombrer
     le royaume dans le d\xE9sespoir et la discorde. "
-  branch11: []
-  branch12: []
   branch13: []
   branch14: []
   branch15: []
@@ -623,8 +623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.0031428, y: -159.83}
+  m_SizeDelta: {x: 855.2, y: 87.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:

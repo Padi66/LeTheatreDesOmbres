@@ -357,8 +357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.89, y: 2.52}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: -1.0758, y: 3.5566}
+  m_SizeDelta: {x: 855.1915, y: 407.3313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &158098417 stripped
 Transform:
@@ -505,7 +505,9 @@ MonoBehaviour:
   branch7: []
   branch8: []
   branch9: []
-  branch10:
+  branch10: []
+  branch11: []
+  branch12:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau"
   - " qui se dressait alors fi\xE8rement sur la colline."
@@ -584,8 +586,6 @@ MonoBehaviour:
   - "-et nouvelle tentative de drague de Sir Oswald\u2026 "
   - "Coinc\xE9e pour l\u2019\xE9ternit\xE9 \xE0 l\u2019entr\xE9e du ch\xE2teau, face
     \xE0 ce squelette aussi d\xE9termin\xE9 qu\u2019elle \xE0 parvenir \xE0 son but\u2026"
-  branch11: []
-  branch12: []
   branch13: []
   branch14: []
   branch15: []
@@ -621,8 +621,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.00099802, y: -163.23}
+  m_SizeDelta: {x: 855.19, y: 60.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:
