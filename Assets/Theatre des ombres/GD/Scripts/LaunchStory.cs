@@ -28,7 +28,7 @@ public class LaunchStory : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         //_light.intensity = 1
-        _levelManager.LoadBackStage();
+        //_levelManager.LoadBackStage();
     }
 }
  
