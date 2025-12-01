@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.05
-  displayTime: 2
+  typewriterDelay: 0.04
+  displayTime: 0.9
   branch0: []
   branch1: []
   branch2: []
@@ -517,15 +517,17 @@ MonoBehaviour:
     avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
-    afin de retourner aupr\xE8s de son roi, un groupe de bandits malfam\xE9s jaillit
-    face \xE0 elle."
+    afin de retourner aupr\xE8s de son roi,"
+  - "un groupe de bandits malfam\xE9s jaillit face \xE0 elle."
   - "Et malgr\xE9 son courage et sa t\xE9nacit\xE9, elle ne put rien faire face \xE0
     leur nombre."
-  - "Ces derniers prirent un malin plaisir \xE0 la d\xE9pouiller de ses biens, la
-    privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e ainsi
-    que son bouclier, avant de dispara\xEEtre dans la for\xEAt."
+  - "Ces derniers prenant un malin plaisir \xE0 la d\xE9pouiller de ses biens, "
+  - "la privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e
+    ainsi que son bouclier,"
+  - "avant de dispara\xEEtre dans la for\xEAt."
   - " Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
-    de retourner, digne, au ch\xE2teau."
+    de retourner,"
+  - "digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
@@ -552,15 +554,16 @@ MonoBehaviour:
     du ch\xE2teau, il aper\xE7ut une silhouette, celle d'un squelette."
   - "Post\xE9 non loin des murailles du ch\xE2teau, ce dernier interpela la chevaleresse
     d\xE8s qu'il la vit. "
-  - "\u2014 Ohhh\u2026 mais qui voil\xE0 ? Une dame d\u2019une beaut\xE9\u2026 \xE0
-    en mourir ! lan\xE7a-t-il, souriant \xE0 pleines dents, tout en remettant une
-    m\xE8che de cheveux inexistante. "
+  - "\u2014 Ohhh\u2026 mais qui voil\xE0 ? Une dame d\u2019une beaut\xE9\u2026"
+  - "\xE0 en mourir ! lan\xE7a-t-il, souriant \xE0 pleines dents, "
+  - "tout en remettant une m\xE8che de cheveux inexistante."
   - La chevaleresse, perplexe, ne comprit pas vraiment ce qu'il venait de se passer,
     et fit mine de rien.
   - "Mais le squelette, quant \xE0 lui, continua de s\u2019approcher d'elle, cette
     fois-ci en bombant le torse, les c\xF4tes en avant. "
   - "\u2014 Permettez-moi de me pr\xE9senter, \xE0 vous radieuse chevaleresse ! Je
-    suis euh\u2026 Sir Oswald, pour vous servir ! "
+    suis euh\u2026"
+  - Sir Oswald, pour vous servir !
   - "La chevaleresse ignora ce dernier, continuant son chemin, seulement celui-ci
     se remit toujours face \xE0 elle."
   - "Agac\xE9e, cette derni\xE8re finit par le menacer de le mettre en pi\xE8ces
