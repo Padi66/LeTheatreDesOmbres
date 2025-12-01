@@ -443,7 +443,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.05
-  displayTime: 2
+  typewriterDelay: 0.04
+  displayTime: 1
   branch0: []
   branch1: []
   branch2: []
@@ -517,15 +517,17 @@ MonoBehaviour:
     avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
-    afin de retourner aupr\xE8s de son roi, un groupe de bandits malfam\xE9s jaillit
-    face \xE0 elle."
+    afin de retourner aupr\xE8s de son roi, "
+  - "un groupe de bandits malfam\xE9s jaillit face \xE0 elle."
   - "Et malgr\xE9 son courage et sa t\xE9nacit\xE9, elle ne put rien faire face \xE0
     leur nombre."
-  - "Ces derniers prirent un malin plaisir \xE0 la d\xE9pouiller de ses biens, la
-    privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e ainsi
-    que son bouclier, avant de dispara\xEEtre dans la for\xEAt."
+  - "Ces derniers prirent un malin plaisir \xE0 la d\xE9pouiller de ses biens, "
+  - "la privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e
+    ainsi que son bouclier, "
+  - "avant de dispara\xEEtre dans la for\xEAt."
   - " Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
-    de retourner, digne, au ch\xE2teau."
+    de retourner, "
+  - "digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
@@ -554,23 +556,24 @@ MonoBehaviour:
   - "\u2014 D\xE9j\xE0 de retour ? Votre bravoure et votre d\xE9termination sont
     vraiment sans faille. Toujours pr\xEAte \xE0 servir le royaume avec honneur,
     dit-il.  "
-  - "Seulement, \xE0 peine le roi eut-il termin\xE9 sa phrase, qu\u2019un grondement
-    terrible se fit entendre, r\xE9sonnant dans toute la contr\xE9e."
+  - "Seulement, \xE0 peine le roi eut-il termin\xE9 sa phrase,"
+  - "qu\u2019un grondement terrible se fit entendre, r\xE9sonnant dans toute la contr\xE9e."
   - "Et soudain, un immense dragon surgit au-dessus du ch\xE2teau, crachant des torrents
     de flammes."
-  - "Le roi, effray\xE9 et d\xE9sempar\xE9, se tourna alors vers la Chevaleresse,
-    implorant cette derni\xE8re ainsi que les autres gardes de tout faire pour sauver
-    le royaume."
+  - "Le roi, effray\xE9 et d\xE9sempar\xE9, se tourna alors vers la Chevaleresse,"
+  - " implorant cette derni\xE8re ainsi que les autres gardes de tout faire pour
+    sauver le royaume."
   - "\xC0 ces mots, Lyra brandit fermement son \xE9p\xE9e avant de s\u2019\xE9lancer
     vers le monstre d\xE9cha\xEEn\xE9."
   - "D\xE9termin\xE9e \xE0 en d\xE9coudre, elle parvint, au terme d\u2019un affrontement
-    effr\xE9n\xE9, \xE0 porter un coup d\xE9cisif au terrible dragon, le for\xE7ant
-    \xE0 fuir."
+    effr\xE9n\xE9,"
+  - "\xE0 porter un coup d\xE9cisif au terrible dragon, le for\xE7ant \xE0 fuir."
   - "Le roi, qui s\u2019\xE9tait \xE9clips\xE9 d\xE8s le d\xE9but du combat, sortit
     enfin de sa cachette et remercia chaleureusement Lyra pour avoir terrass\xE9
     la cr\xE9ature."
-  - "Longuement acclam\xE9e par les villageois alentours, son \xE9pop\xE9e se conclut
-    par l\u2019attribution l\xE9gendaire du titre de Protectrice du Royaume."
+  - "Longuement acclam\xE9e par les villageois alentours,"
+  - "son \xE9pop\xE9e se conclut par l\u2019attribution l\xE9gendaire du titre de
+    Protectrice du Royaume."
   branch13: []
   branch14: []
   branch15: []
@@ -606,8 +609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00007391, y: -161.02}
-  m_SizeDelta: {x: 855.19, y: 85.3}
+  m_AnchoredPosition: {x: -1.9, y: -156.07}
+  m_SizeDelta: {x: 799.45, y: 95.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:

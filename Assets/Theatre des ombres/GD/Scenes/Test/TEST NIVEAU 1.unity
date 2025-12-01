@@ -443,7 +443,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
-  displayTime: 0.9
+  displayTime: 1
   branch0: []
   branch1: []
   branch2: []
@@ -561,11 +561,11 @@ MonoBehaviour:
     et fit mine de rien.
   - "Mais le squelette, quant \xE0 lui, continua de s\u2019approcher d'elle, cette
     fois-ci en bombant le torse, les c\xF4tes en avant. "
-  - "\u2014 Permettez-moi de me pr\xE9senter, \xE0 vous radieuse chevaleresse ! Je
-    suis euh\u2026"
+  - "\u2014 Permettez-moi de me pr\xE9senter, \xE0 vous radieuse chevaleresse ! "
+  - "Je suis euh\u2026"
   - Sir Oswald, pour vous servir !
-  - "La chevaleresse ignora ce dernier, continuant son chemin, seulement celui-ci
-    se remit toujours face \xE0 elle."
+  - La chevaleresse ignora ce dernier, continuant son chemin,
+  - "seulement celui-ci se remit toujours face \xE0 elle."
   - "Agac\xE9e, cette derni\xE8re finit par le menacer de le mettre en pi\xE8ces
     s'il ne daignait pas la laisser passer."
   - "Mais il ne semblait pas effray\xE9 par ses menaces et continua de lui faire
@@ -575,8 +575,8 @@ MonoBehaviour:
   - "Lyra, \xE0 bout de nerfs, d\xE9gaina son \xE9p\xE9e et trancha ce dernier d\u2019un
     coup net, le faisant s'\xE9crouler en mille morceaux d'os."
   - Elle enjamba alors ce dernier, et reprit sa route.
-  - "Mais \xE0 peine fit-elle un pas que les os du squelette se reconstitu\xE8rent.
-    Sir Oswald se pr\xE9sentant de nouveau face \xE0 elle, les bras grands ouverts
+  - "Mais \xE0 peine fit-elle un pas que les os du squelette se reconstitu\xE8rent."
+  - "Sir Oswald se pr\xE9sentant de nouveau face \xE0 elle, les bras grands ouverts
     :"
   - "\u2014 Tu ne peux vraiment plus te passer de moi, hein ? "
   - "Lyra, exasp\xE9r\xE9e, ass\xE9na un second coup d'\xE9p\xE9e."
@@ -624,8 +624,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00099802, y: -163.23}
-  m_SizeDelta: {x: 855.19, y: 60.62}
+  m_AnchoredPosition: {x: -1.95, y: -163.23}
+  m_SizeDelta: {x: 797.64, y: 60.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:

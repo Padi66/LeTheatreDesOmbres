@@ -443,7 +443,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.05
-  displayTime: 2
+  typewriterDelay: 0.04
+  displayTime: 1
   branch0: []
   branch1: []
   branch2: []
@@ -517,15 +517,17 @@ MonoBehaviour:
     avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
-    afin de retourner aupr\xE8s de son roi, un groupe de bandits malfam\xE9s jaillit
-    face \xE0 elle."
+    afin de retourner aupr\xE8s de son roi,"
+  - " un groupe de bandits malfam\xE9s jaillit face \xE0 elle."
   - "Et malgr\xE9 son courage et sa t\xE9nacit\xE9, elle ne put rien faire face \xE0
     leur nombre."
-  - "Ces derniers prirent un malin plaisir \xE0 la d\xE9pouiller de ses biens, la
-    privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e ainsi
-    que son bouclier, avant de dispara\xEEtre dans la for\xEAt."
+  - "Ces derniers prirent un malin plaisir \xE0 la d\xE9pouiller de ses biens, "
+  - "la privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e
+    ainsi que son bouclier, "
+  - "avant de dispara\xEEtre dans la for\xEAt."
   - "Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
-    de retourner, digne, au ch\xE2teau."
+    de retourner,"
+  - " digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
@@ -620,8 +622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0031428, y: -157}
-  m_SizeDelta: {x: 855.2, y: 93.34}
+  m_AnchoredPosition: {x: 2.71, y: -157}
+  m_SizeDelta: {x: 785.16, y: 93.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1288017455
 GameObject:
