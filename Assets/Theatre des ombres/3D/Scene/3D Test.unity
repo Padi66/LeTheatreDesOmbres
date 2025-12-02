@@ -2663,6 +2663,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Toile_U_set_9_backstage
       objectReference: {fileID: 0}
+    - target: {fileID: 3543203652604598444, guid: 4e5b327f817071e4bbaa85a7a5116bd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543203652604598444, guid: 4e5b327f817071e4bbaa85a7a5116bd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543203652604598444, guid: 4e5b327f817071e4bbaa85a7a5116bd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543203652604598444, guid: 4e5b327f817071e4bbaa85a7a5116bd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
