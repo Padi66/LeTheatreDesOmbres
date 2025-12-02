@@ -414,22 +414,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 725925103768817630, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 725925103768817630, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 725925103768817630, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2768231644554379207, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3659904696416176338, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3267558
@@ -478,18 +462,6 @@ PrefabInstance:
       propertyPath: _storyManager
       value: 
       objectReference: {fileID: 1480032615}
-    - target: {fileID: 3978146764777009893, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: _particleSystem
-      value: 
-      objectReference: {fileID: 2102619262}
-    - target: {fileID: 3978146764777009893, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: _socketInteractor
-      value: 
-      objectReference: {fileID: 208282248}
-    - target: {fileID: 4134417657979637049, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 13fea913cc0bb08458bb75c2ea4b5fe8, type: 2}
     - target: {fileID: 6064065124753620484, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
       propertyPath: m_Name
       value: GreenPiedestal
@@ -2832,6 +2804,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: _socketGreen
+      value: 
+      objectReference: {fileID: 208282248}
+    - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: _socketOrange
+      value: 
+      objectReference: {fileID: 1789582806}
+    - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: _socketPurple
+      value: 
+      objectReference: {fileID: 789769124}
+    - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
       propertyPath: _piedestalGreen
       value: 
       objectReference: {fileID: 1962490886}
@@ -2843,6 +2827,10 @@ PrefabInstance:
       propertyPath: _piedestalPurple
       value: 
       objectReference: {fileID: 1042673544}
+    - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: _dialogueSequence
+      value: 
+      objectReference: {fileID: 402269912}
     - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
       propertyPath: _endPositionGreen
       value: 
@@ -6547,11 +6535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
---- !u!198 &2102619262 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5228873126254541283, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
-  m_PrefabInstance: {fileID: 208282247}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
