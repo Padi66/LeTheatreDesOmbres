@@ -28,8 +28,7 @@ public class PiedestalUP : MonoBehaviour
         StartCoroutine(Delay(6));
         _dialogueSequence.StartDialogueBranch(0);
         _dialogueSequence.StartDialogueBranch(1);
-        UpGreen();
-        
+        UpGreen(_socketGreen);  // ← Passe la référence de la socket !
     }
 
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)

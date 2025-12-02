@@ -148,10 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685a80b21116b6f46abebaa73bbc1f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LegacyAnimationChain
+  mainAnimationName: SliceTree1
+  autoDetectAnimations: 1
   mainAnimation: {fileID: 0}
-  mainAnimationName: Slice1
   animationsToTrigger: []
-  delay: 0
+  delay: 5
 --- !u!4 &172280093
 Transform:
   m_ObjectHideFlags: 0
@@ -178,6 +179,7 @@ GameObject:
   - component: {fileID: 255600207}
   - component: {fileID: 255600206}
   - component: {fileID: 255600208}
+  - component: {fileID: 255600209}
   m_Layer: 0
   m_Name: Bush1 (3)
   m_TagString: Untagged
@@ -266,7 +268,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255600204}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 247ade9829bf7c4428d992c1fbf446fe, type: 2}
   m_CullingMode: 0
@@ -280,6 +282,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &255600209
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255600204}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 48ff0be90e90097488cbdc944830a580, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 48ff0be90e90097488cbdc944830a580, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &344831035
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,10 +542,9 @@ GameObject:
   - component: {fileID: 531006589}
   - component: {fileID: 531006588}
   - component: {fileID: 531006587}
-  - component: {fileID: 531006590}
   - component: {fileID: 531006591}
   m_Layer: 0
-  m_Name: Tree1
+  m_Name: Treemain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,28 +641,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &531006590
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531006586}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 247ade9829bf7c4428d992c1fbf446fe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &531006591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,8 +653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d78351e5e4ed6429bc29dab09eb08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoAnimationChain
-  mainAnimationName: Slice1
-  targetTag: 
 --- !u!1001 &541489529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -683,6 +677,18 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 366349417458699317, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 366349417458699317, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.909
+      objectReference: {fileID: 0}
+    - target: {fileID: 366349417458699317, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.717
+      objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
@@ -693,11 +699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.31
+      value: 39.118
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1314,7 +1320,7 @@ Animation:
   - {fileID: 0}
   - {fileID: 7400000, guid: caabf7440f030ab4f974a2686239afde, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
@@ -2646,7 +2652,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596861482}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: 53944c5cdf5328f4180e2508b3c6be8f, type: 2}
   m_Animations:
