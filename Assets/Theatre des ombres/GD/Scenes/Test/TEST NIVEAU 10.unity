@@ -495,6 +495,9 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
   displayTime: 1
+  onAllDialoguesComplete:
+    m_PersistentCalls:
+      m_Calls: []
   branch0: []
   branch1: []
   branch2: []
@@ -575,17 +578,20 @@ MonoBehaviour:
   - "Le roi, outr\xE9 par cette demande, lui r\xE9pliqua que JAMAIS il ne toucherait
     \xE0 son ch\xE2teau."
   - "Le squelette, hilare, se mit \xE0 rire aux \xE9clats :"
-  - "\u2014 Votre ch\xE2teau, elle est bien bonne celle-l\xE0. Vous n\u2019\xEAtes
-    pas tr\xE8s rus\xE9 comme homme."
+  - "\u2014 Votre ch\xE2teau, elle est bien bonne celle-l\xE0."
+  - "Vous n\u2019\xEAtes pas tr\xE8s rus\xE9 comme homme."
   - "Voyons\u2026 pensez-vous vraiment qu\u2019un roi puisse manquer autant de charme
     et de tenue que vous ? "
   - "Le squelette regarda l\u2019\xE9p\xE9e avec insistance."
   - "\u2014 Bah tiens, donnez-moi \xE7a si vous \xEAtes le roi, cela ne vous sert
     \xE0 rien ! "
+  - "Il arracha l\u2019\xE9p\xE9e des bras tremblotants du roi avec une facilit\xE9
+    d\xE9concertante,"
+  - "puis s\u2019enfuit en courant, gloussant et le traitant de bon \xE0 rien."
   - "Son Altesse n\u2019eut m\xEAme pas le temps de se d\xE9fendre que le squelette
     p\xE9n\xE9tra dans le ch\xE2teau."
-  - "\xC9puis\xE9, il ne lui restait qu\u2019une chose \xE0 faire :"
-  - "pleurer jusqu\u2019\xE0 ce que fin s\u2019ensuive."
+  - "\xC9puis\xE9, il ne lui restait qu\u2019une chose \xE0 faire : pleurer jusqu\u2019\xE0
+    ce que fin s\u2019ensuive."
   - "On apprit alors plus tard que le squelette prit le pouvoir, faisant sombrer
     le royaume dans le d\xE9sespoir et la discorde. "
   branch13: []
