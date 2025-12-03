@@ -44,12 +44,7 @@ public class SocketOrange : MonoBehaviour
 
         if (_hapticManager != null)
         {
-            bool isLeftHand = args.interactorObject.transform.name.Contains("Left");
-            
-            if (isLeftHand)
-                _hapticManager.TriggerLeftHand(0.6f, 0.2f);
-            else
-                _hapticManager.TriggerRightHand(0.6f, 0.2f);
+            _hapticManager.TriggerBothHands(0.6f, 0.2f);
         }
 
         if (cube.GetComponent<Sword>())
@@ -89,6 +84,11 @@ public class SocketOrange : MonoBehaviour
 
     void OnSelectExited(SelectExitEventArgs args)
     {
+        if (_hapticManager != null)
+        {
+            _hapticManager.TriggerBothHands(0.3f, 0.1f);
+        }
+
         Debug.Log("Socket Orange vide");
         StoryManager.OnSocketStateChanged?.Invoke("Orange", false);
         StoryManager.OnCubePlaced?.Invoke("Orange", null);

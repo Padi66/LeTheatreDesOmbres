@@ -12,13 +12,14 @@ public class SocketGreen : MonoBehaviour
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private ParticleSystem _particleSystem;
-    [SerializeField] private HapticManager _hapticManager;
+    [SerializeField] private HapticManager _hapticManager;  // ← AJOUTEZ CECI
     private bool _hasDone = false;
     
     void Start()
     {
        _socketInteractor.enabled = false;
        
+       // ← AJOUTEZ CECI pour trouver automatiquement le HapticManager
        if (_hapticManager == null)
        {
            _hapticManager = FindFirstObjectByType<HapticManager>();
@@ -42,16 +43,12 @@ public class SocketGreen : MonoBehaviour
         GameObject cube = args.interactableObject.transform.gameObject;
         string cubeName = null;
     
+        // ← AJOUTEZ CECI pour vibration lors du placement
         if (_hapticManager != null)
         {
-            bool isLeftHand = args.interactorObject.transform.name.Contains("Left");
-            
-            if (isLeftHand)
-                _hapticManager.TriggerLeftHand(0.6f, 0.2f);
-            else
-                _hapticManager.TriggerRightHand(0.6f, 0.2f);
+            _hapticManager.TriggerBothHands(0.6f, 0.2f);
         }
-    
+        
         if (cube.GetComponent<CubeGreen>())
         {
             cubeName = "CubeGreen";
@@ -104,6 +101,12 @@ public class SocketGreen : MonoBehaviour
 
     void OnSelectExited(SelectExitEventArgs args)
     {
+        // ← AJOUTEZ CECI pour vibration lors du retrait
+        if (_hapticManager != null)
+        {
+            _hapticManager.TriggerBothHands(0.3f, 0.1f);
+        }
+        
         Debug.Log("Socket Vert vide");
         StoryManager.OnSocketStateChanged?.Invoke("Green", false);
         StoryManager.OnCubePlaced?.Invoke("Green", null);
