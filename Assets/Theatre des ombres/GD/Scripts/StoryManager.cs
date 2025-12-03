@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
-
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class StoryManager : MonoBehaviour
 {
@@ -26,11 +27,25 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private SceneTransitionManager _transition;
 
+    [Header("Transition Settings")]
+    [SerializeField] private float delayBeforeTransition = 1f;
+
     private AsyncOperation _preloadedScene;
+    private int pendingSceneIndex = -1;
+    private bool waitingForDialogues = false;
 
     private void Start()
     {
         StartCoroutine(TestHapticFeedback());
+
+        if (_dialogueSequence != null)
+        {
+            _dialogueSequence.onAllDialoguesComplete.AddListener(OnAllDialoguesComplete);
+        }
+        else
+        {
+            Debug.LogWarning("DialogueSequence not assigned in StoryManager!");
+        }
     }
 
     private IEnumerator TestHapticFeedback()
@@ -77,14 +92,12 @@ public class StoryManager : MonoBehaviour
     {
         OnSocketStateChanged += OnSocketUpdate;
         OnCubePlaced += OnCubeUpdate;
-        
     }
 
     private void OnDisable()
     {
         OnSocketStateChanged -= OnSocketUpdate;
         OnCubePlaced -= OnCubeUpdate;
-       
     }
 
     private void OnSocketUpdate(string socketName, bool state)
@@ -126,40 +139,29 @@ public class StoryManager : MonoBehaviour
         }
         CheckCombinationBackstage();
     }
-    
-
-    
-    
-    
 
     public void CheckDirectStep1()
     {
-        //Chevalresse dans la forêt
         if (_cubeInGreen == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(2);
         }
-        //Squelette dans la forêt
         else if (_cubeInGreen == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(3);
         }
-        //Roi dans la forêt
         else if (_cubeInGreen == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(4);
         }
-        
     }
 
     public void CheckDirectStep2()
     {
-        //épée au village
         if (_cubeInOrange == "Sword")
         {
             _dialogueSequence.StartDialogueBranch(6);
         }
-        //bouclier au village
         else if (_cubeInOrange == "Shield")
         {
             _dialogueSequence.StartDialogueBranch(7);
@@ -168,118 +170,124 @@ public class StoryManager : MonoBehaviour
 
     public void CheckDirectStep3()
     {
-        //Squelette au château
         if (_cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(9);
         }
-        //Roi au château
         else if (_cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(10);
         }
-        //Chevalresse au château
         else if (_cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(11);
         }
-
-        
     }
-
-    
-    
 
     private void CheckCombinationBackstage()
     {
-        
-        //Chevalresse Epée Squelette
+        int targetScene = -1;
+
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(2));
+            targetScene = 2;
             Debug.Log("Bonne combinaison ! //Chevalresse Epée Squelette");
         }
-        
-        //Chevalresse Epée Roi
         else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(3));
+            targetScene = 3;
             Debug.Log("Bonne combinaison ! //Chevalresse Epée Roi");
         }
-        
-        //Chevalresse Bouclier Roi
         else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(4));
+            targetScene = 4;
             Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Roi");
         }
-
-        //Chevalresse Bouclier Squelette
         else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(5));
+            targetScene = 5;
             Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Squelette");
         }
-        
-        //Squelette Epée Roi
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(6));
+            targetScene = 6;
             Debug.Log("Bonne combinaison ! //Squelette Epée Roi");
         }
-        
-        //Squelette Epee Chevalier
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(7));
+            targetScene = 7;
             Debug.Log("Bonne combinaison ! //Squelette Epee Chevalier");
         }
-
-        //Squelette Bouclier Roi
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(8));
+            targetScene = 8;
             Debug.Log("Bonne combinaison !  //Squelette Bouclier Roi");
         }
-        
-        //Squelette Bouclier Chevalresse
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(9));
+            targetScene = 9;
             Debug.Log("Bonne combinaison ! //Squelette Bouclier Chevalresse");
         }
-
-        //Roi Epée Chevalresse
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(10));
+            targetScene = 10;
             Debug.Log("Bonne combinaison !  //Roi Epée Chevalresse");
         }
-        
-        //Roi Epee Squelette
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(11));
+            targetScene = 11;
             Debug.Log("Bonne combinaison !//Roi Epee Squelette");
         }
-
-        //Roi Bouclier Chevalresse
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(12));
+            targetScene = 12;
             Debug.Log("Bonne combinaison ! //Roi Bouclier Chevalresse");
         }
-        
-        //Roi Bouclier Squelette
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(13));
+            targetScene = 13;
             Debug.Log("Bonne combinaison ! //Roi Bouclier Squelette");
         }
-
         else
         {
             Debug.Log("Aucune Combinaison");
         }
+
+        if (targetScene >= 0)
+        {
+            pendingSceneIndex = targetScene;
+            waitingForDialogues = true;
+            Debug.Log($"Combinaison détectée! Attente de la fin des dialogues avant de charger la scène {targetScene}");
+        }
+    }
+
+    private void OnAllDialoguesComplete()
+    {
+        if (!waitingForDialogues || pendingSceneIndex < 0)
+        {
+            Debug.Log("Tous les dialogues terminés, mais aucune transition en attente.");
+            return;
+        }
+
+        Debug.Log($"Tous les dialogues terminés! Lancement de la transition vers la scène {pendingSceneIndex} dans {delayBeforeTransition}s");
+        StartCoroutine(TransitionAfterDelay());
+    }
+
+    private IEnumerator TransitionAfterDelay()
+    {
+        yield return new WaitForSeconds(delayBeforeTransition);
+
+        if (_transition != null)
+        {
+            _transition.StartCoroutine(_transition.TransitionToScene(pendingSceneIndex));
+        }
+        else
+        {
+            Debug.LogWarning("SceneTransitionManager not found! Loading scene directly.");
+            SceneManager.LoadScene(pendingSceneIndex);
+        }
+
+        pendingSceneIndex = -1;
+        waitingForDialogues = false;
     }
 }

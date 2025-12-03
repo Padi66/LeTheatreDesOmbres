@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueSequence : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class DialogueSequence : MonoBehaviour
     [Header("Dialogue Settings")]
     public float typewriterDelay = 0.05f;
     public float displayTime = 2f;
+
+    [Header("Events")]
+    public UnityEvent onAllDialoguesComplete;
 
     [Header("Dialogue Branches")]
     [TextArea(2, 5)] public List<string> branch0;
@@ -37,6 +41,7 @@ public class DialogueSequence : MonoBehaviour
     [TextArea(2, 5)] public List<string> branch21;
     [TextArea(2, 5)] public List<string> branch22;
     [TextArea(2, 5)] public List<string> branch23;
+
     private Coroutine activeDialogue;
     private Queue<int> branchQueue = new Queue<int>();
     private bool isPlaying = false;
@@ -82,19 +87,19 @@ public class DialogueSequence : MonoBehaviour
     {
         switch (branchNumber)
         {
-            case 0: return branch0; //il était une fois
-            case 1: return branch1; //piédestal vert text
-            case 2: return branch2;//Chevalresse dans la forêt
-            case 3: return branch3;//Squelette dans la forêt
-            case 4: return branch4;//Roi dans la forêt
-            case 5: return branch5;//piedestal orange text
-            case 6: return branch6;//épée au village
-            case 7: return branch7;//bouclier au village
-            case 8: return branch8; //piédestal violet text
-            case 9: return branch9;//squelette au chateau
-            case 10: return branch10; //roi au chateau
-            case 11: return branch11; //chevalresse au chateau
-            case 12: return branch12; // Final
+            case 0: return branch0;
+            case 1: return branch1;
+            case 2: return branch2;
+            case 3: return branch3;
+            case 4: return branch4;
+            case 5: return branch5;
+            case 6: return branch6;
+            case 7: return branch7;
+            case 8: return branch8;
+            case 9: return branch9;
+            case 10: return branch10;
+            case 11: return branch11;
+            case 12: return branch12;
             case 13: return branch13;
             case 14: return branch14;
             case 15: return branch15;
@@ -104,7 +109,7 @@ public class DialogueSequence : MonoBehaviour
             case 19: return branch19;
             case 20: return branch20;
             case 21: return branch21;
-            case 22: return branch22; 
+            case 22: return branch22;
             default: return null;
         }
     }
@@ -152,5 +157,13 @@ public class DialogueSequence : MonoBehaviour
             Debug.Log($"Playing next queued branch: {nextBranch}. Remaining in queue: {branchQueue.Count}");
             PlayBranch(nextBranch);
         }
+        else
+        {
+            Debug.Log("All dialogues complete! Invoking onAllDialoguesComplete event.");
+            onAllDialoguesComplete?.Invoke();
+        }
     }
+
+    public bool IsPlaying => isPlaying;
+    public bool HasQueuedDialogues => branchQueue.Count > 0;
 }
