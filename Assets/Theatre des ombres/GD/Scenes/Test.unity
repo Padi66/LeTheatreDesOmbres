@@ -561,6 +561,25 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &745688782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620550476518455857, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
+  m_PrefabInstance: {fileID: 2615524144662828037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &745688792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745688782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3097cdc42a133764688c02ee5732918b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnMaterial
+  audioSource: {fileID: 616941558}
+  targetMaterial: {fileID: 13400000, guid: 4800259544de8ad41ad354bf5a08154e, type: 2}
 --- !u!1 &820326896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1158,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 312867673109549035, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 4800259544de8ad41ad354bf5a08154e, type: 2}
+    - target: {fileID: 1084125075090207424, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2415099
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084125075090207424, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
+      propertyPath: m_Center.y
+      value: -0.3248117
+      objectReference: {fileID: 0}
     - target: {fileID: 1124463224681305464, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
       propertyPath: m_Name
       value: Middle + Bottom Figurine 1
@@ -1221,35 +1252,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6469542858611276051, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 616941557}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 530644734035190599, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1460883540}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
 --- !u!4 &1460883538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6469542858611276051, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
   m_PrefabInstance: {fileID: 1460883537}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1460883539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 530644734035190599, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
-  m_PrefabInstance: {fileID: 1460883537}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1460883540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460883539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3097cdc42a133764688c02ee5732918b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnMaterial
-  audioSource: {fileID: 616941558}
-  targetMaterial: {fileID: 13400000, guid: 4800259544de8ad41ad354bf5a08154e, type: 2}
 --- !u!1 &1543558999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1699,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8453610387919221228, guid: 812da6d50e1f3a04fa14be3c7b18d792, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1741,6 +1754,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5937344239541706445, guid: 00bdda2e1466630469e37240c8c1ca76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268218426399222508, guid: 00bdda2e1466630469e37240c8c1ca76, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7767528924328576305, guid: 00bdda2e1466630469e37240c8c1ca76, type: 3}
@@ -1799,6 +1816,18 @@ PrefabInstance:
     - target: {fileID: 228157561067628726, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 963080381921876244, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284249828047317246, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4428052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284249828047317246, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
+      propertyPath: m_Center.y
+      value: 0.2214024
       objectReference: {fileID: 0}
     - target: {fileID: 9056761493691988298, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
       propertyPath: m_Name
@@ -2109,6 +2138,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7399648224591629222, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7620550476518455857, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
       propertyPath: m_Name
       value: Top Figurine 1
@@ -2116,7 +2149,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7620550476518455857, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 745688792}
   m_SourcePrefab: {fileID: 100100000, guid: 84c8928c63789e74fb327ceb0236e0e7, type: 3}
 --- !u!1001 &3483692249878627352
 PrefabInstance:
@@ -2126,6 +2162,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 154960798124440079, guid: 0a14a8006d967874daaf22987b9dbdbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2841579617102598438, guid: 0a14a8006d967874daaf22987b9dbdbe, type: 3}
       propertyPath: m_Name
       value: Figurine Finished 2
@@ -2297,6 +2337,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291329393090467590, guid: 211ea7d78f871fe4fa3a3a7cf91d0857, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8457255823230282914, guid: 211ea7d78f871fe4fa3a3a7cf91d0857, type: 3}
       propertyPath: m_Name
       value: CubePurple
@@ -2411,6 +2455,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3459736921813708554, guid: d58cdbedb3cfc7e4a9c44288c8336a69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4463804708278291137, guid: d58cdbedb3cfc7e4a9c44288c8336a69, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.55
@@ -2622,6 +2670,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6277262366639545213, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8469696459775363534, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
       propertyPath: m_Name
       value: Middle + Bottom Figurine 3
@@ -2707,6 +2759,10 @@ PrefabInstance:
     - target: {fileID: 4615199264355365219, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
       propertyPath: m_Name
       value: 'Top + Middle Figurine 2 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592458470493403309, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9111683037372025167, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
       propertyPath: m_LocalPosition.x
