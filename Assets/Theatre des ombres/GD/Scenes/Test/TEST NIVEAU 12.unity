@@ -495,6 +495,9 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
   displayTime: 1
+  onAllDialoguesComplete:
+    m_PersistentCalls:
+      m_Calls: []
   branch0: []
   branch1: []
   branch2: []
@@ -571,8 +574,8 @@ MonoBehaviour:
     :"
   - "\u2014 Eh oh, toi ! Ouvre la porte \xE0 ton roi !"
   - "La garde le d\xE9visagea, perplexe, puis \xE9clata de rire. "
-  - "\u2014 Ton roi ? De qui tu parles, mendiant ? D\xE9guerpis avant qu\u2019on
-    te chasse \xE0 coups de hallebarde."
+  - "\u2014 Ton roi ? De qui tu parles, mendiant ?"
+  - "D\xE9guerpis avant qu\u2019on te chasse \xE0 coups de hallebarde."
   - "\u2014 Comment oses-tu parler \xE0 ton roi sur ce ton ? Je te ferai fouetter
     pour \xE7a !"
   - "\xC0 ces mots, plusieurs gardes sortirent du ch\xE2teau,"
@@ -582,10 +585,12 @@ MonoBehaviour:
   - "\xC9tait-il devenu fou ? Le royaume avait-il oubli\xE9 son propre souverain
     ?"
   - "C\u2019est alors qu\u2019un squelette surgit du chemin, marchant d\u2019un pas
-    tranquille. Le roi resta bouche b\xE9e."
+    tranquille."
+  - "Le roi resta bouche b\xE9e."
   - "Le mort-vivant l\u2019observa un instant puis demanda :"
   - "\u2014 Toi aussi, ils t\u2019ont refus\xE9 l\u2019entr\xE9e du ch\xE2teau ?"
-  - "\u2014 Oui\u2026 ils ne me reconnaissent pas. Je suis le roi. "
+  - "\u2014 Oui\u2026 ils ne me reconnaissent pas."
+  - Je suis le roi.
   - "Le squelette secoua sa bo\xEEte cr\xE2nienne, amus\xE9. "
   - "\u2014 Oui, bien s\xFBr. Et moi, je suis vivant."
   - "Il tr\xE9bucha sur une pierre, manquant de s\u2019effondrer en morceaux. "
@@ -596,15 +601,17 @@ MonoBehaviour:
   - "\u2014 D\xE9sol\xE9. Alors\u2026 que comptes-tu faire maintenant ?"
   - "Le roi baissa la t\xEAte."
   - "\u2014 Je ne sais pas. Peut-\xEAtre qu\u2019il est temps d\u2019en finir avec\u2026
-    tout \xE7a. Avec la royaut\xE9, le pouvoir\u2026 les responsabilit\xE9s que plus
-    personne ne voit."
+    tout \xE7a."
+  - "Avec la royaut\xE9, le pouvoir\u2026 les responsabilit\xE9s que plus personne
+    ne voit."
   - "Le squelette se rapprocha de lui, geste \xE9trange pour une cr\xE9ature sans
     chair. "
   - "\u2014 Tu sais\u2026 on est pareils, toi et moi. On a \xE9t\xE9 oubli\xE9s.
     Mis de c\xF4t\xE9. Effac\xE9s."
   - Il tendit une main osseuse.
-  - "\u2014 Alors fuis avec moi. Quittons ces murs, quittons leurs jugements. Partons
-    vers l\u2019horizon. Juste toi et moi. Sans se retourner."
+  - "\u2014 Alors fuis avec moi. Quittons ces murs, quittons leurs jugements."
+  - "Partons vers l\u2019horizon. Juste toi et moi."
+  - Sans se retourner.
   - Le roi regarda cette main blanche, fragile, incongrue.
   - "Et pour la premi\xE8re fois depuis longtemps\u2026 il sourit. Il posa sa main
     dans celle du squelette."
@@ -614,8 +621,8 @@ MonoBehaviour:
   - "On raconta qu\u2019ils travers\xE8rent montagnes et for\xEAts, qu\u2019ils se
     li\xE8rent d\u2019une amiti\xE9 ou peut-\xEAtre d\u2019un amour que nul ne put
     s\xE9parer."
-  - "Et que jamais plus ils ne cherch\xE8rent \xE0 revenir au ch\xE2teau."
-  - "Car parfois, la libert\xE9 n\u2019est pas un tr\xF4ne\u2026 "
+  - "Et que jamais plus ils ne cherch\xE8rent \xE0 revenir au ch\xE2teau. Car parfois,
+    la libert\xE9 n\u2019est pas un tr\xF4ne\u2026 "
   - "Mais simplement quelqu\u2019un qui vous tend la main quand tout le monde vous
     oublie."
   branch13: []

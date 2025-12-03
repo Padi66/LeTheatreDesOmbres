@@ -495,6 +495,9 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
   displayTime: 1
+  onAllDialoguesComplete:
+    m_PersistentCalls:
+      m_Calls: []
   branch0: []
   branch1: []
   branch2: []
@@ -564,19 +567,20 @@ MonoBehaviour:
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle d'une chevaleresse."
-  - "Elle est imperturbable, post\xE9e \xE0 son poste aux portes du ch\xE2teau. "
+  - "Imperturbable, post\xE9e \xE0 son poste aux portes du ch\xE2teau. "
   - "Le roi quant \xE0 lui, \xE9puis\xE9 par toutes ces p\xE9rip\xE9ties,"
   - "\xE9tait enfin arriv\xE9 aux portes du ch\xE2teau, mais la chevaleresse lui
     bloqua l\u2019entr\xE9e :"
   - "\u2014 Enfin, chevaleresse ! Vous ne devinerez jamais tout ce qu\u2019il m\u2019est
-    arriv\xE9, je suis bien heureux de retrouver ma splendide demeure. "
-  - "Dit-il tout en maniant maladroitement son \xE9p\xE9e face \xE0 la chevaleresse."
+    arriv\xE9,"
+  - "je suis bien heureux de retrouver ma splendide demeure. Dit-il tout en maniant
+    maladroitement son \xE9p\xE9e face \xE0 la chevaleresse."
   - "La chevaleresse, ne le prenant pas au s\xE9rieux, souffla et roula des yeux. "
   - "\u2014 Euuh... Bonjour, Monsieur, vous venez pour ?"
   - "\u2014 Mais ma chevaleresse, JE suis le roi, je viens ici pour rentrer chez
     moi. "
-  - "\u2014 Non, r\xE9pondit-elle froidement, je connais les gens comme vous."
-  - Vous avez choisi la mauvaise personne,
+  - "\u2014 Non, r\xE9pondit-elle froidement, je connais les gens comme vous. Vous
+    avez choisi la mauvaise personne,"
   - "je connais le roi dans ses moindres d\xE9tails, il n\u2019est pas aussi fou
     que vous. Vous ne rentrerez pas aussi facilement."
   - "Exc\xE9d\xE9 par sa r\xE9ponse, son Altesse perdit patience et prit alors une

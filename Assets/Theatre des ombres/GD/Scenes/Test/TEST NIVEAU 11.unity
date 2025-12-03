@@ -495,6 +495,9 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
   displayTime: 1
+  onAllDialoguesComplete:
+    m_PersistentCalls:
+      m_Calls: []
   branch0: []
   branch1: []
   branch2: []
@@ -565,7 +568,7 @@ MonoBehaviour:
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle d'une chevaleresse."
-  - "Elle est imperturbable, pos\xE9e \xE0 son poste aux portes du ch\xE2teau. "
+  - "imperturbable, pos\xE9e \xE0 son poste aux portes du ch\xE2teau. "
   - "Le roi, \xE9puis\xE9 par toutes ces p\xE9rip\xE9ties, et enfin arriv\xE9 \xE0
     destination,"
   - " se retrouva face \xE0 cette derni\xE8re qui lui bloqua l\u2019entr\xE9e."
