@@ -126,7 +126,7 @@ MonoBehaviour:
     - Pyramide
     - 
     - 
-    objectToSpawn: {fileID: 1117567053886166506, guid: 56c49a44be9cf2d4c85627544bedef36, type: 3}
+    objectToSpawn: {fileID: 4406114788250645380, guid: e0ae7f7fc610c184c92a3818dfd95111, type: 3}
     spawnLocation: {fileID: 0}
     fx: {fileID: 0}
   - combinationName: Shield
@@ -156,9 +156,9 @@ MonoBehaviour:
     - Pyramide
     - 
     - 
-    objectToSpawn: {fileID: 6823396660713083286, guid: 1bdf07dcdfaf4fe498f98be310151f40, type: 3}
+    objectToSpawn: {fileID: 2383737046881278821, guid: bec53a95c4bdb5449a73bc3e37f078c2, type: 3}
     spawnLocation: {fileID: 0}
-    fx: {fileID: 0}
+    fx: {fileID: 5468599165333747748}
 --- !u!1001 &49912954031489258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3020,11 +3020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489289234574599576, guid: d129a6d503f49834aa9d47e42690c871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.65
+      value: 0.447
       objectReference: {fileID: 0}
     - target: {fileID: 489289234574599576, guid: d129a6d503f49834aa9d47e42690c871, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.137
+      value: -0.504
       objectReference: {fileID: 0}
     - target: {fileID: 489289234574599576, guid: d129a6d503f49834aa9d47e42690c871, type: 3}
       propertyPath: m_LocalRotation.w
