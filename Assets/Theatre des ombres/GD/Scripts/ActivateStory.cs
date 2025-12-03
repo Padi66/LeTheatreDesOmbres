@@ -88,17 +88,13 @@ public class ActivateStory : MonoBehaviour
             var interactable = socketInteractor.interactablesSelected[0];
             GameObject cube = interactable.transform.gameObject;
 
-            if (cube.GetComponent<CubeGreen>())
+            if (cube.GetComponent<PlayTicket>())
             {
-                return "CubeGreen";
+                return "PlayTicket";
             }
-            else if (cube.GetComponent<CubeOrange>())
+            else if (cube.GetComponent<QuitTicket>())
             {
-                return "CubeOrange";
-            }
-            else if (cube.GetComponent<CubePurple>())
-            {
-                return "CubePurple";
+                return "QuitTicket";
             }
         }
 
@@ -176,14 +172,14 @@ public class ActivateStory : MonoBehaviour
             return;
         }
 
-        if (cubeType == "CubeGreen")
+        if (cubeType == "PlayTicket")
         {
-            Debug.Log("Cube VERT - Chargement Level 1");
+            Debug.Log("Chargement Level 1");
             _levelManager.LoadBackStage();
         }
-        else if (cubeType == "CubePurple")
+        else if (cubeType == "QuitTicket")
         {
-            Debug.Log("Cube VIOLET - Fermeture du jeu");
+            Debug.Log("Fermeture du jeu");
             _levelManager.Quit();
         }
         else
