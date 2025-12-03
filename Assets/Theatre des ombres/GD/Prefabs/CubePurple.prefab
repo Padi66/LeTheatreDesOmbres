@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8872462162663496951}
   - component: {fileID: 8921739941249781748}
   - component: {fileID: 8376855773632831959}
+  - component: {fileID: 1532435796247995562}
   m_Layer: 0
   m_Name: CubePurple
   m_TagString: Untagged
@@ -293,3 +294,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
+--- !u!114 &1532435796247995562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249519903314322553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703bca2deb05782408908bdf1dfc7959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableHapticFeedback
+  _hapticManager: {fileID: 0}
+  _grabAmplitude: 0.4
+  _grabDuration: 0.15
+  _releaseAmplitude: 0.2
+  _releaseDuration: 0.1
