@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: POOF (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2962853038874607561, guid: c4feb6ef12b3c5341a9123676cb27dcf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4249437714528574666, guid: c4feb6ef12b3c5341a9123676cb27dcf, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0224936
