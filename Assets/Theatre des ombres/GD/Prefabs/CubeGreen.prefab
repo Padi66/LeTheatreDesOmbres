@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3373095786007246921}
   - component: {fileID: 3638050672452554332}
   - component: {fileID: 7046587767917708331}
+  - component: {fileID: -8916591774333519027}
   m_Layer: 0
   m_Name: CubeGreen
   m_TagString: Untagged
@@ -293,3 +294,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfeca05dcf493c4e87abedbdd921155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectResetter
+--- !u!114 &-8916591774333519027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371142553204606993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703bca2deb05782408908bdf1dfc7959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableHapticFeedback
+  _hapticManager: {fileID: 0}
+  _grabAmplitude: 0.4
+  _grabDuration: 0.15
+  _releaseAmplitude: 0.2
+  _releaseDuration: 0.1
