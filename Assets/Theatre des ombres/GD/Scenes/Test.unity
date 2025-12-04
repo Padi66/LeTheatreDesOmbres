@@ -1211,6 +1211,7 @@ MonoBehaviour:
   _piedestal: {fileID: 0}
   _transition: {fileID: 0}
   delayBeforeTransition: 1
+  _isLaunched: 0
 --- !u!4 &1628006683
 Transform:
   m_ObjectHideFlags: 0

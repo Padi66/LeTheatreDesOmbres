@@ -29,13 +29,14 @@ public class ZoneTPObject : MonoBehaviour
 
     private IEnumerator ResetObject(Transform obj, Rigidbody rb, ObjectResetter resetter)
     {
-        rb.isKinematic = true;
-
-        if (_resetVelocity)
+        if (_resetVelocity && !rb.isKinematic)
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
+
+        bool wasKinematic = rb.isKinematic;
+        rb.isKinematic = true;
 
         obj.position = resetter.InitialPosition;
 
@@ -48,6 +49,12 @@ public class ZoneTPObject : MonoBehaviour
 
         yield return new WaitForSeconds(_resetDelay);
 
-        rb.isKinematic = false;
+        rb.isKinematic = wasKinematic;
+        
+        if (_resetVelocity && !rb.isKinematic)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 }
