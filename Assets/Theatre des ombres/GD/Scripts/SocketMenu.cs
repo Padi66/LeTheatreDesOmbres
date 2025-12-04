@@ -13,7 +13,20 @@ public class SocketMenu : MonoBehaviour
     public bool _isInSocket = false;
 
     
+    private void OnEnable()
+    {
+        _socketInteractor.selectEntered.AddListener(OnSelectEntered);
+        _socketInteractor.selectExited.AddListener(OnSelectExited);
+    }
 
+    private void OnDisable()
+    {
+        _socketInteractor.selectEntered.RemoveListener(OnSelectEntered);
+        _socketInteractor.selectExited.RemoveListener(OnSelectExited);
+    }
+    
+    
+    
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         GameObject cube = args.interactableObject.transform.gameObject;
