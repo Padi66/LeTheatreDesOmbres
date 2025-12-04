@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.04
+  typewriterDelay: 0.0418
   displayTime: 1
   onAllDialoguesComplete:
     m_PersistentCalls:
@@ -1384,8 +1384,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: c5eaf5e778bc5004e9c6916035e894ef, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
