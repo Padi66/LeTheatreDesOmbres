@@ -515,8 +515,8 @@ MonoBehaviour:
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau"
   - " qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
-    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que la chevaleresse."
-  - "La Chevaleresse, Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e,"
+    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que  la chevaleresse, "
+  - "Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e,"
   - " avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
@@ -1391,8 +1391,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: 5757cf56d956edf4189e130d3ac3707f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1401,7 +1401,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5.9699926
+  MinDistance: 6.200453
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
