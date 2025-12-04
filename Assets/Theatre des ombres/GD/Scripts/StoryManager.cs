@@ -188,66 +188,78 @@ public class StoryManager : MonoBehaviour
 
     public void CheckCombinationBackstage()
     {
-        _isLaunched = true;
+        
         int targetScene = -1;
 
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
+            _isLaunched = true;
             targetScene = 2;
             Debug.Log("Bonne combinaison ! //Chevalresse Epée Squelette");
         }
         else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
+            _isLaunched = true;
             targetScene = 3;
             Debug.Log("Bonne combinaison ! //Chevalresse Epée Roi");
         }
         else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
+            _isLaunched = true;
             targetScene = 4;
             Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Roi");
         }
         else if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
+            _isLaunched = true;
             targetScene = 5;
             Debug.Log("Bonne combinaison ! //Chevalresse Bouclier Squelette");
         }
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubePurple")
         {
+            _isLaunched = true;
             targetScene = 6;
             Debug.Log("Bonne combinaison ! //Squelette Epée Roi");
         }
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
+            _isLaunched = true;
             targetScene = 7;
             Debug.Log("Bonne combinaison ! //Squelette Epee Chevalier");
         }
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubePurple")
         {
+            _isLaunched = true;
             targetScene = 8;
             Debug.Log("Bonne combinaison !  //Squelette Bouclier Roi");
         }
         else if (_cubeInGreen == "CubeGreen" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
+            _isLaunched = true;
             targetScene = 9;
             Debug.Log("Bonne combinaison ! //Squelette Bouclier Chevalresse");
         }
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeOrange")
         {
+            _isLaunched = true;
             targetScene = 10;
             Debug.Log("Bonne combinaison !  //Roi Epée Chevalresse");
         }
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")
         {
+            _isLaunched = true;
             targetScene = 11;
             Debug.Log("Bonne combinaison !//Roi Epee Squelette");
         }
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeOrange")
         {
+            _isLaunched = true;
             targetScene = 12;
             Debug.Log("Bonne combinaison ! //Roi Bouclier Chevalresse");
         }
         else if (_cubeInGreen == "CubePurple" && _cubeInOrange == "Shield" && _cubeInPurple == "CubeGreen")
         {
+            _isLaunched = true;
             targetScene = 13;
             Debug.Log("Bonne combinaison ! //Roi Bouclier Squelette");
         }
