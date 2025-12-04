@@ -269,13 +269,13 @@ GameObject:
   - component: {fileID: 430627633629862377}
   - component: {fileID: 908660195098148326}
   - component: {fileID: 6684440454758730637}
-  - component: {fileID: 7059689896389721306}
   - component: {fileID: 5836765376471194593}
   - component: {fileID: 6699569172046482947}
   - component: {fileID: 6122613941289533404}
   - component: {fileID: 2248766440254582555}
   - component: {fileID: -609117524200722561}
   - component: {fileID: 2636366263168731683}
+  - component: {fileID: 8056236190151404547}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -308,7 +308,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4406114788250645380}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4160322117403227802, guid: a31b44849f169874b8b667fe1b5f3c35, type: 3}
 --- !u!23 &6684440454758730637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -357,27 +357,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7059689896389721306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4406114788250645380}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5836765376471194593
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -608,6 +587,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnMaterial
   audioSource: {fileID: 773905898687844689}
   targetMaterial: {fileID: 13400000, guid: 122617649784c63449f1e60561085a6c, type: 2}
+--- !u!65 &8056236190151404547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4406114788250645380}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.73804003, y: 0.5116716, z: 0.8099266}
+  m_Center: {x: 0, y: 0.2558358, z: 0.000042155385}
 --- !u!1 &4546908327573685117
 GameObject:
   m_ObjectHideFlags: 0
