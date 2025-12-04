@@ -7,6 +7,7 @@ public class LaunchStory : MonoBehaviour
     [SerializeField] CurtainsMove _curtains;
     [SerializeField] LevelManager _levelManager;
     [SerializeField] private LightGroup _lightGroup;
+    [SerializeField] AudioSource _audioSource;
     
     
     void Start()
@@ -24,6 +25,7 @@ public class LaunchStory : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         _dialogueSequence.StartDialogueBranch(12);
+        _audioSource.Play();
 
         yield return new WaitForSeconds(6f);
 
