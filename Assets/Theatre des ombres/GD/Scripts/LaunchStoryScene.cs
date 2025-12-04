@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class LaunchStory : MonoBehaviour
+public class LaunchStoryScene : MonoBehaviour
 {
     [SerializeField] DialogueSequence _dialogueSequence;
     [SerializeField] CurtainsMove _curtains;

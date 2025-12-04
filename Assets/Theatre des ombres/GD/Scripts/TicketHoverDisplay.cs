@@ -8,6 +8,7 @@ public class TicketHoverDisplay : MonoBehaviour
     [SerializeField] private XRGrabInteractable grabInteractable;
     
     private ControllerCanvasManager currentCanvasManager;
+    private XRBaseInteractor currentInteractor;
     
     private void OnEnable()
     {
@@ -27,9 +28,15 @@ public class TicketHoverDisplay : MonoBehaviour
 
     private void OnHoverEntered(HoverEnterEventArgs args)
     {
+        if (currentCanvasManager != null)
+        {
+            return;
+        }
+
         ControllerCanvasManager canvasManager = GetControllerCanvasManager(args.interactorObject as XRBaseInteractor);
         if (canvasManager != null)
         {
+            currentInteractor = args.interactorObject as XRBaseInteractor;
             currentCanvasManager = canvasManager;
             canvasManager.ShowHoverImage();
         }
@@ -37,18 +44,25 @@ public class TicketHoverDisplay : MonoBehaviour
 
     private void OnHoverExited(HoverExitEventArgs args)
     {
-        if (currentCanvasManager != null && !grabInteractable.isSelected)
+        if (currentInteractor == args.interactorObject && currentCanvasManager != null && !grabInteractable.isSelected)
         {
             currentCanvasManager.HideAllImages();
             currentCanvasManager = null;
+            currentInteractor = null;
         }
     }
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
+        if (currentCanvasManager != null)
+        {
+            currentCanvasManager.HideAllImages();
+        }
+
         ControllerCanvasManager canvasManager = GetControllerCanvasManager(args.interactorObject as XRBaseInteractor);
         if (canvasManager != null)
         {
+            currentInteractor = args.interactorObject as XRBaseInteractor;
             currentCanvasManager = canvasManager;
             canvasManager.ShowSelectImage();
         }
@@ -60,6 +74,7 @@ public class TicketHoverDisplay : MonoBehaviour
         {
             currentCanvasManager.HideAllImages();
             currentCanvasManager = null;
+            currentInteractor = null;
         }
     }
 
@@ -81,4 +96,5 @@ public class TicketHoverDisplay : MonoBehaviour
         return null;
     }
 }
+
 

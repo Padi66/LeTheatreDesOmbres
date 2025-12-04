@@ -26,6 +26,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] LevelManager _levelManager;
     [SerializeField] private PiedestalUP _piedestal;
     [SerializeField] private SceneTransitionManager _transition;
+    
 
     [Header("Transition Settings")]
     [SerializeField] private float delayBeforeTransition = 1f;
@@ -33,6 +34,7 @@ public class StoryManager : MonoBehaviour
     private AsyncOperation _preloadedScene;
     private int pendingSceneIndex = -1;
     private bool waitingForDialogues = false;
+    public bool _isLaunched = false;
 
     private void Start()
     {
@@ -137,7 +139,7 @@ public class StoryManager : MonoBehaviour
                 CheckDirectStep3();
                 break;
         }
-        CheckCombinationBackstage();
+        
     }
 
     public void CheckDirectStep1()
@@ -184,8 +186,9 @@ public class StoryManager : MonoBehaviour
         }
     }
 
-    private void CheckCombinationBackstage()
+    public void CheckCombinationBackstage()
     {
+        _isLaunched = true;
         int targetScene = -1;
 
         if (_cubeInGreen == "CubeOrange" && _cubeInOrange == "Sword" && _cubeInPurple == "CubeGreen")

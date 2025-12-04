@@ -880,6 +880,14 @@ PrefabInstance:
       propertyPath: m_ControllingInteractor
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4967734236092857466, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.61333627
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967734236092857466, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Center.y
+      value: 0.3107557
+      objectReference: {fileID: 0}
     - target: {fileID: 5071654877467818712, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2880898
@@ -932,17 +940,45 @@ PrefabInstance:
       propertyPath: m_ControllingInteractor
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5468599165333747748, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: ShapeModule.type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468599165333747748, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.062
+      value: -1.082
       objectReference: {fileID: 0}
     - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5411
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.789
+      value: -5.519
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071079
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682605555071145308, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 5865841709241494978, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_ControllingInteractor
@@ -996,6 +1032,14 @@ PrefabInstance:
       propertyPath: combinations.Array.data[1].spawnLocation
       value: 
       objectReference: {fileID: 1550973122}
+    - target: {fileID: 7526639671349043263, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6122235
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526639671349043263, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Center.y
+      value: 0.3101992
+      objectReference: {fileID: 0}
     - target: {fileID: 7793090007687452240, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_ControllingInteractor
       value: 
