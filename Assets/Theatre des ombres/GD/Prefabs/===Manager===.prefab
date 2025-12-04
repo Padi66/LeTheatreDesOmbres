@@ -56,6 +56,8 @@ MonoBehaviour:
   _levelManager: {fileID: 0}
   _piedestal: {fileID: 0}
   _transition: {fileID: 0}
+  delayBeforeTransition: 1
+  _isLaunched: 0
 --- !u!114 &4692820781508095928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +79,10 @@ MonoBehaviour:
   _piedestalOrange: {fileID: 0}
   _piedestalPurple: {fileID: 0}
   _piedestalGreen: {fileID: 0}
+  _socketGreen: {fileID: 0}
+  _socketOrange: {fileID: 0}
+  _socketPurple: {fileID: 0}
+  _dialogueSequence: {fileID: 0}
   _duration: 2
 --- !u!114 &6362158601421136897
 MonoBehaviour:
