@@ -108,12 +108,232 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: C_profil
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 827
+        width: 392
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa8f4951ce6870499ee8577ca921eaa
+      internalID: 231381542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Genoux
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 931
+        width: 492
+        height: 569
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9fd35892363324a823bc053d5f3296
+      internalID: -1029472523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_BouclierLever
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 827
+        width: 516
+        height: 754
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de15069a8acc446438971fd3ef56f863
+      internalID: -495752664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_BouclierBaisser
+      rect:
+        serializedVersion: 2
+        x: 2589
+        y: 813
+        width: 465
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414137c48f6508a429967aec8b527a93
+      internalID: 1229697662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITESHEET_CHEVALERESSE_0
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 825
+        width: 562
+        height: 763
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109c72c58c503de4cae697fe23d9b4c0
+      internalID: 1360074107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_MarcheEpee
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 25
+        width: 545
+        height: 743
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2324b6ef795408d4f865ed24f917065e
+      internalID: 668047201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_MargeEpee2
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 9
+        width: 570
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1196a631bd342e24388050f4371b5986
+      internalID: 1354903322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_IdleEpee
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 14
+        width: 547
+        height: 772
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555ae9002a6c4dc479145baebcd03400
+      internalID: 1134460683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Marche1
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 25
+        width: 543
+        height: 781
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ba75e72e8b62543af23350d4fe3a05
+      internalID: 597811329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Marche2
+      rect:
+        serializedVersion: 2
+        x: 3436
+        y: 27
+        width: 383
+        height: 766
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60ed1b26520a9a478d734a58d8ef025
+      internalID: 2086804025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 81327f4cfe4d8f44a9d410d96cc958c5
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +342,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      C_BouclierBaisser: 1229697662
+      C_BouclierLever: -495752664
+      C_Genoux: -1029472523
+      C_IdleEpee: 1134460683
+      C_Marche1: 597811329
+      C_Marche2: 2086804025
+      C_MarcheEpee: 668047201
+      C_MargeEpee2: 1354903322
+      C_profil: 231381542
+      SPRITESHEET_CHEVALERESSE_0: 1360074107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
