@@ -622,8 +622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.04
-  displayTime: 0.9
+  typewriterDelay: 0.043
+  displayTime: 1
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -658,15 +658,14 @@ MonoBehaviour:
     ainsi que son bouclier, "
   - "avant de dispara\xEEtre dans la for\xEAt."
   - "Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
-    de retourner,"
-  - "digne, au ch\xE2teau."
+    de retourner, digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
   - "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
   - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
-    mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
-  - "qui, curieux de savoir ce qu\u2019il pouvait bien se procurer,"
+    mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village, qui,"
+  - "curieux de savoir ce qu\u2019il pouvait bien se procurer,"
   - interpella le forgeron afin de lui demander un bouclier.
   - Elle qui avait tout juste assez pour se procurer une arme opta ainsi pour le
     bouclier,
