@@ -393,8 +393,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: ca3be31510705294aa5fa66a0d620259, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.04
+  typewriterDelay: 0.03825
   displayTime: 1
   onAllDialoguesComplete:
     m_PersistentCalls:
@@ -645,7 +645,7 @@ MonoBehaviour:
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que la chevaleresse"
-  - "La Chevaleresse, Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e, "
+  - "Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e, "
   - "avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
@@ -659,7 +659,7 @@ MonoBehaviour:
   - "avant de dispara\xEEtre dans la for\xEAt."
   - "Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
     de retourner,"
-  - " digne, au ch\xE2teau."
+  - "digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
