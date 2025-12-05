@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.04
-  displayTime: 0.9
+  typewriterDelay: 0.042
+  displayTime: 1
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -516,20 +516,21 @@ MonoBehaviour:
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que"
-  - "Le Roi, connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
-    pour une partie de chasse."
+  - "Le Roi, connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme,"
+  - "avait quitt\xE9 le ch\xE2teau pour une partie de chasse."
   - "Il s\u2019\xE9tait imprudemment \xE9loign\xE9 de sa garde rapproch\xE9e, d\xE9cid\xE9
     \xE0 mener la traque \u201Ctel un h\xE9ros\u201D."
   - "Seulement, ce fut \xE0 ce moment-l\xE0 qu\u2019une horde de bandits malfam\xE9s
     jaillit face \xE0 lui."
   - "Malgr\xE9 son attitude fanfaronne,"
-  - "il ne put rien faire face \xE0 leur nombre, ces derniers le d\xE9pouillant de
-    ses attributs :"
+  - "il ne put rien faire face \xE0 leur nombre,"
+  - "ces derniers le d\xE9pouillant de ses attributs :"
   - "lui arrachant armes, bijoux et sa couronne ador\xE9e, avant de dispara\xEEtre
     dans la for\xEAt."
   - "Ainsi, sale et humili\xE9, il se retrouva seul, sans gardes."
   - "Il lui fallait donc vite retourner au ch\xE2teau afin de retrouver la protection
-    de ses chevaliers et regagner sa place de roi."
+    de ses chevaliers"
+  - et regagner sa place de roi.
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
@@ -567,7 +568,8 @@ MonoBehaviour:
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
-    du ch\xE2teau, il aper\xE7ut une silhouette, celle de la chevaleresse."
+    du ch\xE2teau, il aper\xE7ut une silhouette,"
+  - celle de la chevaleresse.
   - "imperturbable, pos\xE9e \xE0 son poste aux portes du ch\xE2teau. "
   - "Le roi, \xE9puis\xE9 par toutes ces p\xE9rip\xE9ties, et enfin arriv\xE9 \xE0
     destination,"
@@ -583,9 +585,9 @@ MonoBehaviour:
     route seul."
   - "Si vous ne me croyez toujours pas, je peux vous dire des choses que seul un
     roi peut savoir, dit-il en faisant un clin d\u2019\u0153il."
-  - "Un doute s\u2019immis\xE7a dans l\u2019esprit de la chevaleresse, qui entama
-    une r\xE9flexion profonde afin de savoir si l\u2019homme devant elle \xE9tait
-    bel et bien le roi."
+  - "Un doute s\u2019immis\xE7a dans l\u2019esprit de la chevaleresse,"
+  - "qui entama une r\xE9flexion profonde afin de savoir si l\u2019homme devant elle
+    \xE9tait bel et bien le roi."
   - "Le roi lui souffla un secret. Imm\xE9diatement apr\xE8s, "
   - "la chevaleresse se d\xE9cala d\u2019un pas et s\u2019inclina pour laisser passer
     le roi :"
@@ -593,7 +595,8 @@ MonoBehaviour:
     reconnu votre visage royal sous cette... salet\xE9, dit-elle, g\xEAn\xE9e et
     de mani\xE8re h\xE9sitante. "
   - "Soulag\xE9, le sourire jusqu\u2019aux oreilles, son Altesse jeta son bouclier
-    aux pieds de la chevaleresse et entra fi\xE8rement dans son ch\xE2teau. "
+    aux pieds de la chevaleresse"
+  - "et entra fi\xE8rement dans son ch\xE2teau. "
   branch13: []
   branch14: []
   branch15: []
