@@ -537,8 +537,8 @@ MonoBehaviour:
     mart\xE8lements r\xE9p\xE9t\xE9s,"
   - "le menant \xE0 la forge du village, qui, curieux de savoir ce qu\u2019il pouvait
     bien se procurer, interpella le forgeron afin de lui demander un bouclier."
-  - "Demanda fi\xE8rement ce dernier, alors qu\u2019il n\u2019avait jamais tenu une
-    seule arme de sa vie."
+  - "Demanda fi\xE8rement ce dernier, "
+  - "alors qu\u2019il n\u2019avait jamais tenu une seule arme de sa vie."
   - "\u2014 Cela vous fera 10 \xE9cus, d\xE9clara le forgeron."
   - "Le roi se mit \xE0 ricaner, persuad\xE9 que l\u2019homme le reconna\xEEtrait
     aussit\xF4t."
@@ -549,8 +549,7 @@ MonoBehaviour:
   - "ce qui acheva de d\xE9semparer Son Altesse, d\xE9j\xE0 sans le moindre sou en
     poche."
   - "Il tenta alors une approche qu\u2019il n\u2019aurait jamais faite en tant que
-    roi. "
-  - "Il se mit \xE0 crier de toutes ses forces : "
+    roi. Il se mit \xE0 crier de toutes ses forces : "
   - "\u2014 Mon brave homme, un squelette s\u2019approche de votre forge !"
   - "Vite, je sais me battre comme un roi, donnez-moi ce bouclier pour vous prot\xE9ger
     ! "
@@ -694,7 +693,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 0b33b52f3cba1fc4387e97fe9e43c542, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0a7da285e1d5a1a48bf075f15324e2ee, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
