@@ -526,7 +526,7 @@ MonoBehaviour:
   - "parvinrent sans mal \xE0 venir \xE0 bout de la troupe de bandits."
   - "Et Oswald fut alors tu\xE9 dans la disgr\xE2ce la plus absolue."
   - "Son corps laiss\xE9 \xE0 l\u2019abandon au beau milieu de la for\xEAt."
-  - vec le temps, la pluie et la terre eurent raison de sa chair.
+  - Avec le temps, la pluie et la terre eurent raison de sa chair.
   - Ne restant plus que des os, ensevelis dans le sol.
   - "Seulement, un si\xE8cle apr\xE8s sa mort, un ph\xE9nom\xE8ne inattendu eut lieu."
   - Un mouvement sembla se manifester sous terre.
@@ -655,8 +655,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: 875294cdbc0d96b4eaddb567fc1bf5d9, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -866,8 +866,9 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
-  _lightGroup: {fileID: 0}
   _audioSource: {fileID: 1014418048}
+  _lights: []
+  _lightFadeDuration: 2
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
