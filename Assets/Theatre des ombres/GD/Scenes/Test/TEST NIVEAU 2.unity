@@ -515,20 +515,21 @@ MonoBehaviour:
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
-    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que la chevaleresse."
-  - "Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e,"
+    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+  - La chevaleresse, Lyra,
+  - "Une des guerri\xE8res les plus courageuses de la contr\xE9e,"
   - "avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
     afin de retourner aupr\xE8s de son roi, "
   - "un groupe de bandits malfam\xE9s jaillit face \xE0 elle."
-  - "Et malgr\xE9 son courage et sa t\xE9nacit\xE9, elle ne put rien faire face \xE0
-    leur nombre."
+  - "Et malgr\xE9 son courage et sa t\xE9nacit\xE9, "
+  - "elle ne put rien faire face \xE0 leur nombre."
   - "Ces derniers prenant un malin plaisir \xE0 la d\xE9pouiller de ses biens, "
   - "la privant de son attirail de chevaleresse en lui subtilisant son \xE9p\xE9e
     ainsi que son bouclier, "
   - "avant de dispara\xEEtre dans la for\xEAt."
-  - " Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
+  - "Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper afin
     de retourner, "
   - "digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
@@ -566,15 +567,15 @@ MonoBehaviour:
   - "Et soudain, un immense dragon surgit au-dessus du ch\xE2teau, crachant des torrents
     de flammes."
   - "Le roi, effray\xE9 et d\xE9sempar\xE9, se tourna alors vers la Chevaleresse,"
-  - " implorant cette derni\xE8re ainsi que les autres gardes de tout faire pour
-    sauver le royaume."
+  - "implorant cette derni\xE8re ainsi que les autres gardes de tout faire pour sauver
+    le royaume."
   - "\xC0 ces mots, Lyra brandit fermement son \xE9p\xE9e avant de s\u2019\xE9lancer
     vers le monstre d\xE9cha\xEEn\xE9."
   - "D\xE9termin\xE9e \xE0 en d\xE9coudre, elle parvint, au terme d\u2019un affrontement
     effr\xE9n\xE9,"
   - "\xE0 porter un coup d\xE9cisif au terrible dragon, le for\xE7ant \xE0 fuir."
-  - "Le roi, qui s\u2019\xE9tait \xE9clips\xE9 d\xE8s le d\xE9but du combat, sortit
-    enfin de sa cachette et remercia chaleureusement Lyra pour avoir terrass\xE9
+  - "Le roi, qui s\u2019\xE9tait \xE9clips\xE9 d\xE8s le d\xE9but du combat,"
+  - "sortit enfin de sa cachette et remercia chaleureusement Lyra pour avoir terrass\xE9
     la cr\xE9ature."
   - "Longuement acclam\xE9e par les villageois autour,"
   - "son \xE9pop\xE9e se conclut par l\u2019attribution l\xE9gendaire du titre de
@@ -727,8 +728,9 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
-  _lightGroup: {fileID: 0}
   _audioSource: {fileID: 1334619057}
+  _lights: []
+  _lightFadeDuration: 2
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
