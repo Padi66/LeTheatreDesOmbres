@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.04
+  typewriterDelay: 0.041
   displayTime: 0.9
   onAllDialoguesComplete:
     m_PersistentCalls:
@@ -597,7 +597,7 @@ MonoBehaviour:
   - "Cette derni\xE8re, le prenant pour un fou et une menace potentielle pour le
     royaume,"
   - "elle le neutralisa aussit\xF4t, et l\u2019emmena dans les ge\xF4les du ch\xE2teau."
-  - "Le roi frustr\xE9 pleura \xE0 jamais, il ne serait jamais reconnu comme roi."
+  - "Le roi frustr\xE9 pleura \xE0 jamais, il ne sera jamais reconnu comme roi."
   branch13: []
   branch14: []
   branch15: []
@@ -664,7 +664,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 0147ec22889777d4c9e2782000bf1c09, type: 3}
+  m_Resource: {fileID: 8300000, guid: c56ff4ed5ca03464ca8304ca9cbe5452, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
