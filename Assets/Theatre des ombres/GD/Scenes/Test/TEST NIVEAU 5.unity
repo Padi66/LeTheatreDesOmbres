@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.0418
-  displayTime: 1
+  typewriterDelay: 0.046
+  displayTime: 0.7
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -534,8 +534,7 @@ MonoBehaviour:
     \xE0 nouveau."
   - "Un r\xE9veil soudain d\u2019Oswald, qui d\xE9gagea alors son corps squelettique
     enseveli sous cet amas de terre,"
-  - "avant de reprendre sa route d\xE9termin\xE9e, anim\xE9 par son sentiment de
-    vengeance."
+  - "avant de reprendre sa route d\xE9termin\xE9, anim\xE9 par son sentiment de vengeance."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
     qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
@@ -576,10 +575,10 @@ MonoBehaviour:
   - "un dragon, qui, attir\xE9 par le chaos, se jeta sur le ch\xE2teau, d\xE9versant
     des torrents de flammes, r\xE9duisant le b\xE2timent en cendres."
   - "Le squelette, quant \xE0 lui, \xE9tait le seul \xEAtre qui se tenait toujours
-    debout dans cette b\xE2tisse en ruine :"
-  - il ne craignait pas le feu. Il en sortit ainsi serein.
-  - Sa vengeance pleinement assouvie, il reprit sa route vers de nouveaux horizons,
-  - "laissant derri\xE8re lui une contr\xE9e ravag\xE9e."
+    debout dans cette b\xE2tisse en ruine : il ne craignait pas le feu. Il en sortit
+    ainsi serein."
+  - "Sa vengeance pleinement assouvie, il reprit sa route vers de nouveaux horizons,
+    laissant derri\xE8re lui une contr\xE9e ravag\xE9e."
   branch13: []
   branch14: []
   branch15: []
@@ -728,8 +727,9 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
-  _lightGroup: {fileID: 0}
   _audioSource: {fileID: 1943251278}
+  _lights: []
+  _lightFadeDuration: 2
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
@@ -880,7 +880,8 @@ Transform:
   m_LocalPosition: {x: -0.90611, y: 2.41, z: -6.73}
   m_LocalScale: {x: 10.595, y: 6.7841, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1943251279}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454393565
@@ -1384,7 +1385,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c5eaf5e778bc5004e9c6916035e894ef, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1be83f8fe7353604d90f8d4cf016650c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1478,12 +1479,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943251277}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.46712, y: 0.75368, z: -2.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.052950453, y: -0.24414735, z: 3.83}
+  m_LocalScale: {x: 0.09438414, y: 0.14740348, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1441288036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2085820996 stripped
 Transform:
@@ -1502,4 +1503,3 @@ SceneRoots:
   - {fileID: 1288017457}
   - {fileID: 81826213}
   - {fileID: 1441288036}
-  - {fileID: 1943251279}
