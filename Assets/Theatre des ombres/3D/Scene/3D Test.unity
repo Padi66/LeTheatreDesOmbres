@@ -1347,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 501d468dbc7c5c84b8fdd6d90e49b3ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -124.09
+      value: -124.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 501d468dbc7c5c84b8fdd6d90e49b3ff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4638,7 +4638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa1dd488761a3984bb8a94c86426b689, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 134.34
+      value: 134.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa1dd488761a3984bb8a94c86426b689, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5943,7 +5943,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 442d7b4ee500a9f4aacade9bacc899e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -121.663
+      value: -121.828
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 442d7b4ee500a9f4aacade9bacc899e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6430,6 +6430,10 @@ PrefabInstance:
     - target: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8591,7 +8595,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1a2872e7b9306b949a1bfb5751b681ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -122.2831
+      value: -122.219
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1a2872e7b9306b949a1bfb5751b681ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8656,11 +8660,12 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 1827226128182048838, guid: 1a2872e7b9306b949a1bfb5751b681ec, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 1827226128182048838, guid: 1a2872e7b9306b949a1bfb5751b681ec, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_CullingType: 0
 --- !u!1 &1640110853 stripped
 GameObject:
