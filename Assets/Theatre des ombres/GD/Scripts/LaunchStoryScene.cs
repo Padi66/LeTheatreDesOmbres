@@ -20,17 +20,17 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2f);
 
         _curtains.OpenCurtainsRight();
         _curtains.OpenCurtainsLeft();
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2f);
 
         _dialogueSequence.StartDialogueBranch(12);
         _audioSource.Play();
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2f);
 
         //StartCoroutine(FadeLightsOut(_lightFadeDuration));
 
