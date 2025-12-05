@@ -561,7 +561,7 @@ MonoBehaviour:
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
-    du ch\xE2teau, il aper\xE7ut une silhouette, celle d'une chevaleresse."
+    du ch\xE2teau, il aper\xE7ut une silhouette, celle de la chevaleresse."
   - "Arm\xE9 de son bouclier vol\xE9, le Squelette fut interpell\xE9 par la Chevaleresse
     depuis le haut des remparts :"
   - "\u2014 Toi, cr\xE9ature mal\xE9fique devant nos portes\u2026 que viens-tu faire
@@ -600,7 +600,8 @@ MonoBehaviour:
   - "Que chacun commencera sa vie sur un pied d\u2019\xE9galit\xE9."
   - "Et cela arrivera parce que des \xEAtres comme toi auront choisi la parole plut\xF4t
     que les armes."
-  - "Merci, cr\xE9ature. Je promets de porter ton message \xE0 travers tout le royaume. "
+  - "Merci, cr\xE9ature. Je te promets de porter ton message \xE0 travers tout le
+    royaume. "
   - "Ce sera ma qu\xEAte ultime."
   - "Le Squelette, satisfait, tourna les talons et repartit comme il \xE9tait venu."
   - "Puis il disparut \xE0 jamais."
@@ -756,8 +757,9 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
-  _lightGroup: {fileID: 0}
   _audioSource: {fileID: 2090591741}
+  _lights: []
+  _lightFadeDuration: 2
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
@@ -1417,8 +1419,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: d8556dcceb462ff4f8cd86a864ceaa2e, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
