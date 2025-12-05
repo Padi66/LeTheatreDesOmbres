@@ -135,14 +135,29 @@ public class DialogueSequence : MonoBehaviour
         foreach (string line in dialogues)
         {
             dialogueTextUI.text = "";
+            
+            float startTime = Time.realtimeSinceStartup;
+            int characterIndex = 0;
 
-            foreach (char c in line)
+            while (characterIndex < line.Length)
             {
-                dialogueTextUI.text += c;
-                yield return new WaitForSeconds(typewriterDelay);
+                float elapsedTime = Time.realtimeSinceStartup - startTime;
+                int targetCharCount = Mathf.FloorToInt(elapsedTime / typewriterDelay);
+
+                while (characterIndex < targetCharCount && characterIndex < line.Length)
+                {
+                    dialogueTextUI.text += line[characterIndex];
+                    characterIndex++;
+                }
+
+                yield return null;
             }
 
-            yield return new WaitForSeconds(displayTime);
+            float displayStartTime = Time.realtimeSinceStartup;
+            while (Time.realtimeSinceStartup - displayStartTime < displayTime)
+            {
+                yield return null;
+            }
         }
 
         dialogueTextUI.text = "";
@@ -167,3 +182,4 @@ public class DialogueSequence : MonoBehaviour
     public bool IsPlaying => isPlaying;
     public bool HasQueuedDialogues => branchQueue.Count > 0;
 }
+
