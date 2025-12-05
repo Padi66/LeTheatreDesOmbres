@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TypewriterEffect
   textMeshPro: {fileID: 919864461}
-  delay: 0.05
+  delay: 0.04
 --- !u!114 &81826209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
-  displayTime: 1
+  displayTime: 0.9
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -516,7 +516,7 @@ MonoBehaviour:
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que la chevaleresse."
-  - "La Chevaleresse, Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e,"
+  - "Lyra, une des guerri\xE8res les plus courageuses de la contr\xE9e,"
   - "avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
   - "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste for\xEAt
@@ -538,7 +538,8 @@ MonoBehaviour:
   - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
     mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
   - "qui, curieux de savoir ce qu\u2019il pouvait bien se procurer, interpella le
-    forgeron afin de lui demander une \xE9p\xE9e"
+    forgeron afin de lui demander... "
+  - "Une \xE9p\xE9e."
   - "Elle qui avait tout juste assez pour se procurer une arme, opta ainsi pour une
     \xE9p\xE9e,"
   - "sachant manier tout type de lame \xE0 la perfection, et pr\xE9f\xE9rant privil\xE9gier
@@ -554,11 +555,12 @@ MonoBehaviour:
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
-    du ch\xE2teau, il aper\xE7ut une silhouette, celle d'un roi."
+    du ch\xE2teau, il aper\xE7ut une silhouette, celle..."
+  - Du Roi.
   - "Accoud\xE9 sur les murailles du ch\xE2teau, ce dernier interpella la Chevaleresse."
   - "\u2014 D\xE9j\xE0 de retour ? Votre bravoure et votre d\xE9termination sont
-    vraiment sans faille. Toujours pr\xEAte \xE0 servir le royaume avec honneur,
-    dit-il.  "
+    vraiment sans faille. "
+  - "Toujours pr\xEAte \xE0 servir le royaume avec honneur, dit-il.  "
   - "Seulement, \xE0 peine le roi eut-il termin\xE9 sa phrase,"
   - "qu\u2019un grondement terrible se fit entendre, r\xE9sonnant dans toute la contr\xE9e."
   - "Et soudain, un immense dragon surgit au-dessus du ch\xE2teau, crachant des torrents
@@ -574,7 +576,7 @@ MonoBehaviour:
   - "Le roi, qui s\u2019\xE9tait \xE9clips\xE9 d\xE8s le d\xE9but du combat, sortit
     enfin de sa cachette et remercia chaleureusement Lyra pour avoir terrass\xE9
     la cr\xE9ature."
-  - "Longuement acclam\xE9e par les villageois alentours,"
+  - "Longuement acclam\xE9e par les villageois autour,"
   - "son \xE9pop\xE9e se conclut par l\u2019attribution l\xE9gendaire du titre de
     Protectrice du Royaume."
   branch13: []
