@@ -19,9 +19,10 @@ public class ActivateStory : MonoBehaviour
         _outlineLayer = LayerMask.NameToLayer("Outline");
         _defaultLayer = LayerMask.NameToLayer("Default");
         
-        
-        
-        
+        if (_buttonVisual == null)
+        {
+            _buttonVisual = gameObject;
+        }
     }
 
     void OnEnable()
@@ -56,25 +57,49 @@ public class ActivateStory : MonoBehaviour
     {
         if (_allSocketsOccupied && !_hasBeenPressed)
         {
-            _buttonVisual.layer = _outlineLayer;
-            
+            SetLayerRecursively(_buttonVisual, _outlineLayer);
+            Debug.Log("Tous les sockets occupés - Outline activé!");
         }
         else
         {
-            _buttonVisual.layer = _defaultLayer;
-            
+            SetLayerRecursively(_buttonVisual, _defaultLayer);
+            Debug.Log("Outline désactivé");
+        }
+    }
+
+    private void SetLayerRecursively(GameObject obj, int layer)
+    {
+        if (obj == null) return;
+        
+        obj.layer = layer;
+        
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
         }
     }
 
     void OnButtonPressed()
     {
-        
+        if (_hasBeenPressed)
+        {
+            Debug.LogWarning("Le bouton a déjà été appuyé!");
+            return;
+        }
+
+        if (!_allSocketsOccupied)
+        {
+            Debug.LogWarning("Tous les sockets doivent être occupés!");
+            Debug.Log($"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
+            return;
+        }
+
         if (!_storyManager._isLaunched)
         {
             _hasBeenPressed = true;
-            _buttonVisual.layer = _defaultLayer;
+            SetLayerRecursively(_buttonVisual, _defaultLayer);
             _storyManager.CheckCombinationBackstage();
-            
+            Debug.Log("Bouton appuyé!");
         }
     }
 
@@ -82,6 +107,6 @@ public class ActivateStory : MonoBehaviour
     {
         _hasBeenPressed = false;
         UpdateButtonOutline();
-        ;
+        Debug.Log("Bouton réinitialisé");
     }
 }
