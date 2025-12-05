@@ -393,8 +393,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: fa18a6bc409cb2a449e4933953c4607f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -690,7 +690,7 @@ MonoBehaviour:
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
-    du ch\xE2teau, il aper\xE7ut une silhouette, celle d'un roi."
+    du ch\xE2teau, il aper\xE7ut une silhouette, celle du roi."
   - "Arm\xE9 de son bouclier vol\xE9, le squelette s\u2019avan\xE7ait jusqu\u2019aux
     portes du ch\xE2teau et interpella le souverain :"
   - "\u2014 Et toi, tu dois \xEAtre le roi. Laisse-moi entrer. "
@@ -713,8 +713,8 @@ MonoBehaviour:
     que le dragon lui-m\xEAme finisse par s\u2019\xE9puiser,"
   - "las de cet \xE9change vain."
   - "Ainsi repouss\xE9, le roi remercia grandement le squelette et,"
-  - "fid\xE8le \xE0 sa promesse, fit de lui un homme\u2026 ou plut\xF4t un squelette
-    recouvert d'or."
+  - "fid\xE8le \xE0 sa promesse, fit de lui un homme\u2026"
+  - "ou plut\xF4t un squelette recouvert d'or."
   branch13: []
   branch14: []
   branch15: []
@@ -863,8 +863,9 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
-  _lightGroup: {fileID: 0}
   _audioSource: {fileID: 162436339}
+  _lights: []
+  _lightFadeDuration: 2
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
