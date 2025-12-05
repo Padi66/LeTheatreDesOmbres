@@ -140,12 +140,12 @@ GameObject:
   - component: {fileID: 7637641724497736903}
   - component: {fileID: 7248816708918606336}
   - component: {fileID: 734783437203583401}
-  - component: {fileID: 190459869482192400}
   - component: {fileID: 1806692097089278737}
   - component: {fileID: 9093272638617640465}
   - component: {fileID: 7137573100398079821}
   - component: {fileID: 2095684164576374620}
   - component: {fileID: 6879720953624558602}
+  - component: {fileID: 7341239710046965373}
   m_Layer: 0
   m_Name: Bottom Figurine 2
   m_TagString: Pyramide
@@ -177,7 +177,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6823396660713083286}
-  m_Mesh: {fileID: 8528861742571846829, guid: aebce4ef53cb2984c8e7294f78850958, type: 3}
+  m_Mesh: {fileID: 8528861742571846829, guid: 35f5171b54184fc42ab7832a105c424a, type: 3}
 --- !u!23 &734783437203583401
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -226,27 +226,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &190459869482192400
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6823396660713083286}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1806692097089278737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -465,6 +444,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnMaterial
   audioSource: {fileID: 5885474731877697042}
   targetMaterial: {fileID: 13400000, guid: e8bf2882420bb5146acc74b946ea3d9d, type: 2}
+--- !u!65 &7341239710046965373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823396660713083286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.937926, y: 1.0157043, z: 0.9379261}
+  m_Center: {x: 0, y: -0.3411903, z: 0}
 --- !u!1 &7992663507859926021
 GameObject:
   m_ObjectHideFlags: 0

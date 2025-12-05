@@ -427,12 +427,12 @@ GameObject:
   - component: {fileID: 676913013883084633}
   - component: {fileID: 6679177075087816459}
   - component: {fileID: 6252784459514063360}
-  - component: {fileID: 229204847536214297}
   - component: {fileID: 5350674806892491265}
   - component: {fileID: 3769157452022766194}
   - component: {fileID: 6270744238431776050}
   - component: {fileID: 6315887012583009048}
   - component: {fileID: 5426504092154746756}
+  - component: {fileID: 1889646420946693360}
   m_Layer: 0
   m_Name: Middle Figurine 3
   m_TagString: Untagged
@@ -466,7 +466,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4644511683335856051}
-  m_Mesh: {fileID: 2274641795328395424, guid: f10d381b19c8c924d80c01d25ede5131, type: 3}
+  m_Mesh: {fileID: 2274641795328395424, guid: 558c870663e6e3340bbe43c04260f802, type: 3}
 --- !u!23 &6252784459514063360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -515,27 +515,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &229204847536214297
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4644511683335856051}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.9782789, y: 0.7519847, z: 0.460879}
-  m_Center: {x: 0.009998202, y: 0.22702913, z: -0.08081732}
 --- !u!54 &5350674806892491265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -667,7 +646,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 0
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 2
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -752,6 +731,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnMaterial
   audioSource: {fileID: 2647548176056154791}
   targetMaterial: {fileID: 13400000, guid: e8bf2882420bb5146acc74b946ea3d9d, type: 2}
+--- !u!65 &1889646420946693360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644511683335856051}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8419678, y: 0.73141444, z: 0.40801477}
+  m_Center: {x: -0.008115828, y: 0.19489177, z: -0.050868474}
 --- !u!1 &6061092411759619077
 GameObject:
   m_ObjectHideFlags: 0

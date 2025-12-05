@@ -2568,6 +2568,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4857015800372123752, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b0d432209c6fd14c9efc6d01bb7476c, type: 2}
+    - target: {fileID: 4857015800372123752, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 522b33f47f1750046a67058fd32e4679, type: 2}
     - target: {fileID: 8469696459775363534, guid: 7dbdfb3b50ee0824f9a11e30eaa5fa5c, type: 3}
       propertyPath: m_Name
       value: Middle + Bottom Figurine 3
@@ -2642,6 +2650,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 750825166588010225, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 75b910119ac1e6f4a815353f212e5e1d, type: 2}
     - target: {fileID: 4615199264355365219, guid: 34902fc1f8b5a284180ef65c9adfc5ee, type: 3}
       propertyPath: m_Name
       value: 'Top + Middle Figurine 2 '
