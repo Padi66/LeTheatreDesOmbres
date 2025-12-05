@@ -494,7 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.04
-  displayTime: 1
+  displayTime: 0.9
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -515,7 +515,7 @@ MonoBehaviour:
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
-    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que le roi."
+    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que"
   - "Le Roi, connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
     pour une partie de chasse."
   - "Il s\u2019\xE9tait imprudemment \xE9loign\xE9 de sa garde rapproch\xE9e, d\xE9cid\xE9
@@ -567,7 +567,7 @@ MonoBehaviour:
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
-    du ch\xE2teau, il aper\xE7ut une silhouette, celle d'une chevaleresse."
+    du ch\xE2teau, il aper\xE7ut une silhouette, celle de la chevaleresse."
   - "imperturbable, pos\xE9e \xE0 son poste aux portes du ch\xE2teau. "
   - "Le roi, \xE9puis\xE9 par toutes ces p\xE9rip\xE9ties, et enfin arriv\xE9 \xE0
     destination,"
@@ -586,9 +586,9 @@ MonoBehaviour:
   - "Un doute s\u2019immis\xE7a dans l\u2019esprit de la chevaleresse, qui entama
     une r\xE9flexion profonde afin de savoir si l\u2019homme devant elle \xE9tait
     bel et bien le roi."
-  - Le roi lui souffla un secret.
-  - "Imm\xE9diatement apr\xE8s, la chevaleresse se d\xE9cala d\u2019un pas et s\u2019inclina
-    pour laisser passer le roi :"
+  - "Le roi lui souffla un secret. Imm\xE9diatement apr\xE8s, "
+  - "la chevaleresse se d\xE9cala d\u2019un pas et s\u2019inclina pour laisser passer
+    le roi :"
   - "\u2014 Je suis sinc\xE8rement d\xE9sol\xE9e, Votre Altesse, j\u2019avais bien
     reconnu votre visage royal sous cette... salet\xE9, dit-elle, g\xEAn\xE9e et
     de mani\xE8re h\xE9sitante. "
@@ -742,8 +742,9 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
-  _lightGroup: {fileID: 0}
   _audioSource: {fileID: 2111789741}
+  _lights: []
+  _lightFadeDuration: 2
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0
@@ -1403,8 +1404,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: 639747b0048c083459d2c050da17314a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
