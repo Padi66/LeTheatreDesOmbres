@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   dialogueTextUI: {fileID: 919864461}
-  typewriterDelay: 0.04
+  typewriterDelay: 0.042
   displayTime: 0.9
   onAllDialoguesComplete:
     m_PersistentCalls:
