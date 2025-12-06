@@ -515,21 +515,21 @@ MonoBehaviour:
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
-    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que"
-  - "Le Roi, connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme,"
-  - "avait quitt\xE9 le ch\xE2teau pour une partie de chasse."
+    et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+  - Le Roi,
+  - "connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
+    pour une partie de chasse."
   - "Il s\u2019\xE9tait imprudemment \xE9loign\xE9 de sa garde rapproch\xE9e, d\xE9cid\xE9
     \xE0 mener la traque \u201Ctel un h\xE9ros\u201D."
   - "Seulement, ce fut \xE0 ce moment-l\xE0 qu\u2019une horde de bandits malfam\xE9s
     jaillit face \xE0 lui."
-  - "Malgr\xE9 son attitude fanfaronne,"
-  - "il ne put rien faire face \xE0 leur nombre,"
-  - "ces derniers le d\xE9pouillant de ses attributs :"
+  - "Malgr\xE9 son attitude fanfaronne, il ne put rien faire face \xE0 leur nombre."
+  - "Ces derniers le d\xE9pouillant de ses attributs :"
   - "lui arrachant armes, bijoux et sa couronne ador\xE9e, avant de dispara\xEEtre
     dans la for\xEAt."
   - "Ainsi, sale et humili\xE9, il se retrouva seul, sans gardes."
-  - "Il lui fallait donc vite retourner au ch\xE2teau afin de retrouver la protection
-    de ses chevaliers"
+  - "Il lui fallait donc vite retourner au ch\xE2teau, afin de retrouver la protection
+    de ses chevaliers,"
   - et regagner sa place de roi.
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
@@ -538,7 +538,8 @@ MonoBehaviour:
   - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
     mart\xE8lements r\xE9p\xE9t\xE9s,"
   - "le menant \xE0 la forge du village, qui, curieux de savoir ce qu\u2019il pouvait
-    bien se procurer, interpella le forgeron afin de lui demander un bouclier."
+    bien se procurer, interpella le forgeron afin de lui demander... "
+  - Un bouclier.
   - "Demanda fi\xE8rement ce dernier, alors qu\u2019il n\u2019avait jamais tenu une
     seule arme de sa vie."
   - "\u2014 Cela vous fera 10 \xE9cus, d\xE9clara le forgeron."
@@ -548,7 +549,7 @@ MonoBehaviour:
     son identit\xE9."
   - " Il d\xE9clara avec fiert\xE9 qu\u2019il connaissait tr\xE8s bien son roi et
     qu\u2019il n\u2019avait \u201Crien en commun\u201D avec lui,"
-  - "ce qui acheva de d\xE9semparer Son Altesse, d\xE9j\xE0 sans le moindre sou en
+  - "ce qui acheva de d\xE9semparer son Altesse, d\xE9j\xE0 sans le moindre sou en
     poche. "
   - "Il tenta alors une approche qu\u2019il n\u2019aurait jamais faite en tant que
     roi. "
@@ -558,10 +559,10 @@ MonoBehaviour:
     ! "
   - "Le forgeron sursauta, paniqu\xE9, regardant dans la direction indiqu\xE9e par
     le roi,"
-  - "laissant le champ libre \xE0 ce dernier pour subtiliser le bouclier expos\xE9
+  - "laissant le champ libre \xE0 ce dernier pour subtiliser le bouclier expos\xE9,
     avant de se pr\xE9cipiter hors de la forge, puis du village."
   - "Il poursuivit ainsi sa route vers le ch\xE2teau, laissant le forgeron dans l\u2019incompr\xE9hension
-    la plus totale suite \xE0 ce qu\u2019il venait de se passer."
+    la plus totale, suite \xE0 ce qu\u2019il venait de se passer."
   - "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin entamer
     la derni\xE8re \xE9tape de son p\xE9riple,"
   - "en entreprenant la mont\xE9e de la colline menant au ch\xE2teau."
@@ -569,10 +570,11 @@ MonoBehaviour:
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette,"
-  - celle de la chevaleresse.
+  - celle...
+  - de la chevaleresse.
   - "imperturbable, pos\xE9e \xE0 son poste aux portes du ch\xE2teau. "
   - "Le roi, \xE9puis\xE9 par toutes ces p\xE9rip\xE9ties, et enfin arriv\xE9 \xE0
-    destination,"
+    sa destination,"
   - " se retrouva face \xE0 cette derni\xE8re qui lui bloqua l\u2019entr\xE9e."
   - "Il \xE9tablit alors un stratag\xE8me pour se faire reconna\xEEtre en la suppliant
     de bien vouloir le laisser rentrer."
@@ -1407,7 +1409,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 639747b0048c083459d2c050da17314a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2ca45838b13ea1840ba277c14f8fd313, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
