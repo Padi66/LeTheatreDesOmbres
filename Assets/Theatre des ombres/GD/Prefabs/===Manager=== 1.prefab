@@ -305,6 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9005360695515634918}
   - component: {fileID: 8365595108694636506}
+  - component: {fileID: 3485185529520679613}
   - component: {fileID: 220018106520259494}
   - component: {fileID: 7773251827209734683}
   - component: {fileID: 6401737509545507999}
@@ -349,6 +350,24 @@ MonoBehaviour:
   _curtains: {fileID: 220018106520259494}
   _levelManager: {fileID: 7773251827209734683}
   _audioSource: {fileID: 783631418706695821}
+  _lights: []
+  _lightFadeDuration: 2
+--- !u!114 &3485185529520679613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578790336813391016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26725354ec9291948af5112808a32f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaunchStoryScene
+  _dialogueSequence: {fileID: 0}
+  _curtains: {fileID: 220018106520259494}
+  _levelManager: {fileID: 7773251827209734683}
+  _audioSource: {fileID: 0}
   _lights: []
   _lightFadeDuration: 2
 --- !u!114 &220018106520259494
@@ -528,7 +547,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 121.21448, y: -22.517538, z: 223.71584, w: -9.510408}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

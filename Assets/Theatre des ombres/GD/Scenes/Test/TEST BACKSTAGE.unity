@@ -144,6 +144,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2228813017668896988, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9769485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228813017668896988, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
+      propertyPath: m_Center.y
+      value: 0.48847425
+      objectReference: {fileID: 0}
     - target: {fileID: 3659904696416176338, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.25
@@ -1321,6 +1329,14 @@ PrefabInstance:
     - target: {fileID: 3578943981672964972, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206771151619870590, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9814062
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206771151619870590, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
+      propertyPath: m_Center.y
+      value: 0.4907031
       objectReference: {fileID: 0}
     - target: {fileID: 6289138765567759802, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
       propertyPath: m_Name
@@ -3159,6 +3175,14 @@ PrefabInstance:
     - target: {fileID: 2749398828214675583, guid: 3536c6d8a64fbf84e9ee1a6184521ed0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272665640813811648, guid: 3536c6d8a64fbf84e9ee1a6184521ed0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.97899246
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272665640813811648, guid: 3536c6d8a64fbf84e9ee1a6184521ed0, type: 3}
+      propertyPath: m_Center.y
+      value: 0.48949623
       objectReference: {fileID: 0}
     - target: {fileID: 3272994354824491717, guid: 3536c6d8a64fbf84e9ee1a6184521ed0, type: 3}
       propertyPath: m_StaticEditorFlags

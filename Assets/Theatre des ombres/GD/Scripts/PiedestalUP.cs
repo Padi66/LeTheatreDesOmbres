@@ -28,14 +28,14 @@ public class PiedestalUP : MonoBehaviour
         StartCoroutine(Delay(6));
         _dialogueSequence.StartDialogueBranch(0);
         _dialogueSequence.StartDialogueBranch(1);
-        //UpGreen(_socketGreen);  // ← Passe la référence de la socket !
+        UpGreen(_socketGreen);  // ← Passe la référence de la socket !
     }
 
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
         _dialogueSequence.StartDialogueBranch(5);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
-        StartCoroutine(UpEnumOrange(socket));
+        //StartCoroutine(UpEnumOrange(socket));
     }
 
     public void UpGreen(XRLockSocketInteractor socketToReactivate = null)
@@ -48,7 +48,7 @@ public class PiedestalUP : MonoBehaviour
     {
         _dialogueSequence.StartDialogueBranch(8);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
-        StartCoroutine(UpEnumPurple(socket));
+        //StartCoroutine(UpEnumPurple(socket));
     }
     
     IEnumerator UpEnumGreen(XRLockSocketInteractor socketToReactivate = null)
