@@ -56,7 +56,7 @@ public class SocketOrange : MonoBehaviour
             {
                 if (!_hasDone)
                 {
-                    _piedestal.UpPurple();
+                    //_piedestal.UpPurple();
                     _hasDone = true;
                 }
             }
