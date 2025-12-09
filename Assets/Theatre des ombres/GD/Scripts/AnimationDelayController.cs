@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AnimationDelayController : MonoBehaviour
@@ -8,11 +9,12 @@ public class AnimationDelayController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0f;
-        Invoke(nameof(ResumeTime), delayBeforeStart);
+        StartCoroutine(ResumeTimeAfterDelay());
     }
     
-    private void ResumeTime()
+    private IEnumerator ResumeTimeAfterDelay()
     {
+        yield return new WaitForSecondsRealtime(delayBeforeStart);
         Time.timeScale = 1f;
     }
 }
