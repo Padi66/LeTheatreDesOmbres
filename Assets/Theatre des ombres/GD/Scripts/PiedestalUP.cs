@@ -6,16 +6,23 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class PiedestalUP : MonoBehaviour
 {
- 
-    public Transform _startPositionGreen;
-    public Transform _endPositionGreen;
-    public Transform _startPositionPurple;
-    public Transform _endPositionPurple;
-    public Transform _startPositionOrange;
-    public Transform _endPositionOrange;
-    public Transform _piedestalOrange;
-    public Transform _piedestalPurple;
-    public Transform _piedestalGreen;
+    // Anciennes variables pour l'animation de position (désactivées)
+    // public Transform _startPositionGreen;
+    // public Transform _endPositionGreen;
+    // public Transform _startPositionPurple;
+    // public Transform _endPositionPurple;
+    // public Transform _startPositionOrange;
+    // public Transform _endPositionOrange;
+    // public Transform _piedestalOrange;
+    // public Transform _piedestalPurple;
+    // public Transform _piedestalGreen;
+    
+    // Nouvelles variables pour le système de lumières
+    public Light _lightGreen;
+    public Light _lightOrange;
+    public Light _lightPurple;
+    public float _lightTransitionDuration = 1f;
+    
     public XRLockSocketInteractor _socketGreen;
     public XRLockSocketInteractor _socketOrange;
     public XRLockSocketInteractor _socketPurple;
@@ -28,29 +35,82 @@ public class PiedestalUP : MonoBehaviour
         StartCoroutine(Delay(6));
         _dialogueSequence.StartDialogueBranch(0);
         _dialogueSequence.StartDialogueBranch(1);
-        UpGreen(_socketGreen);  // ← Passe la référence de la socket !
+        UpGreen(_socketGreen);
     }
 
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
         _dialogueSequence.StartDialogueBranch(5);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
-        //StartCoroutine(UpEnumOrange(socket));
+        StartCoroutine(TurnOnLight(_lightOrange, socket));
     }
 
     public void UpGreen(XRLockSocketInteractor socketToReactivate = null)
     {
         XRLockSocketInteractor socket = socketToReactivate ?? _socketGreen;
-        StartCoroutine(UpEnumGreen(socket));
+        StartCoroutine(TurnOnLight(_lightGreen, socket));
     }
 
     public void UpPurple(XRLockSocketInteractor socketToReactivate = null)
     {
         _dialogueSequence.StartDialogueBranch(8);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
-        //StartCoroutine(UpEnumPurple(socket));
+        StartCoroutine(TurnOnLight(_lightPurple, socket));
     }
     
+    IEnumerator TurnOnLight(Light light, XRLockSocketInteractor socketToReactivate = null)
+    {
+        if (light == null)
+        {
+            Debug.LogWarning("Light is null, cannot turn on");
+            yield break;
+        }
+
+        light.enabled = true;
+        float elapsed = 0f;
+        float startIntensity = 0f;
+        float targetIntensity = 50f;
+
+        while (elapsed < _lightTransitionDuration)
+        {
+            light.intensity = Mathf.Lerp(startIntensity, targetIntensity, elapsed / _lightTransitionDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        light.intensity = targetIntensity;
+
+        if (socketToReactivate != null)
+        {
+            socketToReactivate.enabled = true;
+            Debug.Log($"Socket {socketToReactivate.name} réactivé après l'allumage de la lumière");
+        }
+    }
+
+    IEnumerator TurnOffLight(Light light)
+    {
+        if (light == null || !light.enabled)
+        {
+            yield break;
+        }
+
+        float elapsed = 0f;
+        float startIntensity = light.intensity;
+        float targetIntensity = 0f;
+
+        while (elapsed < _lightTransitionDuration)
+        {
+            light.intensity = Mathf.Lerp(startIntensity, targetIntensity, elapsed / _lightTransitionDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        light.intensity = 0f;
+        light.enabled = false;
+    }
+
+    // Anciennes coroutines pour l'animation de montée (désactivées)
+    /*
     IEnumerator UpEnumGreen(XRLockSocketInteractor socketToReactivate = null)
     {
         float elapsed = 0f;
@@ -84,6 +144,7 @@ public class PiedestalUP : MonoBehaviour
 
         _piedestalGreen.position = _startPositionGreen.position;
     }
+    
     IEnumerator UpEnumPurple(XRLockSocketInteractor socketToReactivate = null)
     {
         float elapsed = 0f;
@@ -103,6 +164,7 @@ public class PiedestalUP : MonoBehaviour
             Debug.Log("Socket Purple réactivé après la montée du piédestal");
         }
     }
+    
     IEnumerator DownEnumPurple()
     {
         float elapsed = 0f;
@@ -148,10 +210,10 @@ public class PiedestalUP : MonoBehaviour
         }
         _piedestalOrange.position = _startPositionOrange.position;
     }
+    */
+    
     IEnumerator Delay(int delay)
     {
         yield return new WaitForSeconds(delay);
-
     }
 }
-
