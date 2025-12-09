@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -118,7 +131,7 @@ TextureImporter:
         width: 330
         height: 890
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -127,6 +140,28 @@ TextureImporter:
       bones: []
       spriteID: 85054cbeb29c62b48bd72d889e243567
       internalID: 354006442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ombre_2_0
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 29
+        width: 521
+        height: 983
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13a6c636e136284995396fd11ff4882
+      internalID: 1671669582
       vertices: []
       indices: 
       edges: []
@@ -146,6 +181,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ChevaleresseIdleFace1: 354006442
+      Ombre_2_0: 1671669582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
