@@ -486,9 +486,9 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   m_Button: {fileID: 2047426709777387324}
-  m_PressDistance: 0.03
-  m_PressBuffer: 0.01
-  m_ButtonOffset: 0.14
+  m_PressDistance: 0.015
+  m_PressBuffer: 0.005
+  m_ButtonOffset: 0.13
   m_ButtonSize: 0.05
   m_ToggleButton: 0
   m_OnPress:
