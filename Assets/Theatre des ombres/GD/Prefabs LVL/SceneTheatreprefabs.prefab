@@ -509,8 +509,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3326087268782051133}
   - component: {fileID: 20596875963651596}
-  - component: {fileID: 584814294241351257}
-  - component: {fileID: 4807169601625402020}
   - component: {fileID: 1937948029400302892}
   - component: {fileID: 8984601995179726802}
   m_Layer: 0
@@ -551,48 +549,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 5940439431317087825}
-  _curtains: {fileID: 4807169601625402020}
+  _curtains: {fileID: 0}
   _levelManager: {fileID: 1937948029400302892}
   _audioSource: {fileID: 6629023012778266455}
   _lights: []
   _lightFadeDuration: 2
---- !u!114 &584814294241351257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3986391131544621985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26725354ec9291948af5112808a32f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LaunchStoryScene
-  _dialogueSequence: {fileID: 0}
-  _curtains: {fileID: 4807169601625402020}
-  _levelManager: {fileID: 1937948029400302892}
-  _audioSource: {fileID: 0}
-  _lights: []
-  _lightFadeDuration: 2
---- !u!114 &4807169601625402020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3986391131544621985}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e910df4460cdd44a8adf58b4d7cc9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CurtainsMove
-  _startPositionLeft: {fileID: 0}
-  _endPositionLeft: {fileID: 0}
-  _startPositionRight: {fileID: 0}
-  _endPositionRight: {fileID: 0}
-  _curtainsRight: {fileID: 0}
-  _curtainsLeft: {fileID: 0}
-  _duration: 5
 --- !u!114 &1937948029400302892
 MonoBehaviour:
   m_ObjectHideFlags: 0

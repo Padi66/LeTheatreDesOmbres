@@ -4228,62 +4228,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1628006681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1628006683}
-  - component: {fileID: 1628006682}
-  m_Layer: 0
-  m_Name: ===Manager===
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1628006682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628006681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3e3ef4429e5fe4e9eaa405e5cfdd95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StoryManager
-  _socketGreen: 0
-  _socketOrange: 0
-  _socketPurple: 0
-  _cubeInGreen: 
-  _cubeInOrange: 
-  _cubeInPurple: 
-  _dialogueSequence: {fileID: 0}
-  _levelManager: {fileID: 0}
-  _piedestal: {fileID: 0}
-  _transition: {fileID: 0}
-  delayBeforeTransition: 1
-  _isLaunched: 0
---- !u!4 &1628006683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628006681}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.87864, y: 1.26582, z: 21.36214}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687166462
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,6 +4683,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1552899594541898964, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2624150484517433883, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Name
       value: SceneTheatreprefabs
@@ -4964,6 +4912,10 @@ PrefabInstance:
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[48]'
       value: "plus personne n\u2019\xE9tant capable de l\u2019arr\xEAter."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396734172077087262, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5212,13 +5164,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089455266}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.8444427, y: 0.5346433, z: -0.032441083, w: -0.004547083}
+  m_LocalRotation: {x: 0.406305, y: -0.91315013, z: 0.009211363, w: -0.03143646}
   m_LocalPosition: {x: 5.219, y: 3.786, z: 35.32}
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 1.548, y: 183.421, z: 115.368}
+  m_LocalEulerAnglesHint: {x: -0.5, y: 176.279, z: 312.043}
 --- !u!95 &2089455270
 Animator:
   serializedVersion: 7
@@ -5381,7 +5333,6 @@ SceneRoots:
   - {fileID: 623479214}
   - {fileID: 344831036}
   - {fileID: 1543559003}
-  - {fileID: 1628006683}
   - {fileID: 481343635}
   - {fileID: 1125089678}
   - {fileID: 2022977799}

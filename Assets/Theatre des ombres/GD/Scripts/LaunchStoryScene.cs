@@ -5,13 +5,16 @@ public class LaunchStoryScene : MonoBehaviour
 {
     [Header("Scene References")]
     [SerializeField] private DialogueSequence _dialogueSequence;
-    [SerializeField] private CurtainsMove _curtains;
+    //[SerializeField] private CurtainsMove _curtains;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private AudioSource _audioSource;
     
     [Header("Lights")]
     [SerializeField] private Light[] _lights;
     [SerializeField] private float _lightFadeDuration = 2f;
+    
+    [Header("Delay")]
+    [SerializeField] private float _delayBack;
     
     void Start()
     {
@@ -20,23 +23,20 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        yield return new WaitForSeconds(2f);
-
+        /*yield return new WaitForSeconds(2f);
         _curtains.OpenCurtainsRight();
-        _curtains.OpenCurtainsLeft();
-
-        yield return new WaitForSeconds(2f);
-
+        _curtains.OpenCurtainsLeft();*/
+        
+        
+        //StartCoroutine(FadeLightsOut(_lightFadeDuration));
+        //yield return new WaitForSeconds(_lightFadeDuration);
         _dialogueSequence.StartDialogueBranch(12);
         _audioSource.Play();
 
-        yield return new WaitForSeconds(2f);
-
-        //StartCoroutine(FadeLightsOut(_lightFadeDuration));
-
-        //yield return new WaitForSeconds(_lightFadeDuration);
-
-        //_levelManager.LoadBackStage();
+        
+        
+        yield return new WaitForSeconds(_delayBack);
+        _levelManager.LoadMainMenu();
     }
 
     private IEnumerator FadeLightsOut(float duration)
