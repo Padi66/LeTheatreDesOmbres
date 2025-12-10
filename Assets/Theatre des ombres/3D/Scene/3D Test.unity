@@ -2643,6 +2643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTheatreprefabs
       objectReference: {fileID: 0}
+    - target: {fileID: 2778083491617519520, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.488
+      objectReference: {fileID: 0}
     - target: {fileID: 4008081496005786401, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_LocalPosition.x
       value: -125.29776
@@ -2682,6 +2686,10 @@ PrefabInstance:
     - target: {fileID: 4008081496005786401, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625793744192983048, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5279999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
