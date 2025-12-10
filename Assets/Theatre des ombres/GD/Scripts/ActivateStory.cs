@@ -70,14 +70,18 @@ public class ActivateStory : MonoBehaviour
     private void SetLayerRecursively(GameObject obj, int layer)
     {
         if (obj == null) return;
-        
-        obj.layer = layer;
-        
+    
+        if (obj != gameObject && obj.GetComponent<MeshRenderer>() != null)
+        {
+            obj.layer = layer;
+        }
+    
         foreach (Transform child in obj.transform)
         {
             SetLayerRecursively(child.gameObject, layer);
         }
     }
+
 
     void OnButtonPressed()
     {
