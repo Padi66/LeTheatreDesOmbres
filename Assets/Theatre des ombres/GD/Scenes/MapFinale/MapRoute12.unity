@@ -667,6 +667,10 @@ PrefabInstance:
       value: "Mais simplement quelqu\u2019un qui vous tend la main, quand tout le
         monde vous oublie."
       objectReference: {fileID: 0}
+    - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 28c43e6ba802db9448b85a43e789c942, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

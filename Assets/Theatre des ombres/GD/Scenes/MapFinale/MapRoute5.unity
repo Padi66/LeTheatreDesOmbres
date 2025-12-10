@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: 'branch12.Array.data[45]'
       value: "Laissant derri\xE8re lui une contr\xE9e ravag\xE9e."
       objectReference: {fileID: 0}
+    - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d6c3df5231ba1d42bfff8cb54344367, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

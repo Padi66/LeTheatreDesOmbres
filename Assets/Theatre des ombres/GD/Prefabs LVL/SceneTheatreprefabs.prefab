@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 1937948029400302892}
   - component: {fileID: 8984601995179726802}
   m_Layer: 0
-  m_Name: ===Manager=== 1
+  m_Name: ===Manager===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -549,11 +549,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 5940439431317087825}
-  _curtains: {fileID: 0}
   _levelManager: {fileID: 1937948029400302892}
   _audioSource: {fileID: 6629023012778266455}
   _lights: []
   _lightFadeDuration: 2
+  _extraDelayAfterCompletion: 1
 --- !u!114 &1937948029400302892
 MonoBehaviour:
   m_ObjectHideFlags: 0

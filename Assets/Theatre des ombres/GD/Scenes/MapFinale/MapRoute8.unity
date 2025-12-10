@@ -2934,6 +2934,10 @@ PrefabInstance:
       value: "Aucun visiteur. Aucun son. Rien d\u2019autre que l\u2019\xE9coulement
         du temps."
       objectReference: {fileID: 0}
+    - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: c4e954cbb1da1fc46bd76c396f24d30f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

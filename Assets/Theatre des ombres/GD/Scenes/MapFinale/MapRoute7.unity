@@ -3175,6 +3175,10 @@ PrefabInstance:
       propertyPath: 'branch12.Array.data[53]'
       value: "ou plut\xF4t un squelette recouvert d'or."
       objectReference: {fileID: 0}
+    - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8296c6bbeaa6de747a5dd69a5d134527, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

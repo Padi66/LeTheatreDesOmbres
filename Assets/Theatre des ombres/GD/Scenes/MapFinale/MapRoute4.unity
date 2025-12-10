@@ -4337,6 +4337,10 @@ PrefabInstance:
       propertyPath: 'branch12.Array.data[49]'
       value: "sauvant ainsi la contr\xE9e tout enti\xE8re."
       objectReference: {fileID: 0}
+    - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f58f0776da5a6db44b7fcf446ef867f8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
