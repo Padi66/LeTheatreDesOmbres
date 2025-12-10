@@ -66,12 +66,11 @@ public class ActivateStory : MonoBehaviour
             Debug.Log("Outline désactivé");
         }
     }
-
     private void SetLayerRecursively(GameObject obj, int layer)
     {
         if (obj == null) return;
     
-        if (obj != gameObject && obj.GetComponent<MeshRenderer>() != null)
+        if (obj.GetComponent<Collider>() == null)
         {
             obj.layer = layer;
         }
@@ -81,7 +80,6 @@ public class ActivateStory : MonoBehaviour
             SetLayerRecursively(child.gameObject, layer);
         }
     }
-
 
     void OnButtonPressed()
     {
