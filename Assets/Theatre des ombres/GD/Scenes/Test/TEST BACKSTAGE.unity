@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -670,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &397264121
 Light:
   m_ObjectHideFlags: 0
@@ -744,13 +744,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397264120}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.89239484, y: 0.09904852, z: 0.23911647, w: -0.3696541}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 225.001, y: -30, z: 0}
 --- !u!114 &397264123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4737,6 +4737,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_SpotAngle
+      value: 96.17496
+      objectReference: {fileID: 0}
     - target: {fileID: 5232496644344673961, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.049154
@@ -4780,6 +4784,18 @@ PrefabInstance:
     - target: {fileID: 6379735626127204597, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_Name
       value: Backstage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_SpotAngle
+      value: 106.37874
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

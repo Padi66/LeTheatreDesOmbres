@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ZoneTPObject : MonoBehaviour
 {
@@ -27,6 +29,46 @@ public class ZoneTPObject : MonoBehaviour
         StartCoroutine(ResetObject(rb.transform, rb, resetter));
     }
 
+    private IEnumerator ResetObject(Transform obj, Rigidbody rb, ObjectResetter resetter)
+    {
+        XRGrabInteractable grabInteractable = rb.GetComponent<XRGrabInteractable>();
+        
+        if (grabInteractable != null && grabInteractable.isSelected)
+        {
+            grabInteractable.interactionManager.CancelInteractableSelection((IXRSelectInteractable)grabInteractable);
+        }
+        
+        if (_resetVelocity && !rb.isKinematic)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        bool wasKinematic = rb.isKinematic;
+        rb.isKinematic = true;
+
+        obj.position = resetter.InitialPosition;
+
+        if (_resetRotation)
+        {
+            obj.rotation = resetter.InitialRotation;
+        }
+
+        Debug.Log($"{obj.name} téléporté à {resetter.InitialPosition}");
+
+        yield return new WaitForSeconds(_resetDelay);
+
+        rb.isKinematic = wasKinematic;
+        
+        if (_resetVelocity && !rb.isKinematic)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+    }
+
+    // ORIGINAL ResetObject method before modification:
+    /*
     private IEnumerator ResetObject(Transform obj, Rigidbody rb, ObjectResetter resetter)
     {
         if (_resetVelocity && !rb.isKinematic)
@@ -57,4 +99,5 @@ public class ZoneTPObject : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
         }
     }
+    */
 }
