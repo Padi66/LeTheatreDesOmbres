@@ -4,7 +4,7 @@ using UnityEngine;
 public class AnimationDelayController : MonoBehaviour
 {
     [Header("Pause Settings")]
-    [SerializeField] private float delayBeforeStart = 2f;
+    [SerializeField] public float delayBeforeStart = 2f;
     
     private void Start()
     {

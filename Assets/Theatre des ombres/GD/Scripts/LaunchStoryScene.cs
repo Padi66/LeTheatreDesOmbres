@@ -7,6 +7,7 @@ public class LaunchStoryScene : MonoBehaviour
     [SerializeField] private DialogueSequence _dialogueSequence;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AnimationDelayController _animationDelayController;
     
     [Header("Lights")]
     [SerializeField] private Light[] _lights;
@@ -22,6 +23,8 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
+        yield return new WaitForSeconds(_animationDelayController.delayBeforeStart);
+        
         StartCoroutine(FadeLightsOut(_lightFadeDuration));
         _dialogueSequence.StartDialogueBranch(12);
         _audioSource.Play();
@@ -37,7 +40,7 @@ public class LaunchStoryScene : MonoBehaviour
 
     private IEnumerator WaitForDialoguesAndAudio()
     {
-        while (_dialogueSequence.IsPlaying && _dialogueSequence.HasQueuedDialogues && _audioSource.isPlaying)
+        while (_audioSource.isPlaying)
         {
             yield return null;
         }
@@ -103,7 +106,7 @@ public class LaunchStoryScene : MonoBehaviour
                     _lights[i].intensity = 0f;
                 }
                 
-                targetIntensities[i] = 1f;
+                targetIntensities[i] = 5f;
             }
         }
 
