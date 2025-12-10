@@ -8,6 +8,7 @@ public class LaunchStoryScene : MonoBehaviour
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AnimationDelayController _animationDelayController;
+    [SerializeField] private GameObject _projecteur;
     
     [Header("Lights")]
     [SerializeField] private Light[] _lights;
@@ -18,21 +19,24 @@ public class LaunchStoryScene : MonoBehaviour
     
     void Start()
     {
+        
         StartCoroutine(Sequence());
     }
 
     IEnumerator Sequence()
     {
-        yield return new WaitForSeconds(_animationDelayController.delayBeforeStart);
         
+        yield return new WaitForSeconds(_animationDelayController.delayBeforeStart);
+        _projecteur.SetActive(true);
         StartCoroutine(FadeLightsOut(_lightFadeDuration));
+        
         _dialogueSequence.StartDialogueBranch(12);
         _audioSource.Play();
 
         yield return StartCoroutine(WaitForDialoguesAndAudio());
 
         yield return new WaitForSeconds(_extraDelayAfterCompletion);
-        
+        _projecteur.SetActive(false);
         StartCoroutine(FadeLightsIn(_lightFadeDuration));
         
         _levelManager.LoadMainMenu();
