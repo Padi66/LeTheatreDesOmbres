@@ -2038,6 +2038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1626608066737500270, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3130556819844574636, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.792
@@ -2082,6 +2086,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PushButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3799879612533761728, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950601907789714247, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008274757937641526, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2120,7 +2136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ActivateStory
   _button: {fileID: 869764215}
   _storyManager: {fileID: 1480032615}
-  _buttonVisual: {fileID: 1740398301}
+  _buttonVisual: {fileID: 869764214}
 --- !u!1001 &959529771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3688,11 +3704,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1570435534692413303, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
   m_PrefabInstance: {fileID: 208282247}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1740398301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8085050572727677009, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
-  m_PrefabInstance: {fileID: 869764213}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1766605261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,15 +4340,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4285203843356500315, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1978
+      value: -11.096
       objectReference: {fileID: 0}
     - target: {fileID: 4285203843356500315, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6423
+      value: 1.4871
       objectReference: {fileID: 0}
     - target: {fileID: 4285203843356500315, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.3381
+      value: -6.62
       objectReference: {fileID: 0}
     - target: {fileID: 4285203843356500315, guid: d69283d508b4474428e15e5b0e05f5bf, type: 3}
       propertyPath: m_LocalRotation.w
