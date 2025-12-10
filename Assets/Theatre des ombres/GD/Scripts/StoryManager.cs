@@ -29,8 +29,8 @@ public class StoryManager : MonoBehaviour
     
 
     [Header("Transition Settings")]
+    
     [SerializeField] private float delayBeforeTransition = 1f;
-
     private AsyncOperation _preloadedScene;
     private int pendingSceneIndex = -1;
     private bool waitingForDialogues = false;

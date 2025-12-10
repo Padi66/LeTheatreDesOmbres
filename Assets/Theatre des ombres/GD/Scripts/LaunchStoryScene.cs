@@ -5,7 +5,6 @@ public class LaunchStoryScene : MonoBehaviour
 {
     [Header("Scene References")]
     [SerializeField] private DialogueSequence _dialogueSequence;
-    //[SerializeField] private CurtainsMove _curtains;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private AudioSource _audioSource;
     
@@ -14,7 +13,7 @@ public class LaunchStoryScene : MonoBehaviour
     [SerializeField] private float _lightFadeDuration = 2f;
     
     [Header("Delay")]
-    [SerializeField] private float _delayBack;
+    [SerializeField] private float _extraDelayAfterCompletion = 1f;
     
     void Start()
     {
@@ -23,20 +22,27 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        /*yield return new WaitForSeconds(2f);
-        _curtains.OpenCurtainsRight();
-        _curtains.OpenCurtainsLeft();*/
-        
-        
-        //StartCoroutine(FadeLightsOut(_lightFadeDuration));
-        //yield return new WaitForSeconds(_lightFadeDuration);
+        StartCoroutine(FadeLightsOut(_lightFadeDuration));
         _dialogueSequence.StartDialogueBranch(12);
         _audioSource.Play();
 
+        yield return StartCoroutine(WaitForDialoguesAndAudio());
+
+        yield return new WaitForSeconds(_extraDelayAfterCompletion);
         
+        StartCoroutine(FadeLightsIn(_lightFadeDuration));
         
-        yield return new WaitForSeconds(_delayBack);
         _levelManager.LoadMainMenu();
+    }
+
+    private IEnumerator WaitForDialoguesAndAudio()
+    {
+        while (_dialogueSequence.IsPlaying && _dialogueSequence.HasQueuedDialogues && _audioSource.isPlaying)
+        {
+            yield return null;
+        }
+        
+        Debug.Log("Dialogues et audio terminés !");
     }
 
     private IEnumerator FadeLightsOut(float duration)
