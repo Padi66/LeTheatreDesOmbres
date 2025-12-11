@@ -39,14 +39,14 @@ public class StoryManager : MonoBehaviour
     private void Start()
     {
 
-        if (_dialogueSequence != null)
+        /*if (_dialogueSequence != null)
         {
             _dialogueSequence.onAllDialoguesComplete.AddListener(OnAllDialoguesComplete);
         }
         else
         {
             Debug.LogWarning("DialogueSequence not assigned in StoryManager!");
-        }
+        }*/
         _dialogueSequence.StartDialogueBranch(1);
     }
 
@@ -232,13 +232,15 @@ public class StoryManager : MonoBehaviour
 
         if (targetScene >= 0)
         {
-            pendingSceneIndex = targetScene;
+            Debug.Log($"✅ Lancement de la transition vers scène {targetScene} dans {delayBeforeTransition}s");
+            StartCoroutine(TransitionAfterDelay(targetScene));
+            /*pendingSceneIndex = targetScene;
             waitingForDialogues = true;
-            Debug.Log($"Combinaison détectée! Attente de la fin des dialogues avant de charger la scène {targetScene}");
+            Debug.Log($"Combinaison détectée! Attente de la fin des dialogues avant de charger la scène {targetScene}");*/
         }
     }
 
-    private void OnAllDialoguesComplete()
+    /*private void OnAllDialoguesComplete()
     {
         if (!waitingForDialogues || pendingSceneIndex < 0)
         {
@@ -248,23 +250,23 @@ public class StoryManager : MonoBehaviour
 
         Debug.Log($"Tous les dialogues terminés! Lancement de la transition vers la scène {pendingSceneIndex} dans {delayBeforeTransition}s");
         StartCoroutine(TransitionAfterDelay());
-    }
+    }*/
 
-    private IEnumerator TransitionAfterDelay()
+    private IEnumerator TransitionAfterDelay(int sceneIndex)
     {
+        Debug.Log($"[StoryManager] Attente de {delayBeforeTransition}s avant transition...");
         yield return new WaitForSeconds(delayBeforeTransition);
 
+        Debug.Log($"[StoryManager] Lancement de la transition vers scène {sceneIndex}");
+        
         if (_transition != null)
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(pendingSceneIndex));
+            _transition.StartCoroutine(_transition.TransitionToScene(sceneIndex));
         }
         else
         {
-            Debug.LogWarning("SceneTransitionManager not found! Loading scene directly.");
-            SceneManager.LoadScene(pendingSceneIndex);
+            Debug.LogWarning("[StoryManager] SceneTransitionManager not found! Loading scene directly.");
+            SceneManager.LoadScene(sceneIndex);
         }
-
-        pendingSceneIndex = -1;
-        waitingForDialogues = false;
     }
 }
