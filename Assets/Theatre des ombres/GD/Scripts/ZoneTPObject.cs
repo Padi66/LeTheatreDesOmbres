@@ -9,6 +9,8 @@ public class ZoneTPObject : MonoBehaviour
     [SerializeField] private float _resetDelay = 0.1f;
     [SerializeField] private bool _resetRotation = true;
     [SerializeField] private bool _resetVelocity = true;
+    [SerializeField] ParticleSystem _particleSystem;
+    [SerializeField] AudioSource _audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,6 +61,8 @@ public class ZoneTPObject : MonoBehaviour
         yield return new WaitForSeconds(_resetDelay);
 
         rb.isKinematic = wasKinematic;
+        _audioSource.Play();
+        _particleSystem.Play();
         
         if (_resetVelocity && !rb.isKinematic)
         {
