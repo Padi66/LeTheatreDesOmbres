@@ -220,7 +220,7 @@ Animator:
   m_GameObject: {fileID: 30388642}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8adb2fdd5ac23564ca5beb524e982611, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5f6184e60c5b6584190ee08e3cf21662, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5617438370356856132, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: delayBeforeStart
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: dialogueTextUI
@@ -2195,7 +2195,7 @@ Animation:
   m_GameObject: {fileID: 655903735}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 43d2232e00754a44d96c8b32c158e328, type: 2}
+  m_Animation: {fileID: 7400000, guid: 3cfd7b282373c074e9cea07ed170b250, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 43d2232e00754a44d96c8b32c158e328, type: 2}
   - {fileID: 7400000, guid: 3cfd7b282373c074e9cea07ed170b250, type: 2}
@@ -4198,7 +4198,7 @@ Animation:
   m_GameObject: {fileID: 1550523235}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 5edd83c11d318fb41b3b36dccf1ea53d, type: 2}
+  m_Animation: {fileID: 7400000, guid: a7099f40863d8be4faa0843ffdac9275, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 5edd83c11d318fb41b3b36dccf1ea53d, type: 2}
   - {fileID: 7400000, guid: a7099f40863d8be4faa0843ffdac9275, type: 2}
@@ -4750,7 +4750,7 @@ Animator:
   m_GameObject: {fileID: 1695098629}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3795f3adc6677d4469f4669b64fc6367, type: 2}
+  m_Controller: {fileID: 9100000, guid: 89552819480b8a745944098b293cdbd3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
