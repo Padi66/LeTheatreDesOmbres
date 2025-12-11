@@ -28,6 +28,12 @@ public class PiedestalUP : MonoBehaviour
     public XRLockSocketInteractor _socketPurple;
     public DialogueSequence _dialogueSequence;
     public float _duration = 2f;
+    
+    [SerializeField] private GameObject _socketOrangeVisual;
+    [SerializeField] private GameObject _socketGreenVisual;
+    [SerializeField] private GameObject _socketPurpleVisual;
+    
+    
 
 
     private void Start()
@@ -36,6 +42,7 @@ public class PiedestalUP : MonoBehaviour
         _dialogueSequence.StartDialogueBranch(0);
         _dialogueSequence.StartDialogueBranch(1);
         UpGreen(_socketGreen);
+        
     }
 
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
@@ -43,12 +50,15 @@ public class PiedestalUP : MonoBehaviour
         _dialogueSequence.StartDialogueBranch(5);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
         StartCoroutine(TurnOnLight(_lightOrange, socket));
+        SetLayerRecursively(_socketOrangeVisual, 6);
+        
     }
 
     public void UpGreen(XRLockSocketInteractor socketToReactivate = null)
     {
         XRLockSocketInteractor socket = socketToReactivate ?? _socketGreen;
         StartCoroutine(TurnOnLight(_lightGreen, socket));
+        SetLayerRecursively(_socketGreenVisual, 6);
     }
 
     public void UpPurple(XRLockSocketInteractor socketToReactivate = null)
@@ -56,6 +66,7 @@ public class PiedestalUP : MonoBehaviour
         _dialogueSequence.StartDialogueBranch(8);
         XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
         StartCoroutine(TurnOnLight(_lightPurple, socket));
+        SetLayerRecursively(_socketPurpleVisual, 6);
     }
     
     IEnumerator TurnOnLight(Light light, XRLockSocketInteractor socketToReactivate = null)
@@ -107,6 +118,22 @@ public class PiedestalUP : MonoBehaviour
 
         light.intensity = 0f;
         light.enabled = false;
+    }
+    
+  
+    private void SetLayerRecursively(GameObject obj, int layer)
+    {
+        if (obj == null) return;
+    
+        if (obj.GetComponent<Collider>() == null)
+        {
+            obj.layer = layer;
+        }
+    
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
+        }
     }
 
     // Anciennes coroutines pour l'animation de montée (désactivées)

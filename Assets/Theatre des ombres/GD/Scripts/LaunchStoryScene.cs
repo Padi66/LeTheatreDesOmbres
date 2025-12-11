@@ -28,10 +28,10 @@ public class LaunchStoryScene : MonoBehaviour
         
         yield return new WaitForSeconds(_animationDelayController.delayBeforeStart);
         _projecteur.SetActive(true);
-        
+        StartCoroutine(FadeLightsOut(_lightFadeDuration));
         _dialogueSequence.StartDialogueBranch(12);
         _audioSource.Play();
-        StartCoroutine(FadeLightsOut(_lightFadeDuration));
+        
 
         yield return StartCoroutine(WaitForDialoguesAndAudio());
 
