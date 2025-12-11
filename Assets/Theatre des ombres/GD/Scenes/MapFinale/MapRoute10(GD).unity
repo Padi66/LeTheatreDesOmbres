@@ -293,6 +293,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: displayTime
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: dialogueTextUI
       value: 
       objectReference: {fileID: 96264618}
@@ -302,7 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: branch12.Array.size
-      value: 89
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
@@ -314,12 +318,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: 'Le Roi, '
+      value: Le Roi,
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[5]'
       value: "connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
-        pour une partie de chasse. "
+        pour une partie de chasse."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[6]'
@@ -354,195 +358,212 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[13]'
-      value: "Il lui fallait donc vite retourner au ch\xE2teau afin de retrouver
-        la protection de ses chevaliers,"
+      value: "Il lui fallait donc vite retourner au ch\xE2teau, "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[14]'
-      value: et regagner sa place de roi.
+      value: afin de retrouver la protection de ses chevaliers et regagner sa place
+        de roi.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[16]'
+      value: "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage
+        dans sa qu\xEAte, "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[17]'
+      value: "qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[18]'
-      value: "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le
-        son des mart\xE8lements r\xE9p\xE9t\xE9s,"
+      value: "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[19]'
-      value: "le menant \xE0 la forge du village, qui, curieux de savoir ce qu\u2019il
-        pouvait bien se procurer, interpella le forgeron afin de lui demander..."
+      value: "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le
+        son des mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,
+        qui,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[20]'
-      value: Un bouclier.
+      value: "curieux de savoir ce qu\u2019il pouvait bien se procurer, interpella
+        le forgeron afin de lui demander..."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[21]'
-      value: "Demanda fi\xE8rement ce dernier, alors qu\u2019il n\u2019avait jamais
-        tenu une seule arme de sa vie."
+      value: "Une \xE9p\xE9e"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[22]'
-      value: "\u2014 Cela vous fera 10 \xE9cus, d\xE9clara le forgeron."
+      value: "Demanda fi\xE8rement ce dernier, alors qu\u2019il n\u2019avait jamais
+        tenu une seule arme de sa vie. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[23]'
+      value: "\u2014 Cela vous fera 10 \xE9cus, d\xE9clara le forgeron."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[24]'
       value: "Le roi se mit \xE0 ricaner, persuad\xE9 que l\u2019homme le reconna\xEEtrait
         aussit\xF4t."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[24]'
-      value: "Mais le forgeron, le d\xE9visageant sans comprendre, lui demanda de
+      propertyPath: 'branch12.Array.data[25]'
+      value: "Mais le forgeron le d\xE9visageant sans comprendre, lui demanda de
         prouver son identit\xE9."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[25]'
+      propertyPath: 'branch12.Array.data[26]'
       value: "Il d\xE9clara avec fiert\xE9 qu\u2019il connaissait tr\xE8s bien son
         roi et qu\u2019il n\u2019avait \u201Crien en commun\u201D avec lui,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[26]'
+      propertyPath: 'branch12.Array.data[27]'
       value: "ce qui acheva de d\xE9semparer son Altesse, d\xE9j\xE0 sans le moindre
         sou en poche."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[27]'
+      propertyPath: 'branch12.Array.data[28]'
       value: "Il tenta alors une approche qu\u2019il n\u2019aurait jamais faite en
-        tant que roi. Il se mit \xE0 crier de toutes ses forces : "
+        tant que roi."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[28]'
+      propertyPath: 'branch12.Array.data[29]'
+      value: "Il se mit soudain \xE0 crier de toutes ses forces :"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[30]'
       value: "\u2014 Mon brave homme, un squelette s\u2019approche de votre forge
         !"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[29]'
-      value: "Vite, je sais me battre comme un roi, donnez-moi ce bouclier pour vous
-        prot\xE9ger ! "
+      propertyPath: 'branch12.Array.data[31]'
+      value: "Vite, je sais me battre comme un roi, donnez-moi cette \xE9p\xE9e pour
+        vous prot\xE9ger ! "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[30]'
+      propertyPath: 'branch12.Array.data[32]'
       value: "Le forgeron sursauta, paniqu\xE9, regardant dans la direction indiqu\xE9e
         par le roi,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[31]'
-      value: "laissant le champ libre \xE0 ce dernier pour subtiliser le bouclier
-        expos\xE9 avant de se pr\xE9cipiter hors de la forge, puis du village."
+      propertyPath: 'branch12.Array.data[33]'
+      value: "laissant le champ libre \xE0 ce dernier pour subtiliser l\u2019\xE9p\xE9e
+        expos\xE9e, avant de se pr\xE9cipiter hors de la forge, puis du village."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[32]'
+      propertyPath: 'branch12.Array.data[34]'
       value: "Il poursuivit ainsi sa route vers le ch\xE2teau, laissant le forgeron
         dans l\u2019incompr\xE9hension la plus totale suite \xE0 ce qu\u2019il venait
         de se passer."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[33]'
+      propertyPath: 'branch12.Array.data[35]'
       value: "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin
         entamer la derni\xE8re \xE9tape de son p\xE9riple,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[34]'
-      value: "en entreprenant la mont\xE9e de la colline menant au ch\xE2teau."
+      propertyPath: 'branch12.Array.data[36]'
+      value: "en entreprenant la mont\xE9e de la colline menant au ch\xE2teau. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[35]'
+      propertyPath: 'branch12.Array.data[37]'
       value: "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient
         se dresser majestueusement devant lui."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[36]'
-      value: "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de
-        la porte du ch\xE2teau, il aper\xE7ut une silhouette,"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: 'branch12.Array.data[37]'
-      value: Celle...
-      objectReference: {fileID: 0}
-    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[38]'
-      value: D'un squelette.
+      value: "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de
+        la porte du ch\xE2teau, il aper\xE7ut une silhouette, "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[39]'
-      value: "Post\xE9 non loin des murailles du ch\xE2teau, il observait le roi
-        \xE9puis\xE9, qui se dirigeait vers l\u2019entr\xE9e gard\xE9e par une chevaleresse."
+      value: 'Celle... '
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[40]'
-      value: "Le roi s\u2019arr\xEAta devant la porte du ch\xE2teau, et interpella
-        la garde :"
+      value: D'un squelette.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[41]'
-      value: "\u2014 Eh oh, toi ! Ouvre la porte \xE0 ton roi !"
+      value: "Post\xE9 non loin des murailles du ch\xE2teau, ce dernier courut vers
+        sa majest\xE9 d\xE8s qu'il le vit."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[42]'
-      value: "La garde le d\xE9visagea,"
+      value: "En le voyant, le roi bondit de peur, n\u2019ayant jamais vu une cr\xE9ature
+        aussi effrayante."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[43]'
-      value: "perplexe, puis \xE9clata de rire. "
+      value: "Il brandit son \xE9p\xE9e, se cachant derri\xE8re."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[44]'
-      value: "\u2014 Ton roi ? De qui tu parles, mendiant ?"
+      value: "\u2014 Que voulez-vous... Je veux juste rentrer chez moi, dit-il d\xE9sesp\xE9r\xE9. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[45]'
-      value: "D\xE9guerpis avant qu\u2019on te chasse \xE0 coups de hallebarde."
+      value: "Prenant le roi pour un malfrat, le squelette le rassura et lui proposa
+        un march\xE9 :"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[46]'
-      value: "\u2014 Comment oses-tu parler \xE0 ton roi sur ce ton ? Je te ferai
-        fouetter pour \xE7a !"
+      value: "s\u2019infiltrer tous les deux dans le ch\xE2teau pour trouver un butin
+        int\xE9ressant."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[47]'
-      value: "\xC0 ces mots, plusieurs gardes sortirent du ch\xE2teau,"
+      value: "Le roi, outr\xE9 par cette demande, lui r\xE9pliqua que JAMAIS il ne
+        toucherait \xE0 son ch\xE2teau."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[48]'
-      value: "le saisirent sans m\xE9nagement et l\u2019\xE9loign\xE8rent de l\u2019entr\xE9e
-        comme un simple vagabond."
+      value: "Le squelette, hilare, se mit \xE0 rire aux \xE9clats :"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[49]'
-      value: "Rejet\xE9 et humili\xE9, il resta seul, \xE0 se morfondre."
+      value: "\u2014 Votre ch\xE2teau, elle est bien bonne celle-l\xE0. Vous n\u2019\xEAtes
+        pas tr\xE8s rus\xE9 comme homme."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[50]'
-      value: "\xC9tait-il devenu fou ?"
+      value: "Voyons\u2026 pensez-vous vraiment qu\u2019un roi puisse manquer autant
+        de charme et de tenue que vous ? "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[51]'
-      value: "Le royaume avait-il oubli\xE9 son propre souverain ?"
+      value: "Le squelette regarda l\u2019\xE9p\xE9e avec insistance."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[52]'
-      value: "C\u2019est alors qu\u2019un squelette surgit du chemin, marchant d\u2019un
-        pas tranquille."
+      value: "\u2014 Bah tiens, donnez-moi \xE7a si vous \xEAtes le roi, cela ne
+        vous sert \xE0 rien ! "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[53]'
-      value: "Le roi resta bouche b\xE9e."
+      value: "Il arracha l\u2019\xE9p\xE9e des bras tremblotants du roi avec une
+        facilit\xE9 d\xE9concertante,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[54]'
-      value: "Le mort-vivant l\u2019observa un instant puis demanda :"
+      value: "puis s\u2019enfuit en courant, gloussant et le traitant de bon \xE0
+        rien."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[55]'
-      value: "\u2014 Toi aussi, ils t\u2019ont refus\xE9 l\u2019entr\xE9e du ch\xE2teau
-        ?"
+      value: "Son Altesse n\u2019eut m\xEAme pas le temps de se d\xE9fendre que le
+        squelette p\xE9n\xE9tra dans le ch\xE2teau."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[56]'
-      value: "\u2014 Oui\u2026 ils ne me reconnaissent pas..."
+      value: "\xC9puis\xE9, il ne lui restait qu\u2019une chose \xE0 faire : pleurer
+        jusqu\u2019\xE0 ce que fin s\u2019ensuive."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[57]'
-      value: Je suis le roi.
+      value: "On apprit alors plus tard que le squelette prit le pouvoir, faisant
+        sombrer le royaume dans le d\xE9sespoir et la discorde. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[58]'
@@ -1359,6 +1380,8 @@ MonoBehaviour:
   _resetDelay: 0.1
   _resetRotation: 1
   _resetVelocity: 1
+  _particleSystem: {fileID: 0}
+  _audioSource: {fileID: 0}
 --- !u!65 &344831038
 BoxCollider:
   m_ObjectHideFlags: 0

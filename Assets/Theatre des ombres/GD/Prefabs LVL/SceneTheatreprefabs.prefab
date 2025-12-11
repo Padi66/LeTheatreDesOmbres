@@ -758,7 +758,6 @@ Transform:
   - {fileID: 1726765239372030445}
   - {fileID: 6506101445128613938}
   - {fileID: 1531078455424679182}
-  - {fileID: 7463484323202758408}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2799322168234108961
@@ -900,6 +899,7 @@ GameObject:
   - component: {fileID: 20596875963651596}
   - component: {fileID: 1937948029400302892}
   - component: {fileID: 8984601995179726802}
+  - component: {fileID: 5394467109377465470}
   m_Layer: 0
   m_Name: ===Manager===
   m_TagString: Untagged
@@ -940,7 +940,8 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 5940439431317087825}
   _levelManager: {fileID: 1937948029400302892}
   _audioSource: {fileID: 6629023012778266455}
-  _animationDelayController: {fileID: 5617438370356856132}
+  _animationDelayController: {fileID: 0}
+  _animationDelay: {fileID: 5394467109377465470}
   _projecteur: {fileID: 2799322168234108961}
   _lights:
   - {fileID: 2754383800247266531}
@@ -976,6 +977,21 @@ MonoBehaviour:
   - {fileID: 2754383800247266531}
   - {fileID: 2202629336024975054}
   _intensity: 5
+--- !u!114 &5394467109377465470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986391131544621985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4be6e4d1e15004cbe16e3c1eedf02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationDelay
+  delayBeforeStart: 2
+  disableLegacyAnimations: 1
+  pauseAnimators: 1
 --- !u!1 &4023897921272495998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,51 +1487,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &6713160184100066230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7463484323202758408}
-  - component: {fileID: 5617438370356856132}
-  m_Layer: 0
-  m_Name: timer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7463484323202758408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6713160184100066230}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.02745, y: -3.11838, z: -11.97752}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4008081496005786401}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5617438370356856132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6713160184100066230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420394ee58e35ab47b87bec9aac816d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimationDelayController
-  delayBeforeStart: 2
 --- !u!1 &6932738765332958985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1714,8 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 304163196676612449}
   typewriterDelay: 0.04
   displayTime: 1
+  audioSourcesToPreload: []
+  initialDelay: 1
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []

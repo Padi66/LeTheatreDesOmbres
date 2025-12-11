@@ -7,7 +7,8 @@ public class LaunchStoryScene : MonoBehaviour
     [SerializeField] private DialogueSequence _dialogueSequence;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AnimationDelayController _animationDelayController;
+    
+    [SerializeField] private AnimationDelay _animationDelay;
     [SerializeField] private GameObject _projecteur;
     
     [Header("Lights")]
@@ -25,8 +26,7 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        
-        yield return new WaitForSeconds(_animationDelayController.delayBeforeStart);
+        yield return new WaitForSeconds(_animationDelay.delayBeforeStart);
         _projecteur.SetActive(true);
         StartCoroutine(FadeLightsOut(_lightFadeDuration));
         _dialogueSequence.StartDialogueBranch(12);
