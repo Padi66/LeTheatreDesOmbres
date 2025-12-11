@@ -2071,7 +2071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964d1677ad4185f42afe36e47b33d66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraHeightNormalizer
-  targetHeight: 1.5
+  targetHeight: 1.4
   minHeight: 0.5
 --- !u!4 &740336219 stripped
 Transform:
@@ -4959,13 +4959,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322432192634860002, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_Range
       value: 5.93
       objectReference: {fileID: 0}
     - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.94232106
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9742934
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.97735846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_Intensity
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_SpotAngle
@@ -4981,7 +4997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4215514930551583229, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5232496644344673961, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5028,8 +5044,20 @@ PrefabInstance:
       value: Backstage
       objectReference: {fileID: 0}
     - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.79811317
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.951627
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_Intensity
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_SpotAngle
