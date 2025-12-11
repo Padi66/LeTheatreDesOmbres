@@ -486,10 +486,10 @@ MonoBehaviour:
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
   m_Button: {fileID: 6469584446198760120}
-  m_PressDistance: 0.015
+  m_PressDistance: 0.04
   m_PressBuffer: 0.005
-  m_ButtonOffset: 0.115
-  m_ButtonSize: 0.08
+  m_ButtonOffset: 0.14
+  m_ButtonSize: 0.11
   m_ToggleButton: 0
   m_OnPress:
     m_PersistentCalls:
