@@ -3775,7 +3775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionManager
   fadeCanvasGroup: {fileID: 1565022777}
-  fadeDuration: 8
+  fadeDuration: 2
   delayBeforeDialogue: 1
   disableMovementDuringDialogue: 1
   resetCameraRotationOnSceneLoad: 1
@@ -4860,6 +4860,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977962, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535270415050945640, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      propertyPath: m_CameraYOffset
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2249296449437080463, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
