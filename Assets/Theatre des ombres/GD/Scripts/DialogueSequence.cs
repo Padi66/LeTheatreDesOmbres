@@ -13,6 +13,12 @@ public class DialogueSequence : MonoBehaviour
     public float typewriterDelay = 0.05f;
     public float displayTime = 2f;
 
+    [Header("Sound Preloading")]
+    [Tooltip("AudioSources à précharger au démarrage (glisse-dépose depuis la scène)")]
+    public List<AudioSource> audioSourcesToPreload = new List<AudioSource>();
+    [Tooltip("Délai avant de lancer le premier dialogue")]
+    public float initialDelay = 1f;
+
     [Header("Events")]
     public UnityEvent onAllDialoguesComplete;
 
@@ -45,6 +51,40 @@ public class DialogueSequence : MonoBehaviour
     private Coroutine activeDialogue;
     private Queue<int> branchQueue = new Queue<int>();
     private bool isPlaying = false;
+    private bool isReady = false;
+
+    private void Start()
+    {
+        StartCoroutine(InitializeDialogueSystem());
+    }
+
+    private IEnumerator InitializeDialogueSystem()
+    {
+        Debug.Log("Initializing dialogue system...");
+
+        yield return new WaitForSeconds(initialDelay);
+
+        if (audioSourcesToPreload.Count > 0)
+        {
+            Debug.Log($"Preloading {audioSourcesToPreload.Count} audio clips...");
+
+            foreach (AudioSource audioSource in audioSourcesToPreload)
+            {
+                if (audioSource != null && audioSource.clip != null)
+                {
+                    audioSource.clip.LoadAudioData();
+                    yield return null;
+                }
+            }
+
+            yield return new WaitForSeconds(0.1f);
+
+            Debug.Log("Audio preloading complete!");
+        }
+
+        isReady = true;
+        Debug.Log("Dialogue system ready!");
+    }
 
     public void StartDialogueBranch(int branch)
     {
@@ -62,8 +102,28 @@ public class DialogueSequence : MonoBehaviour
         }
         else
         {
-            PlayBranch(branch);
+            if (!isReady)
+            {
+                StartCoroutine(WaitForReadyThenPlay(branch));
+            }
+            else
+            {
+                PlayBranch(branch);
+            }
         }
+    }
+
+    private IEnumerator WaitForReadyThenPlay(int branch)
+    {
+        Debug.Log($"Waiting for dialogue system to be ready before playing branch {branch}...");
+
+        while (!isReady)
+        {
+            yield return null;
+        }
+
+        Debug.Log("System ready, starting dialogue!");
+        PlayBranch(branch);
     }
 
     private void PlayBranch(int branch)
@@ -110,6 +170,7 @@ public class DialogueSequence : MonoBehaviour
             case 20: return branch20;
             case 21: return branch21;
             case 22: return branch22;
+            case 23: return branch23;
             default: return null;
         }
     }
@@ -135,7 +196,7 @@ public class DialogueSequence : MonoBehaviour
         foreach (string line in dialogues)
         {
             dialogueTextUI.text = "";
-            
+
             float startTime = Time.realtimeSinceStartup;
             int characterIndex = 0;
 
@@ -182,4 +243,3 @@ public class DialogueSequence : MonoBehaviour
     public bool IsPlaying => isPlaying;
     public bool HasQueuedDialogues => branchQueue.Count > 0;
 }
-
