@@ -47,6 +47,7 @@ public class StoryManager : MonoBehaviour
         {
             Debug.LogWarning("DialogueSequence not assigned in StoryManager!");
         }
+        _dialogueSequence.StartDialogueBranch(1);
     }
 
     
