@@ -13,11 +13,9 @@ public class DialogueSequence : MonoBehaviour
     public float typewriterDelay = 0.05f;
     public float displayTime = 2f;
 
-    [Header("Sound Preloading")]
-    [Tooltip("AudioSources à précharger au démarrage (glisse-dépose depuis la scène)")]
+    [Header("Audio Preloading")]
+    [Tooltip("AudioSources à précharger au Start pour éviter les freezes")]
     public List<AudioSource> audioSourcesToPreload = new List<AudioSource>();
-    [Tooltip("Délai avant de lancer le premier dialogue")]
-    public float initialDelay = 1f;
 
     [Header("Events")]
     public UnityEvent onAllDialoguesComplete;
@@ -51,39 +49,24 @@ public class DialogueSequence : MonoBehaviour
     private Coroutine activeDialogue;
     private Queue<int> branchQueue = new Queue<int>();
     private bool isPlaying = false;
-    private bool isReady = false;
 
     private void Start()
     {
-        StartCoroutine(InitializeDialogueSystem());
+        PreloadAudioClips();
     }
 
-    private IEnumerator InitializeDialogueSystem()
+    private void PreloadAudioClips()
     {
-        Debug.Log("Initializing dialogue system...");
-
-        yield return new WaitForSeconds(initialDelay);
-
         if (audioSourcesToPreload.Count > 0)
         {
-            Debug.Log($"Preloading {audioSourcesToPreload.Count} audio clips...");
-
             foreach (AudioSource audioSource in audioSourcesToPreload)
             {
                 if (audioSource != null && audioSource.clip != null)
                 {
                     audioSource.clip.LoadAudioData();
-                    yield return null;
                 }
             }
-
-            yield return new WaitForSeconds(0.1f);
-
-            Debug.Log("Audio preloading complete!");
         }
-
-        isReady = true;
-        Debug.Log("Dialogue system ready!");
     }
 
     public void StartDialogueBranch(int branch)
@@ -102,28 +85,8 @@ public class DialogueSequence : MonoBehaviour
         }
         else
         {
-            if (!isReady)
-            {
-                StartCoroutine(WaitForReadyThenPlay(branch));
-            }
-            else
-            {
-                PlayBranch(branch);
-            }
+            PlayBranch(branch);
         }
-    }
-
-    private IEnumerator WaitForReadyThenPlay(int branch)
-    {
-        Debug.Log($"Waiting for dialogue system to be ready before playing branch {branch}...");
-
-        while (!isReady)
-        {
-            yield return null;
-        }
-
-        Debug.Log("System ready, starting dialogue!");
-        PlayBranch(branch);
     }
 
     private void PlayBranch(int branch)
