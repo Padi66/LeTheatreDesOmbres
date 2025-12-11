@@ -47,9 +47,11 @@ public class PiedestalUP : MonoBehaviour
 
     public void UpOrange(XRLockSocketInteractor socketToReactivate = null)
     {
-        SetLayerRecursively(_socketGreenVisual, 0);
-        _dialogueSequence.StartDialogueBranch(5);
+        
+       
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
+        _dialogueSequence.StartDialogueBranch(5);
+        SetLayerRecursively(_socketGreenVisual, 0);
         StartCoroutine(TurnOnLight(_lightOrange, socket));
         SetLayerRecursively(_socketOrangeVisual, 6);
         
@@ -64,9 +66,11 @@ public class PiedestalUP : MonoBehaviour
 
     public void UpPurple(XRLockSocketInteractor socketToReactivate = null)
     {
-        SetLayerRecursively(_socketPurpleVisual, 0);
-        _dialogueSequence.StartDialogueBranch(8);
+        
+        
         XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
+        _dialogueSequence.StartDialogueBranch(8);
+        SetLayerRecursively(_socketPurpleVisual, 0);
         StartCoroutine(TurnOnLight(_lightPurple, socket));
         SetLayerRecursively(_socketPurpleVisual, 6);
     }
