@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Content.Interaction;
 
 public class ActivateMenu : MonoBehaviour
@@ -15,7 +16,7 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private SocketMenu _socketMenuRef;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private GameObject _buttonVisual;
-    private float _durationAnimation = 4f;
+    private float _durationAnim= 4f;
     
     private int _outlineLayer;
     private int _defaultLayer;
@@ -24,6 +25,13 @@ public class ActivateMenu : MonoBehaviour
     public Transform _startPosition;
     public Transform _endPosition;
     public Transform _rideau;
+    
+    [SerializeField] private float delayBeforeTransition = 1f;
+    private AsyncOperation _preloadedScene;
+    private int pendingSceneIndex = -1;
+    private bool waitingForDialogues = false;
+    public bool _isLaunched = false;
+    [SerializeField] private SceneTransitionManager _transition;
     
     
     void Awake()
@@ -205,7 +213,7 @@ public class ActivateMenu : MonoBehaviour
         if (cubeType == "PlayTicket")
         {
             Debug.Log("Chargement Level 1");
-            _levelManager.LoadBackStage();
+            StartCoroutine(TransitionAfterDelay(1));
         }
         else if (cubeType == "QuitTicket")
         {
@@ -263,6 +271,25 @@ public class ActivateMenu : MonoBehaviour
 
         _rideau.position = _endPosition.position;
     }
+    
+    private IEnumerator TransitionAfterDelay(int sceneIndex)
+    {
+        Debug.Log($"[StoryManager] Attente de {delayBeforeTransition}s avant transition...");
+        yield return new WaitForSeconds(delayBeforeTransition);
+
+        Debug.Log($"[StoryManager] Lancement de la transition vers scène {sceneIndex}");
+        
+        if (_transition != null)
+        {
+            _transition.StartCoroutine(_transition.TransitionToScene(sceneIndex));
+        }
+        else
+        {
+            Debug.LogWarning("[StoryManager] SceneTransitionManager not found! Loading scene directly.");
+            SceneManager.LoadScene(sceneIndex);
+        }
+    }
+    
 }
 
 

@@ -28,7 +28,7 @@ public class AnimationDelay : MonoBehaviour
                 anim.enabled = false;
             }
             
-            Debug.Log($"[AnimationDelayController] {allAnimations.Length} Legacy Animations désactivées");
+            Debug.Log($"[AnimationDelay] {allAnimations.Length} Legacy Animations désactivées");
         }
         
         if (pauseAnimators)
@@ -42,20 +42,19 @@ public class AnimationDelay : MonoBehaviour
                 allAnimators[i].speed = 0f;
             }
             
-            Debug.Log($"[AnimationDelayController] {allAnimators.Length} Animators mis en pause");
+            Debug.Log($"[AnimationDelay] {allAnimators.Length} Animators mis en pause");
         }
     }
     
     private void Start()
     {
         Time.timeScale = 0f;
-        StartCoroutine(ResumeTimeAfterDelay());
+        Debug.Log($"[AnimationDelay] Time.timeScale mis à 0 - En attente de ResumeAnimations()");
     }
     
-    private IEnumerator ResumeTimeAfterDelay()
+    public void ResumeAnimations()
     {
-        Debug.Log($"[AnimationDelayController] Pause de {delayBeforeStart}s...");
-        yield return new WaitForSecondsRealtime(delayBeforeStart);
+        Debug.Log("[AnimationDelay] ResumeAnimations() appelé - Réactivation des animations");
         
         Time.timeScale = 1f;
         
@@ -69,7 +68,7 @@ public class AnimationDelay : MonoBehaviour
                 }
             }
             
-            Debug.Log($"[AnimationDelayController] {allAnimations.Length} Legacy Animations réactivées");
+            Debug.Log($"[AnimationDelay] {allAnimations.Length} Legacy Animations réactivées");
         }
         
         if (pauseAnimators && allAnimators != null)
@@ -82,9 +81,10 @@ public class AnimationDelay : MonoBehaviour
                 }
             }
             
-            Debug.Log($"[AnimationDelayController] {allAnimators.Length} Animators relancés");
+            Debug.Log($"[AnimationDelay] {allAnimators.Length} Animators relancés");
         }
         
-        Debug.Log("[AnimationDelayController] Temps restauré, animations actives !");
+        Debug.Log("[AnimationDelay] Temps restauré, animations actives !");
     }
 }
+

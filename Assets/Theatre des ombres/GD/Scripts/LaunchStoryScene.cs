@@ -26,7 +26,9 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        yield return new WaitForSeconds(_animationDelay.delayBeforeStart);
+        yield return new WaitForSeconds(5f);
+        
+        _animationDelay.ResumeAnimations();
         _projecteur.SetActive(true);
         StartCoroutine(FadeLightsOut(_lightFadeDuration));
         _dialogueSequence.StartDialogueBranch(12);
