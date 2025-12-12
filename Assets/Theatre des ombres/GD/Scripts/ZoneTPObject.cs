@@ -61,8 +61,8 @@ public class ZoneTPObject : MonoBehaviour
         yield return new WaitForSeconds(_resetDelay);
 
         rb.isKinematic = wasKinematic;
-        //_audioSource.Play();
-        //_particleSystem.Play();
+        _audioSource.Play();
+        _particleSystem.Play();
         
         if (_resetVelocity && !rb.isKinematic)
         {
