@@ -2568,7 +2568,7 @@ MonoBehaviour:
   fadeCanvasGroup: {fileID: 1511808379}
   fadeDuration: 2
   delayBeforeDialogue: 1
-  disableMovementDuringDialogue: 0
+  disableMovementDuringDialogue: 1
   resetCameraRotationOnSceneLoad: 1
   targetCameraYRotation: 180
 --- !u!4 &1103631265
