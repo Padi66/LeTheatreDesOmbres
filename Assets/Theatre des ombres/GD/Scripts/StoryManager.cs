@@ -38,6 +38,12 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private AudioClip chevaleresse2;
     [SerializeField] private AudioClip bouclier;
     [SerializeField] private AudioClip epee;
+    [SerializeField] private float audioCooldown = 1f;
+
+    private float _lastGreenAudioTime = -999f;
+    private float _lastOrangeAudioTime = -999f;
+    private float _lastPurpleAudioTime = -999f;
+
     
 
     [Header("Transition Settings")]
@@ -60,7 +66,7 @@ public class StoryManager : MonoBehaviour
             Debug.LogWarning("DialogueSequence not assigned in StoryManager!");
         }*/
         _dialogueSequence.StartDialogueBranch(1);
-        _audioSource.PlayOneShot(Fixe1);
+        //_audioSource.PlayOneShot(Fixe1);
     }
 
     
@@ -119,55 +125,75 @@ public class StoryManager : MonoBehaviour
 
     public void CheckDirectStep1()
     {
+        if (Time.time - _lastGreenAudioTime < audioCooldown)
+            return;
+
         if (_cubeInGreen == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(2);
             _audioSource.PlayOneShot(chevaleresse1);
+            _lastGreenAudioTime = Time.time;
         }
         else if (_cubeInGreen == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(3);
             _audioSource.PlayOneShot(Squelette1);
+            _lastGreenAudioTime = Time.time;
         }
         else if (_cubeInGreen == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(4);
             _audioSource.PlayOneShot(Roi1);
+            _lastGreenAudioTime = Time.time;
         }
     }
 
+
     public void CheckDirectStep2()
     {
+        if (Time.time - _lastOrangeAudioTime < audioCooldown)
+            return;
+
         if (_cubeInOrange == "Sword")
         {
             _dialogueSequence.StartDialogueBranch(6);
             _audioSource.PlayOneShot(epee);
+            _lastOrangeAudioTime = Time.time;
         }
         else if (_cubeInOrange == "Shield")
         {
             _dialogueSequence.StartDialogueBranch(7);
             _audioSource.PlayOneShot(bouclier);
+            _lastOrangeAudioTime = Time.time;
         }
     }
 
+
     public void CheckDirectStep3()
     {
+        if (Time.time - _lastPurpleAudioTime < audioCooldown)
+            return;
+
         if (_cubeInPurple == "CubeGreen")
         {
             _dialogueSequence.StartDialogueBranch(9);
             _audioSource.PlayOneShot(Squelette2);
+            _lastPurpleAudioTime = Time.time;
         }
         else if (_cubeInPurple == "CubePurple")
         {
             _dialogueSequence.StartDialogueBranch(10);
             _audioSource.PlayOneShot(Roi2);
+            _lastPurpleAudioTime = Time.time;
         }
         else if (_cubeInPurple == "CubeOrange")
         {
             _dialogueSequence.StartDialogueBranch(11);
             _audioSource.PlayOneShot(chevaleresse2);
+            _lastPurpleAudioTime = Time.time;
         }
     }
+
 
     public void CheckCombinationBackstage()
     {

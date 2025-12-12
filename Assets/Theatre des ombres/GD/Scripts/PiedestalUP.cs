@@ -55,8 +55,8 @@ public class PiedestalUP : MonoBehaviour
        
         XRLockSocketInteractor socket = socketToReactivate ?? _socketOrange;
         _dialogueSequence.StartDialogueBranch(5);
-        _audioSource.Stop();
-        _audioSource.PlayOneShot(Fixe2);
+        //_audioSource.Stop();
+        //_audioSource.PlayOneShot(Fixe2);
         SetLayerRecursively(_socketGreenVisual, 0);
         StartCoroutine(TurnOnLight(_lightOrange, socket));
         SetLayerRecursively(_socketOrangeVisual, 6);
@@ -76,8 +76,8 @@ public class PiedestalUP : MonoBehaviour
         
         XRLockSocketInteractor socket = socketToReactivate ?? _socketPurple;
         _dialogueSequence.StartDialogueBranch(8);
-        _audioSource.Stop();
-        _audioSource.PlayOneShot(Fixe3);
+        //_audioSource.Stop();
+        //_audioSource.PlayOneShot(Fixe3);
         SetLayerRecursively(_socketOrangeVisual, 0);
         StartCoroutine(TurnOnLight(_lightPurple, socket));
         SetLayerRecursively(_socketPurpleVisual, 6);
