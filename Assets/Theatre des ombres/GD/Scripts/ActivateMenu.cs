@@ -130,8 +130,11 @@ public class ActivateMenu : MonoBehaviour
 
         LockCubeGrab(cube);
     
-        Transform originalParent = cube.transform.parent;
         cube.transform.SetParent(_socketAttach);
+        if (_animationPrefab != null)
+        {
+            _animationPrefab.SetParent(_socketAttach);
+        }
 
         Vector3 startPos = _attachPositionStart.position;
         Vector3 endPos = _attachPositionEnd.position;
@@ -156,6 +159,7 @@ public class ActivateMenu : MonoBehaviour
 
         ExecuteMenuActionWithCubeType(cubeType);
     }
+
 
 
     private void LockCubeGrab(GameObject cube)
