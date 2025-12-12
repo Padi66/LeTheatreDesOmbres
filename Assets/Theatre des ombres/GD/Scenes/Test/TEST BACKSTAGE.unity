@@ -1008,6 +1008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TPZone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6804585615915777758, guid: d4bc0e38ddaba6c46a9dd30aa795f6e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
