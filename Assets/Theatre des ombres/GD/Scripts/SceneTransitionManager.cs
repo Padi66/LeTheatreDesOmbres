@@ -21,6 +21,10 @@ public class SceneTransitionManager : MonoBehaviour
     [Header("Camera Settings")]
     public bool resetCameraRotationOnSceneLoad = true;
     public float targetCameraYRotation = 0f;
+    
+    [Header("Scene-Specific Settings")]
+    [Tooltip("DÃ©sactive les mouvements et les rayons pendant la transition (pour les niveaux de jeu)")]
+    public bool disableMovementAndRaysDuringTransition = true;
 
     private Canvas fadeCanvas;
     private ContinuousMoveProvider moveProvider;
@@ -138,8 +142,11 @@ public class SceneTransitionManager : MonoBehaviour
 
         sceneFadeComplete = false;
 
-        DisableMovement();
-        DisableControllerRays();
+        if (disableMovementAndRaysDuringTransition)
+        {
+            DisableMovement();
+            DisableControllerRays();
+        }
 
         yield return StartCoroutine(FadeToBlack());
 
@@ -157,8 +164,11 @@ public class SceneTransitionManager : MonoBehaviour
             ResetCameraRotation();
         }
 
-        DisableControllerRays();
-        DisableMovementInNewScene();
+        if (disableMovementAndRaysDuringTransition)
+        {
+            DisableControllerRays();
+            DisableMovementInNewScene();
+        }
 
         yield return new WaitForSeconds(0.2f);
 
@@ -185,7 +195,11 @@ public class SceneTransitionManager : MonoBehaviour
         }
 
         Debug.Log("Both fades complete, enabling controller rays NOW");
-        EnableControllerRays();
+        
+        if (disableMovementAndRaysDuringTransition)
+        {
+            EnableControllerRays();
+        }
 
         if (sceneFadeScreen == null)
         {
@@ -213,7 +227,7 @@ public class SceneTransitionManager : MonoBehaviour
                     currentOriginRotation.z
                 );
 
-                Debug.Log($"Camera rotation reset - Target: {targetCameraYRotation}°, Camera was: {currentCameraYRotation}°, XROrigin rotated by: {rotationDifference}°");
+                Debug.Log($"Camera rotation reset - Target: {targetCameraYRotation}Â°, Camera was: {currentCameraYRotation}Â°, XROrigin rotated by: {rotationDifference}Â°");
             }
             else
             {
@@ -232,7 +246,14 @@ public class SceneTransitionManager : MonoBehaviour
         Debug.Log("SceneFadeScreen complete");
         sceneFadeComplete = true;
 
-        if (!disableMovementDuringDialogue)
+        if (disableMovementAndRaysDuringTransition)
+        {
+            if (!disableMovementDuringDialogue)
+            {
+                EnableMovementInNewScene();
+            }
+        }
+        else
         {
             EnableMovementInNewScene();
         }

@@ -3882,6 +3882,7 @@ MonoBehaviour:
   disableMovementDuringDialogue: 1
   resetCameraRotationOnSceneLoad: 1
   targetCameraYRotation: 180
+  disableMovementAndRaysDuringTransition: 0
 --- !u!4 &1138022925
 Transform:
   m_ObjectHideFlags: 0
