@@ -860,13 +860,8 @@ MonoBehaviour:
   _resetDelay: 0.1
   _resetRotation: 1
   _resetVelocity: 1
-<<<<<<< Updated upstream
   _particlePrefab: {fileID: 0}
   _teleportSound: {fileID: 0}
-=======
-  _particleSystem: {fileID: 0}
-  _audioSource: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!65 &344831038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4825,7 +4820,7 @@ Animator:
   m_GameObject: {fileID: 1695098629}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5da2639fc9ca9994186dd43bbe653550, type: 2}
+  m_Controller: {fileID: 9100000, guid: 72c5d4c1aecf85f419cc6ff359d2a66d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4944,7 +4939,7 @@ Transform:
   m_GameObject: {fileID: 1820081282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.0751, y: 1.687, z: 35.338}
+  m_LocalPosition: {x: 9.075, y: 1.687, z: 35.338}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
