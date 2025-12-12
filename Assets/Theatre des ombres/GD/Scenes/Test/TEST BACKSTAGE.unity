@@ -3598,6 +3598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TPZone
       objectReference: {fileID: 0}
+    - target: {fileID: 8332221700056287792, guid: d4bc0e38ddaba6c46a9dd30aa795f6e5, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

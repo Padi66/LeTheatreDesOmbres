@@ -9,8 +9,9 @@ public class ZoneTPObject : MonoBehaviour
     [SerializeField] private float _resetDelay = 0.1f;
     [SerializeField] private bool _resetRotation = true;
     [SerializeField] private bool _resetVelocity = true;
-    [SerializeField] ParticleSystem _particleSystem;
-    [SerializeField] AudioSource _audioSource;
+    [SerializeField] private GameObject _particlePrefab;
+    private ParticleSystem _particleSystem;
+    private AudioSource _audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +20,15 @@ public class ZoneTPObject : MonoBehaviour
         {
             rb = other.GetComponentInParent<Rigidbody>();
         }
+        other.gameObject.AddComponent<AudioSource>();
+        _audioSource = other.gameObject.GetComponent<AudioSource>();
+        other.gameObject.AddComponent<ParticleSystem>();
+        _particleSystem = other.gameObject.GetComponent<ParticleSystem>();
+        GameObject particleInstance = Instantiate(_particlePrefab, other.transform);
+        _particleSystem = particleInstance.GetComponent<ParticleSystem>();
+
+
+        
         
         if (rb == null) return;
 
@@ -27,7 +37,6 @@ public class ZoneTPObject : MonoBehaviour
         {
             resetter = rb.gameObject.AddComponent<ObjectResetter>();
         }
-
         StartCoroutine(ResetObject(rb.transform, rb, resetter));
     }
 
