@@ -15,6 +15,7 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private SocketMenu _socketMenuRef;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private GameObject _buttonVisual;
+    private float _durationAnimation = 4f;
     
     private int _outlineLayer;
     private int _defaultLayer;
@@ -253,9 +254,9 @@ public class ActivateMenu : MonoBehaviour
     {
         float elapsed = 0f;
 
-        while (elapsed < _duration)
+        while (elapsed < _durationAnim)
         {
-            _rideau.position = Vector3.Lerp(_startPosition.position, _endPosition.position, elapsed / _duration);
+            _rideau.position = Vector3.Lerp(_startPosition.position, _endPosition.position, elapsed / _durationAnim);
             elapsed += Time.deltaTime;
             yield return null;
         }
