@@ -495,6 +495,7 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.043
   displayTime: 1
+  audioSourcesToPreload: []
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -514,9 +515,9 @@ MonoBehaviour:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
-  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
+  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vents
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
-  - Le squelette.
+  - Le Squelette.
   - "Autrefois, Oswald de son nom, \xE9tait un bandit r\xE9put\xE9 pour ses embuscades
     sur les routes de la contr\xE9e."
   - "Ni h\xE9ros ni monstre, simplement un homme qui vivait du malheur des autres,
@@ -563,30 +564,30 @@ MonoBehaviour:
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle..."
-  - De la chevaleresse
-  - "Arm\xE9 de son \xE9p\xE9e vol\xE9e, le squelette fut interpell\xE9 par la Chevaleresse
+  - De la Chevaleresse
+  - "Arm\xE9 de son \xE9p\xE9e vol\xE9e, le squelette fut interpell\xE9 par la chevaleresse
     depuis le haut des remparts : "
   - "\u2014 Toi, vile cr\xE9ature devant nos portes\u2026 que viens-tu faire ici
     ?"
-  - "Le Squelette leva son cr\xE2ne dans sa direction, avant de lui r\xE9torquer
+  - "Le squelette leva son cr\xE2ne dans sa direction, avant de lui r\xE9torquer
     : "
   - "\u2014 Je viens me venger contre vous, chevaliers, vos anc\xEAtres m\u2019ayant
     massacr\xE9 il y a cent ans de cela."
-  - "La Chevaleresse empoigna son \xE9p\xE9e en la sortant de son fourreau."
+  - "La chevaleresse empoigna son \xE9p\xE9e en la sortant de son fourreau."
   - "\u2014 Je suis navr\xE9e pour toi, mais ceux qui t\u2019ont fait du tort ne
     sont plus de ce monde. Tu aurais d\xFB rester parmi les morts."
   - "\u2014 S\u2019ils ne sont plus l\xE0\u2026 alors c\u2019est sur toi que je passerai
     ma col\xE8re."
-  - "Sans h\xE9siter face \xE0 la d\xE9termination du squelette, la Chevaleresse
+  - "Sans h\xE9siter face \xE0 la d\xE9termination du squelette, la chevaleresse
     sauta depuis les murailles et atterrit devant lui."
   - "Elle ne montra aucune peur \xE0 l\u2019\xE9gard de ce dernier, le d\xE9fiant
     directement en le regardant droit dans ses orbites vides."
   - "\xC0 la suite de quoi, les deux d\xE9but\xE8rent un combat acharn\xE9 : la Chevaleresse
-    tranchant les os du Squelette, qui ne cessaient de se reformer \xE0 chaque coup.Rien
-    ne semblait pouvoir l\u2019arr\xEAter."
+    tranchant les os du squelette, qui ne cessaient de se reformer \xE0 chaque coup.
+    Rien ne semblait pouvoir l\u2019arr\xEAter."
   - "Ainsi le duel s\u2019\xE9ternisa durant un jour et une nuit."
-  - "Mais alors que les forces de la Chevaleresse touchaient \xE0 leur fin, cette
-    derni\xE8re parvint \xE0 pi\xE9ger le Squelette et \xE0 le ma\xEEtriser"
+  - "Mais alors que les forces de la chevaleresse touchaient \xE0 leur fin, cette
+    derni\xE8re parvint \xE0 pi\xE9ger le Squelette et \xE0 le ma\xEEtriser,"
   - "jetant ainsi ce dernier dans les cachots du ch\xE2teau."
   - "Il y resta des centaines d\u2019ann\xE9es, prisonnier des barreaux, enferm\xE9
     dans l\u2019obscurit\xE9 absolue."
@@ -866,11 +867,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 919864462}
-  _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
   _audioSource: {fileID: 1014418048}
+  _animationDelay: {fileID: 0}
+  _projecteur: {fileID: 0}
   _lights: []
   _lightFadeDuration: 2
+  _extraDelayAfterCompletion: 1
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0

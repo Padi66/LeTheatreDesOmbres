@@ -624,6 +624,7 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.042
   displayTime: 1
+  audioSourcesToPreload: []
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -645,7 +646,7 @@ MonoBehaviour:
   - "qui se dressait alors fi\xE8rement sur la colline."
   - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que... "
-  - Le squelette.
+  - Le Squelette.
   - "Autrefois, Oswald de son nom, \xE9tait un bandit r\xE9put\xE9 pour ses embuscades
     sur les routes de la contr\xE9e."
   - "Ni h\xE9ros ni monstre, simplement un homme qui vivait du malheur des autres,
@@ -668,8 +669,8 @@ MonoBehaviour:
     vengeance. "
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
-    qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
-  - "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
+    qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt,"
+  - "laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
   - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
     mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
   - "qui, curieux de savoir ce qu\u2019il pouvait bien se procurer, interpella le
@@ -692,11 +693,11 @@ MonoBehaviour:
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle..."
-  - Du roi.
+  - Du Roi.
   - "Arm\xE9 de son bouclier vol\xE9, le squelette s\u2019avan\xE7ait jusqu\u2019aux
     portes du ch\xE2teau et interpella le souverain :"
   - "\u2014 Et toi, tu dois \xEAtre le roi. Laisse-moi entrer. "
-  - "Le roi, n\u2019eut m\xEAme pas le temps de r\xE9pondre qu\u2019un rugissement
+  - "Le roi n\u2019eut m\xEAme pas le temps de r\xE9pondre qu\u2019un rugissement
     secoua toute la contr\xE9e,"
   - "laissant entrevoir un dragon surgissant au-dessus du ch\xE2teau et r\xE9duisant
     en cendres tout ce qui se trouvait sur son passage."
@@ -864,11 +865,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 919864462}
-  _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
   _audioSource: {fileID: 162436339}
+  _animationDelay: {fileID: 0}
+  _projecteur: {fileID: 0}
   _lights: []
   _lightFadeDuration: 2
+  _extraDelayAfterCompletion: 1
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0

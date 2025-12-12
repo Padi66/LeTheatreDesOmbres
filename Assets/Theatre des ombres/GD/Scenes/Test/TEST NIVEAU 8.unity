@@ -495,6 +495,7 @@ MonoBehaviour:
   dialogueTextUI: {fileID: 919864461}
   typewriterDelay: 0.042
   displayTime: 1
+  audioSourcesToPreload: []
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -514,9 +515,9 @@ MonoBehaviour:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
-  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
+  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vents
     et mar\xE9es pour accomplir son objectif, n\u2019\xE9tait autre que..."
-  - Le squelette.
+  - Le Squelette.
   - "Autrefois, Oswald de son nom, \xE9tait un bandit r\xE9put\xE9 pour ses embuscades
     sur les routes de la contr\xE9e."
   - "Ni h\xE9ros ni monstre, simplement un homme qui vivait du malheur des autres,
@@ -539,8 +540,8 @@ MonoBehaviour:
     vengeance."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
-    qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
-  - "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
+    qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt,"
+  - "laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
   - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
     mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
   - "qui, curieux de savoir ce qu\u2019il pouvait bien se procurer, interpella le
@@ -565,14 +566,14 @@ MonoBehaviour:
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle..."
   - De la chevaleresse.
-  - "Arm\xE9 de son bouclier vol\xE9, le Squelette fut interpell\xE9 par la Chevaleresse
+  - "Arm\xE9 de son bouclier vol\xE9, le squelette fut interpell\xE9 par la chevaleresse
     depuis le haut des remparts :"
   - "\u2014 Toi, cr\xE9ature mal\xE9fique devant nos portes\u2026 que viens-tu faire
     ici ?"
-  - "Le Squelette leva son cr\xE2ne vers elle."
+  - "Le squelette leva son cr\xE2ne vers elle."
   - "\u2014 Je viens r\xE9clamer une vengeance pour moi et mes compagnons, que vos
     chevaliers ont massacr\xE9s il y a cent ans."
-  - La Chevaleresse plissa les yeux.
+  - La chevaleresse plissa les yeux.
   - " \u2014 Et tu crois qu\u2019avec un simple bouclier, tu vas entrer dans le ch\xE2teau
     et imposer tes exigences ?"
   - "\u2014 Je ne suis pas venu me battre, ni d\xE9fier qui que ce soit, r\xE9pondit-il
@@ -585,7 +586,7 @@ MonoBehaviour:
     origines ou de notre classe sociale."
   - "Comment survivre autrement ? Le peuple d\u2019en bas est plac\xE9 dans des cases
     d\xE8s la naissance. Notre avenir ne nous appartient pas."
-  - "La Chevaleresse demeura silencieuse quelques instants, frapp\xE9e par l\u2019absurdit\xE9
+  - "La chevaleresse demeura silencieuse quelques instants, frapp\xE9e par l\u2019absurdit\xE9
     touchante de la situation."
   - "Recevoir une le\xE7on d\u2019humanit\xE9 d\u2019un squelette sans chair."
   - "Finalement, elle d\xE9clara :"
@@ -597,16 +598,16 @@ MonoBehaviour:
   - "Je te demande pardon, au nom de tout l\u2019ordre de chevalerie, d\u2019ici
     et d\u2019ailleurs."
   - "Rien ne pourra effacer ce qui a \xE9t\xE9 fait\u2026"
-  - "Mais j\u2019ai l\u2019espoir qu\u2019un jour, le monde sera diff\xE9rent."
+  - "mais j\u2019ai l\u2019espoir qu\u2019un jour, le monde sera diff\xE9rent."
   - "Que chacun commencera sa vie sur un pied d\u2019\xE9galit\xE9."
   - "Et cela arrivera parce que des \xEAtres comme toi auront choisi la parole plut\xF4t
     que les armes."
   - "Merci, cr\xE9ature. Je te promets de porter ton message \xE0 travers tout le
     royaume."
   - "Ce sera ma qu\xEAte ultime."
-  - "Le Squelette, satisfait, tourna les talons et repartit comme il \xE9tait venu."
+  - "Le squelette, satisfait, tourna les talons et repartit comme il \xE9tait venu."
   - "Puis il disparut \xE0 jamais."
-  - "Quant \xE0 la Chevaleresse, profond\xE9ment marqu\xE9e par les paroles du mort-vivant,
+  - "Quant \xE0 la chevaleresse, profond\xE9ment marqu\xE9e par les paroles du mort-vivant,
     elle entreprit un long voyage."
   - "Partout o\xF9 elle allait, elle \xE9coutait les gens, les aidait, et s\u2019effor\xE7ait
     de donner \xE0 chacun une chance que le monde leur avait refus\xE9e."
@@ -756,11 +757,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 919864462}
-  _curtains: {fileID: 1305203356}
   _levelManager: {fileID: 1305203359}
   _audioSource: {fileID: 2090591741}
+  _animationDelay: {fileID: 0}
+  _projecteur: {fileID: 0}
   _lights: []
   _lightFadeDuration: 2
+  _extraDelayAfterCompletion: 1
 --- !u!4 &1305203358
 Transform:
   m_ObjectHideFlags: 0

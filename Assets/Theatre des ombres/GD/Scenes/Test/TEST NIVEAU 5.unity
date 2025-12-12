@@ -524,7 +524,7 @@ MonoBehaviour:
     entour\xE9 de son petit groupe de voleurs."
   - "Mais un jour, leurs m\xE9faits all\xE8rent trop loin."
   - "Et un groupe de chevaliers fut d\xE9p\xEAch\xE9 par le roi afin de les \xE9liminer."
-  - "L'affrontement fut bref, les chevaliers, bien plus nombreux et mieux entra\xEEn\xE9s,"
+  - "L'affrontement fut bref : les chevaliers, bien plus nombreux et mieux entra\xEEn\xE9s,"
   - "parvinrent sans mal \xE0 venir \xE0 bout de la troupe de bandits."
   - "Et Oswald fut alors tu\xE9 dans la disgr\xE2ce la plus absolue."
   - "Son corps laiss\xE9 \xE0 l\u2019abandon au beau milieu de la for\xEAt."
@@ -558,12 +558,12 @@ MonoBehaviour:
   - "que le squelette quitta le village, laissant derri\xE8re lui un silence lourd."
   - "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin entamer
     la derni\xE8re \xE9tape de son p\xE9riple, en entreprenant la mont\xE9e de la
-    colline menant au ch\xE2teau"
+    colline menant au ch\xE2teau."
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
     majestueusement devant lui."
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle... "
-  - Du roi.
+  - Du Roi.
   - "Arm\xE9 de son \xE9p\xE9e vol\xE9e, le squelette enfon\xE7a la porte du ch\xE2teau
     et traversa les couloirs un \xE0 un."
   - "\xC0 chaque pi\xE8ce qu\u2019il traversait, des soldats terroris\xE9s tentaient
@@ -730,7 +730,7 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 919864462}
   _levelManager: {fileID: 1305203359}
   _audioSource: {fileID: 1943251278}
-  _animationDelayController: {fileID: 0}
+  _animationDelay: {fileID: 0}
   _projecteur: {fileID: 0}
   _lights: []
   _lightFadeDuration: 2
