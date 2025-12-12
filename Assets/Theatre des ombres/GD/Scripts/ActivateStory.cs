@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
 
@@ -9,12 +10,14 @@ public class ActivateStory : MonoBehaviour
 
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private GameObject _buttonVisual;
+    [SerializeField] private GameObject _purplePiedestal;
 
     private bool _hasBeenPressed = false;
     private bool _allSocketsOccupied = false;
 
     private int _outlineLayer;
     private int _defaultLayer;
+    
 
     
 
@@ -64,6 +67,7 @@ public class ActivateStory : MonoBehaviour
     {
         if (_allSocketsOccupied && !_hasBeenPressed)
         {
+            SetLayerRecursively(_purplePiedestal, _defaultLayer);
             SetLayerRecursively(_buttonVisual, _outlineLayer);
             Debug.Log("Tous les sockets occupés - Outline activé!");
         }

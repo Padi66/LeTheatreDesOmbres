@@ -15,7 +15,7 @@ public class ZoneTPObject : MonoBehaviour
     [SerializeField] private AudioClip _teleportSound;*/
 
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb == null)
