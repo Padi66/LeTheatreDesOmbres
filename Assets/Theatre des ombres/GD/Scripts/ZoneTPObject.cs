@@ -12,6 +12,8 @@ public class ZoneTPObject : MonoBehaviour
     [SerializeField] private GameObject _particlePrefab;
     private ParticleSystem _particleSystem;
     private AudioSource _audioSource;
+    [SerializeField] private AudioClip _teleportSound;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,10 +24,15 @@ public class ZoneTPObject : MonoBehaviour
         }
         other.gameObject.AddComponent<AudioSource>();
         _audioSource = other.gameObject.GetComponent<AudioSource>();
+        _audioSource.clip = _teleportSound;
+        _audioSource.playOnAwake = false;
         other.gameObject.AddComponent<ParticleSystem>();
         _particleSystem = other.gameObject.GetComponent<ParticleSystem>();
         GameObject particleInstance = Instantiate(_particlePrefab, other.transform);
+        particleInstance.transform.localPosition = Vector3.zero;
+        particleInstance.transform.localRotation = Quaternion.identity;
         _particleSystem = particleInstance.GetComponent<ParticleSystem>();
+
 
 
         

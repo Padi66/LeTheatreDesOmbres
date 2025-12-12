@@ -127,6 +127,5 @@ MonoBehaviour:
   _resetDelay: 0.5
   _resetRotation: 1
   _resetVelocity: 1
-  _particleSystem: {fileID: 0}
   _particlePrefab: {fileID: 6115995040702793779, guid: 87fef50c14699d146b0c53e101f7d9a9, type: 3}
-  _audioSource: {fileID: 0}
+  _teleportSound: {fileID: 8300000, guid: 6cc514f14d9afe24fadd81a83f76223f, type: 3}
