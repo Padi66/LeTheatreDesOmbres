@@ -10,6 +10,7 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private Transform _socketAttach;
     [SerializeField] private float _duration = 2f;
     [SerializeField] private float _delayAfterAnimation = 0.5f;
+    [SerializeField] private Transform _animationPrefab;
 
     [SerializeField] private SocketMenu _socketMenuRef;
     [SerializeField] private LevelManager _levelManager;
@@ -22,7 +23,7 @@ public class ActivateMenu : MonoBehaviour
     public Transform _startPosition;
     public Transform _endPosition;
     public Transform _rideau;
-    [SerializeField] private float _durationAnim;
+    
     
     void Awake()
     {
@@ -128,6 +129,9 @@ public class ActivateMenu : MonoBehaviour
         Debug.Log("Début animation du cube");
 
         LockCubeGrab(cube);
+    
+        Transform originalParent = cube.transform.parent;
+        cube.transform.SetParent(_socketAttach);
 
         Vector3 startPos = _attachPositionStart.position;
         Vector3 endPos = _attachPositionEnd.position;
@@ -135,12 +139,12 @@ public class ActivateMenu : MonoBehaviour
 
         while (elapsed < _duration)
         {
-            cube.transform.position = Vector3.Lerp(startPos, endPos, elapsed / _duration);
+            _socketAttach.position = Vector3.Lerp(startPos, endPos, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        cube.transform.position = endPos;
+        _socketAttach.position = endPos;
 
         Debug.Log("Animation terminée - verrouillage final");
         LockCubeFinal(cube);
@@ -151,9 +155,8 @@ public class ActivateMenu : MonoBehaviour
         Debug.Log($"Déclenchement de l'action finale - Type de cube: '{cubeType}'");
 
         ExecuteMenuActionWithCubeType(cubeType);
-        
-        
     }
+
 
     private void LockCubeGrab(GameObject cube)
     {
@@ -246,9 +249,9 @@ public class ActivateMenu : MonoBehaviour
     {
         float elapsed = 0f;
 
-        while (elapsed < _durationAnim)
+        while (elapsed < _duration)
         {
-            _rideau.position = Vector3.Lerp(_startPosition.position, _endPosition.position, elapsed / _durationAnim);
+            _rideau.position = Vector3.Lerp(_startPosition.position, _endPosition.position, elapsed / _duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
