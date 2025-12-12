@@ -978,6 +978,7 @@ MonoBehaviour:
   branch21: []
   branch22: []
   branch23: []
+  persistentBranches: 010000000500000008000000
 --- !u!222 &402269913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1350,6 +1351,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3091010051962706131, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 348858a1010f7f04e9fbeda7a53ba62f, type: 3}
     - target: {fileID: 3106376975029083742, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1414,6 +1419,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4419110700341927693, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 348858a1010f7f04e9fbeda7a53ba62f, type: 3}
     - target: {fileID: 4526526225087830730, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1630,6 +1639,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7654047266869195769, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 348858a1010f7f04e9fbeda7a53ba62f, type: 3}
+    - target: {fileID: 7768435049593241181, guid: eabc73212483bc340836e676de6338fa, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 348858a1010f7f04e9fbeda7a53ba62f, type: 3}
     - target: {fileID: 7770982046937429182, guid: eabc73212483bc340836e676de6338fa, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5310,6 +5327,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.818
       objectReference: {fileID: 0}
+    - target: {fileID: 3129215093232989642, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: ad1d13ddb44186a48b50bcf5f239cca3, type: 3}
     - target: {fileID: 3322432192634860002, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 0
@@ -5394,6 +5415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Backstage
       objectReference: {fileID: 0}
+    - target: {fileID: 7798608658795019052, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c46593d65a497446a9e13d60daf716b, type: 3}
     - target: {fileID: 7952596608042302126, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
       propertyPath: m_Color.b
       value: 0.79811317
