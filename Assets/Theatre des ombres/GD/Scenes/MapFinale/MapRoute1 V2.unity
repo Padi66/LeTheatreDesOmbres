@@ -860,6 +860,7 @@ MonoBehaviour:
   _resetDelay: 0.1
   _resetRotation: 1
   _resetVelocity: 1
+  _particlePrefab: {fileID: 0}
 --- !u!65 &344831038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4814,7 +4815,7 @@ Animator:
   m_GameObject: {fileID: 1695098629}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 72c5d4c1aecf85f419cc6ff359d2a66d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5da2639fc9ca9994186dd43bbe653550, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
