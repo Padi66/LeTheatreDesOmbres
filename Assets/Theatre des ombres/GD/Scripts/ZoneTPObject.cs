@@ -48,19 +48,18 @@ public class ZoneTPObject : MonoBehaviour
     private IEnumerator ResetObject(Transform obj, Rigidbody rb, ObjectResetter resetter)
     {
         XRGrabInteractable grabInteractable = rb.GetComponent<XRGrabInteractable>();
-        
+    
         if (grabInteractable != null && grabInteractable.isSelected)
         {
             grabInteractable.interactionManager.CancelInteractableSelection((IXRSelectInteractable)grabInteractable);
         }
-        
+    
         if (_resetVelocity && !rb.isKinematic)
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
 
-        bool wasKinematic = rb.isKinematic;
         rb.isKinematic = true;
 
         obj.position = resetter.InitialPosition;
@@ -74,16 +73,25 @@ public class ZoneTPObject : MonoBehaviour
 
         yield return new WaitForSeconds(_resetDelay);
 
-        rb.isKinematic = wasKinematic;
+        if (grabInteractable == null)
+        {
+            rb.isKinematic = false;
+        }
+        else
+        {
+            rb.isKinematic = false;
+        }
+    
         _audioSource.Play();
         _particleSystem.Play();
-        
+    
         if (_resetVelocity && !rb.isKinematic)
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
     }
+
 
     // ORIGINAL ResetObject method before modification:
     /*
