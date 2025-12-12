@@ -16,14 +16,13 @@ public class SceneTransitionManager : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public float delayBeforeDialogue = 2f;
-    public bool disableMovementDuringDialogue = true;
 
     [Header("Camera Settings")]
     public bool resetCameraRotationOnSceneLoad = true;
     public float targetCameraYRotation = 0f;
     
     [Header("Scene-Specific Settings")]
-    [Tooltip("Désactive les mouvements et les rayons pendant la transition (pour les niveaux de jeu)")]
+    [Tooltip("Désactive les mouvements et les rayons pendant la transition (décocher pour Menu/Backstage, cocher pour Routes)")]
     public bool disableMovementAndRaysDuringTransition = true;
 
     private Canvas fadeCanvas;
@@ -144,7 +143,7 @@ public class SceneTransitionManager : MonoBehaviour
 
         if (disableMovementAndRaysDuringTransition)
         {
-            DisableMovement();
+            DisableMovementInCurrentScene();
             DisableControllerRays();
         }
 
@@ -240,20 +239,12 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-
     private void OnSceneFadeComplete()
     {
         Debug.Log("SceneFadeScreen complete");
         sceneFadeComplete = true;
 
-        if (disableMovementAndRaysDuringTransition)
-        {
-            if (!disableMovementDuringDialogue)
-            {
-                EnableMovementInNewScene();
-            }
-        }
-        else
+        if (!disableMovementAndRaysDuringTransition)
         {
             EnableMovementInNewScene();
         }
@@ -357,17 +348,28 @@ public class SceneTransitionManager : MonoBehaviour
         Debug.Log("FadeFromBlack complete");
     }
 
-    private void DisableMovement()
+    private void DisableMovementInCurrentScene()
     {
-        if (moveProvider != null)
+        ContinuousMoveProvider[] moveProviders = FindObjectsByType<ContinuousMoveProvider>(FindObjectsSortMode.None);
+        ContinuousTurnProvider[] continuousTurnProviders = FindObjectsByType<ContinuousTurnProvider>(FindObjectsSortMode.None);
+        SnapTurnProvider[] snapTurnProviders = FindObjectsByType<SnapTurnProvider>(FindObjectsSortMode.None);
+
+        foreach (var move in moveProviders)
         {
-            moveProvider.enabled = false;
-            Debug.Log("Disabled OLD scene movement providers");
+            move.enabled = false;
+            Debug.Log($"Disabled ContinuousMoveProvider on {move.gameObject.name} in CURRENT scene");
         }
 
-        if (turnProvider != null)
+        foreach (var turn in continuousTurnProviders)
         {
-            turnProvider.enabled = false;
+            turn.enabled = false;
+            Debug.Log($"Disabled ContinuousTurnProvider on {turn.gameObject.name} in CURRENT scene");
+        }
+
+        foreach (var snapTurn in snapTurnProviders)
+        {
+            snapTurn.enabled = false;
+            Debug.Log($"Disabled SnapTurnProvider on {snapTurn.gameObject.name} in CURRENT scene");
         }
     }
 
@@ -380,19 +382,19 @@ public class SceneTransitionManager : MonoBehaviour
         foreach (var move in moveProviders)
         {
             move.enabled = false;
-            Debug.Log($"Disabled ContinuousMoveProvider on {move.gameObject.name}");
+            Debug.Log($"Disabled ContinuousMoveProvider on {move.gameObject.name} in NEW scene");
         }
 
         foreach (var turn in continuousTurnProviders)
         {
             turn.enabled = false;
-            Debug.Log($"Disabled ContinuousTurnProvider on {turn.gameObject.name}");
+            Debug.Log($"Disabled ContinuousTurnProvider on {turn.gameObject.name} in NEW scene");
         }
 
         foreach (var snapTurn in snapTurnProviders)
         {
             snapTurn.enabled = false;
-            Debug.Log($"Disabled SnapTurnProvider on {snapTurn.gameObject.name}");
+            Debug.Log($"Disabled SnapTurnProvider on {snapTurn.gameObject.name} in NEW scene");
         }
     }
 

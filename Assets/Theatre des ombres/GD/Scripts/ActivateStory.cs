@@ -67,7 +67,7 @@ public class ActivateStory : MonoBehaviour
     {
         if (_allSocketsOccupied && !_hasBeenPressed)
         {
-            SetLayerRecursively(_purplePiedestal, _defaultLayer);
+            
             SetLayerRecursively(_buttonVisual, _outlineLayer);
             Debug.Log("Tous les sockets occupés - Outline activé!");
         }
