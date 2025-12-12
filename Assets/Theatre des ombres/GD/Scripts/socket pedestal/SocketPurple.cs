@@ -12,17 +12,12 @@ public class SocketPurple : MonoBehaviour
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private HapticManager _hapticManager;
-    [SerializeField] private GameObject _purplePiedestalVisual;
-
-    private int _outlineLayer;
-    private int _defaultLayer;
-
+   
     void Start()
     {
         _socketInteractor.enabled = false;
 
-        _outlineLayer = LayerMask.NameToLayer("Outline");
-        _defaultLayer = LayerMask.NameToLayer("Default");
+        
         
         if (_hapticManager == null)
         {
@@ -71,8 +66,8 @@ public class SocketPurple : MonoBehaviour
             Debug.Log($"Socket Violet contient Cube Violet - nom envoyé: '{cubeName}'");
         }
 
-        SetLayerRecursively(_purplePiedestalVisual, _defaultLayer);
-        Debug.Log("Cube placé dans socket purple - Outline désactivé");
+        
+        
 
         StoryManager.OnSocketStateChanged?.Invoke("Purple", true);
         StoryManager.OnCubePlaced?.Invoke("Purple", cubeName);
@@ -87,7 +82,6 @@ public class SocketPurple : MonoBehaviour
             _hapticManager.TriggerBothHands(0.3f, 0.1f);
         }
         
-        Debug.Log("Cube retiré du socket purple - Outline réactivé");
         
         Debug.Log("Socket Violet vide");
         StoryManager.OnSocketStateChanged?.Invoke("Purple", false);

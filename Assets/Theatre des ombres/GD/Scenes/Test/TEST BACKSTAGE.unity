@@ -417,11 +417,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1633451742894343369, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
   m_PrefabInstance: {fileID: 789769123}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &312161047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6289138765567759802, guid: ac611cc1b67218943a86154cbd5db5d1, type: 3}
-  m_PrefabInstance: {fileID: 789769123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &350442982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2379,7 +2374,7 @@ MonoBehaviour:
   _button: {fileID: 869764215}
   _storyManager: {fileID: 1480032615}
   _buttonVisual: {fileID: 869764214}
-  _purplePiedestal: {fileID: 312161047}
+  _purplePiedestal: {fileID: 1192360715}
 --- !u!1001 &953069413
 PrefabInstance:
   m_ObjectHideFlags: 0
