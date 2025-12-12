@@ -26,7 +26,7 @@ public class LaunchStoryScene : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(5f);
         
         _animationDelay.ResumeAnimations();
         _projecteur.SetActive(true);
