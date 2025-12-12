@@ -723,8 +723,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4f6859d2c5331be4b81a44b344406d27, type: 2}
+  m_sharedMaterial: {fileID: 604935935388518477, guid: 4f6859d2c5331be4b81a44b344406d27, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -748,8 +748,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -63.24196, y: 0, z: -29.586594, w: -8.234337}
+  m_margin: {x: -44.702057, y: 0, z: -27.510544, w: -8.234337}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -811,8 +811,7 @@ MonoBehaviour:
   onAllDialoguesComplete:
     m_PersistentCalls:
       m_Calls: []
-  branch0:
-  - "Il \xE9tait une fois..."
+  branch0: []
   branch1:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
@@ -888,7 +887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &408735911

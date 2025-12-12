@@ -10,9 +10,9 @@ public class ZoneTPObject : MonoBehaviour
     [SerializeField] private bool _resetRotation = true;
     [SerializeField] private bool _resetVelocity = true;
     [SerializeField] private GameObject _particlePrefab;
-    private ParticleSystem _particleSystem;
+    /*private ParticleSystem _particleSystem;
     private AudioSource _audioSource;
-    [SerializeField] private AudioClip _teleportSound;
+    [SerializeField] private AudioClip _teleportSound;*/
 
 
     private void OnTriggerExit(Collider other)
@@ -22,14 +22,14 @@ public class ZoneTPObject : MonoBehaviour
         {
             rb = other.GetComponentInParent<Rigidbody>();
         }
-        other.gameObject.AddComponent<AudioSource>();
+        /*other.gameObject.AddComponent<AudioSource>();
         _audioSource = other.gameObject.GetComponent<AudioSource>();
         _audioSource.clip = _teleportSound;
         _audioSource.playOnAwake = false;
         GameObject particleInstance = Instantiate(_particlePrefab, other.transform);
         particleInstance.transform.localPosition = Vector3.zero;
         particleInstance.transform.localRotation = Quaternion.identity;
-        _particleSystem = particleInstance.GetComponent<ParticleSystem>();
+        _particleSystem = particleInstance.GetComponent<ParticleSystem>();*/
 
 
 
@@ -82,8 +82,8 @@ public class ZoneTPObject : MonoBehaviour
             rb.isKinematic = false;
         }
     
-        _audioSource.Play();
-        _particleSystem.Play();
+        /*_audioSource.Play();
+        _particleSystem.Play();*/
     
         if (_resetVelocity && !rb.isKinematic)
         {
