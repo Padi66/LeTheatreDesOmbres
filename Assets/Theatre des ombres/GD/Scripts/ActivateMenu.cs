@@ -13,7 +13,28 @@ public class ActivateMenu : MonoBehaviour
 
     [SerializeField] private SocketMenu _socketMenuRef;
     [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private GameObject _buttonVisual;
     
+    private int _outlineLayer;
+    private int _defaultLayer;
+
+    
+    public Transform _startPosition;
+    public Transform _endPosition;
+    public Transform _rideau;
+    [SerializeField] private float _durationAnim;
+    
+    void Awake()
+    {
+        _outlineLayer = LayerMask.NameToLayer("Outline");
+        _defaultLayer = LayerMask.NameToLayer("Default");
+    
+        if (_buttonVisual == null)
+        {
+            _buttonVisual = gameObject;
+        }
+    }
+
 
     private bool _hasBeenPressed = false;
 
@@ -54,6 +75,7 @@ public class ActivateMenu : MonoBehaviour
             if (cubeObject != null)
             {
                 StartCoroutine(AnimateCubeAndTrigger(cubeObject, cubeType));
+                StartCoroutine(CloseCurtains());
             }
             else
             {
@@ -187,4 +209,53 @@ public class ActivateMenu : MonoBehaviour
             Debug.LogWarning($"Type de cube non géré: '{cubeType}'");
         }
     }
+    
+    void Update()
+    {
+        CheckSocketState();
+    }
+
+    private void CheckSocketState()
+    {
+        if (_socketMenuRef._isInSocket && !_hasBeenPressed)
+        {
+            SetLayerRecursively(_buttonVisual, _outlineLayer);
+        }
+        else
+        {
+            SetLayerRecursively(_buttonVisual, _defaultLayer);
+        }
+    }
+    
+    private void SetLayerRecursively(GameObject obj, int layer)
+    {
+        if (obj == null) return;
+
+        if (obj.GetComponent<Collider>() == null)
+        {
+            obj.layer = layer;
+        }
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
+        }
+    }
+    
+    IEnumerator CloseCurtains()
+    {
+        float elapsed = 0f;
+
+        while (elapsed < _durationAnim)
+        {
+            _rideau.position = Vector3.Lerp(_startPosition.position, _endPosition.position, elapsed / _durationAnim);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        _rideau.position = _endPosition.position;
+    }
 }
+
+
+

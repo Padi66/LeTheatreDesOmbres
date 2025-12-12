@@ -1,24 +1,31 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
 
 public class ActivateStory : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private XRPushButton _button;
+    [Header("References")] [SerializeField]
+    private XRPushButton _button;
+
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private GameObject _buttonVisual;
 
     private bool _hasBeenPressed = false;
     private bool _allSocketsOccupied = false;
-    
+
     private int _outlineLayer;
     private int _defaultLayer;
+
+    
+
+
+
 
     void Awake()
     {
         _outlineLayer = LayerMask.NameToLayer("Outline");
         _defaultLayer = LayerMask.NameToLayer("Default");
-        
+
         if (_buttonVisual == null)
         {
             _buttonVisual = gameObject;
@@ -43,8 +50,8 @@ public class ActivateStory : MonoBehaviour
     private void CheckSocketsState()
     {
         bool previousState = _allSocketsOccupied;
-        _allSocketsOccupied = _storyManager._socketGreen && 
-                              _storyManager._socketOrange && 
+        _allSocketsOccupied = _storyManager._socketGreen &&
+                              _storyManager._socketOrange &&
                               _storyManager._socketPurple;
 
         if (previousState != _allSocketsOccupied)
@@ -66,15 +73,16 @@ public class ActivateStory : MonoBehaviour
             Debug.Log("Outline désactivé");
         }
     }
+
     private void SetLayerRecursively(GameObject obj, int layer)
     {
         if (obj == null) return;
-    
+
         if (obj.GetComponent<Collider>() == null)
         {
             obj.layer = layer;
         }
-    
+
         foreach (Transform child in obj.transform)
         {
             SetLayerRecursively(child.gameObject, layer);
@@ -92,7 +100,8 @@ public class ActivateStory : MonoBehaviour
         if (!_allSocketsOccupied)
         {
             Debug.LogWarning("Tous les sockets doivent être occupés!");
-            Debug.Log($"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
+            Debug.Log(
+                $"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
             return;
         }
 
@@ -111,4 +120,5 @@ public class ActivateStory : MonoBehaviour
         UpdateButtonOutline();
         Debug.Log("Bouton réinitialisé");
     }
+
 }
