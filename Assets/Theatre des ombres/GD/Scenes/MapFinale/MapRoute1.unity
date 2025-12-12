@@ -860,6 +860,7 @@ MonoBehaviour:
   _resetDelay: 0.1
   _resetRotation: 1
   _resetVelocity: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   _particlePrefab: {fileID: 0}
   _teleportSound: {fileID: 0}
@@ -867,6 +868,8 @@ MonoBehaviour:
   _particleSystem: {fileID: 0}
   _audioSource: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 0acdcd7 ([TME] Menu,story)
 --- !u!65 &344831038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -899,10 +902,6 @@ PrefabInstance:
     - target: {fileID: 20596875963651596, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: _animationDelayController
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 835506080976968190, guid: a626a0850a91ac742940f13c78252877, type: 3}
-      propertyPath: disableMovementDuringDialogue
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2202629336024975054, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Lightmapping
