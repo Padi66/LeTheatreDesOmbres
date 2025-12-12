@@ -6,22 +6,19 @@ using UnityEngine.Events;
 
 public class DialogueSequence : MonoBehaviour
 {
-    [Header("UI Reference")]
-    public TextMeshProUGUI dialogueTextUI;
+    [Header("UI Reference")] public TextMeshProUGUI dialogueTextUI;
 
-    [Header("Dialogue Settings")]
-    public float typewriterDelay = 0.05f;
+    [Header("Dialogue Settings")] public float typewriterDelay = 0.05f;
     public float displayTime = 2f;
 
-    [Header("Audio Preloading")]
-    [Tooltip("AudioSources à précharger au Start pour éviter les freezes")]
+    [Header("Audio Preloading")] [Tooltip("AudioSources ï¿½ prï¿½charger au Start pour ï¿½viter les freezes")]
     public List<AudioSource> audioSourcesToPreload = new List<AudioSource>();
 
-    [Header("Events")]
-    public UnityEvent onAllDialoguesComplete;
+    [Header("Events")] public UnityEvent onAllDialoguesComplete;
 
-    [Header("Dialogue Branches")]
-    [TextArea(2, 5)] public List<string> branch0;
+    [Header("Dialogue Branches")] [TextArea(2, 5)]
+    public List<string> branch0;
+
     [TextArea(2, 5)] public List<string> branch1;
     [TextArea(2, 5)] public List<string> branch2;
     [TextArea(2, 5)] public List<string> branch3;
@@ -46,6 +43,11 @@ public class DialogueSequence : MonoBehaviour
     [TextArea(2, 5)] public List<string> branch22;
     [TextArea(2, 5)] public List<string> branch23;
 
+    [Header("Persistent Branches")] [Tooltip("Branches dont le dernier Ã©lÃ©ment reste affichÃ©")]
+    public List<int> persistentBranches = new List<int> { 1, 5, 8 };
+
+    private int _currentBranch = -1;
+    private string _lastDialogueText = "";
     private Coroutine activeDialogue;
     private Queue<int> branchQueue = new Queue<int>();
     private bool isPlaying = false;
@@ -70,7 +72,14 @@ public class DialogueSequence : MonoBehaviour
     }
 
     public void StartDialogueBranch(int branch)
+
     {
+        if (_currentBranch == branch && isPlaying)
+        {
+            Debug.Log($"Branch {branch} is already playing, ignoring.");
+            return;
+        }
+
         if (isPlaying)
         {
             if (!branchQueue.Contains(branch))
@@ -78,6 +87,7 @@ public class DialogueSequence : MonoBehaviour
                 branchQueue.Enqueue(branch);
                 Debug.Log($"Branch {branch} queued. Queue size: {branchQueue.Count}");
             }
+
             else
             {
                 Debug.Log($"Branch {branch} already in queue, skipping.");
@@ -153,11 +163,14 @@ public class DialogueSequence : MonoBehaviour
 
         dialogueTextUI.enabled = true;
         isPlaying = true;
+        _currentBranch = branchNumber;
 
         Debug.Log($"Playing Branch {branchNumber} with {dialogues.Count} lines");
 
-        foreach (string line in dialogues)
+        for (int i = 0; i < dialogues.Count; i++)
         {
+            string line = dialogues[i];
+            bool isLastLine = (i == dialogues.Count - 1);
             dialogueTextUI.text = "";
 
             float startTime = Time.realtimeSinceStartup;
@@ -177,6 +190,11 @@ public class DialogueSequence : MonoBehaviour
                 yield return null;
             }
 
+            if (isLastLine && persistentBranches.Contains(branchNumber))
+            {
+                _lastDialogueText = line;
+            }
+
             float displayStartTime = Time.realtimeSinceStartup;
             while (Time.realtimeSinceStartup - displayStartTime < displayTime)
             {
@@ -184,11 +202,20 @@ public class DialogueSequence : MonoBehaviour
             }
         }
 
-        dialogueTextUI.text = "";
+        if (persistentBranches.Contains(branchNumber))
+        {
+            dialogueTextUI.text = _lastDialogueText;
+            Debug.Log($"Branch {branchNumber} finished - Last line kept displayed");
+        }
+        else
+        {
+            dialogueTextUI.text = "";
+            Debug.Log($"Branch {branchNumber} finished - Text cleared");
+        }
+
         isPlaying = false;
         activeDialogue = null;
-
-        Debug.Log($"Branch {branchNumber} finished");
+        _currentBranch = -1;
 
         if (branchQueue.Count > 0)
         {
@@ -202,7 +229,4 @@ public class DialogueSequence : MonoBehaviour
             onAllDialoguesComplete?.Invoke();
         }
     }
-
-    public bool IsPlaying => isPlaying;
-    public bool HasQueuedDialogues => branchQueue.Count > 0;
 }
