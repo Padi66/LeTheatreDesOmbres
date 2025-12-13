@@ -5,9 +5,8 @@ using UnityEngine.XR.Content.Interaction;
 
 public class ActivateStory : MonoBehaviour
 {
-    [Header("References")] [SerializeField]
-    private XRPushButton _button;
-
+    [Header("References")] 
+    [SerializeField] private XRPushButton _button;
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private GameObject _buttonVisual;
     [SerializeField] private GameObject _purplePiedestal;
@@ -17,12 +16,6 @@ public class ActivateStory : MonoBehaviour
 
     private int _outlineLayer;
     private int _defaultLayer;
-    
-
-    
-
-
-
 
     void Awake()
     {
@@ -69,12 +62,12 @@ public class ActivateStory : MonoBehaviour
         {
             SetLayerRecursively(_purplePiedestal, _defaultLayer);
             SetLayerRecursively(_buttonVisual, _outlineLayer);
-            Debug.Log("Tous les sockets occupés - Outline activé!");
+            Debug.Log($"[ActivateStory] All sockets occupied - Purple pedestal to layer {_defaultLayer}, Button to Outline");
         }
         else
         {
             SetLayerRecursively(_buttonVisual, _defaultLayer);
-            Debug.Log("Outline désactivé");
+            Debug.Log($"[ActivateStory] Outline disabled - Button to layer {_defaultLayer}");
         }
     }
 
@@ -82,10 +75,7 @@ public class ActivateStory : MonoBehaviour
     {
         if (obj == null) return;
 
-        if (obj.GetComponent<Collider>() == null)
-        {
-            obj.layer = layer;
-        }
+        obj.layer = layer;
 
         foreach (Transform child in obj.transform)
         {
@@ -104,8 +94,7 @@ public class ActivateStory : MonoBehaviour
         if (!_allSocketsOccupied)
         {
             Debug.LogWarning("Tous les sockets doivent être occupés!");
-            Debug.Log(
-                $"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
+            Debug.Log($"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
             return;
         }
 
@@ -124,5 +113,4 @@ public class ActivateStory : MonoBehaviour
         UpdateButtonOutline();
         Debug.Log("Bouton réinitialisé");
     }
-
 }

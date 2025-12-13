@@ -25,7 +25,6 @@ public class StoryManager : MonoBehaviour
     [SerializeField] DialogueSequence _dialogueSequence;
     [SerializeField] LevelManager _levelManager;
     [SerializeField] private PiedestalUP _piedestal;
-    [SerializeField] private SceneTransitionManager _transition;
     [SerializeField] AudioSource _audioSource;
     [SerializeField] private AudioClip Fixe1;
     [SerializeField] private AudioClip Fixe2;
@@ -301,19 +300,21 @@ public class StoryManager : MonoBehaviour
 
     private IEnumerator TransitionAfterDelay(int sceneIndex)
     {
-        Debug.Log($"[StoryManager] Attente de {delayBeforeTransition}s avant transition...");
+        Debug.Log($"[StoryManager] Waiting {delayBeforeTransition}s before transition...");
         yield return new WaitForSeconds(delayBeforeTransition);
 
-        Debug.Log($"[StoryManager] Lancement de la transition vers scène {sceneIndex}");
-        
-        if (_transition != null)
+        Debug.Log($"[StoryManager] Starting transition to scene {sceneIndex}");
+    
+        SceneTransitionManager transition = FindFirstObjectByType<SceneTransitionManager>();
+    
+        if (transition != null)
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(sceneIndex));
+            transition.StartCoroutine(transition.TransitionToScene(sceneIndex));
         }
         else
         {
-            Debug.LogWarning("[StoryManager] SceneTransitionManager not found! Loading scene directly.");
-            SceneManager.LoadScene(sceneIndex);
+            Debug.LogError("[StoryManager] SceneTransitionManager not found!");
         }
     }
+
 }

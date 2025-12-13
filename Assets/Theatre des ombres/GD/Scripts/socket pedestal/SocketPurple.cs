@@ -88,20 +88,7 @@ public class SocketPurple : MonoBehaviour
         StoryManager.OnCubePlaced?.Invoke("Purple", null);
     }
 
-    private void SetLayerRecursively(GameObject obj, int layer)
-    {
-        if (obj == null) return;
-
-        if (obj.GetComponent<Collider>() == null)
-        {
-            obj.layer = layer;
-        }
-
-        foreach (Transform child in obj.transform)
-        {
-            SetLayerRecursively(child.gameObject, layer);
-        }
-    }
+   
 
     public void LockCube()
     {
