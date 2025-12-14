@@ -309,6 +309,10 @@ PrefabInstance:
       value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[0]'
+      value: "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
       value: "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
       objectReference: {fileID: 0}
@@ -317,12 +321,17 @@ PrefabInstance:
       value: "qui se dressait alors fi\xE8rement sur la colline."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[3]'
+      value: "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver
+        vents et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: Le Roi,
+      value: Le Roi.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[5]'
-      value: "connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
+      value: "Connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
         pour une partie de chasse."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
@@ -366,6 +375,10 @@ PrefabInstance:
         de roi.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[15]'
+      value: "Malgr\xE9 ces mauvaises rencontres,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[16]'
       value: "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage
         dans sa qu\xEAte, "
@@ -391,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[21]'
-      value: "Une \xE9p\xE9e"
+      value: "Une \xE9p\xE9e."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[22]'
@@ -482,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[40]'
-      value: D'un squelette.
+      value: D'un Squelette.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[41]'

@@ -2660,6 +2660,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[0]'
+      value: "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
       value: "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
       objectReference: {fileID: 0}
@@ -2668,8 +2672,13 @@ PrefabInstance:
       value: "qui se dressait alors fi\xE8rement sur la colline."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[3]'
+      value: "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver
+        vents et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: Le squelette.
+      value: Le Squelette.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[5]'
@@ -2698,7 +2707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[10]'
-      value: "Et Oswald fut alors tu\xE9 dans la disgr\xE2ce la plus absolue. "
+      value: "Et Oswald fut alors tu\xE9 dans la disgr\xE2ce la plus absolue."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[11]'
@@ -2823,7 +2832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[37]'
-      value: "Le Squelette leva son cr\xE2ne dans sa direction, avant de lui r\xE9torquer
+      value: "Le squelette leva son cr\xE2ne dans sa direction, avant de lui r\xE9torquer
         : "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
@@ -2833,7 +2842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[39]'
-      value: "La Chevaleresse empoigna son \xE9p\xE9e en la sortant de son fourreau."
+      value: "La chevaleresse empoigna son \xE9p\xE9e en la sortant de son fourreau."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[40]'
@@ -2847,7 +2856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[42]'
-      value: "Sans h\xE9siter face \xE0 la d\xE9termination du squelette, la Chevaleresse
+      value: "Sans h\xE9siter face \xE0 la d\xE9termination du squelette, la chevaleresse
         sauta depuis les murailles et atterrit devant lui."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
@@ -2858,8 +2867,8 @@ PrefabInstance:
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[44]'
       value: "\xC0 la suite de quoi, les deux d\xE9but\xE8rent un combat acharn\xE9
-        : la Chevaleresse tranchant les os du Squelette, qui ne cessaient de se reformer
-        \xE0 chaque coup.Rien ne semblait pouvoir l\u2019arr\xEAter."
+        : la chevaleresse tranchant les os du squelette, qui ne cessaient de se reformer
+        \xE0 chaque coup. Rien ne semblait pouvoir l\u2019arr\xEAter."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[45]'
@@ -2867,8 +2876,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[46]'
-      value: "Mais alors que les forces de la Chevaleresse touchaient \xE0 leur fin,
-        cette derni\xE8re parvint \xE0 pi\xE9ger le Squelette et \xE0 le ma\xEEtriser"
+      value: "Mais alors que les forces de la chevaleresse touchaient \xE0 leur fin,
+        cette derni\xE8re parvint \xE0 pi\xE9ger le squelette et \xE0 le ma\xEEtriser"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[47]'

@@ -4749,6 +4749,10 @@ PrefabInstance:
       value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[0]'
+      value: "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
       value: "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
       objectReference: {fileID: 0}
@@ -4757,8 +4761,13 @@ PrefabInstance:
       value: "qui se dressait alors fi\xE8rement sur la colline."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[3]'
+      value: "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver
+        vents et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: La Chevaleresse, Lyra,
+      value: La Chevaleresse Lyra,
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[5]'
@@ -4775,6 +4784,15 @@ PrefabInstance:
         for\xEAt afin de retourner aupr\xE8s de son roi, "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[8]'
+      value: "un groupe de bandits malfam\xE9s jaillit face \xE0 elle."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[9]'
+      value: "Et malgr\xE9 son courage et sa t\xE9nacit\xE9, elle ne put rien faire
+        face \xE0 leur nombre."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[10]'
       value: "Ces derniers prenant un malin plaisir \xE0 la d\xE9pouiller de ses
         biens,"
@@ -4785,13 +4803,35 @@ PrefabInstance:
         ainsi que son bouclier,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[12]'
+      value: "avant de dispara\xEEtre dans la for\xEAt."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[13]'
-      value: " Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper
+      value: "Ainsi humili\xE9e, il lui incombait \xE0 pr\xE9sent de se r\xE9\xE9quiper
         afin de retourner,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[14]'
       value: "digne, au ch\xE2teau."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[15]'
+      value: "Malgr\xE9 ces mauvaises rencontres,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[16]'
+      value: "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage
+        dans sa qu\xEAte, qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[17]'
+      value: "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[18]'
+      value: "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le
+        son des mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[19]'
@@ -4813,12 +4853,23 @@ PrefabInstance:
         sur sa force brute."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[23]'
+      value: "Elle r\xE9cup\xE9ra ainsi sa bourse, et donna la somme r\xE9clam\xE9e
+        par le forgeron."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[24]'
       value: "Une fois le bouclier entre ses mains, elle se sentit \xE0 nouveau compl\xE8te,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[25]'
       value: "et put ainsi repartir sereine en direction du ch\xE2teau."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[26]'
+      value: "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin
+        entamer la derni\xE8re \xE9tape de son p\xE9riple, en entreprenant la mont\xE9e
+        de la colline menant au ch\xE2teau."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[27]'
@@ -4847,7 +4898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[33]'
-      value: "\u2014 Ah ! Chevaleresse Lyra ! D\xE9j\xE0 de retour\u2026 "
+      value: "\u2014 Ah ! chevaleresse Lyra ! D\xE9j\xE0 de retour\u2026 "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[34]'

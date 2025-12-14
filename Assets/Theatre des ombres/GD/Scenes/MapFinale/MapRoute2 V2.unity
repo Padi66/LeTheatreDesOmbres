@@ -3048,7 +3048,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 2067855898}
-  _levelManager: {fileID: 811535819}
   _audioSource: {fileID: 885348764}
   _animationDelay: {fileID: 811535817}
   _projecteur: {fileID: 363340436}
@@ -3057,6 +3056,8 @@ MonoBehaviour:
   - {fileID: 0}
   _lightFadeDuration: 2
   _extraDelayAfterCompletion: 1
+  delayBeforeTransition: 1
+  _mainMenuSceneIndex: 0
 --- !u!4 &811535821
 Transform:
   m_ObjectHideFlags: 0
@@ -6754,9 +6755,9 @@ MonoBehaviour:
   - "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
   - "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
   - "qui se dressait alors fi\xE8rement sur la colline."
-  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vent
+  - "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver vents
     et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
-  - La chevaleresse, Lyra,
+  - La chevaleresse Lyra,
   - "Une des guerri\xE8res les plus courageuses de la contr\xE9e,"
   - "avait \xE9t\xE9 envoy\xE9e par le roi afin de r\xE9aliser une t\xE2che de la
     plus haute importance."
@@ -6774,7 +6775,7 @@ MonoBehaviour:
   - "digne, au ch\xE2teau."
   - "Malgr\xE9 ces mauvaises rencontres,"
   - "cela n\u2019avait pas d\xE9courag\xE9 pour autant notre personnage dans sa qu\xEAte,
-    qui \xE9tait enfin parvenu \xE0 quitter la for\xEAt."
+    qui \xE9tait enfin parvenue \xE0 quitter la for\xEAt."
   - "Laissant \xE0 pr\xE9sent se d\xE9voiler devant lui un petit village."
   - "Et \xE0 peine arriv\xE9, ce dernier fut directement attir\xE9 par le son des
     mart\xE8lements r\xE9p\xE9t\xE9s, le menant \xE0 la forge du village,"
@@ -6790,7 +6791,7 @@ MonoBehaviour:
   - "Une fois l\u2019\xE9p\xE9e en main, elle se sentit \xE0 nouveau compl\xE8te,"
   - "l\u2019\xE9p\xE9e comme un prolongement de sa main, elle put ainsi repartir
     sereine en direction du ch\xE2teau."
-  - "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin entamer
+  - "\xC0 pr\xE9sent \xE9quip\xE9e et par\xE9, notre personnage put enfin entamer
     la derni\xE8re \xE9tape de son p\xE9riple, en entreprenant la mont\xE9e de la
     colline menant au ch\xE2teau."
   - "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient se dresser
@@ -6798,7 +6799,7 @@ MonoBehaviour:
   - "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de la porte
     du ch\xE2teau, il aper\xE7ut une silhouette, celle..."
   - Du Roi.
-  - "Accoud\xE9 sur les murailles du ch\xE2teau, ce dernier interpella la Chevaleresse."
+  - "Accoud\xE9 sur les murailles du ch\xE2teau, ce dernier interpella la chevaleresse."
   - "\u2014 D\xE9j\xE0 de retour ? Votre bravoure et votre d\xE9termination sont
     vraiment sans faille. "
   - "Toujours pr\xEAte \xE0 servir le royaume avec honneur, dit-il.  "
@@ -6806,7 +6807,7 @@ MonoBehaviour:
   - "qu\u2019un grondement terrible se fit entendre, r\xE9sonnant dans toute la contr\xE9e."
   - "Et soudain, un immense dragon surgit au-dessus du ch\xE2teau, crachant des torrents
     de flammes."
-  - "Le roi, effray\xE9 et d\xE9sempar\xE9, se tourna alors vers la Chevaleresse,"
+  - "Le roi, effray\xE9 et d\xE9sempar\xE9, se tourna alors vers la chevaleresse,"
   - "implorant cette derni\xE8re ainsi que les autres gardes de tout faire pour sauver
     le royaume."
   - "\xC0 ces mots, Lyra brandit fermement son \xE9p\xE9e avant de s\u2019\xE9lancer

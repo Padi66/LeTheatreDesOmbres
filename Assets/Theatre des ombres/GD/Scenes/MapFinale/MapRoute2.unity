@@ -1936,6 +1936,10 @@ PrefabInstance:
       value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[0]'
+      value: "Il \xE9tait une fois dans la fausse for\xEAt de Korha, "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
       value: "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
       objectReference: {fileID: 0}
@@ -1944,8 +1948,17 @@ PrefabInstance:
       value: "qui se dressait alors fi\xE8rement sur la colline."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[3]'
+      value: "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver
+        vents et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: La chevaleresse, Lyra,
+      value: La chevaleresse Lyra,
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[5]'
+      value: "Une des guerri\xE8res les plus courageuses de la contr\xE9e,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[6]'
@@ -1956,6 +1969,10 @@ PrefabInstance:
       propertyPath: 'branch12.Array.data[7]'
       value: "Seulement, alors qu\u2019elle s\u2019appr\xEAtait \xE0 quitter la vaste
         for\xEAt afin de retourner aupr\xE8s de son roi, "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[8]'
+      value: "un groupe de bandits malfam\xE9s jaillit face \xE0 elle."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[9]'

@@ -414,6 +414,10 @@ PrefabInstance:
       value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[0]'
+      value: "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
       value: "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
       objectReference: {fileID: 0}
@@ -422,12 +426,17 @@ PrefabInstance:
       value: "qui se dressait alors fi\xE8rement sur la colline."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[3]'
+      value: "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver
+        vents et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: Le Roi,
+      value: Le Roi.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[5]'
-      value: "connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
+      value: "Connu pour \xEAtre fid\xE8le \xE0 lui-m\xEAme, avait quitt\xE9 le ch\xE2teau
         pour une partie de chasse."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
@@ -583,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[38]'
-      value: de la chevaleresse.
+      value: De la Chevaleresse.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[39]'
@@ -596,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[41]'
-      value: " se retrouva face \xE0 cette derni\xE8re qui lui bloqua l\u2019entr\xE9e."
+      value: "se retrouva face \xE0 cette derni\xE8re qui lui bloqua l\u2019entr\xE9e."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[42]'

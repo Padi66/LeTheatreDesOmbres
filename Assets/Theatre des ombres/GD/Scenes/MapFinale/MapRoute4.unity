@@ -4063,6 +4063,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[0]'
+      value: "Il \xE9tait une fois dans la fausse for\xEAt de Korha,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[1]'
       value: "une jeune \xE2me s\u2019avan\xE7ant d\xE9termin\xE9e vers le ch\xE2teau,"
       objectReference: {fileID: 0}
@@ -4073,11 +4077,11 @@ PrefabInstance:
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[3]'
       value: "Mais ainsi, ce vaillant personnage qui s\u2019appr\xEAtait \xE0 braver
-        vent et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que.."
+        vents et mar\xE9es pour accomplir son objectif n\u2019\xE9tait autre que.."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[4]'
-      value: la chevaleresse, Lyra,
+      value: la chevaleresse Lyra,
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[5]'
@@ -4170,7 +4174,7 @@ PrefabInstance:
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[24]'
       value: "notre personnage put enfin entamer la derni\xE8re \xE9tape de son p\xE9riple,
-        en entreprenant la mont\xE9e de la colline menant au ch\xE2teau"
+        en entreprenant la mont\xE9e de la colline menant au ch\xE2teau."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[25]'
@@ -4184,7 +4188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[27]'
-      value: D'un squelette.
+      value: D'un Squelette.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[28]'
@@ -4215,7 +4219,7 @@ PrefabInstance:
       value: "\u2014 Peut-\xEAtre, mais c\u2019est \xE0 cause d\u2019anciens chevaliers
         comme toi que je suis devenu ainsi. Et aujourd'hui je ne peux mener \xE0
         bien ma vengeance, ces derniers \xE9tant morts depuis bien longtemps ! Alors
-        c\u2019est toi qui payeras pour eux !"
+        c\u2019est toi qui paieras pour eux !"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[34]'
@@ -4249,7 +4253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[40]'
-      value: ' Un dragon.'
+      value: Un dragon.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[41]'
@@ -4259,8 +4263,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[42]'
-      value: " en \xE9change d'excuses officielles et d'une compensation pour ce
-        qu'il a subi par le pass\xE9."
+      value: "en \xE9change d'excuses officielles et d'une compensation pour ce qu'il
+        a subi par le pass\xE9."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[43]'
