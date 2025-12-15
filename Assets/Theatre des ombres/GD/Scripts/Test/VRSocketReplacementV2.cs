@@ -124,6 +124,10 @@ public class VRSocketReplacementV2 : MonoBehaviour
     GameObject spawnedObject = null;
     bool shouldDestroy = false;
     
+    // Spawn du prefab sans réattachement automatique à la main
+    spawnedObject = SpawnPrefab(savedWorldPosition, savedWorldRotation);
+    shouldDestroy = (spawnedObject != null);
+    
     /*if (currentHandHolding != null && isParentBeingHeld)
     {
         spawnedObject = SpawnPrefab(savedWorldPosition, savedWorldRotation);
@@ -160,7 +164,7 @@ public class VRSocketReplacementV2 : MonoBehaviour
         Debug.LogWarning("Aucune main ne tient la figurine, spawn du prefab sans réattachement");
         spawnedObject = SpawnPrefab(savedWorldPosition, savedWorldRotation);
         shouldDestroy = (spawnedObject != null);
-    }
+    }*/
 
     if (shouldDestroy)
     {
@@ -182,12 +186,8 @@ public class VRSocketReplacementV2 : MonoBehaviour
     else
     {
         Debug.LogError("Le prefab n'a pas pu être spawné, conservation des objets!");
-    }*/
+    }
     
-    // Spawn du prefab sans réattachement automatique à la main
-    spawnedObject = SpawnPrefab(savedWorldPosition, savedWorldRotation);
-    shouldDestroy = (spawnedObject != null);
-
 }
 
 
