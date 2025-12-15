@@ -2712,7 +2712,7 @@ PrefabInstance:
       objectReference: {fileID: 1333802937}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: typewriterDelay
-      value: 0.043
+      value: 0.042
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: sceneWarmupDelay
@@ -2720,7 +2720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: branch12.Array.size
-      value: 50
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[0]'
@@ -2765,24 +2765,24 @@ PrefabInstance:
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[9]'
       value: "L'affrontement fut bref, les chevaliers, bien plus nombreux et mieux
-        entra\xEEn\xE9s, parvinrent sans mal \xE0 venir \xE0 bout de la troupe de
-        bandits."
+        entra\xEEn\xE9s,"
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[10]'
-      value: "Et Oswald fut alors tu\xE9 dans la disgr\xE2ce la plus absolue. "
+      value: "parvinrent sans mal \xE0 venir \xE0 bout de la troupe de bandits. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[11]'
-      value: "Son corps laiss\xE9 \xE0 l\u2019abandon au beau milieu de la for\xEAt."
+      value: "Et Oswald fut alors tu\xE9 dans la disgr\xE2ce la plus absolue. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[12]'
-      value: 'Avec le temps, la pluie et la terre eurent raison de sa chair. '
+      value: "Son corps laiss\xE9 \xE0 l\u2019abandon au beau milieu de la for\xEAt."
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[13]'
-      value: Ne restant plus que des os, ensevelis dans le sol.
+      value: Avec le temps, la pluie et la terre eurent raison de sa chair. Ne restant
+        plus que des os, ensevelis dans le sol.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[14]'
@@ -2833,128 +2833,205 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[24]'
-      value: "Une \xE9p\xE9e."
+      value: Un bouclier
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[25]'
-      value: "\xE0 peine fit-il part de sa demande, que le forgeron, alors attel\xE9
-        sur son \xE9tabli, releva la t\xEAte afin de faire face \xE0 son client."
+      value: "A peine fit-il part de sa demande, que le forgeron, alors attel\xE9
+        sur son \xE9tabli, releva la t\xEAte afin de faire face \xE0 son client. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[26]'
-      value: "Seulement, \xE0 la vue du squelette, ce dernier se figea aussit\xF4t."
+      value: "Seulement, \xE0 la vue du squelette, ce dernier se figea aussit\xF4t. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[27]'
-      value: "Choqu\xE9 et terrifi\xE9 de se retrouver face \xE0 un mort-vivant."
+      value: "Choqu\xE9 et terrifi\xE9 de se retrouver face \xE0 un mort-vivant. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[28]'
-      value: "Le squelette en profita pour subtiliser la lame, alors visible sur
-        l\u2019\xE9tabli du forgeron, avant de repartir du village."
+      value: 'Le squelette en profita pour subtiliser le bouclier, '
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[29]'
-      value: "Il prit un malin plaisir \xE0 terrifier les villageois qu'il croisait,
-        parfaitement indiff\xE9rent \xE0 la panique qu\u2019il semait."
+      value: "alors visible sur l\u2019\xE9tabli du forgeron, avant de repartir du
+        village. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[30]'
-      value: "Et c\u2019est ainsi, au pas lent et sans un regard en arri\xE8re, que
-        le squelette quitta le village, laissant derri\xE8re lui un silence lourd."
+      value: "Il prit un malin plaisir \xE0 terrifier les villageois qu'il croisait,
+        parfaitement indiff\xE9rent \xE0 la panique qu\u2019il semait. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[31]'
-      value: "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin
-        entamer la derni\xE8re \xE9tape de son p\xE9riple, en entreprenant la mont\xE9e
-        de la colline menant au ch\xE2teau."
+      value: "Et c\u2019est ainsi que le squelette quitta le village, laissant derri\xE8re
+        lui un silence lourd. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[32]'
-      value: "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient
-        se dresser majestueusement devant lui."
+      value: "\xC0 pr\xE9sent \xE9quip\xE9 et par\xE9, notre personnage put enfin
+        entamer la derni\xE8re \xE9tape de son p\xE9riple, "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[33]'
-      value: "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de
-        la porte du ch\xE2teau, il aper\xE7ut une silhouette, celle..."
+      value: "en entreprenant la mont\xE9e de la colline menant au ch\xE2teau. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[34]'
-      value: De la Chevaleresse.
+      value: "Et ainsi, au fur et \xE0 mesure de son avanc\xE9e, les tours semblaient
+        se dresser majestueusement devant lui. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[35]'
-      value: "Arm\xE9 de son \xE9p\xE9e vol\xE9e, le squelette fut interpell\xE9
-        par la Chevaleresse depuis le haut des remparts : "
+      value: "Mais alors qu\u2019il se trouvait \xE0 pr\xE9sent \xE0 deux pas de
+        la porte du ch\xE2teau, il aper\xE7ut une silhouette, celle... "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[36]'
-      value: "\u2014 Toi, vile cr\xE9ature devant nos portes\u2026 que viens-tu faire
-        ici ?"
+      value: De la chevaleresse.
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[37]'
-      value: "Le squelette leva son cr\xE2ne dans sa direction, avant de lui r\xE9torquer
-        : "
+      value: "Arm\xE9 de son bouclier vol\xE9, le squelette fut interpell\xE9 par
+        la chevaleresse depuis le haut des remparts : "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[38]'
-      value: "\u2014 Je viens me venger contre vous, chevaliers, vos anc\xEAtres
-        m\u2019ayant massacr\xE9 il y a cent ans de cela."
+      value: "\u2014 Toi, cr\xE9ature mal\xE9fique devant nos portes\u2026 que viens-tu
+        faire ici ? "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[39]'
-      value: "La chevaleresse empoigna son \xE9p\xE9e en la sortant de son fourreau."
+      value: "Le squelette leva son cr\xE2ne vers elle. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[40]'
-      value: "\u2014 Je suis navr\xE9e pour toi, mais ceux qui t\u2019ont fait du
-        tort ne sont plus de ce monde. Tu aurais d\xFB rester parmi les morts."
+      value: "\u2014 Je viens r\xE9clamer une vengeance pour moi et mes compagnons,
+        que vos chevaliers ont massacr\xE9s il y a cent ans. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[41]'
-      value: "\u2014 S\u2019ils ne sont plus l\xE0\u2026 alors c\u2019est sur toi
-        que je passerai ma col\xE8re."
+      value: 'La chevaleresse plissa les yeux. '
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[42]'
-      value: "Sans h\xE9siter face \xE0 la d\xE9termination du squelette, la chevaleresse
-        sauta depuis les murailles et atterrit devant lui."
+      value: "\u2014 Et tu crois qu\u2019avec un simple bouclier, tu vas entrer dans
+        le ch\xE2teau et imposer tes exigences ? "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[43]'
-      value: "Elle ne montra aucune peur \xE0 l\u2019\xE9gard de ce dernier, le d\xE9fiant
-        directement en le regardant droit dans ses orbites vides."
+      value: "\u2014 Je ne suis pas venu me battre, ni d\xE9fier qui que ce soit,
+        r\xE9pondit-il calmement. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[44]'
-      value: "\xC0 la suite de quoi, les deux d\xE9but\xE8rent un combat acharn\xE9
-        : la chevaleresse tranchant les os du squelette, qui ne cessaient de se reformer
-        \xE0 chaque coup. Rien ne semblait pouvoir l\u2019arr\xEAter."
+      value: "L\u2019heure n\u2019est plus \xE0 la violence. Vous avez laiss\xE9
+        nos corps pourrir dans la for\xEAt. Aucune s\xE9pulture, aucune \xE9pitaphe. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[45]'
-      value: "Ainsi le duel s\u2019\xE9ternisa durant un jour et une nuit."
+      value: "Certes, nous avions commis quelques m\xE9faits\u2026 parfois \xE9t\xE9
+        cruels envers les passants. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[46]'
-      value: "Mais alors que les forces de la chevaleresse touchaient \xE0 leur fin,
-        cette derni\xE8re parvint \xE0 pi\xE9ger le squelette et \xE0 le ma\xEEtriser"
+      value: "Mais seulement parce que le royaume nous avait rejet\xE9s, \xE0 cause
+        de nos origines ou de notre classe sociale. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[47]'
-      value: "jetant ainsi ce dernier dans les cachots du ch\xE2teau."
+      value: "Comment survivre autrement ? Le peuple d\u2019en bas est plac\xE9 dans
+        des cases d\xE8s la naissance. Notre avenir ne nous appartient pas. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[48]'
-      value: "Il y resta des centaines d\u2019ann\xE9es, prisonnier des barreaux,
-        enferm\xE9 dans l\u2019obscurit\xE9 absolue."
+      value: "La chevaleresse demeura silencieuse quelques instants, frapp\xE9e par
+        l\u2019absurdit\xE9 touchante de la situation. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[49]'
-      value: "Aucun visiteur. Aucun son. Rien d\u2019autre que l\u2019\xE9coulement
-        du temps."
+      value: "Recevoir une le\xE7on d\u2019humanit\xE9 d\u2019un squelette sans chair. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[50]'
+      value: "Finalement, elle d\xE9clara : "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[51]'
+      value: "\u2014 Je t\u2019entends\u2026 et je compatis \xE0 ta souffrance. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[52]'
+      value: "Je ne m\u2019\xE9tais jamais demand\xE9 pourquoi les \u201Cmauvaises\u201D
+        personnes le devenaient. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[53]'
+      value: "Et aujourd\u2019hui, c\u2019est un squelette qui m\u2019ouvre les yeux,
+        lui qui n\u2019en poss\xE8de m\xEAme plus. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[54]'
+      value: "Je te demande pardon, au nom de tout l\u2019ordre de chevalerie, d\u2019ici
+        et d\u2019ailleurs. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[55]'
+      value: "Rien ne pourra effacer ce qui a \xE9t\xE9 fait\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[56]'
+      value: "Mais j\u2019ai l\u2019espoir qu\u2019un jour, le monde sera diff\xE9rent. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[57]'
+      value: "Que chacun commencera sa vie sur un pied d\u2019\xE9galit\xE9. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[58]'
+      value: "Et cela arrivera parce que des \xEAtres comme toi auront choisi la
+        parole plut\xF4t que les armes. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[59]'
+      value: "Merci, cr\xE9ature. Je te promets de porter ton message \xE0 travers
+        tout le royaume. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[60]'
+      value: "Ce sera ma qu\xEAte ultime. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[61]'
+      value: "Le squelette, satisfait, tourna les talons et repartit comme il \xE9tait
+        venu. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[62]'
+      value: "Puis il disparut \xE0 jamais. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[63]'
+      value: "Quant \xE0 la chevaleresse, profond\xE9ment marqu\xE9e par les paroles
+        du mort-vivant, elle entreprit un long voyage. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[64]'
+      value: "Partout o\xF9 elle allait, elle \xE9coutait les gens, les aidait, et
+        s\u2019effor\xE7ait de donner \xE0 chacun une chance que le monde leur avait
+        refus\xE9e. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[65]'
+      value: "Partout o\xF9 elle allait, elle \xE9coutait les gens, les aidait, et
+        s\u2019effor\xE7ait de donner \xE0 chacun une chance que le monde leur avait
+        refus\xE9e. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: 'branch12.Array.data[66]'
+      value: "Partout o\xF9 elle allait, elle \xE9coutait les gens, les aidait, et
+        s\u2019effor\xE7ait de donner \xE0 chacun une chance que le monde leur avait
+        refus\xE9e. "
       objectReference: {fileID: 0}
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: soundsToPreload.Array.size
