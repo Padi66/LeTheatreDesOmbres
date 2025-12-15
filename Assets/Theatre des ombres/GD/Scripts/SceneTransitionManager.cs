@@ -83,6 +83,11 @@ public class SceneTransitionManager : MonoBehaviour
             if (cam != null)
             {
                 canvas.worldCamera = cam;
+                Debug.Log($"✅ FadeCanvas camera assigned: {cam.name}");
+            }
+            else
+            {
+                Debug.LogWarning("⚠️ No camera found for FadeCanvas!");
             }
         }
 
@@ -98,24 +103,36 @@ public class SceneTransitionManager : MonoBehaviour
         Camera cam = Camera.main;
         if (cam != null)
         {
+            Debug.Log($"Found Camera.main: {cam.name}");
             return cam;
         }
 
+        XROrigin xrOrigin = FindFirstObjectByType<XROrigin>();
+        if (xrOrigin != null && xrOrigin.Camera != null)
+        {
+            Debug.Log($"Found camera from XROrigin: {xrOrigin.Camera.name}");
+            return xrOrigin.Camera;
+        }
+
         Camera[] allCameras = FindObjectsByType<Camera>(FindObjectsSortMode.None);
+        Debug.Log($"Searching through {allCameras.Length} cameras in scene");
 
         foreach (Camera c in allCameras)
         {
             if (c.enabled && c.gameObject.activeInHierarchy)
             {
+                Debug.Log($"Found active camera: {c.name}");
                 return c;
             }
         }
 
         if (allCameras.Length > 0)
         {
+            Debug.Log($"Using first camera found: {allCameras[0].name}");
             return allCameras[0];
         }
 
+        Debug.LogError("❌ No camera found in scene!");
         return null;
     }
 
@@ -157,6 +174,10 @@ public class SceneTransitionManager : MonoBehaviour
 
         Debug.Log($"Scene {sceneIndex} loaded - configuring NEW scene");
 
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        SetupFadeCanvas();
+
         if (resetCameraRotationOnSceneLoad)
         {
             ResetCameraRotation();
@@ -168,7 +189,7 @@ public class SceneTransitionManager : MonoBehaviour
             DisableMovementInNewScene();
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSecondsRealtime(0.2f);
 
         SceneFadeScreen sceneFadeScreen = FindFirstObjectByType<SceneFadeScreen>();
 
@@ -253,7 +274,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     private IEnumerator DelayedDialogue(bool disableMovement)
     {
-        yield return new WaitForSeconds(delayBeforeDialogue);
+        yield return new WaitForSecondsRealtime(delayBeforeDialogue);
         TriggerDialogue(disableMovement);
     }
 
@@ -309,15 +330,17 @@ public class SceneTransitionManager : MonoBehaviour
     {
         if (fadeCanvasGroup == null)
         {
+            Debug.LogError("❌ fadeCanvasGroup is null!");
             yield break;
         }
 
+        Debug.Log("Starting FadeToBlack...");
         fadeCanvasGroup.blocksRaycasts = true;
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             fadeCanvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null;
         }
@@ -330,14 +353,16 @@ public class SceneTransitionManager : MonoBehaviour
     {
         if (fadeCanvasGroup == null)
         {
+            Debug.LogError("❌ fadeCanvasGroup is null!");
             yield break;
         }
 
+        Debug.Log("Starting FadeFromBlack...");
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null;
         }
