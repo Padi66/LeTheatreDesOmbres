@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 6732368022583414073}
   - component: {fileID: 7533796804663117098}
   - component: {fileID: 411561491499605093}
+  - component: {fileID: 6687246230846200933}
   m_Layer: 0
   m_Name: Top Socket 1
   m_TagString: Untagged
@@ -283,6 +284,20 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 9056761493691988298, guid: a14c397fb244d864a9e81c72f337fd34, type: 3}
   removeParentObject: 1
   destroyDelay: 0.05
+--- !u!114 &6687246230846200933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933725845801044811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67723600f1b5ec548ac061b241e55778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnSocketAttach
+  attachSound: {fileID: 8300000, guid: 27bc617605a647f43a2b20d92a4d9102, type: 3}
+  volume: 0.8
 --- !u!1 &4964133712661659162
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +614,7 @@ GameObject:
   - component: {fileID: 2858483245214969095}
   - component: {fileID: 4104623929370936891}
   - component: {fileID: 5872854856302304869}
+  - component: {fileID: 2648301576067121784}
   m_Layer: 0
   m_Name: Bottom Socket 1
   m_TagString: Untagged
@@ -709,6 +725,20 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1124463224681305464, guid: 788f5487f12b3f345b0d0964e0c308a3, type: 3}
   removeParentObject: 1
   destroyDelay: 0.05
+--- !u!114 &2648301576067121784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916778223569025263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67723600f1b5ec548ac061b241e55778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnSocketAttach
+  attachSound: {fileID: 8300000, guid: 27bc617605a647f43a2b20d92a4d9102, type: 3}
+  volume: 0.8
 --- !u!1 &8289277864956885455
 GameObject:
   m_ObjectHideFlags: 0
