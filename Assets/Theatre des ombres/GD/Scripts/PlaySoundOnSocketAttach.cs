@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
@@ -15,7 +16,7 @@ public class PlaySoundOnSocketAttach : MonoBehaviour
 
     void Awake()
     {
-        socketInteractor = GetComponent<XRSocketInteractor>();
+        socketInteractor = GetComponent<XRLockSocketInteractor>();
         
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;

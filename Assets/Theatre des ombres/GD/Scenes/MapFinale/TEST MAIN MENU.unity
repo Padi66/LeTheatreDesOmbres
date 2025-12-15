@@ -5004,6 +5004,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.0753
       objectReference: {fileID: 0}
+    - target: {fileID: 8646211491558553632, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
+      propertyPath: _sound
+      value: 
+      objectReference: {fileID: 1375672525}
     - target: {fileID: 9015132923688323499, guid: f6175bb96c523154eb2b0006774cc7a5, type: 3}
       propertyPath: m_Size.x
       value: 0.09628455
