@@ -174,7 +174,7 @@ public class SceneTransitionManager : MonoBehaviour
 
         Debug.Log($"Scene {sceneIndex} loaded - configuring NEW scene");
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
 
         SetupFadeCanvas();
 
@@ -189,7 +189,7 @@ public class SceneTransitionManager : MonoBehaviour
             DisableMovementInNewScene();
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSecondsRealtime(0.2f);
 
         SceneFadeScreen sceneFadeScreen = FindFirstObjectByType<SceneFadeScreen>();
 
@@ -274,7 +274,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     private IEnumerator DelayedDialogue(bool disableMovement)
     {
-        yield return new WaitForSeconds(delayBeforeDialogue);
+        yield return new WaitForSecondsRealtime(delayBeforeDialogue);
         TriggerDialogue(disableMovement);
     }
 
@@ -340,7 +340,7 @@ public class SceneTransitionManager : MonoBehaviour
 
         while (elapsedTime < fadeDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             fadeCanvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null;
         }
@@ -362,7 +362,7 @@ public class SceneTransitionManager : MonoBehaviour
 
         while (elapsedTime < fadeDuration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null;
         }
