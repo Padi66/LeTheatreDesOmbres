@@ -9,6 +9,8 @@ using Unity.XR.CoreUtils;
 public class SceneTransitionManager : MonoBehaviour
 {
     private static SceneTransitionManager instance;
+    
+    public static SceneTransitionManager Instance => instance;
 
     [Header("Fade Settings")]
     public CanvasGroup fadeCanvasGroup;
@@ -20,10 +22,6 @@ public class SceneTransitionManager : MonoBehaviour
     [Header("Camera Settings")]
     public bool resetCameraRotationOnSceneLoad = true;
     public float targetCameraYRotation = 0f;
-    
-    [Header("Scene-Specific Settings")]
-    [Tooltip("Désactive les mouvements et les rayons pendant la transition (décocher pour Menu/Backstage, cocher pour Routes)")]
-    public bool disableMovementAndRaysDuringTransition = true;
 
     private Canvas fadeCanvas;
     private ContinuousMoveProvider moveProvider;
@@ -52,6 +50,7 @@ public class SceneTransitionManager : MonoBehaviour
         }
         else
         {
+            Debug.LogWarning($"Duplicate SceneTransitionManager found in {gameObject.scene.name}, destroying...");
             Destroy(gameObject);
         }
     }
@@ -120,14 +119,14 @@ public class SceneTransitionManager : MonoBehaviour
         return null;
     }
 
-    public static void TeleportToScene(int sceneIndex, int dialogueBranch, ContinuousMoveProvider move, ContinuousTurnProvider turn)
+    public static void TeleportToScene(int sceneIndex, int dialogueBranch, ContinuousMoveProvider move, ContinuousTurnProvider turn, bool disableMovement = false)
     {
         if (instance != null)
         {
             instance.moveProvider = move;
             instance.turnProvider = turn;
             instance.currentDialogueBranch = dialogueBranch;
-            instance.StartCoroutine(instance.TransitionToScene(sceneIndex));
+            instance.StartCoroutine(instance.TransitionToScene(sceneIndex, disableMovement));
         }
         else
         {
@@ -135,13 +134,13 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    public IEnumerator TransitionToScene(int sceneIndex)
+    public IEnumerator TransitionToScene(int sceneIndex, bool disableMovement = false)
     {
-        Debug.Log($"Starting transition to scene {sceneIndex}");
+        Debug.Log($"Starting transition to scene {sceneIndex} (disableMovement: {disableMovement})");
 
         sceneFadeComplete = false;
 
-        if (disableMovementAndRaysDuringTransition)
+        if (disableMovement)
         {
             DisableMovementInCurrentScene();
             DisableControllerRays();
@@ -163,7 +162,7 @@ public class SceneTransitionManager : MonoBehaviour
             ResetCameraRotation();
         }
 
-        if (disableMovementAndRaysDuringTransition)
+        if (disableMovement)
         {
             DisableControllerRays();
             DisableMovementInNewScene();
@@ -176,7 +175,7 @@ public class SceneTransitionManager : MonoBehaviour
         if (sceneFadeScreen != null)
         {
             Debug.Log("Found SceneFadeScreen, starting fade out");
-            sceneFadeScreen.FadeOut(fadeDuration, OnSceneFadeComplete);
+            sceneFadeScreen.FadeOut(fadeDuration, () => OnSceneFadeComplete(disableMovement));
         }
         else
         {
@@ -195,14 +194,14 @@ public class SceneTransitionManager : MonoBehaviour
 
         Debug.Log("Both fades complete, enabling controller rays NOW");
         
-        if (disableMovementAndRaysDuringTransition)
+        if (disableMovement)
         {
             EnableControllerRays();
         }
 
         if (sceneFadeScreen == null)
         {
-            OnSceneFadeComplete();
+            OnSceneFadeComplete(disableMovement);
         }
     }
 
@@ -239,23 +238,23 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    private void OnSceneFadeComplete()
+    private void OnSceneFadeComplete(bool disableMovement)
     {
         Debug.Log("SceneFadeScreen complete");
         sceneFadeComplete = true;
 
-        if (!disableMovementAndRaysDuringTransition)
+        if (!disableMovement)
         {
             EnableMovementInNewScene();
         }
 
-        StartCoroutine(DelayedDialogue());
+        StartCoroutine(DelayedDialogue(disableMovement));
     }
 
-    private IEnumerator DelayedDialogue()
+    private IEnumerator DelayedDialogue(bool disableMovement)
     {
         yield return new WaitForSeconds(delayBeforeDialogue);
-        TriggerDialogue();
+        TriggerDialogue(disableMovement);
     }
 
     private void DisableControllerRays()
@@ -429,7 +428,7 @@ public class SceneTransitionManager : MonoBehaviour
         Debug.Log("Movement enabled after dialogue");
     }
 
-    private void TriggerDialogue()
+    private void TriggerDialogue(bool disableMovement)
     {
         DialogueSequence dialogueSequence = FindFirstObjectByType<DialogueSequence>();
 
@@ -441,7 +440,18 @@ public class SceneTransitionManager : MonoBehaviour
             }
 
             dialogueSequence.StartDialogueBranch(currentDialogueBranch);
+            Debug.Log($"Dialogue branch {currentDialogueBranch} triggered");
+        }
+        else
+        {
+            Debug.Log("No DialogueSequence found - enabling movement immediately");
+        
+            if (disableMovement)
+            {
+                EnableMovementInNewScene();
+            }
         }
     }
 }
+
 

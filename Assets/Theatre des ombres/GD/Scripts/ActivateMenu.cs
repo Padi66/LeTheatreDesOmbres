@@ -274,23 +274,27 @@ public class ActivateMenu : MonoBehaviour
     
     private IEnumerator TransitionAfterDelay(int sceneIndex)
     {
-        Debug.Log($"[StoryManager] Attente de {delayBeforeTransition}s avant transition...");
+        Debug.Log($"[ActivateMenu] Waiting {delayBeforeTransition}s before transition...");
         yield return new WaitForSeconds(delayBeforeTransition);
 
-        Debug.Log($"[StoryManager] Lancement de la transition vers scène {sceneIndex}");
-        
-        if (_transition != null)
+        Debug.Log($"[ActivateMenu] Starting transition to scene {sceneIndex}");
+    
+        if (SceneTransitionManager.Instance != null)
         {
-            _transition.StartCoroutine(_transition.TransitionToScene(sceneIndex));
+            SceneTransitionManager.Instance.StartCoroutine(
+                SceneTransitionManager.Instance.TransitionToScene(sceneIndex, disableMovement: false)
+            );
         }
         else
         {
-            Debug.LogWarning("[StoryManager] SceneTransitionManager not found! Loading scene directly.");
-            SceneManager.LoadScene(sceneIndex);
+            Debug.LogError("[ActivateMenu] SceneTransitionManager.Instance is null!");
         }
     }
+
+
+    }
     
-}
+
 
 
 

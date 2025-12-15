@@ -199,16 +199,17 @@ public class LaunchStoryScene : MonoBehaviour
 
         Debug.Log($"[LaunchStoryScene] Starting transition to scene {sceneIndex}");
     
-        SceneTransitionManager transition = FindFirstObjectByType<SceneTransitionManager>();
-    
-        if (transition != null)
+        if (SceneTransitionManager.Instance != null)
         {
-            transition.StartCoroutine(transition.TransitionToScene(sceneIndex));
+            SceneTransitionManager.Instance.StartCoroutine(
+                SceneTransitionManager.Instance.TransitionToScene(sceneIndex, disableMovement: false)
+            );
         }
         else
         {
-            Debug.LogError("[LaunchStoryScene] SceneTransitionManager not found!");
+            Debug.LogError("[LaunchStoryScene] SceneTransitionManager.Instance is null!");
         }
     }
+
 
 }

@@ -61,12 +61,12 @@ public class ActivateStory : MonoBehaviour
         if (_allSocketsOccupied && !_hasBeenPressed)
         {
             SetLayerRecursively(_purplePiedestal, _defaultLayer);
-            SetLayerRecursively(_buttonVisual, _outlineLayer);
+            SetLayerRecursivelyButton(_buttonVisual, _outlineLayer);
             Debug.Log($"[ActivateStory] All sockets occupied - Purple pedestal to layer {_defaultLayer}, Button to Outline");
         }
         else
         {
-            SetLayerRecursively(_buttonVisual, _defaultLayer);
+            SetLayerRecursivelyButton(_buttonVisual, _defaultLayer);
             Debug.Log($"[ActivateStory] Outline disabled - Button to layer {_defaultLayer}");
         }
     }
@@ -80,6 +80,21 @@ public class ActivateStory : MonoBehaviour
         foreach (Transform child in obj.transform)
         {
             SetLayerRecursively(child.gameObject, layer);
+        }
+    }
+    
+    private void SetLayerRecursivelyButton(GameObject obj, int layer)
+    {
+        if (obj == null) return;
+
+        if (obj.GetComponent<Collider>() == null && obj.GetComponent<Rigidbody>() == null)
+        {
+            obj.layer = layer;
+        }
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursivelyButton(child.gameObject, layer);
         }
     }
 
@@ -101,7 +116,7 @@ public class ActivateStory : MonoBehaviour
         if (!_storyManager._isLaunched)
         {
             _hasBeenPressed = true;
-            SetLayerRecursively(_buttonVisual, _defaultLayer);
+            SetLayerRecursivelyButton(_buttonVisual, _defaultLayer);
             _storyManager.CheckCombinationBackstage();
             Debug.Log("Bouton appuyé!");
         }
