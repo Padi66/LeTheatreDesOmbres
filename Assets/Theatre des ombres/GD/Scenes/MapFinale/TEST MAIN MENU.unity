@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 168740252}
   - component: {fileID: 168740251}
   - component: {fileID: 168740250}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 276032519}
   - component: {fileID: 276032518}
   - component: {fileID: 276032517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 712220374}
   - component: {fileID: 712220373}
   - component: {fileID: 712220372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2875,6 +2875,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.09070839, y: 0.03141004, z: 0.039316766}
   m_Center: {x: -0.0019606855, y: 0.004333555, z: 0.00519541}
+--- !u!1 &1054078850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 366349417295850677, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+  m_PrefabInstance: {fileID: 1836729781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1054078851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054078850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e2f4fbcb09d0b46806c00779fbbecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallClippingVignette
+  detectionRadius: 0.15
+  wallLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  fadeSpeed: 5
+  vignetteColor: {r: 0, g: 0, b: 0, a: 1}
+  quadDistance: 0.1
+  quadSize: 1
 --- !u!1 &1103631263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,7 +2983,7 @@ GameObject:
   - component: {fileID: 1148608466}
   - component: {fileID: 1148608465}
   - component: {fileID: 1148608464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3862,7 +3887,7 @@ GameObject:
   - component: {fileID: 1620431983}
   - component: {fileID: 1620431982}
   - component: {fileID: 1620431981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4401,6 +4426,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1298728562}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 366349417295850677, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1054078851}
     - targetCorrespondingSourceObject: {fileID: 366349417886633163, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1836729787}
