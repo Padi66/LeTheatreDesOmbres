@@ -12,6 +12,7 @@ public class SocketPurple : MonoBehaviour
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private HapticManager _hapticManager;
+    [SerializeField] private AudioSource _sound;
    
     void Start()
     {
@@ -52,18 +53,21 @@ public class SocketPurple : MonoBehaviour
             cubeName = "CubeGreen";
             _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Vert - nom envoyé: '{cubeName}'");
+            _sound.Play();
         }
         else if (cube.GetComponent<CubeOrange>())
         {
             cubeName = "CubeOrange";
             _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Orange - nom envoyé: '{cubeName}'");
+            _sound.Play();
         }
         else if (cube.GetComponent<CubePurple>())
         {
             cubeName = "CubePurple";
             _particleSystem.Play();
             Debug.Log($"Socket Violet contient Cube Violet - nom envoyé: '{cubeName}'");
+            _sound.Play();
         }
 
         

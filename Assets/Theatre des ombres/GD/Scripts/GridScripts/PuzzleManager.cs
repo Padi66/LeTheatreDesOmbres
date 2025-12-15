@@ -24,6 +24,7 @@ public class PuzzleManager : MonoBehaviour
     public PuzzleCombination[] combinations;
 
     private bool puzzleCompleted = false;
+    [SerializeField] private AudioSource _sound;
 
     private void Awake()
     {
@@ -133,6 +134,7 @@ public class PuzzleManager : MonoBehaviour
             resetter.SaveInitialTransform();
             
             _particleSystem.Play();
+            _sound.Play();
 
             Debug.Log($"Spawned: {spawned.name}");
         }

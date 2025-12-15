@@ -8,6 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class SocketMenu : MonoBehaviour
 {
     [SerializeField] private XRSocketInteractor _socketInteractor;
+    [SerializeField] private AudioSource _sound;
     
 
     public bool _isInSocket = false;
@@ -35,14 +36,14 @@ public class SocketMenu : MonoBehaviour
         if (cube.GetComponent<PlayTicket>())
         {
             _isInSocket = true;
-           
+            _sound.Play();
             
             
         }
         else if (cube.GetComponent<QuitTicket>())
         {
             _isInSocket = true;
-            
+            _sound.Play();
             
             
         }

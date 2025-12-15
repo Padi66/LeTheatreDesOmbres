@@ -10,6 +10,7 @@ public class ActivateStory : MonoBehaviour
     [SerializeField] private StoryManager _storyManager;
     [SerializeField] private GameObject _buttonVisual;
     [SerializeField] private GameObject _purplePiedestal;
+    [SerializeField] private AudioSource _sound;
 
     private bool _hasBeenPressed = false;
     private bool _allSocketsOccupied = false;
@@ -103,6 +104,7 @@ public class ActivateStory : MonoBehaviour
         if (_hasBeenPressed)
         {
             Debug.LogWarning("Le bouton a déjà été appuyé!");
+            _sound.Play();
             return;
         }
 
@@ -110,6 +112,7 @@ public class ActivateStory : MonoBehaviour
         {
             Debug.LogWarning("Tous les sockets doivent être occupés!");
             Debug.Log($"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
+            _sound.Play();
             return;
         }
 

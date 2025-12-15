@@ -32,6 +32,7 @@ public class ActivateMenu : MonoBehaviour
     private bool waitingForDialogues = false;
     public bool _isLaunched = false;
     [SerializeField] private SceneTransitionManager _transition;
+    [SerializeField] private AudioSource _sound;
     
     
     void Awake()
@@ -63,6 +64,7 @@ public class ActivateMenu : MonoBehaviour
         if (_hasBeenPressed)
         {
             Debug.LogWarning("Bouton déjà pressé, action en cours - ignorer");
+            _sound.Play();
             return;
         }
 
@@ -72,6 +74,7 @@ public class ActivateMenu : MonoBehaviour
 
             string cubeType = GetCubeTypeInSocket();
             Debug.Log($"Type de cube détecté: '{cubeType}'");
+            _sound.Play();
 
             if (string.IsNullOrEmpty(cubeType))
             {
