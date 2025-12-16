@@ -167,7 +167,7 @@ public class ActivateMenu : MonoBehaviour
         
         if (_handAnimator != null)
         {
-            _handAnimator.SetBool(IS_TICKET_IN_SOCKET, true);
+            _handAnimator.SetTrigger(IS_TICKET_IN_SOCKET);
         }
 
         Debug.Log("Animation terminée - verrouillage final");
