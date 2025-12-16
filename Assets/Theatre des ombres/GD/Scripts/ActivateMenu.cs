@@ -16,6 +16,8 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private SocketMenu _socketMenuRef;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private GameObject _buttonVisual;
+    [SerializeField] private Animator _handAnimator;
+    private const string IS_TICKET_IN_SOCKET = "IsTicketInSocket";
     private float _durationAnim= 4f;
     
     private int _outlineLayer;
@@ -150,7 +152,7 @@ public class ActivateMenu : MonoBehaviour
             _animationPrefab.SetParent(_socketAttach);
         }
 
-        Vector3 startPos = _attachPositionStart.position;
+        /*Vector3 startPos = _attachPositionStart.position;
         Vector3 endPos = _attachPositionEnd.position;
         float elapsed = 0f;
 
@@ -161,7 +163,7 @@ public class ActivateMenu : MonoBehaviour
             yield return null;
         }
 
-        _socketAttach.position = endPos;
+        _socketAttach.position = endPos;*/
 
         Debug.Log("Animation terminée - verrouillage final");
         LockCubeFinal(cube);
