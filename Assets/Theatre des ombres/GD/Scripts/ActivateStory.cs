@@ -101,6 +101,7 @@ public class ActivateStory : MonoBehaviour
 
     void OnButtonPressed()
     {
+        _sound.Play();
         if (_hasBeenPressed)
         {
             Debug.LogWarning("Le bouton a déjà été appuyé!");
@@ -111,7 +112,7 @@ public class ActivateStory : MonoBehaviour
         {
             Debug.LogWarning("Tous les sockets doivent être occupés!");
             Debug.Log($"Green: {_storyManager._socketGreen}, Orange: {_storyManager._socketOrange}, Purple: {_storyManager._socketPurple}");
-            _sound.Play();
+            
             return;
         }
 
@@ -122,6 +123,7 @@ public class ActivateStory : MonoBehaviour
             _storyManager.CheckCombinationBackstage();
             Debug.Log("Bouton appuyé!");
         }
+        
     }
 
     public void ResetButton()

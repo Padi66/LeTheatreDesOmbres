@@ -64,6 +64,7 @@ public class ActivateMenu : MonoBehaviour
 
     void OnButtonPressed()
     {
+        _sound.Play();
         if (_hasBeenPressed)
         {
             Debug.LogWarning("Bouton déjà pressé, action en cours - ignorer");
@@ -97,6 +98,7 @@ public class ActivateMenu : MonoBehaviour
             {
                 Debug.LogError("Impossible de récupérer le GameObject du cube");
             }
+            
         }
         else
         {
@@ -285,8 +287,7 @@ public class ActivateMenu : MonoBehaviour
     
     private IEnumerator TransitionAfterDelay(int sceneIndex)
     {
-        Debug.Log($"[ActivateMenu] Waiting {delayBeforeTransition}s before transition...");
-        yield return new WaitForSeconds(delayBeforeTransition);
+        
 
         Debug.Log($"[ActivateMenu] Starting transition to scene {sceneIndex}");
     
