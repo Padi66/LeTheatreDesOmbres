@@ -5578,9 +5578,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6a399b7902bcca46a3e18d84cecccbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 543450651782474935}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6a399b7902bcca46a3e18d84cecccbf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 543450651782474936}
   m_SourcePrefab: {fileID: 100100000, guid: d6a399b7902bcca46a3e18d84cecccbf, type: 3}
 --- !u!1 &1926204254 stripped
 GameObject:
@@ -5764,20 +5761,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &543450651782474936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926204254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61af8209a03b7d4088a79abeef3b6a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoboticHandVoice
-  audioSource: {fileID: 543450651782474935}
-  onPlayTicketGrabbed: {fileID: 8300000, guid: 58fda1fb18e18ad4f99789b6e19cf9c6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
