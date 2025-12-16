@@ -287,7 +287,8 @@ public class ActivateMenu : MonoBehaviour
     
     private IEnumerator TransitionAfterDelay(int sceneIndex)
     {
-        
+        Debug.Log($"[ActivateMenu] Waiting {delayBeforeTransition}s before transition...");
+        yield return new WaitForSeconds(0f);
 
         Debug.Log($"[ActivateMenu] Starting transition to scene {sceneIndex}");
     

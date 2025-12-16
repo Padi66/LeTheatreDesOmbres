@@ -58,6 +58,17 @@ public class SceneTransitionManager : MonoBehaviour
     private void Start()
     {
         SetupFadeCanvas();
+        
+        if (fadeCanvasGroup != null)
+        {
+            fadeCanvasGroup.alpha = 0f;
+            fadeCanvasGroup.blocksRaycasts = false;
+            Debug.Log("FadeCanvas initialized to transparent on game start");
+        }
+        else
+        {
+            Debug.LogWarning("fadeCanvasGroup is null in Start()");
+        }
     }
 
     private Canvas GetFadeCanvas()
