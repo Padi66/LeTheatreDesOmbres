@@ -164,6 +164,11 @@ public class ActivateMenu : MonoBehaviour
         }
 
         _socketAttach.position = endPos;*/
+        
+        if (_handAnimator != null)
+        {
+            _handAnimator.SetBool(IS_TICKET_IN_SOCKET, true);
+        }
 
         Debug.Log("Animation terminée - verrouillage final");
         LockCubeFinal(cube);
