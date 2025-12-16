@@ -155,7 +155,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267225084155470960}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.87845993}
+  m_LocalPosition: {x: 0, y: 0, z: -0.981}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -822,7 +822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchStory
   _dialogueSequence: {fileID: 5940439431317087825}
-  _levelManager: {fileID: 1937948029400302892}
   _audioSource: {fileID: 6629023012778266455}
   _animationDelay: {fileID: 5394467109377465470}
   _projecteur: {fileID: 2799322168234108961}
@@ -831,6 +830,8 @@ MonoBehaviour:
   - {fileID: 2202629336024975054}
   _lightFadeDuration: 2
   _extraDelayAfterCompletion: 1
+  delayBeforeTransition: 1
+  _mainMenuSceneIndex: 0
 --- !u!114 &1937948029400302892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,7 +1347,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6944950562426388616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1585,6 +1586,7 @@ MonoBehaviour:
   branch21: []
   branch22: []
   branch23: []
+  persistentBranches: 010000000500000008000000
 --- !u!1 &8859281654897265813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,8 +4255,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8547667, y: 0.24617219, z: 0.8246298}
-  m_Center: {x: -0.00000046802722, y: 0.12262314, z: 0}
+  m_Size: {x: 0.8547667, y: 0.31353188, z: 1.0569793}
+  m_Center: {x: -0.00000046802722, y: 0.15630299, z: 0.11617485}
 --- !u!1001 &2526917083271475216
 PrefabInstance:
   m_ObjectHideFlags: 0

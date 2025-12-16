@@ -42,9 +42,9 @@ public class PlaySoundOnSocketAttach : MonoBehaviour
 
     private void OnSocketAttach(SelectEnterEventArgs args)
     {
-        if (attachSound != null && audioSource != null)
+        if (attachSound != null)
         {
-            audioSource.PlayOneShot(attachSound, volume);
+            AudioSource.PlayClipAtPoint(attachSound, transform.position, volume);
         }
     }
     
