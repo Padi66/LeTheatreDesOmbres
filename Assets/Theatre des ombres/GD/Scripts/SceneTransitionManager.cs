@@ -100,6 +100,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     private Camera FindSceneCamera()
     {
+        // Essayer Camera.main d'abord
         Camera cam = Camera.main;
         if (cam != null)
         {
@@ -107,6 +108,7 @@ public class SceneTransitionManager : MonoBehaviour
             return cam;
         }
 
+        // Essayer XROrigin
         XROrigin xrOrigin = FindFirstObjectByType<XROrigin>();
         if (xrOrigin != null && xrOrigin.Camera != null)
         {
@@ -114,6 +116,7 @@ public class SceneTransitionManager : MonoBehaviour
             return xrOrigin.Camera;
         }
 
+        // Fallback : chercher toutes les caméras
         Camera[] allCameras = FindObjectsByType<Camera>(FindObjectsSortMode.None);
         Debug.Log($"Searching through {allCameras.Length} cameras in scene");
 
@@ -126,13 +129,14 @@ public class SceneTransitionManager : MonoBehaviour
             }
         }
 
+        // Dernière tentative
         if (allCameras.Length > 0)
         {
-            Debug.Log($"Using first camera found: {allCameras[0].name}");
+            Debug.LogWarning($"No active camera found, using first camera: {allCameras[0].name}");
             return allCameras[0];
         }
 
-        Debug.LogError("❌ No camera found in scene!");
+        Debug.LogError("NO CAMERA FOUND IN SCENE!");
         return null;
     }
 
