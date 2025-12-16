@@ -90,17 +90,10 @@ public class SceneTransitionManager : MonoBehaviour
                 Debug.LogWarning("⚠️ No camera found for FadeCanvas!");
             }
         }
-
-        if (fadeCanvasGroup != null)
-        {
-            fadeCanvasGroup.alpha = 0f;
-            fadeCanvasGroup.blocksRaycasts = false;
-        }
     }
 
     private Camera FindSceneCamera()
     {
-        // Essayer Camera.main d'abord
         Camera cam = Camera.main;
         if (cam != null)
         {
@@ -108,7 +101,6 @@ public class SceneTransitionManager : MonoBehaviour
             return cam;
         }
 
-        // Essayer XROrigin
         XROrigin xrOrigin = FindFirstObjectByType<XROrigin>();
         if (xrOrigin != null && xrOrigin.Camera != null)
         {
@@ -116,7 +108,6 @@ public class SceneTransitionManager : MonoBehaviour
             return xrOrigin.Camera;
         }
 
-        // Fallback : chercher toutes les caméras
         Camera[] allCameras = FindObjectsByType<Camera>(FindObjectsSortMode.None);
         Debug.Log($"Searching through {allCameras.Length} cameras in scene");
 
@@ -129,7 +120,6 @@ public class SceneTransitionManager : MonoBehaviour
             }
         }
 
-        // Dernière tentative
         if (allCameras.Length > 0)
         {
             Debug.LogWarning($"No active camera found, using first camera: {allCameras[0].name}");
@@ -181,6 +171,13 @@ public class SceneTransitionManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.1f);
 
         SetupFadeCanvas();
+
+        if (fadeCanvasGroup != null)
+        {
+            fadeCanvasGroup.alpha = 1f;
+            fadeCanvasGroup.blocksRaycasts = true;
+            Debug.Log("FadeCanvas set to black (alpha = 1) in new scene");
+        }
 
         if (resetCameraRotationOnSceneLoad)
         {
@@ -482,5 +479,3 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 }
-
-
