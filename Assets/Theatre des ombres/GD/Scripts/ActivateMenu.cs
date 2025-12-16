@@ -147,11 +147,8 @@ public class ActivateMenu : MonoBehaviour
         LockCubeGrab(cube);
     
         cube.transform.SetParent(_socketAttach);
-        if (_animationPrefab != null)
-        {
-            _animationPrefab.SetParent(_socketAttach);
-        }
-
+        cube.transform.localPosition = Vector3.zero;
+        cube.transform.localRotation = Quaternion.identity;
         /*Vector3 startPos = _attachPositionStart.position;
         Vector3 endPos = _attachPositionEnd.position;
         float elapsed = 0f;
@@ -273,7 +270,7 @@ public class ActivateMenu : MonoBehaviour
     
     IEnumerator CloseCurtains()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         float elapsed = 0f;
 
         while (elapsed < _durationAnim)
