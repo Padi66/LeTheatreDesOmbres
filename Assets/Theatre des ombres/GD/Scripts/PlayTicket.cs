@@ -3,8 +3,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class PlayTicket : MonoBehaviour
 {
-    [Header("References")]
-    public RoboticHandVoice roboticHand;
+    
+    /*public RoboticHandVoice roboticHand;
 
     private XRGrabInteractable grabInteractable;
 
@@ -37,6 +37,6 @@ public class PlayTicket : MonoBehaviour
         {
             grabInteractable.selectEntered.RemoveListener(OnTicketGrabbed);
         }
-    }
+    }*/
     
 }

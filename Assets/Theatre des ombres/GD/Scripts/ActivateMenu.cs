@@ -33,6 +33,7 @@ public class ActivateMenu : MonoBehaviour
     public bool _isLaunched = false;
     [SerializeField] private SceneTransitionManager _transition;
     [SerializeField] private AudioSource _sound;
+    [SerializeField] private AudioSource _roboticVoice;
     
     
     void Awake()
@@ -126,6 +127,7 @@ public class ActivateMenu : MonoBehaviour
             if (cube.GetComponent<PlayTicket>())
             {
                 return "PlayTicket";
+                
             }
             else if (cube.GetComponent<QuitTicket>())
             {
@@ -216,6 +218,7 @@ public class ActivateMenu : MonoBehaviour
         if (cubeType == "PlayTicket")
         {
             Debug.Log("Chargement Level 1");
+            _roboticVoice.Play();
             StartCoroutine(TransitionAfterDelay(1));
         }
         else if (cubeType == "QuitTicket")

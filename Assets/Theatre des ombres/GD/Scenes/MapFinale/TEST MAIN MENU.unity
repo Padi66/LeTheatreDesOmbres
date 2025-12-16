@@ -693,7 +693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110773b7253e06847ac07ac08951e139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayTicket
-  roboticHand: {fileID: 543450651782474936}
 --- !u!114 &94373257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,7 +1711,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0abe8180abbe4514b984bf6effe80665, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2923,7 +2922,7 @@ Transform:
   m_GameObject: {fileID: 929294005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.036, y: 1.124, z: 4.92}
+  m_LocalPosition: {x: -1.036, y: 1.124, z: 8.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2942,18 +2941,18 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 71614be40caeb9b4e865bf4840ba885a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 4.3373647
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 5
+  MaxDistance: 15
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2986,7 +2985,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3197,7 +3196,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0abe8180abbe4514b984bf6effe80665, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3744,7 +3743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PersistentMusicManager
   musicSource: {fileID: 929294007}
   menuBackstageMusic: {fileID: 8300000, guid: 71614be40caeb9b4e865bf4840ba885a, type: 3}
-  musicVolume: 0.5
+  gameplayMusic: {fileID: 0}
+  musicVolume: 0.2
   playOnAwake: 1
   scenesWithMusic:
   - TEST MAIN MENU
@@ -3754,6 +3754,10 @@ MonoBehaviour:
   backstageSceneName: TEST BACKSTAGE
   menuPosition: {x: -1.036, y: 1.124, z: 3.222}
   backstagePosition: {x: -9.166, y: 1.323, z: -8.517}
+  useMuffledInMenu: 1
+  muffledCutoffFrequency: 1000
+  normalCutoffFrequency: 22000
+  muffledTransitionTime: 1
 --- !u!4 &1210376215
 Transform:
   m_ObjectHideFlags: 0
@@ -4275,6 +4279,7 @@ MonoBehaviour:
   _isLaunched: 0
   _transition: {fileID: 1103631264}
   _sound: {fileID: 1375672525}
+  _roboticVoice: {fileID: 543450651782474935}
 --- !u!82 &1375672525 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5978349121402991471, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
@@ -5675,7 +5680,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 58fda1fb18e18ad4f99789b6e19cf9c6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5719,7 +5724,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

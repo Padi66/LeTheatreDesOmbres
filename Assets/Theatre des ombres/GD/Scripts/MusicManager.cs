@@ -10,7 +10,7 @@ public class PersistentMusicManager : MonoBehaviour
 
     [Header("Music Clips")]
     [SerializeField] private AudioClip menuBackstageMusic;
-    
+    [SerializeField] private AudioClip gameplayMusic;
 
     [Header("Settings")]
     [SerializeField] private float musicVolume = 0.3f;
@@ -26,8 +26,15 @@ public class PersistentMusicManager : MonoBehaviour
     [SerializeField] private Vector3 menuPosition = new Vector3(0f, 0f, 0f);
     [SerializeField] private Vector3 backstagePosition = new Vector3(0f, 2f, 0f);
 
+    [Header("Muffled Effect")]
+    [SerializeField] private bool useMuffledInMenu = true;
+    [SerializeField] private float muffledCutoffFrequency = 1000f;
+    [SerializeField] private float normalCutoffFrequency = 22000f;
+    [SerializeField] private float muffledTransitionTime = 1.5f;
+
     private Transform originalParent;
     private Vector3 originalLocalPosition;
+    private AudioLowPassFilter lowPassFilter;
 
     private void Awake()
     {
@@ -83,6 +90,16 @@ public class PersistentMusicManager : MonoBehaviour
         musicSource.minDistance = 5f;
         musicSource.maxDistance = 50f;
         musicSource.rolloffMode = AudioRolloffMode.Linear;
+
+        if (useMuffledInMenu)
+        {
+            lowPassFilter = musicSource.gameObject.GetComponent<AudioLowPassFilter>();
+            if (lowPassFilter == null)
+            {
+                lowPassFilter = musicSource.gameObject.AddComponent<AudioLowPassFilter>();
+            }
+            lowPassFilter.cutoffFrequency = muffledCutoffFrequency;
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -90,6 +107,11 @@ public class PersistentMusicManager : MonoBehaviour
         if (autoReposition)
         {
             HandleRepositioning(scene.name);
+        }
+
+        if (useMuffledInMenu)
+        {
+            HandleMuffledEffect(scene.name);
         }
 
         bool shouldPlayMusic = IsSceneInList(scene.name, scenesWithMusic);
@@ -105,6 +127,46 @@ public class PersistentMusicManager : MonoBehaviour
         {
             StopMusic();
         }
+    }
+
+    private void HandleMuffledEffect(string sceneName)
+    {
+        if (lowPassFilter == null) return;
+
+        if (sceneName == menuSceneName)
+        {
+            EnableMuffled(true);
+        }
+        else if (sceneName == backstageSceneName)
+        {
+            EnableMuffled(false);
+        }
+    }
+
+    private void EnableMuffled(bool enable)
+    {
+        if (lowPassFilter != null)
+        {
+            StopAllCoroutines();
+            StartCoroutine(TransitionMuffledEffect(enable, muffledTransitionTime));
+        }
+    }
+
+    private System.Collections.IEnumerator TransitionMuffledEffect(bool toMuffled, float duration)
+    {
+        float startFrequency = lowPassFilter.cutoffFrequency;
+        float targetFrequency = toMuffled ? muffledCutoffFrequency : normalCutoffFrequency;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            lowPassFilter.cutoffFrequency = Mathf.Lerp(startFrequency, targetFrequency, elapsed / duration);
+            yield return null;
+        }
+
+        lowPassFilter.cutoffFrequency = targetFrequency;
+        Debug.Log($"Muffled effect: {(toMuffled ? "ON" : "OFF")} - Cutoff: {targetFrequency} Hz");
     }
 
     private void HandleRepositioning(string sceneName)
@@ -216,8 +278,22 @@ public class PersistentMusicManager : MonoBehaviour
             }
         }
     }
-    
-    
+
+    public void PlayGameplayMusic()
+    {
+        if (gameplayMusic != null && musicSource != null)
+        {
+            if (musicSource.clip != gameplayMusic)
+            {
+                musicSource.clip = gameplayMusic;
+                musicSource.Play();
+            }
+            else if (!musicSource.isPlaying)
+            {
+                musicSource.Play();
+            }
+        }
+    }
 
     public void StopMusic()
     {
@@ -234,6 +310,11 @@ public class PersistentMusicManager : MonoBehaviour
         {
             musicSource.volume = musicVolume;
         }
+    }
+
+    public void SetMuffledEffect(bool enable)
+    {
+        EnableMuffled(enable);
     }
 
     public void FadeOut(float duration = 1f)
@@ -289,3 +370,4 @@ public class PersistentMusicManager : MonoBehaviour
         musicSource.volume = musicVolume;
     }
 }
+
