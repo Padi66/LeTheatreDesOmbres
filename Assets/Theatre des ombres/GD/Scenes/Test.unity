@@ -224,6 +224,7 @@ MonoBehaviour:
   _resetDelay: 0.5
   _resetRotation: 1
   _resetVelocity: 1
+  _particlePrefab: {fileID: 0}
 --- !u!65 &344831038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1266,7 +1267,19 @@ MonoBehaviour:
   _dialogueSequence: {fileID: 0}
   _levelManager: {fileID: 0}
   _piedestal: {fileID: 0}
-  _transition: {fileID: 0}
+  _audioSource: {fileID: 0}
+  Fixe1: {fileID: 0}
+  Fixe2: {fileID: 0}
+  Fixe3: {fileID: 0}
+  Squelette1: {fileID: 0}
+  Squelette2: {fileID: 0}
+  Roi1: {fileID: 0}
+  Roi2: {fileID: 0}
+  chevaleresse1: {fileID: 0}
+  chevaleresse2: {fileID: 0}
+  bouclier: {fileID: 0}
+  epee: {fileID: 0}
+  audioCooldown: 1
   delayBeforeTransition: 1
   _isLaunched: 0
 --- !u!4 &1628006683
