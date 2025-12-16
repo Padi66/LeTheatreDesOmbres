@@ -1848,6 +1848,11 @@ PrefabInstance:
       addedObject: {fileID: 1781857482}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eabc73212483bc340836e676de6338fa, type: 3}
+--- !u!1 &475334314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2973852216821697869, guid: eabc73212483bc340836e676de6338fa, type: 3}
+  m_PrefabInstance: {fileID: 475334313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &475334316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5071654877467818712, guid: eabc73212483bc340836e676de6338fa, type: 3}
@@ -2978,6 +2983,10 @@ PrefabInstance:
       propertyPath: Fixe3
       value: 
       objectReference: {fileID: 8300000, guid: a5142c3b9be456a43be0675b04006b7e, type: 3}
+    - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: Machine
+      value: 
+      objectReference: {fileID: 475334314}
     - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
       propertyPath: _duration
       value: 4

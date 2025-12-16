@@ -35,6 +35,7 @@ public class PiedestalUP : MonoBehaviour
     [SerializeField] AudioSource _audioSource;
     [SerializeField] private AudioClip Fixe2;
     [SerializeField] private AudioClip Fixe3;
+    [SerializeField] private GameObject Machine;
     
     
     
@@ -60,7 +61,8 @@ public class PiedestalUP : MonoBehaviour
         SetLayerRecursively(_socketGreenVisual, 0);
         StartCoroutine(TurnOnLight(_lightOrange, socket));
         SetLayerRecursively(_socketOrangeVisual, 6);
-        
+        Machine.layer = 6;
+
     }
 
     public void UpGreen(XRLockSocketInteractor socketToReactivate = null)
@@ -79,6 +81,7 @@ public class PiedestalUP : MonoBehaviour
         //_audioSource.Stop();
         //_audioSource.PlayOneShot(Fixe3);
         SetLayerRecursively(_socketOrangeVisual, 0);
+        Machine.layer = 0;
         StartCoroutine(TurnOnLight(_lightPurple, socket));
         SetLayerRecursively(_socketPurpleVisual, 6);
     }

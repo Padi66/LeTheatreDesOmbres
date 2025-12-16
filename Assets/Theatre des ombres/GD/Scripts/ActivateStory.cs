@@ -104,7 +104,6 @@ public class ActivateStory : MonoBehaviour
         if (_hasBeenPressed)
         {
             Debug.LogWarning("Le bouton a déjà été appuyé!");
-            _sound.Play();
             return;
         }
 

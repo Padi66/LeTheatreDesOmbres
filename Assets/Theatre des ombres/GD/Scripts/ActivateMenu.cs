@@ -67,7 +67,7 @@ public class ActivateMenu : MonoBehaviour
         if (_hasBeenPressed)
         {
             Debug.LogWarning("Bouton déjà pressé, action en cours - ignorer");
-            _sound.Play();
+            
             return;
         }
 
