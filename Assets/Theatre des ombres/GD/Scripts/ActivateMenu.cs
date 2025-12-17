@@ -78,7 +78,7 @@ public class ActivateMenu : MonoBehaviour
 
             string cubeType = GetCubeTypeInSocket();
             Debug.Log($"Type de cube détecté: '{cubeType}'");
-            _sound.Play();
+            
 
             if (string.IsNullOrEmpty(cubeType))
             {
