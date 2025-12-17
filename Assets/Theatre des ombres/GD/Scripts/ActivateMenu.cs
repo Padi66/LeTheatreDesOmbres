@@ -18,7 +18,7 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private GameObject _buttonVisual;
     [SerializeField] private Animator _handAnimator;
     private const string IS_TICKET_IN_SOCKET = "IsTicketInSocket";
-    private float _durationAnim= 2f;
+    private float _durationAnim= 1f;
     
     private int _outlineLayer;
     private int _defaultLayer;
@@ -28,7 +28,7 @@ public class ActivateMenu : MonoBehaviour
     public Transform _endPosition;
     public Transform _rideau;
     
-    [SerializeField] private float delayBeforeTransition = 1f;
+    
     private AsyncOperation _preloadedScene;
     private int pendingSceneIndex = -1;
     private bool waitingForDialogues = false;
@@ -78,6 +78,7 @@ public class ActivateMenu : MonoBehaviour
 
             string cubeType = GetCubeTypeInSocket();
             Debug.Log($"Type de cube détecté: '{cubeType}'");
+            
 
             if (string.IsNullOrEmpty(cubeType))
             {
@@ -91,7 +92,7 @@ public class ActivateMenu : MonoBehaviour
             if (cubeObject != null)
             {
                 StartCoroutine(AnimateCubeAndTrigger(cubeObject, cubeType));
-                StartCoroutine(CloseCurtains());
+                
             }
             else
             {
@@ -167,6 +168,8 @@ public class ActivateMenu : MonoBehaviour
         {
             _handAnimator.SetTrigger(IS_TICKET_IN_SOCKET);
         }
+        
+        StartCoroutine(CloseCurtains());
 
         Debug.Log("Animation terminée - verrouillage final");
         LockCubeFinal(cube);
@@ -286,7 +289,6 @@ public class ActivateMenu : MonoBehaviour
     
     private IEnumerator TransitionAfterDelay(int sceneIndex)
     {
-        Debug.Log($"[ActivateMenu] Waiting {delayBeforeTransition}s before transition...");
         yield return new WaitForSeconds(0f);
 
         Debug.Log($"[ActivateMenu] Starting transition to scene {sceneIndex}");
@@ -302,7 +304,8 @@ public class ActivateMenu : MonoBehaviour
             Debug.LogError("[ActivateMenu] SceneTransitionManager.Instance is null!");
         }
     }
-    
+
+
     }
     
 
