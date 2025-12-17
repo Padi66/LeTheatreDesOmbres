@@ -18,7 +18,7 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private GameObject _buttonVisual;
     [SerializeField] private Animator _handAnimator;
     private const string IS_TICKET_IN_SOCKET = "IsTicketInSocket";
-    private float _durationAnim= 1f;
+    private float _durationAnim= 0.5f;
     
     private int _outlineLayer;
     private int _defaultLayer;
@@ -274,7 +274,7 @@ public class ActivateMenu : MonoBehaviour
     
     IEnumerator CloseCurtains()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4.5f);
         float elapsed = 0f;
 
         while (elapsed < _durationAnim)
