@@ -240,6 +240,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1552899594541898964, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2624150484517433883, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Name
       value: SceneTheatreprefabs
@@ -708,6 +712,10 @@ PrefabInstance:
       propertyPath: 'branch12.Array.data[88]'
       value: "Mais simplement quelqu\u2019un qui vous tend la main, quand tout le
         monde vous oublie."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396734172077087262, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Resource
@@ -1741,9 +1749,10 @@ Animation:
   m_GameObject: {fileID: 450771564}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: be8f4646c570d384caa07b2760e5abf1, type: 2}
+  m_Animation: {fileID: 7400000, guid: 8e67d1ff5ccf4c84ea798b1a7738d7b1, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: be8f4646c570d384caa07b2760e5abf1, type: 2}
+  - {fileID: 7400000, guid: 8e67d1ff5ccf4c84ea798b1a7738d7b1, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2343,9 +2352,10 @@ Animation:
   m_GameObject: {fileID: 655903735}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 43d2232e00754a44d96c8b32c158e328, type: 2}
+  m_Animation: {fileID: 7400000, guid: 3cfd7b282373c074e9cea07ed170b250, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 43d2232e00754a44d96c8b32c158e328, type: 2}
+  - {fileID: 7400000, guid: 3cfd7b282373c074e9cea07ed170b250, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -4458,9 +4468,10 @@ Animation:
   m_GameObject: {fileID: 1550523235}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 5edd83c11d318fb41b3b36dccf1ea53d, type: 2}
+  m_Animation: {fileID: 7400000, guid: a7099f40863d8be4faa0843ffdac9275, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 5edd83c11d318fb41b3b36dccf1ea53d, type: 2}
+  - {fileID: 7400000, guid: a7099f40863d8be4faa0843ffdac9275, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0

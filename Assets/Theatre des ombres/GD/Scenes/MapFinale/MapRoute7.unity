@@ -2880,6 +2880,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1552899594541898964, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2624150484517433883, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Name
       value: SceneTheatreprefabs
@@ -3179,6 +3183,10 @@ PrefabInstance:
     - target: {fileID: 5940439431317087825, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: 'branch12.Array.data[53]'
       value: "ou plut\xF4t un squelette recouvert d'or."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396734172077087262, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Resource
