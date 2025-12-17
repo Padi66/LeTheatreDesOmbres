@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -6,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class TicketHoverDisplay : MonoBehaviour
 {
     [SerializeField] private XRGrabInteractable grabInteractable;
+    
     
     private ControllerCanvasManager currentCanvasManager;
     private XRBaseInteractor currentInteractor;
@@ -16,6 +18,7 @@ public class TicketHoverDisplay : MonoBehaviour
         grabInteractable.hoverExited.AddListener(OnHoverExited);
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
         grabInteractable.selectExited.AddListener(OnSelectExited);
+        
     }
     
     private void OnDisable()
@@ -95,6 +98,9 @@ public class TicketHoverDisplay : MonoBehaviour
         
         return null;
     }
+
+  
+
 }
 
 

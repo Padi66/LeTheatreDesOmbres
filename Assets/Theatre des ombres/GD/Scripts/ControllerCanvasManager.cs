@@ -4,6 +4,7 @@ public class ControllerCanvasManager : MonoBehaviour
 {
     [SerializeField] private GameObject hoverImageObject;
     [SerializeField] private GameObject selectImageObject;
+    [SerializeField] private GameObject buttonImageObject;
 
     private void Awake()
     {
@@ -37,6 +38,19 @@ public class ControllerCanvasManager : MonoBehaviour
         if (selectImageObject != null)
         {
             selectImageObject.SetActive(false);
+        }
+        if (buttonImageObject != null)
+        {
+            buttonImageObject.SetActive(false);
+        }
+    }
+    
+    public void ShowButtonImage()
+    {
+        HideAllImages();
+        if (hoverImageObject != null)
+        {
+            buttonImageObject.SetActive(true);
         }
     }
 }

@@ -14,7 +14,7 @@ public class SocketGreen : MonoBehaviour
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private HapticManager _hapticManager;  // ← AJOUTEZ CECI
     private bool _hasDone = false;
-    [SerializeField] private AudioSource _sound;
+    
     
     void Start()
     {
@@ -56,7 +56,7 @@ public class SocketGreen : MonoBehaviour
             _particleSystem.Play();
             Debug.Log($"Socket Vert contient Cube Vert - nom envoyé: '{cubeName}'");
             if (_piedestal != null)
-                _sound.Play();
+                
             {
                 if (!_hasDone)
                 {
@@ -71,7 +71,7 @@ public class SocketGreen : MonoBehaviour
             cubeName = "CubeOrange";
             _particleSystem.Play();
             Debug.Log($"Socket Vert contient Cube Orange - nom envoyé: '{cubeName}'");
-            _sound.Play();
+            
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -86,7 +86,7 @@ public class SocketGreen : MonoBehaviour
             cubeName = "CubePurple";
             _particleSystem.Play();
             Debug.Log($"Socket Vert contient Cube Violet - nom envoyé: '{cubeName}'");
-            _sound.Play();
+            
             if (_piedestal != null)
             {
                 if (!_hasDone)

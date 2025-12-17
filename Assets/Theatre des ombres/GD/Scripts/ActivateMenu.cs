@@ -18,7 +18,7 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private GameObject _buttonVisual;
     [SerializeField] private Animator _handAnimator;
     private const string IS_TICKET_IN_SOCKET = "IsTicketInSocket";
-    private float _durationAnim= 4f;
+    private float _durationAnim= 2f;
     
     private int _outlineLayer;
     private int _defaultLayer;
@@ -78,7 +78,6 @@ public class ActivateMenu : MonoBehaviour
 
             string cubeType = GetCubeTypeInSocket();
             Debug.Log($"Type de cube détecté: '{cubeType}'");
-            
 
             if (string.IsNullOrEmpty(cubeType))
             {
@@ -272,7 +271,7 @@ public class ActivateMenu : MonoBehaviour
     
     IEnumerator CloseCurtains()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         float elapsed = 0f;
 
         while (elapsed < _durationAnim)
@@ -303,8 +302,7 @@ public class ActivateMenu : MonoBehaviour
             Debug.LogError("[ActivateMenu] SceneTransitionManager.Instance is null!");
         }
     }
-
-
+    
     }
     
 

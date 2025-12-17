@@ -14,7 +14,7 @@ public class SocketOrange : MonoBehaviour
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private HapticManager _hapticManager;
     private bool _hasDone = false;
-    [SerializeField] private AudioSource _sound;
+   
 
     void Start()
     {
@@ -53,7 +53,7 @@ public class SocketOrange : MonoBehaviour
             cubeName = "Sword";
             _particleSystem.Play();
             Debug.Log($"Socket Orange contient Sword - nom envoyé: '{cubeName}'");
-            _sound.Play();
+            
             if (_piedestal != null)
             {
                 if (!_hasDone)
@@ -68,7 +68,7 @@ public class SocketOrange : MonoBehaviour
             cubeName = "Shield";
             _particleSystem.Play();
             Debug.Log($"Socket Orange contient Shield - nom envoyé: '{cubeName}'");
-            _sound.Play();
+            
             if (_piedestal != null)
             {
                 if (!_hasDone)

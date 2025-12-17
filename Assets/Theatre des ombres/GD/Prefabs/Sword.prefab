@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 2248766440254582555}
   - component: {fileID: -609117524200722561}
   - component: {fileID: 8056236190151404547}
+  - component: {fileID: 5982441668404287113}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -463,6 +464,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.73804003, y: 0.67, z: 0.8099266}
   m_Center: {x: 0, y: 0.28, z: 0.000042155385}
+--- !u!114 &5982441668404287113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4406114788250645380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3097cdc42a133764688c02ee5732918b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnMaterial
+  audioSource: {fileID: 1601931225218161191}
+  targetMaterial: {fileID: 13400000, guid: e8bf2882420bb5146acc74b946ea3d9d, type: 2}
 --- !u!1 &4546908327573685117
 GameObject:
   m_ObjectHideFlags: 0
