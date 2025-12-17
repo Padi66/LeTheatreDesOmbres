@@ -2296,25 +2296,6 @@ RectTransform:
   m_AnchoredPosition: {x: -9.099008, y: 3.246}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &627115333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-  m_PrefabInstance: {fileID: 1944516633}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &627115334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627115333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964d1677ad4185f42afe36e47b33d66a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraHeightNormalizer
-  targetHeight: 1.4
-  minHeight: 0.5
 --- !u!4 &740336219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5265904791359189925, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
@@ -6518,42 +6499,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 82676482689608540, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366349417295850675, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 366349417295850675, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366349417295850675, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366349417295850675, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 446002754294360242, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1038154866134355807, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104418547061190172, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330770630966253876, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
@@ -6598,89 +6543,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1535270415050945640, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249296449437080463, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_FarAttachMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267352223620756140, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3177868548665108517, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3442733380619304007, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3614198312268184823, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3691527760771623796, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5570396344926915481, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5661869883317575675, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5809986591686265641, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6010792718146615134, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_SlopeLimit
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6010792718146615134, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
       propertyPath: m_StepOffset
-      value: 0.00000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7182317679394397314, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7257985204566761324, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7845633849890027649, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915816194985089474, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8142181451173310186, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9078780653006931314, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9090404306924700944, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      propertyPath: m_FarAttachMode
-      value: 0
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1351904833967977961, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 627115334}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e660da2419d1614198b2c073ddf863d, type: 3}
 --- !u!4 &1962490886 stripped
 Transform:
