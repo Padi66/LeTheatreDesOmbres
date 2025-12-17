@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: _animationDelayController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1552899594541898964, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2202629336024975054, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Lightmapping
       value: 1
@@ -1284,6 +1288,10 @@ PrefabInstance:
     - target: {fileID: 4161024375699403622, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396734172077087262, guid: a626a0850a91ac742940f13c78252877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6629023012778266455, guid: a626a0850a91ac742940f13c78252877, type: 3}
       propertyPath: m_Resource
@@ -3795,7 +3803,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085244409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

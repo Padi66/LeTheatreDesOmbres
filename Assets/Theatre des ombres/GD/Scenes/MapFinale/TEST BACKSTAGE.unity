@@ -1918,6 +1918,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5071654877467818712, guid: eabc73212483bc340836e676de6338fa, type: 3}
   m_PrefabInstance: {fileID: 475334313}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &506323487 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 506971312406693057, guid: 44da0785a3d35e54dafcdb54f9a0abe2, type: 3}
+  m_PrefabInstance: {fileID: 1019227525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &525786183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5692417983733100438, guid: c8489054427e0c14aaf3cc5e262f6c13, type: 3}
@@ -3456,10 +3461,18 @@ PrefabInstance:
     - target: {fileID: 657461433597271298, guid: 44da0785a3d35e54dafcdb54f9a0abe2, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 506323487}
     - target: {fileID: 657461433597271298, guid: 44da0785a3d35e54dafcdb54f9a0abe2, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 506323487}
+    - target: {fileID: 657461433597271298, guid: 44da0785a3d35e54dafcdb54f9a0abe2, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 657461433597271298, guid: 44da0785a3d35e54dafcdb54f9a0abe2, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 671956641532744161, guid: 44da0785a3d35e54dafcdb54f9a0abe2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6633,7 +6646,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5778290692789805889, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5731395528152453803, guid: 412be8b6701f6984a9eab559fa0942b3, type: 3}
