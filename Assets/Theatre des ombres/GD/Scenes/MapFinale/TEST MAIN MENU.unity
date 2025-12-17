@@ -3716,8 +3716,8 @@ MonoBehaviour:
   fadeCanvasGroup: {fileID: 1511808379}
   fadeDuration: 2
   delayBeforeDialogue: 1
-  resetCameraRotationOnSceneLoad: 1
-  targetCameraYRotation: 180
+  resetCameraRotationOnSceneLoad: 0
+  targetCameraYRotation: 0
 --- !u!4 &1103631265
 Transform:
   m_ObjectHideFlags: 0
