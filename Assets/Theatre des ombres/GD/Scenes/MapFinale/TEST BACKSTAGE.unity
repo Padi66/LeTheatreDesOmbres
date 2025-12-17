@@ -3054,6 +3054,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1690943038}
     - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
+      propertyPath: figurineNameDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692820781508095928, guid: 6ed7d62cf4a9a2c479713e7d0c6f9ddd, type: 3}
       propertyPath: _endPositionOrange
       value: 
       objectReference: {fileID: 171152298}
