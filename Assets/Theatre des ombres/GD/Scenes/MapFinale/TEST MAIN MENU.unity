@@ -730,11 +730,11 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
+  m_SnapToColliderVolume: 0
+  m_ReinitializeDynamicAttachEverySingleGrab: 0
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_PredictedVisualsTransform: {fileID: 0}
@@ -2851,10 +2851,10 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
+  m_SnapToColliderVolume: 0
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
@@ -3042,10 +3042,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 637486135460915, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7192001
+      objectReference: {fileID: 0}
+    - target: {fileID: 637486135460915, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9823438
+      objectReference: {fileID: 0}
     - target: {fileID: 53041128342149317, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ef2d92b7e2c031b40a91859e9e8bd5f6, type: 2}
+    - target: {fileID: 104582793312694117, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6761001
+      objectReference: {fileID: 0}
+    - target: {fileID: 104582793312694117, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9641438
+      objectReference: {fileID: 0}
     - target: {fileID: 837846969007847676, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.804674
@@ -3060,7 +3076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 837846969007847676, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.589
+      value: 1.5891001
       objectReference: {fileID: 0}
     - target: {fileID: 837846969007847676, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3068,7 +3084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 837846969007847676, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.901
+      value: -0.92294383
       objectReference: {fileID: 0}
     - target: {fileID: 837846969007847676, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3124,7 +3140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687980602718083997, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.953
+      value: 1.9531001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687980602718083997, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0969439
       objectReference: {fileID: 0}
     - target: {fileID: 4063802110624039207, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_Name
@@ -3140,7 +3160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936291007801405420, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1764002
+      value: 2.1765003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936291007801405420, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0915438
       objectReference: {fileID: 0}
     - target: {fileID: 6041973792191449184, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_Name
@@ -3149,6 +3173,22 @@ PrefabInstance:
     - target: {fileID: 6424984741592266070, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
       propertyPath: m_Name
       value: PlayTicket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081408187142140387, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6495001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081408187142140387, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9941438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326103929834080602, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.381
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326103929834080602, guid: 3185becc0b71e3f4294255fd00bcc861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -4686,7 +4726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130556819844574636, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.058
+      value: -4.0579
       objectReference: {fileID: 0}
     - target: {fileID: 3130556819844574636, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4694,7 +4734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130556819844574636, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3343
+      value: -2.3562438
       objectReference: {fileID: 0}
     - target: {fileID: 3130556819844574636, guid: da3b468b35b58334693dfcd04f6e06a7, type: 3}
       propertyPath: m_LocalRotation.w

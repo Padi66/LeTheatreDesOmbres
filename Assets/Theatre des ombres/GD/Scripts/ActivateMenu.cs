@@ -274,7 +274,7 @@ public class ActivateMenu : MonoBehaviour
     
     IEnumerator CloseCurtains()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(5.5f);
         float elapsed = 0f;
 
         while (elapsed < _durationAnim)
