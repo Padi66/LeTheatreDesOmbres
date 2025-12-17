@@ -38,16 +38,33 @@ public class ActivateMenu : MonoBehaviour
     [SerializeField] private AudioSource _roboticVoice;
     
     
-    void Awake()
+void Awake()
+{
+    _outlineLayer = LayerMask.NameToLayer("Outline");
+    _defaultLayer = LayerMask.NameToLayer("Default");
+
+    if (_buttonVisual == null)
     {
-        _outlineLayer = LayerMask.NameToLayer("Outline");
-        _defaultLayer = LayerMask.NameToLayer("Default");
-    
-        if (_buttonVisual == null)
-        {
-            _buttonVisual = gameObject;
-        }
+        _buttonVisual = gameObject;
     }
+}
+
+void Start()
+{
+    if (_handAnimator != null)
+    {
+        _handAnimator.Rebind();
+        _handAnimator.Update(0f);
+    }
+    
+    _hasBeenPressed = false;
+    
+    if (_rideau != null && _startPosition != null)
+    {
+        _rideau.position = _startPosition.position;
+    }
+}
+
 
 
     private bool _hasBeenPressed = false;

@@ -703,7 +703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7479060910795130853, guid: fb9cc6153878dd24f86f1588e2c46b81, type: 3}
       propertyPath: m_MovementType
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479060910795130853, guid: fb9cc6153878dd24f86f1588e2c46b81, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7479060910795130853, guid: fb9cc6153878dd24f86f1588e2c46b81, type: 3}
       propertyPath: m_UseDynamicAttach
@@ -2501,7 +2505,7 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
@@ -2532,7 +2536,7 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
@@ -2928,6 +2932,10 @@ PrefabInstance:
     - target: {fileID: 6175339765435382529, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531435094398241306, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289277864956885455, guid: 8d33d0ca80117d548b6a703a11f9c654, type: 3}
       propertyPath: m_Name
@@ -4834,6 +4842,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3769157452022766194, guid: 029a2331f5e6a19469105c9877aad6cf, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4644511683335856051, guid: 029a2331f5e6a19469105c9877aad6cf, type: 3}
       propertyPath: m_Name
       value: Middle Figurine 3 (1)
@@ -6077,6 +6089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 883659754785175887, guid: fa823ed97cc46af448f8a330ead2c1f3, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3252319288683936623, guid: fa823ed97cc46af448f8a330ead2c1f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.7289
@@ -6347,6 +6363,10 @@ PrefabInstance:
     - target: {fileID: 1110378237777014210, guid: eb121961caa5baa4b8fe72fb7080978a, type: 3}
       propertyPath: m_Name
       value: Middle Figurine 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766828700403576885, guid: eb121961caa5baa4b8fe72fb7080978a, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8186819968987666276, guid: eb121961caa5baa4b8fe72fb7080978a, type: 3}
       propertyPath: m_LocalPosition.x
